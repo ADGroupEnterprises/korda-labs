@@ -11,10 +11,10 @@
     "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
-    "next": "15.5.2",
+    "framer-motion": "^11",
+    "next": "^15.5.12",
     "react": "^18",
-    "react-dom": "^18",
-    "framer-motion": "^11"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1",
