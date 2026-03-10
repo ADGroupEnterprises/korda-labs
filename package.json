@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cloud-build": "opennextjs-cloudflare build",
-    "cloud-deploy": "wrangler pages deploy"
+    "pages:build": "opennextjs-cloudflare build",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "framer-motion": "^11",
