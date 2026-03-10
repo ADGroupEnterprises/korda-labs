@@ -56,7 +56,7 @@ function TaskManagerAnimation() {
   const displayTasks = order.map(id => TM_TASKS.find(t => t.id === id)!)
 
   return (
-    <div ref={ref} className="rounded-2xl border border-white/5 bg-dark-100/50 p-4 overflow-hidden">
+    <div ref={ref} className="rounded-2xl border border-ink/10 bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
           className="w-1.5 h-1.5 rounded-full bg-brand-blue" />
@@ -74,14 +74,14 @@ function TaskManagerAnimation() {
               layout
               transition={{ layout: { type: 'spring', stiffness: 300, damping: 28 } }}
               className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl border transition-colors duration-500 ${
-                isDone ? 'border-white/5 opacity-40' :
+                isDone ? 'border-ink/8 opacity-40' :
                 isHigh ? 'border-brand-blue/20 bg-brand-blue/5' :
-                'border-white/5 bg-white/[0.02]'
+                'border-ink/8 bg-ink/[0.03]'
               }`}
             >
               <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors duration-500 ${
                 isDone ? 'border-brand-green/40 bg-brand-green/15' :
-                isHigh ? 'border-brand-blue/30' : 'border-white/10'
+                isHigh ? 'border-brand-blue/30' : 'border-ink/15'
               }`}>
                 {isDone && (
                   <motion.svg initial={{ scale: 0 }} animate={{ scale: 1 }} width="8" height="8" viewBox="0 0 10 8" fill="none">
@@ -89,14 +89,14 @@ function TaskManagerAnimation() {
                   </motion.svg>
                 )}
               </div>
-              <span className={`text-xs flex-1 transition-colors duration-500 ${isDone ? 'line-through text-white/20' : isHigh ? 'text-white/80' : 'text-white/35'}`}>
+              <span className={`text-xs flex-1 transition-colors duration-500 ${isDone ? 'line-through text-ink/30' : isHigh ? 'text-ink/85' : 'text-ink/55'}`}>
                 {task.label}
               </span>
               <AnimatePresence>
                 {task.time && phase >= 1 && (
                   <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                     className={`text-[10px] px-2 py-0.5 rounded-full transition-colors duration-500 ${
-                      isHigh ? 'bg-brand-blue/15 text-brand-blue/70' : 'bg-white/5 text-white/25'
+                      isHigh ? 'bg-brand-blue/15 text-brand-blue/70' : 'bg-ink/[0.04] text-ink/35'
                     }`}>
                     {task.time}
                   </motion.span>
@@ -184,14 +184,14 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
       transition={{ duration: 0.6, delay: index * 0.12 }}
       className={`group relative p-7 rounded-2xl border transition-all duration-300 ${
         isBlue
-          ? 'border-brand-blue/15 bg-brand-blue/5 hover:border-brand-blue/25'
-          : 'border-brand-green/15 bg-brand-green/5 hover:border-brand-green/25'
+          ? 'border-brand-blue/25 bg-dark-100 hover:border-brand-blue/40'
+          : 'border-brand-green/25 bg-dark-100 hover:border-brand-green/40'
       }`}
     >
       {/* Icon + name */}
       <div className="flex items-start gap-4 mb-4">
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-          isBlue ? 'bg-brand-blue/15 text-brand-blue' : 'bg-brand-green/15 text-brand-green'
+          isBlue ? 'bg-brand-blue/20 text-brand-blue' : 'bg-brand-green/20 text-brand-green'
         }`}>
           {agent.icon}
         </div>
@@ -204,7 +204,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
       </div>
 
       {/* Description */}
-      <p className="text-white/40 text-sm leading-relaxed mb-5">{agent.description}</p>
+      <p className="text-white/70 text-sm leading-relaxed mb-5">{agent.description}</p>
 
       {/* Skills */}
       <div className="flex flex-wrap gap-2">
@@ -213,8 +213,8 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
             key={skill}
             className={`text-xs px-2.5 py-1 rounded-full border ${
               isBlue
-                ? 'border-brand-blue/20 bg-brand-blue/8 text-brand-blue/70'
-                : 'border-brand-green/20 bg-brand-green/8 text-brand-green/70'
+                ? 'border-brand-blue/25 bg-brand-blue/15 text-brand-blue/80'
+                : 'border-brand-green/25 bg-brand-green/15 text-brand-green/80'
             }`}
           >
             {skill}
@@ -378,7 +378,7 @@ function AdaptiveMemoryAnimation() {
   }, [isInView])
 
   return (
-    <div ref={ref} className="rounded-2xl border border-white/5 bg-dark-100/50 p-4 overflow-hidden">
+    <div ref={ref} className="rounded-2xl border border-ink/10 bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
           className="w-1.5 h-1.5 rounded-full bg-brand-green" />
@@ -403,7 +403,7 @@ function AdaptiveMemoryAnimation() {
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="flex-shrink-0">
                   <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke={item.color === 'blue' ? '#3B82F6' : '#10B981'} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className={`text-xs ${item.color === 'blue' ? 'text-white/55' : 'text-white/55'}`}>{item.label}</span>
+                <span className={`text-xs ${item.color === 'blue' ? 'text-ink/70' : 'text-ink/70'}`}>{item.label}</span>
               </motion.div>
             )}
           </AnimatePresence>

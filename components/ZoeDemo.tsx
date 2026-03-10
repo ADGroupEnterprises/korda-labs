@@ -44,12 +44,12 @@ function TasksUI() {
           initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
           transition={{ delay: i * 0.09, duration: 0.3 }}
           className={`flex items-center gap-2.5 px-2.5 py-2 rounded-lg border ${
-            t.high ? 'border-brand-blue/20 bg-brand-blue/5' : 'border-white/5 bg-white/[0.02]'
+            t.high ? 'border-brand-blue/20 bg-brand-blue/5' : 'border-ink/8 bg-ink/[0.03]'
           }`}
         >
-          <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${t.high ? 'bg-brand-blue' : 'bg-white/15'}`} />
-          <span className={`text-xs flex-1 ${t.high ? 'text-white/80' : 'text-white/35'}`}>{t.label}</span>
-          <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${t.high ? 'bg-brand-blue/15 text-brand-blue/70' : 'bg-white/5 text-white/20'}`}>
+          <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${t.high ? 'bg-brand-blue' : 'bg-ink/20'}`} />
+          <span className={`text-xs flex-1 ${t.high ? 'text-ink/80' : 'text-ink/50'}`}>{t.label}</span>
+          <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${t.high ? 'bg-brand-blue/15 text-brand-blue/70' : 'bg-ink/[0.04] text-ink/30'}`}>
             {t.tag}
           </span>
         </motion.div>
@@ -66,16 +66,16 @@ function MapUI() {
     { x: '18%', y: '68%', name: 'La Colombe', dist: '0.6mi' },
   ]
   return (
-    <div className="relative h-44 rounded-xl overflow-hidden border border-white/5 bg-dark-300">
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
+    <div className="relative h-44 rounded-xl overflow-hidden border border-ink/10 bg-paper-200">
+      <div className="absolute inset-0 opacity-[0.04]" style={{
+        backgroundImage: 'linear-gradient(#1c1a17 1px, transparent 1px), linear-gradient(90deg, #1c1a17 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       }} />
       <svg className="absolute inset-0 w-full h-full opacity-[0.07]" viewBox="0 0 300 180" preserveAspectRatio="none">
-        <line x1="0" y1="90" x2="300" y2="90" stroke="white" strokeWidth="4"/>
-        <line x1="150" y1="0" x2="150" y2="180" stroke="white" strokeWidth="4"/>
-        <line x1="0" y1="45" x2="300" y2="110" stroke="white" strokeWidth="2"/>
-        <line x1="60" y1="0" x2="240" y2="180" stroke="white" strokeWidth="2"/>
+        <line x1="0" y1="90" x2="300" y2="90" stroke="#1c1a17" strokeWidth="4"/>
+        <line x1="150" y1="0" x2="150" y2="180" stroke="#1c1a17" strokeWidth="4"/>
+        <line x1="0" y1="45" x2="300" y2="110" stroke="#1c1a17" strokeWidth="2"/>
+        <line x1="60" y1="0" x2="240" y2="180" stroke="#1c1a17" strokeWidth="2"/>
       </svg>
       <div className="absolute" style={{ left: '50%', top: '50%', transform: 'translate(-50%,-50%)' }}>
         <motion.div animate={{ scale: [1, 1.4, 1] }} transition={{ duration: 2, repeat: Infinity }}
@@ -93,7 +93,7 @@ function MapUI() {
         >
           <div className="w-2.5 h-2.5 rounded-full bg-brand-blue border border-brand-blue/50 shadow-[0_0_8px_#3B82F6]" />
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.15 + 0.25 }}
-            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-dark-400 border border-white/10 rounded px-1.5 py-0.5 text-[9px] text-white/55 whitespace-nowrap">
+            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-paper-DEFAULT border border-ink/15 rounded px-1.5 py-0.5 text-[9px] text-ink/60 whitespace-nowrap">
             {p.name} · {p.dist}
           </motion.div>
         </motion.div>
@@ -114,10 +114,10 @@ function HealthUI() {
       {metrics.map((m, i) => (
         <motion.div key={m.label} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.1 }}>
           <div className="flex justify-between items-center mb-1.5">
-            <span className="text-xs text-white/40">{m.label}</span>
-            <span className={`text-xs font-mono ${m.low ? 'text-brand-green/50' : 'text-white/40'}`}>{m.value}%</span>
+            <span className="text-xs text-ink/50">{m.label}</span>
+            <span className={`text-xs font-mono ${m.low ? 'text-brand-green/50' : 'text-ink/50'}`}>{m.value}%</span>
           </div>
-          <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+          <div className="h-1.5 rounded-full bg-ink/8 overflow-hidden">
             <motion.div initial={{ width: 0 }} animate={{ width: `${m.value}%` }}
               transition={{ duration: 0.9, delay: i * 0.1 + 0.15, ease: 'easeOut' }}
               className={`h-full rounded-full ${m.color === 'blue' ? 'bg-brand-blue' : 'bg-brand-green'}`} />
@@ -172,9 +172,9 @@ export default function ZoeDemo() {
   const showResponse = phase >= 4
 
   return (
-    <div ref={ref} className="rounded-2xl border border-white/8 bg-dark-100 overflow-hidden shadow-2xl">
+    <div ref={ref} className="rounded-2xl border border-ink/12 bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
       {/* App header */}
-      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-white/5">
+      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-ink/8">
         <motion.div
           animate={{ scale: isThinking ? [1, 1.25, 1, 1.2, 1] : [1, 1.06, 1] }}
           transition={{ duration: isThinking ? 0.65 : 3, repeat: Infinity }}
@@ -184,7 +184,7 @@ export default function ZoeDemo() {
             boxShadow: isThinking ? '0 0 14px #3B82F6BB' : '0 0 8px #3B82F666',
           }}
         />
-        <span className="text-white/50 text-xs font-medium">Zoe</span>
+        <span className="text-ink/60 text-xs font-medium">Zoe</span>
         <AnimatePresence>
           {isThinking && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex gap-1 ml-0.5">
@@ -199,29 +199,29 @@ export default function ZoeDemo() {
         <div className="ml-auto flex items-center gap-2">
           <div className="flex gap-1">
             {DEMOS.map((_, i) => (
-              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-brand-blue' : 'bg-white/15'}`} />
+              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-brand-blue' : 'bg-ink/20'}`} />
             ))}
           </div>
-          <div className="w-px h-3 bg-white/10" />
+          <div className="w-px h-3 bg-ink/12" />
           <div className="flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-brand-green/60 animate-pulse" />
-            <span className="text-white/20 text-[10px]">online</span>
+            <span className="text-ink/30 text-[10px]">online</span>
           </div>
         </div>
       </div>
 
       {/* Split body */}
-      <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/5">
+      <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/8">
         {/* LEFT: Chat */}
         <div className="p-4 flex flex-col gap-3 min-h-[260px]">
-          <div className="text-[10px] text-white/18 uppercase tracking-widest font-medium mb-0.5">Chat</div>
+          <div className="text-[10px] text-ink/25 uppercase tracking-widest font-medium mb-0.5">Chat</div>
           <AnimatePresence mode="wait">
             {phase >= 1 && (
               <motion.div key={`user-${demoIdx}`}
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[88%] bg-brand-blue/15 border border-brand-blue/20 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-white/80">
+                <div className="max-w-[88%] bg-brand-blue/15 border border-brand-blue/20 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/80">
                   {demo.query.slice(0, chars)}{phase === 1 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -239,8 +239,8 @@ export default function ZoeDemo() {
                   <div className={`text-[10px] font-semibold mb-1 ${demo.agentColor === 'blue' ? 'text-brand-blue' : 'text-brand-green'}`}>
                     {demo.agent}
                   </div>
-                  <p className="text-white/55 text-xs leading-relaxed">{demo.response}</p>
-                  <p className="text-white/18 text-[10px] mt-1.5 flex items-center gap-1">
+                  <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
+                  <p className="text-ink/25 text-[10px] mt-1.5 flex items-center gap-1">
                     UI rendered in right panel
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5.5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
                   </p>
@@ -252,13 +252,13 @@ export default function ZoeDemo() {
 
         {/* RIGHT: Rendered UI panel */}
         <div className="p-4 min-h-[260px] flex flex-col">
-          <div className="text-[10px] text-white/18 uppercase tracking-widest font-medium mb-3">Rendered UI</div>
+          <div className="text-[10px] text-ink/25 uppercase tracking-widest font-medium mb-3">Rendered UI</div>
           <div className="flex-1">
             <AnimatePresence mode="wait">
               {phase < 1 && (
                 <motion.div key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="h-full flex items-center justify-center">
-                  <p className="text-white/10 text-xs">Awaiting query...</p>
+                  <p className="text-ink/20 text-xs">Awaiting query...</p>
                 </motion.div>
               )}
               {showCode && !showUI && (
@@ -290,9 +290,9 @@ export default function ZoeDemo() {
       </div>
 
       {/* Input bar */}
-      <div className="border-t border-white/5 px-4 py-2.5 flex items-center gap-2.5">
-        <div className="flex-1 h-7 rounded-lg bg-white/5 border border-white/8 flex items-center px-3">
-          <span className="text-white/15 text-xs">Ask Zoe anything...</span>
+      <div className="border-t border-ink/8 px-4 py-2.5 flex items-center gap-2.5">
+        <div className="flex-1 h-7 rounded-lg bg-ink/[0.04] border border-ink/10 flex items-center px-3">
+          <span className="text-ink/30 text-xs">Ask Zoe anything...</span>
         </div>
         <div className="w-6 h-6 rounded-lg bg-brand-blue/20 flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
