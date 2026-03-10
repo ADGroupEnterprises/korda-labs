@@ -290,9 +290,9 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="group relative p-6 rounded-2xl border border-white/5 bg-dark-100/40 hover:border-white/10 hover:bg-dark-100/80 transition-all duration-300"
     >
-      <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-brand-blue/0 group-hover:bg-brand-blue/[0.02]' : 'bg-brand-green/0 group-hover:bg-brand-green/[0.02]'} transition-all duration-300`} />
+      <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-brand-blue/0 group-hover:bg-brand-blue/[0.02]' : 'bg-brand-blue/0 group-hover:bg-brand-blue/[0.02]'} transition-all duration-300`} />
       <div className="relative">
-        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20' : 'bg-brand-green/10 text-brand-green group-hover:bg-brand-green/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
+        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20' : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
           {feature.icon}
         </div>
         <h3 className="text-lg font-semibold text-white mb-2 leading-snug">{feature.title}</h3>
@@ -355,8 +355,8 @@ const zoeSteps = [
 const memoryItems = [
   { key: 'schedule', label: 'Prefers deep work before 11am', icon: '◑', color: 'blue' },
   { key: 'calendar', label: 'Avoids meetings on Fridays', icon: '◑', color: 'blue' },
-  { key: 'tasks', label: 'Processes email in batches, not live', icon: '◑', color: 'green' },
-  { key: 'health', label: 'Workout best after 6pm on weekdays', icon: '◑', color: 'green' },
+  { key: 'tasks', label: 'Processes email in batches, not live', icon: '◑', color: 'blue' },
+  { key: 'health', label: 'Workout best after 6pm on weekdays', icon: '◑', color: 'blue' },
   { key: 'focus', label: 'Focus blocks: 90min max, then break', icon: '◑', color: 'blue' },
 ]
 
@@ -414,7 +414,7 @@ function AdaptiveMemoryAnimation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-3 p-2.5 rounded-lg bg-brand-green/5 border border-brand-green/15 text-[10px] text-brand-green/60 font-mono"
+          className="mt-3 p-2.5 rounded-lg bg-brand-blue/5 border border-brand-blue/15 text-[10px] text-brand-blue/60 font-mono"
         >
           ↑ Rescheduled tomorrow&apos;s standup — you have a focus block at 9am.
         </motion.div>
@@ -487,7 +487,6 @@ export default function ZoePage() {
       <section className="relative py-28 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-brand-blue opacity-[0.05] blur-[140px]" />
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-brand-green opacity-[0.03] blur-[120px]" />
         </div>
         <motion.div
           ref={heroRef}
@@ -524,7 +523,7 @@ export default function ZoePage() {
       </section>
 
       {/* What Zoe Does — Features */}
-      <section className="relative py-32 px-6">
+      <section className="relative py-40 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="max-w-5xl mx-auto">
           <ZoeFeaturesHeader />
@@ -536,8 +535,25 @@ export default function ZoePage() {
         </div>
       </section>
 
+      {/* Statement */}
+      <section className="relative py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.7 }}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white/80"
+          >
+            Zoe doesn&apos;t just manage tasks.
+            <br />
+            <span className="text-white/30">It learns how you think.</span>
+          </motion.p>
+        </div>
+      </section>
+
       {/* How It Works */}
-      <section id="how-it-works" className="relative py-32 px-6">
+      <section id="how-it-works" className="relative py-40 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-brand-blue opacity-[0.03] blur-[100px] -translate-y-1/2" />
@@ -576,14 +592,13 @@ export default function ZoePage() {
       </section>
 
       {/* Orb Experience */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-blue opacity-[0.04] blur-[130px]" />
         </div>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <SectionLabel>The Experience</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               Talk to Zoe.
               <br />
@@ -600,7 +615,7 @@ export default function ZoePage() {
       </section>
 
       {/* Core Agents */}
-      <section className="relative py-24 px-6">
+      <section className="relative py-32 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
@@ -608,7 +623,7 @@ export default function ZoePage() {
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
               Three agents.
               <br />
-              <span className="text-white/40">One team. Working for you.</span>
+              <span className="text-white/40">One team. Built for you.</span>
             </h2>
             <p className="text-white/35 mt-4 max-w-2xl mx-auto">
               Zoe orchestrates everything. Compass holds your goals. Task Manager owns your day.
@@ -632,7 +647,7 @@ export default function ZoePage() {
       </section>
 
       {/* Desktop Bridge */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-green opacity-[0.03] blur-[120px]" />
@@ -688,7 +703,6 @@ export default function ZoePage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="order-1 lg:order-2"
             >
-              <SectionLabel>Desktop Bridge</SectionLabel>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
                 Your home machine,
                 <br />
@@ -707,9 +721,9 @@ export default function ZoePage() {
                   'End-to-end encrypted — only you have the keys',
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm text-white/50">
-                    <span className="w-4 h-4 rounded-full bg-brand-green/15 flex items-center justify-center flex-shrink-0">
+                    <span className="w-4 h-4 rounded-full bg-brand-blue/15 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4L3.5 6.5L9 1" stroke="#10B981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </span>
                     {item}
@@ -722,7 +736,7 @@ export default function ZoePage() {
       </section>
 
       {/* Integrations */}
-      <section className="relative py-24 px-6">
+      <section className="relative py-32 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="max-w-5xl mx-auto text-center" ref={intRef}>
           <motion.div
@@ -730,7 +744,6 @@ export default function ZoePage() {
             animate={intInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <SectionLabel>Integrations</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
               Plugs into your life.
               <br />
@@ -751,7 +764,7 @@ export default function ZoePage() {
                 transition={{ duration: 0.5, delay: ci * 0.1 }}
                 className="p-5 rounded-xl border border-white/5 bg-dark-100/30"
               >
-                <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${ci % 2 === 0 ? 'text-brand-blue' : 'text-brand-green'}`}>
+                <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-brand-blue'}`}>
                   {cat.category}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -768,7 +781,7 @@ export default function ZoePage() {
       </section>
 
       {/* Privacy & Control */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute right-0 bottom-0 w-[400px] h-[400px] rounded-full bg-brand-blue opacity-[0.04] blur-[100px]" />
@@ -780,7 +793,6 @@ export default function ZoePage() {
               animate={privacyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <SectionLabel>Privacy & Control</SectionLabel>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
                 Your models.
                 <br />
@@ -808,7 +820,7 @@ export default function ZoePage() {
                 { title: 'Open audit log', desc: 'Every action Zoe takes on your behalf is logged and reviewable.' },
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl border border-white/5 bg-dark-100/40">
-                  <div className="w-1 h-4 rounded-full bg-gradient-to-b from-brand-blue to-brand-green mb-3" />
+                  <div className="w-1 h-4 rounded-full bg-brand-blue mb-3" />
                   <div className="font-medium text-white text-sm mb-1">{item.title}</div>
                   <div className="text-white/30 text-xs leading-relaxed">{item.desc}</div>
                 </div>
@@ -819,7 +831,7 @@ export default function ZoePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-28 px-6 text-center overflow-hidden">
+      <section className="relative py-40 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-brand-blue opacity-[0.05] blur-[100px]" />

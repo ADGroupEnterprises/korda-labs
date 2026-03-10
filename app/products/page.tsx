@@ -10,12 +10,11 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-dark-DEFAULT">
       {/* Header */}
-      <section className="relative py-24 px-6 text-center overflow-hidden">
+      <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-blue opacity-[0.04] blur-[120px]" />
         </div>
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">Products</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
             Built for every scale
             <br />
@@ -33,7 +32,7 @@ export default function ProductsPage() {
         <div className="max-w-5xl mx-auto">
 
           {/* Featured: Zoe Personal */}
-          <div className="relative rounded-2xl border border-brand-blue/25 bg-brand-blue/5 p-8 sm:p-10 mb-5">
+          <div className="relative rounded-2xl border border-brand-blue/15 bg-brand-blue/[0.03] p-8 sm:p-10 mb-5">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">

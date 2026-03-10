@@ -13,12 +13,6 @@ function Orb() {
         className="absolute inset-0 rounded-full border border-brand-blue/10"
       />
       <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-6 rounded-full border border-brand-blue/15"
-        style={{ borderStyle: 'dashed' }}
-      />
-      <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
         className="absolute inset-12 rounded-full border border-brand-blue/20"
@@ -50,7 +44,7 @@ function Orb() {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className={`absolute w-1 h-1 rounded-full ${i % 2 === 0 ? 'bg-brand-blue' : 'bg-brand-green'}`}
+          className={`absolute w-1 h-1 rounded-full ${'bg-brand-blue/60'}`}
           style={{
             top: '50%',
             left: '50%',
@@ -87,7 +81,7 @@ export default function OrbSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section className="relative py-40 px-6 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-blue opacity-[0.05] blur-[150px]" />
@@ -101,7 +95,6 @@ export default function OrbSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">About Korda Labs</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
               A focused lab.
               <br />

@@ -106,7 +106,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.75 }}
               className="flex items-center gap-2 text-white/25 text-sm mt-4"
             >
-              <span className="w-1 h-1 rounded-full bg-brand-green/60 flex-shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-brand-blue/40 flex-shrink-0" />
               Learns your preferences and adapts over time — the longer you use it, the better it fits you.
             </motion.p>
           </div>
