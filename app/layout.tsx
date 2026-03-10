@@ -3,10 +3,10 @@ import './globals.css'
 import Nav from '@/components/Nav'
 
 export const metadata: Metadata = {
-  title: 'Zoe — Your Personal AI Operating System',
+  title: 'Korda Labs',
   description: 'Zoe is your personal AI operating system — connecting your goals, tools, calendar, health, and life into one intelligent layer that works for you.',
   openGraph: {
-    title: 'Zoe — Your Personal AI Operating System',
+    title: 'Korda Labs',
     description: 'Not a chatbot. A personal OS that puts AI to work for your life.',
     type: 'website',
   },
