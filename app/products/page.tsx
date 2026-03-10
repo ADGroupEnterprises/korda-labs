@@ -137,7 +137,7 @@ export default function ProductsPage() {
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-2 text-white/20 text-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-brand-blue/50" />
-              All products are built by Korda Labs — a venture studio by RIT.
+              All products are built by KORDA LABS.
               <div className="w-1.5 h-1.5 rounded-full bg-brand-blue/50" />
             </div>
           </div>

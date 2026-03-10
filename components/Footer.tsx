@@ -20,7 +20,7 @@ export default function Footer() {
           <Image src="/logo.png" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
           <div>
             <span className="font-semibold text-white/80 tracking-wide">Korda Labs</span>
-            <p className="text-white/25 text-xs">A venture studio by RIT</p>
+            <p className="text-white/25 text-xs">KORDA LABS</p>
           </div>
         </div>
 

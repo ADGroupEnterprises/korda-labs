@@ -48,7 +48,7 @@ export default function KordaSection() {
               <span className="text-white/35">centered on people.</span>
             </h2>
             <p className="text-white/40 leading-relaxed text-lg pt-1">
-              Korda Labs is a venture studio founded at RIT. We create products that give people genuine leverage
+              KORDA LABS creates products that give people genuine leverage
               over their own lives — starting with Zoe, and with more to come.
               We care deeply about privacy, intentional AI, and software that respects the humans using it.
             </p>
