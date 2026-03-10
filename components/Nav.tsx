@@ -13,35 +13,35 @@ function ProductsDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.15 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-white/8 bg-dark-100/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-ink/12 bg-paper-DEFAULT/95 backdrop-blur-xl shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             <Link
               href="/products/zoe"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors group"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors group"
             >
-              <div className="w-6 h-6 rounded-md bg-brand-blue/20 flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-brand-blue" />
+              <div className="w-6 h-6 rounded-md bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-2 h-2 rounded-full bg-accent" />
               </div>
               <div>
-                <div className="text-sm font-medium text-white">Zoe</div>
-                <div className="text-xs text-white/30">Personal AI OS</div>
+                <div className="text-sm font-medium text-ink">Zoe</div>
+                <div className="text-xs text-ink/40">Personal AI OS</div>
               </div>
             </Link>
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg opacity-40 cursor-default">
-              <div className="w-6 h-6 rounded-md bg-white/5 flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-white/30" />
+              <div className="w-6 h-6 rounded-md bg-ink/[0.04] flex items-center justify-center flex-shrink-0">
+                <div className="w-2 h-2 rounded-full bg-ink/30" />
               </div>
               <div>
-                <div className="text-sm font-medium text-white/60">More products</div>
-                <div className="text-xs text-white/25">Coming soon</div>
+                <div className="text-sm font-medium text-ink/60">More products</div>
+                <div className="text-xs text-ink/35">Coming soon</div>
               </div>
             </div>
           </div>
-          <div className="border-t border-white/5 p-2">
+          <div className="border-t border-ink/8 p-2">
             <Link
               href="/products"
-              className="block text-center text-xs text-white/30 hover:text-white/60 py-1.5 transition-colors"
+              className="block text-center text-xs text-ink/40 hover:text-ink/70 py-1.5 transition-colors"
             >
               View all products →
             </Link>
@@ -80,7 +80,7 @@ export default function Nav() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-DEFAULT/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-paper-DEFAULT/90 backdrop-blur-xl border-b border-ink/8'
           : 'bg-transparent'
       }`}
     >
@@ -88,7 +88,7 @@ export default function Nav() {
         {/* Left: Brand */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <Image src="/logo.png" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
-          <span className="text-white font-semibold text-sm tracking-wide">Korda Labs</span>
+          <span className="text-ink font-semibold text-sm tracking-wide">Korda Labs</span>
         </Link>
 
         {/* Center: Products dropdown */}
@@ -97,7 +97,7 @@ export default function Nav() {
             <button
               onClick={() => setProductsOpen(v => !v)}
               onMouseEnter={() => setProductsOpen(true)}
-              className="flex items-center gap-1 text-white/40 hover:text-white text-sm transition-colors duration-200"
+              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
             >
               Products
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`}>
@@ -114,13 +114,13 @@ export default function Nav() {
         <div className="flex items-center gap-3">
           <Link
             href="#"
-            className="hidden sm:inline-flex px-4 py-2 text-sm text-white/50 hover:text-white transition-colors duration-200"
+            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink/50 hover:text-ink transition-colors duration-200"
           >
             Sign in
           </Link>
           <Link
             href="#"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-brand-blue text-white hover:bg-brand-blue-light transition-all duration-200 shadow-[0_0_16px_#3B82F644] hover:shadow-[0_0_24px_#3B82F666]"
+            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#C4973A44] hover:shadow-[0_0_20px_#C4973A66]"
           >
             Sign up
           </Link>

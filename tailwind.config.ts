@@ -9,6 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        paper: {
+          DEFAULT: '#f5f0e8',
+          100: '#ede8df',
+          200: '#e0dbd0',
+        },
+        ink: {
+          DEFAULT: '#1c1a17',
+          muted: '#6b6560',
+          faint: '#9a948e',
+        },
+        accent: {
+          DEFAULT: '#C4973A',
+          light: '#D4A94E',
+          dark: '#A07828',
+          glow: '#C4973A33',
+        },
         brand: {
           blue: '#3B82F6',
           'blue-light': '#60A5FA',
@@ -20,16 +36,17 @@ const config: Config = {
           'green-glow': '#10B98133',
         },
         dark: {
-          DEFAULT: '#06070E',
-          50: '#090B14',
-          100: '#0D0F1A',
-          200: '#131520',
-          300: '#1A1D2E',
-          400: '#242740',
+          DEFAULT: '#0e0d0b',
+          50: '#121109',
+          100: '#141210',
+          200: '#1a1815',
+          300: '#222019',
+          400: '#2c2a22',
         },
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',

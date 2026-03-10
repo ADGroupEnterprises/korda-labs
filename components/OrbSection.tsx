@@ -13,12 +13,6 @@ function Orb() {
         className="absolute inset-0 rounded-full border border-brand-blue/10"
       />
       <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-6 rounded-full border border-brand-blue/15"
-        style={{ borderStyle: 'dashed' }}
-      />
-      <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
         className="absolute inset-12 rounded-full border border-brand-blue/20"
@@ -38,7 +32,7 @@ function Orb() {
         className="relative w-24 h-24 rounded-full"
         style={{
           background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 40%, #1D4ED8 80%, #1E3A8A)',
-          boxShadow: '0 0 40px #3B82F666, 0 0 80px #3B82F633, 0 0 120px #3B82F61A, inset 0 0 20px #60A5FA33',
+          boxShadow: '0 0 40px #3B82F644, 0 0 80px #3B82F622, 0 0 120px #3B82F611, inset 0 0 20px #60A5FA33',
         }}
       >
         {/* Inner highlight */}
@@ -50,7 +44,7 @@ function Orb() {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className={`absolute w-1 h-1 rounded-full ${i % 2 === 0 ? 'bg-brand-blue' : 'bg-brand-green'}`}
+          className={`absolute w-1 h-1 rounded-full ${'bg-brand-blue/60'}`}
           style={{
             top: '50%',
             left: '50%',
@@ -71,7 +65,7 @@ function Orb() {
       ))}
 
       {/* Background glow */}
-      <div className="absolute inset-0 rounded-full bg-brand-blue/5 blur-3xl scale-150" />
+      <div className="absolute inset-0 rounded-full bg-brand-blue/[0.03] blur-3xl scale-150" />
     </div>
   )
 }
@@ -87,11 +81,8 @@ export default function OrbSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-blue opacity-[0.05] blur-[150px]" />
-      </div>
+    <section className="relative py-40 px-6 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
 
       <div className="max-w-5xl mx-auto" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -101,13 +92,12 @@ export default function OrbSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">About Korda Labs</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
               A focused lab.
               <br />
-              <span className="text-white/40">A clear mission.</span>
+              <span className="text-ink/50">A clear mission.</span>
             </h2>
-            <p className="text-white/40 leading-relaxed mb-8 text-lg">
+            <p className="text-ink/50 leading-relaxed mb-8 text-lg">
               Korda Labs is an AI product studio with one driving idea: people deserve tools that work
               for them — not the other way around. We launched with Zoe and we&apos;re just getting started.
             </p>
@@ -122,10 +112,10 @@ export default function OrbSection() {
                   transition={{ delay: 0.4 + m.delay, duration: 0.5 }}
                   className="flex gap-4"
                 >
-                  <span className="mt-1 w-1 h-1 rounded-full bg-brand-blue/60 flex-shrink-0" />
+                  <span className="mt-1 w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
                   <div>
-                    <span className="text-white/70 text-sm font-medium">{m.label}</span>
-                    <p className="text-white/35 text-sm leading-relaxed mt-0.5">{m.detail}</p>
+                    <span className="text-ink/80 text-sm font-medium">{m.label}</span>
+                    <p className="text-ink/45 text-sm leading-relaxed mt-0.5">{m.detail}</p>
                   </div>
                 </motion.div>
               ))}
@@ -139,7 +129,7 @@ export default function OrbSection() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-sm text-brand-blue hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
               >
                 See all products
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

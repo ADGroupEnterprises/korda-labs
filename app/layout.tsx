@@ -1,6 +1,13 @@
 import type { Metadata } from 'next'
+import { Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Korda Labs',
@@ -15,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-dark text-white antialiased">
+      <body className={`${playfair.variable} bg-paper text-ink antialiased`}>
         <Nav />
         <div className="pt-16">{children}</div>
       </body>
