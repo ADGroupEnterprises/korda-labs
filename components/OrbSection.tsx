@@ -107,7 +107,7 @@ export default function OrbSection() {
               <span className="text-white/40">Always yours.</span>
             </h2>
             <p className="text-white/40 leading-relaxed mb-8 text-lg">
-              The Orb is Zoe&apos;s ambient presence — context-aware, conversational, and always one tap away.
+              The Orb is Zoe&apos;s ambient presence — context-aware, conversational, and always one tap away on your phone or desktop.
               It knows your goals, your health data, your schedule. You just talk, and Zoe takes care of the rest.
             </p>
 

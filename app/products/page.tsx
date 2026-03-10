@@ -52,7 +52,7 @@ export default function ProductsPage() {
                   {[
                     'Connects to 20+ personal apps and services',
                     'Core agents always by your side, plus task-specific agents for every need',
-                    'Desktop bridge — manage your home machine remotely',
+                    'Desktop bridge — control your home machine from your phone',
                     'Your models, your keys, your data',
                   ].map((f, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-white/50">
