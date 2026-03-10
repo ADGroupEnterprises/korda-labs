@@ -343,7 +343,85 @@ const zoeSteps = [
     description: 'Your agents stay active in the background — tracking progress, surfacing insights, adjusting plans, and making sure nothing falls through the cracks.',
     detail: 'You direct. Zoe delivers.',
   },
+  {
+    number: '04',
+    title: 'Zoe learns you.',
+    description: "Dedicated memory means Zoe builds a model of how you think, work, and live. It adapts its scheduling, UI, and recommendations to match your preferences — without you having to repeat yourself.",
+    detail: 'Gets smarter the longer you use it',
+  },
 ]
+
+// --- Adaptive Memory Animation ---
+const memoryItems = [
+  { key: 'schedule', label: 'Prefers deep work before 11am', icon: '◑', color: 'blue' },
+  { key: 'calendar', label: 'Avoids meetings on Fridays', icon: '◑', color: 'blue' },
+  { key: 'tasks', label: 'Processes email in batches, not live', icon: '◑', color: 'green' },
+  { key: 'health', label: 'Workout best after 6pm on weekdays', icon: '◑', color: 'green' },
+  { key: 'focus', label: 'Focus blocks: 90min max, then break', icon: '◑', color: 'blue' },
+]
+
+function AdaptiveMemoryAnimation() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-60px' })
+  const [visible, setVisible] = useState(0)
+
+  useEffect(() => {
+    if (!isInView) return
+    let i = 0
+    const tick = () => {
+      i++
+      setVisible(i)
+      if (i < memoryItems.length) setTimeout(tick, 700)
+    }
+    const t = setTimeout(tick, 600)
+    return () => clearTimeout(t)
+  }, [isInView])
+
+  return (
+    <div ref={ref} className="rounded-2xl border border-white/5 bg-dark-100/50 p-4 overflow-hidden">
+      <div className="flex items-center gap-2 mb-4">
+        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
+          className="w-1.5 h-1.5 rounded-full bg-brand-green" />
+        <span className="text-[10px] font-mono text-brand-green/55 tracking-widest uppercase">
+          Zoe Memory — Learning preferences
+        </span>
+      </div>
+      <div className="space-y-2">
+        {memoryItems.map((item, i) => (
+          <AnimatePresence key={item.key}>
+            {visible > i && (
+              <motion.div
+                initial={{ opacity: 0, x: -12, height: 0 }}
+                animate={{ opacity: 1, x: 0, height: 'auto' }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border ${
+                  item.color === 'blue'
+                    ? 'border-brand-blue/15 bg-brand-blue/5'
+                    : 'border-brand-green/15 bg-brand-green/5'
+                }`}
+              >
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="flex-shrink-0">
+                  <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke={item.color === 'blue' ? '#3B82F6' : '#10B981'} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className={`text-xs ${item.color === 'blue' ? 'text-white/55' : 'text-white/55'}`}>{item.label}</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        ))}
+      </div>
+      {visible >= memoryItems.length && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="mt-3 p-2.5 rounded-lg bg-brand-green/5 border border-brand-green/15 text-[10px] text-brand-green/60 font-mono"
+        >
+          ↑ Rescheduled tomorrow&apos;s standup — you have a focus block at 9am.
+        </motion.div>
+      )}
+    </div>
+  )
+}
 
 function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number }) {
   const ref = useRef(null)
@@ -476,14 +554,22 @@ export default function ZoePage() {
                 ))}
               </div>
             </div>
-            {/* Task Manager animation */}
-            <div className="lg:pt-4">
-              <div className="text-[10px] text-white/20 uppercase tracking-widest mb-3 font-medium">Live preview</div>
-              <TaskManagerAnimation />
-              <p className="text-white/20 text-xs mt-4 leading-relaxed">
-                Watch Task Manager sort your day in real time — by priority, deadline, and energy level.
-                Every change you make to your goals flows straight here.
-              </p>
+            {/* Animations */}
+            <div className="lg:pt-4 space-y-6">
+              <div>
+                <div className="text-[10px] text-white/20 uppercase tracking-widest mb-3 font-medium">Task analysis</div>
+                <TaskManagerAnimation />
+                <p className="text-white/20 text-xs mt-3 leading-relaxed">
+                  Task Manager sorts your day by priority, deadline, and energy level — in real time.
+                </p>
+              </div>
+              <div>
+                <div className="text-[10px] text-white/20 uppercase tracking-widest mb-3 font-medium">Adaptive memory</div>
+                <AdaptiveMemoryAnimation />
+                <p className="text-white/20 text-xs mt-3 leading-relaxed">
+                  Zoe builds a model of your habits and preferences — and starts acting on them without being asked.
+                </p>
+              </div>
             </div>
           </div>
         </div>

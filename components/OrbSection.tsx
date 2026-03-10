@@ -79,7 +79,7 @@ function Orb() {
 const milestones = [
   { label: 'Founded', detail: 'Korda Labs incorporated with a single mission: give people real leverage over their lives.', delay: 0 },
   { label: 'First product', detail: 'Zoe launched — a personal AI operating system connecting your goals, health, calendar, and habits.', delay: 0.15 },
-  { label: 'What&apos;s next', detail: 'Platforms for startups, freelancers, and teams. The same intelligence layer, tuned for every scale.', delay: 0.3 },
+  { label: "What's next", detail: 'Platforms for startups, freelancers, and teams. The same intelligence layer, tuned for every scale.', delay: 0.3 },
 ]
 
 export default function OrbSection() {
@@ -125,7 +125,7 @@ export default function OrbSection() {
                   <span className="mt-1 w-1 h-1 rounded-full bg-brand-blue/60 flex-shrink-0" />
                   <div>
                     <span className="text-white/70 text-sm font-medium">{m.label}</span>
-                    <p className="text-white/35 text-sm leading-relaxed mt-0.5" dangerouslySetInnerHTML={{ __html: m.detail }} />
+                    <p className="text-white/35 text-sm leading-relaxed mt-0.5">{m.detail}</p>
                   </div>
                 </motion.div>
               ))}

@@ -98,6 +98,17 @@ export default function Hero() {
                 See how it works
               </Link>
             </motion.div>
+
+            {/* Memory hint */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.75 }}
+              className="flex items-center gap-2 text-white/25 text-sm mt-4"
+            >
+              <span className="w-1 h-1 rounded-full bg-brand-green/60 flex-shrink-0" />
+              Learns your preferences and adapts over time — the longer you use it, the better it fits you.
+            </motion.p>
           </div>
 
           {/* Right: ZoeDemo */}
