@@ -26,7 +26,7 @@ export default function IntegrationTeaser() {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
       <div className="max-w-4xl mx-auto text-center" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function IntegrationTeaser() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.3 + i * 0.04, duration: 0.3 }}
-              className="px-4 py-2 rounded-full border border-white/[0.08] bg-white/[0.03] text-white/40 text-sm hover:border-brand-blue/30 hover:text-white/70 hover:bg-brand-blue/5 transition-all duration-200 cursor-default"
+              className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/50 text-sm hover:border-accent/30 hover:text-ink hover:bg-accent/5 transition-all duration-200 cursor-default"
             >
               {name}
             </motion.span>

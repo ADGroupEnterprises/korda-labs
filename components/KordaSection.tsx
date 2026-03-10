@@ -24,9 +24,7 @@ export default function KordaSection() {
 
   return (
     <section className="relative py-40 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute inset-0 pointer-events-none">
-      </div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
 
       <div className="max-w-5xl mx-auto" ref={ref}>
         {/* Header */}
@@ -40,9 +38,9 @@ export default function KordaSection() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight">
               We build technology
               <br />
-              <span className="text-white/35">centered on people.</span>
+              <span className="text-ink/45">centered on people.</span>
             </h2>
-            <p className="text-white/40 leading-relaxed text-lg pt-1">
+            <p className="text-ink/50 leading-relaxed text-lg pt-1">
               KORDA LABS creates products that give people genuine leverage
               over their own lives — starting with Zoe, and with more to come.
               We care deeply about privacy, intentional AI, and software that respects the humans using it.
@@ -58,11 +56,11 @@ export default function KordaSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 rounded-xl border border-white/5 bg-white/[0.02]"
+              className="p-6 rounded-xl border border-ink/8 bg-ink/[0.04]"
             >
               <div className="w-1 h-6 rounded-full bg-accent mb-4" />
-              <h3 className="text-white font-semibold mb-2">{v.title}</h3>
-              <p className="text-white/35 text-sm leading-relaxed">{v.description}</p>
+              <h3 className="text-ink font-semibold mb-2">{v.title}</h3>
+              <p className="text-ink/45 text-sm leading-relaxed">{v.description}</p>
             </motion.div>
           ))}
         </div>

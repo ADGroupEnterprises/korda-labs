@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} bg-dark text-white antialiased`}>
+      <body className={`${playfair.variable} bg-paper text-ink antialiased`}>
         <Nav />
         <div className="pt-16">{children}</div>
       </body>

@@ -288,15 +288,15 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="group relative p-6 rounded-2xl border border-white/5 bg-dark-100/40 hover:border-white/10 hover:bg-dark-100/80 transition-all duration-300"
+      className="group relative p-6 rounded-2xl border border-ink/8 bg-ink/[0.03] hover:border-ink/12 hover:bg-ink/[0.06] transition-all duration-300"
     >
       <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-accent/0 group-hover:bg-accent/[0.02]' : 'bg-accent/0 group-hover:bg-accent/[0.02]'} transition-all duration-300`} />
       <div className="relative">
         <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-accent/10 text-accent group-hover:bg-accent/20' : 'bg-accent/10 text-accent group-hover:bg-accent/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
           {feature.icon}
         </div>
-        <h3 className="text-lg font-semibold text-white mb-2 leading-snug">{feature.title}</h3>
-        <p className="text-white/40 text-sm leading-relaxed">{feature.description}</p>
+        <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">{feature.title}</h3>
+        <p className="text-ink/50 text-sm leading-relaxed">{feature.description}</p>
       </div>
     </motion.div>
   )
@@ -317,7 +317,7 @@ function ZoeFeaturesHeader() {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Built around your life.
         <br />
-        <span className="text-white/40">Not your workflow.</span>
+        <span className="text-ink/50">Not your workflow.</span>
       </h2>
     </motion.div>
   )
@@ -440,8 +440,8 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
         <div className="absolute inset-0 rounded-full bg-accent/5 blur-md" />
       </div>
       <div className="pt-2.5">
-        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-        <p className="text-white/40 leading-relaxed mb-3 max-w-xl">{step.description}</p>
+        <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
+        <p className="text-ink/50 leading-relaxed mb-3 max-w-xl">{step.description}</p>
         <span className="inline-block text-xs text-accent/60 font-mono border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
@@ -465,7 +465,7 @@ function ZoeHowItWorksHeader() {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Simple by design.
         <br />
-        <span className="text-white/40">Powerful by nature.</span>
+        <span className="text-ink/50">Powerful by nature.</span>
       </h2>
     </motion.div>
   )
@@ -481,13 +481,10 @@ export default function ZoePage() {
   const intInView = useInView(intRef, { once: true, margin: '-100px' })
 
   return (
-    <div className="min-h-screen bg-dark-DEFAULT">
+    <div className="min-h-screen">
 
       {/* Hero */}
       <section className="relative py-28 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-brand-blue opacity-[0.05] blur-[140px]" />
-        </div>
         <motion.div
           ref={heroRef}
           initial={{ opacity: 0, y: 24 }}
@@ -502,7 +499,7 @@ export default function ZoePage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold font-serif tracking-tight mb-6">
             Zoe
           </h1>
-          <p className="text-xl text-white/50 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl text-ink/60 max-w-xl mx-auto mb-10 leading-relaxed">
             A team of AI agents working quietly in the background of your life — so you can focus on living it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -514,7 +511,7 @@ export default function ZoePage() {
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-white/10 text-white/60 hover:text-white hover:border-white/25 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink/60 hover:text-ink hover:border-ink/25 transition-all duration-200"
             >
               All products
             </Link>
@@ -524,7 +521,7 @@ export default function ZoePage() {
 
       {/* What Zoe Does — Features */}
       <section className="relative py-40 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto">
           <ZoeFeaturesHeader />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -543,21 +540,18 @@ export default function ZoePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white/80"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-ink/90"
           >
             Zoe doesn&apos;t just manage tasks.
             <br />
-            <span className="text-white/30">It learns how you think.</span>
+            <span className="text-ink/40">It learns how you think.</span>
           </motion.p>
         </div>
       </section>
 
       {/* How It Works */}
       <section id="how-it-works" className="relative py-40 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-brand-blue opacity-[0.03] blur-[100px] -translate-y-1/2" />
-        </div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto">
           <ZoeHowItWorksHeader />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
@@ -573,16 +567,16 @@ export default function ZoePage() {
             {/* Animations */}
             <div className="lg:pt-4 space-y-6">
               <div>
-                <div className="text-[10px] text-white/20 uppercase tracking-widest mb-3 font-medium">Task analysis</div>
+                <div className="text-[10px] text-ink/30 uppercase tracking-widest mb-3 font-medium">Task analysis</div>
                 <TaskManagerAnimation />
-                <p className="text-white/20 text-xs mt-3 leading-relaxed">
+                <p className="text-ink/30 text-xs mt-3 leading-relaxed">
                   Task Manager sorts your day by priority, deadline, and energy level — in real time.
                 </p>
               </div>
               <div>
-                <div className="text-[10px] text-white/20 uppercase tracking-widest mb-3 font-medium">Adaptive memory</div>
+                <div className="text-[10px] text-ink/30 uppercase tracking-widest mb-3 font-medium">Adaptive memory</div>
                 <AdaptiveMemoryAnimation />
-                <p className="text-white/20 text-xs mt-3 leading-relaxed">
+                <p className="text-ink/30 text-xs mt-3 leading-relaxed">
                   Zoe builds a model of your habits and preferences — and starts acting on them without being asked.
                 </p>
               </div>
@@ -593,18 +587,15 @@ export default function ZoePage() {
 
       {/* Orb Experience */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-blue opacity-[0.04] blur-[130px]" />
-        </div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
               Talk to Zoe.
               <br />
-              <span className="text-white/40">Or just let it work.</span>
+              <span className="text-ink/50">Or just let it work.</span>
             </h2>
-            <p className="text-white/40 max-w-xl mx-auto">
+            <p className="text-ink/50 max-w-xl mx-auto">
               The Orb is always a tap away — on your phone, your desktop, your lock screen.
               Ask it anything. Or say nothing, and watch your agents run quietly in the background,
               keeping your day on track without interrupting it.
@@ -616,16 +607,16 @@ export default function ZoePage() {
 
       {/* Core Agents */}
       <section className="relative py-32 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <SectionLabel>Meet Your Agents</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               Three agents.
               <br />
-              <span className="text-white/40">One team. Built for you.</span>
+              <span className="text-ink/50">One team. Built for you.</span>
             </h2>
-            <p className="text-white/35 mt-4 max-w-2xl mx-auto">
+            <p className="text-ink/45 mt-4 max-w-2xl mx-auto">
               Zoe orchestrates everything. Compass holds your goals. Task Manager owns your day.
               Together, they share context through your integrations — so nothing is ever siloed,
               and nothing falls through the cracks.
@@ -637,8 +628,8 @@ export default function ZoePage() {
             ))}
           </div>
           {/* Connection callout */}
-          <div className="mt-8 p-5 rounded-xl border border-white/5 bg-white/[0.02] text-center">
-            <p className="text-white/30 text-sm">
+          <div className="mt-8 p-5 rounded-xl border border-ink/8 bg-ink/[0.03] text-center">
+            <p className="text-ink/40 text-sm">
               All three agents share context through your connected tools — health apps, calendar, productivity platforms, and more.
               They coordinate, not just coexist.
             </p>
@@ -648,10 +639,7 @@ export default function ZoePage() {
 
       {/* Desktop Bridge */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-green opacity-[0.03] blur-[120px]" />
-        </div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto" ref={bridgeRef}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual */}
@@ -661,7 +649,7 @@ export default function ZoePage() {
               transition={{ duration: 0.7 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative rounded-2xl border border-white/5 bg-dark-100/60 p-6 overflow-hidden">
+              <div className="relative rounded-2xl border border-white/5 bg-dark-100 p-6 overflow-hidden">
                 {/* Fake terminal / bridge UI */}
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 rounded-full bg-brand-green/60" />
@@ -706,9 +694,9 @@ export default function ZoePage() {
               <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
                 Your home machine,
                 <br />
-                <span className="text-white/40">from anywhere.</span>
+                <span className="text-ink/50">from anywhere.</span>
               </h2>
-              <p className="text-white/40 leading-relaxed mb-6">
+              <p className="text-ink/50 leading-relaxed mb-6">
                 The Zoe Desktop Bridge runs quietly on your home computer. When you&apos;re out,
                 on your phone, or on a different machine, Zoe can still access your local files,
                 open applications, update documents, and manage your system — as if you were sitting right there.
@@ -720,7 +708,7 @@ export default function ZoePage() {
                   'Run automations and scripts from your phone',
                   'End-to-end encrypted — only you have the keys',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-white/50">
+                  <li key={i} className="flex items-center gap-3 text-sm text-ink/60">
                     <span className="w-4 h-4 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
                         <path d="M1 4L3.5 6.5L9 1" stroke="#C4973A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -737,7 +725,7 @@ export default function ZoePage() {
 
       {/* Integrations */}
       <section className="relative py-32 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto text-center" ref={intRef}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -747,9 +735,9 @@ export default function ZoePage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
               Plugs into your life.
               <br />
-              <span className="text-white/40">Not the other way around.</span>
+              <span className="text-ink/50">Not the other way around.</span>
             </h2>
-            <p className="text-white/35 max-w-xl mx-auto mb-12">
+            <p className="text-ink/45 max-w-xl mx-auto mb-12">
               Zoe connects to the apps you already use — health, fitness, calendar,
               and productivity — with new integrations shipping every week.
             </p>
@@ -762,14 +750,14 @@ export default function ZoePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={intInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: ci * 0.1 }}
-                className="p-5 rounded-xl border border-white/5 bg-dark-100/30"
+                className="p-5 rounded-xl border border-ink/8 bg-ink/[0.03]"
               >
                 <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-accent'}`}>
                   {cat.category}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map(item => (
-                    <span key={item} className="px-2.5 py-1 rounded-full border border-white/8 bg-white/[0.03] text-white/40 text-xs">
+                    <span key={item} className="px-2.5 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/50 text-xs">
                       {item}
                     </span>
                   ))}
@@ -782,10 +770,7 @@ export default function ZoePage() {
 
       {/* Privacy & Control */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute right-0 bottom-0 w-[400px] h-[400px] rounded-full bg-brand-blue opacity-[0.04] blur-[100px]" />
-        </div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="max-w-5xl mx-auto" ref={privacyRef}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -798,9 +783,9 @@ export default function ZoePage() {
                 <br />
                 Your keys.
                 <br />
-                <span className="text-white/40">Your data.</span>
+                <span className="text-ink/50">Your data.</span>
               </h2>
-              <p className="text-white/40 leading-relaxed">
+              <p className="text-ink/50 leading-relaxed">
                 Zoe is built on the principle that your intelligence system should be yours — fully.
                 You connect your own API keys, choose which models power which agents,
                 and decide exactly what data each integration can see.
@@ -819,10 +804,10 @@ export default function ZoePage() {
                 { title: 'Per-integration permissions', desc: 'Choose exactly what each connected service can read.' },
                 { title: 'Open audit log', desc: 'Every action Zoe takes on your behalf is logged and reviewable.' },
               ].map((item, i) => (
-                <div key={i} className="p-4 rounded-xl border border-white/5 bg-dark-100/40">
+                <div key={i} className="p-4 rounded-xl border border-ink/8 bg-ink/[0.03]">
                   <div className="w-1 h-4 rounded-full bg-accent mb-3" />
-                  <div className="font-medium text-white text-sm mb-1">{item.title}</div>
-                  <div className="text-white/30 text-xs leading-relaxed">{item.desc}</div>
+                  <div className="font-medium text-ink text-sm mb-1">{item.title}</div>
+                  <div className="text-ink/40 text-xs leading-relaxed">{item.desc}</div>
                 </div>
               ))}
             </motion.div>
@@ -832,10 +817,7 @@ export default function ZoePage() {
 
       {/* Final CTA */}
       <section className="relative py-40 px-6 text-center overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-brand-blue opacity-[0.05] blur-[100px]" />
-        </div>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
         <div className="relative max-w-2xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-4">
             Ready to put AI
@@ -844,7 +826,7 @@ export default function ZoePage() {
               to work for your life?
             </span>
           </h2>
-          <p className="text-white/40 mb-10">
+          <p className="text-ink/50 mb-10">
             Sign up free. No credit card required.
           </p>
           <Link

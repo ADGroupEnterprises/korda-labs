@@ -66,7 +66,7 @@ function MapUI() {
     { x: '18%', y: '68%', name: 'La Colombe', dist: '0.6mi' },
   ]
   return (
-    <div className="relative h-44 rounded-xl overflow-hidden border border-white/5 bg-dark-300/80">
+    <div className="relative h-44 rounded-xl overflow-hidden border border-white/5 bg-dark-300">
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
         backgroundSize: '24px 24px',
@@ -93,7 +93,7 @@ function MapUI() {
         >
           <div className="w-2.5 h-2.5 rounded-full bg-brand-blue border border-brand-blue/50 shadow-[0_0_8px_#3B82F6]" />
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.15 + 0.25 }}
-            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-dark-400/95 border border-white/10 rounded px-1.5 py-0.5 text-[9px] text-white/55 whitespace-nowrap">
+            className="absolute -top-6 left-1/2 -translate-x-1/2 bg-dark-400 border border-white/10 rounded px-1.5 py-0.5 text-[9px] text-white/55 whitespace-nowrap">
             {p.name} · {p.dist}
           </motion.div>
         </motion.div>
@@ -172,7 +172,7 @@ export default function ZoeDemo() {
   const showResponse = phase >= 4
 
   return (
-    <div ref={ref} className="rounded-2xl border border-white/8 bg-dark-100/60 overflow-hidden shadow-2xl">
+    <div ref={ref} className="rounded-2xl border border-white/8 bg-dark-100 overflow-hidden shadow-2xl">
       {/* App header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-white/5">
         <motion.div

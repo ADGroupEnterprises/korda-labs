@@ -9,6 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        paper: {
+          DEFAULT: '#f5f0e8',
+          100: '#ede8df',
+          200: '#e0dbd0',
+        },
+        ink: {
+          DEFAULT: '#1c1a17',
+          muted: '#6b6560',
+          faint: '#9a948e',
+        },
         accent: {
           DEFAULT: '#C4973A',
           light: '#D4A94E',

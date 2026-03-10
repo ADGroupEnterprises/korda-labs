@@ -82,10 +82,7 @@ export default function OrbSection() {
 
   return (
     <section className="relative py-40 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-blue opacity-[0.05] blur-[150px]" />
-      </div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
 
       <div className="max-w-5xl mx-auto" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -98,9 +95,9 @@ export default function OrbSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
               A focused lab.
               <br />
-              <span className="text-white/40">A clear mission.</span>
+              <span className="text-ink/50">A clear mission.</span>
             </h2>
-            <p className="text-white/40 leading-relaxed mb-8 text-lg">
+            <p className="text-ink/50 leading-relaxed mb-8 text-lg">
               Korda Labs is an AI product studio with one driving idea: people deserve tools that work
               for them — not the other way around. We launched with Zoe and we&apos;re just getting started.
             </p>
@@ -117,8 +114,8 @@ export default function OrbSection() {
                 >
                   <span className="mt-1 w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
                   <div>
-                    <span className="text-white/70 text-sm font-medium">{m.label}</span>
-                    <p className="text-white/35 text-sm leading-relaxed mt-0.5">{m.detail}</p>
+                    <span className="text-ink/80 text-sm font-medium">{m.label}</span>
+                    <p className="text-ink/45 text-sm leading-relaxed mt-0.5">{m.detail}</p>
                   </div>
                 </motion.div>
               ))}
@@ -132,7 +129,7 @@ export default function OrbSection() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
               >
                 See all products
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

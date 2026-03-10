@@ -80,7 +80,7 @@ export default function Nav() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-DEFAULT/80 backdrop-blur-xl border-b border-white/5'
+          ? 'bg-paper-DEFAULT/90 backdrop-blur-xl border-b border-ink/8'
           : 'bg-transparent'
       }`}
     >
@@ -88,7 +88,7 @@ export default function Nav() {
         {/* Left: Brand */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <Image src="/logo.png" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
-          <span className="text-white font-semibold text-sm tracking-wide">Korda Labs</span>
+          <span className="text-ink font-semibold text-sm tracking-wide">Korda Labs</span>
         </Link>
 
         {/* Center: Products dropdown */}
@@ -97,7 +97,7 @@ export default function Nav() {
             <button
               onClick={() => setProductsOpen(v => !v)}
               onMouseEnter={() => setProductsOpen(true)}
-              className="flex items-center gap-1 text-white/40 hover:text-white text-sm transition-colors duration-200"
+              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
             >
               Products
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`}>
@@ -114,7 +114,7 @@ export default function Nav() {
         <div className="flex items-center gap-3">
           <Link
             href="#"
-            className="hidden sm:inline-flex px-4 py-2 text-sm text-white/50 hover:text-white transition-colors duration-200"
+            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink/50 hover:text-ink transition-colors duration-200"
           >
             Sign in
           </Link>
