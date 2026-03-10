@@ -5,9 +5,6 @@ import Nav from '@/components/Nav'
 export const metadata: Metadata = {
   title: 'Zoe — Your Personal AI Operating System',
   description: 'Zoe is your personal AI operating system — connecting your goals, tools, calendar, health, and life into one intelligent layer that works for you.',
-  icons: {
-    icon: '/favicon.png',
-  },
   openGraph: {
     title: 'Zoe — Your Personal AI Operating System',
     description: 'Not a chatbot. A personal OS that puts AI to work for your life.',
