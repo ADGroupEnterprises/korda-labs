@@ -17,7 +17,7 @@ export default function Footer() {
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <Image src="/logo.jpg" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
+          <Image src="/logo.png" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
           <div>
             <span className="font-semibold text-white/80 tracking-wide">Korda Labs</span>
             <p className="text-white/25 text-xs">A venture studio by RIT</p>

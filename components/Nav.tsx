@@ -87,7 +87,7 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Left: Brand */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <Image src="/logo.jpg" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
+          <Image src="/logo.png" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
           <span className="text-white font-semibold text-sm tracking-wide">Korda Labs</span>
         </Link>
 
