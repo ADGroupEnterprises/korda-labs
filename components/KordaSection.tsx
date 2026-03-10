@@ -72,25 +72,6 @@ export default function KordaSection() {
           ))}
         </div>
 
-        {/* Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-10 flex items-center gap-2"
-        >
-          <Link
-            href="https://kordalabs.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/25 text-sm hover:text-white/60 transition-colors flex items-center gap-1.5"
-          >
-            kordalabs.co
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
-        </motion.div>
       </div>
     </section>
   )

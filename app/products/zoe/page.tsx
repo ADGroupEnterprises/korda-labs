@@ -764,7 +764,7 @@ export default function ZoePage() {
       </section>
 
       {/* How It Works */}
-      <section className="relative py-32 px-6">
+      <section id="how-it-works" className="relative py-32 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-brand-blue opacity-[0.03] blur-[100px] -translate-y-1/2" />

@@ -2,6 +2,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   const ref = useRef(null)
@@ -26,8 +27,8 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex items-center gap-6 text-sm text-white/30">
-          <a href="#" className="hover:text-white/60 transition-colors">Privacy</a>
-          <a href="#" className="hover:text-white/60 transition-colors">Terms</a>
+          <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy</Link>
+          <Link href="/terms" className="hover:text-white/60 transition-colors">Terms</Link>
           <a href="#" className="hover:text-white/60 transition-colors">Contact</a>
         </div>
 

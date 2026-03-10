@@ -51,9 +51,7 @@ export default function ProductsPage() {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
                   {[
                     'Connects to 20+ personal apps and services',
-                    'Goal hierarchy: ambitions → plans → daily tasks',
-                    'Ambient orb — always available on every device',
-                    'Core agents for health, planning, research & more',
+                    'Core agents always by your side, plus task-specific agents for every need',
                     'Desktop bridge — manage your home machine remotely',
                     'Your models, your keys, your data',
                   ].map((f, i) => (
