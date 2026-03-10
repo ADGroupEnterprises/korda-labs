@@ -1,6 +1,7 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 
 function Orb() {
   return (
@@ -75,10 +76,10 @@ function Orb() {
   )
 }
 
-const quotes = [
-  { text: 'How am I tracking toward my goals this week?', delay: 0 },
-  { text: 'Find me 30 minutes for a workout today.', delay: 0.15 },
-  { text: 'What should I focus on right now?', delay: 0.3 },
+const milestones = [
+  { label: 'Founded', detail: 'Korda Labs incorporated with a single mission: give people real leverage over their lives.', delay: 0 },
+  { label: 'First product', detail: 'Zoe launched — a personal AI operating system connecting your goals, health, calendar, and habits.', delay: 0.15 },
+  { label: 'What&apos;s next', detail: 'Platforms for startups, freelancers, and teams. The same intelligence layer, tuned for every scale.', delay: 0.3 },
 ]
 
 export default function OrbSection() {
@@ -100,33 +101,52 @@ export default function OrbSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">The Orb</p>
+            <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">About Korda Labs</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Always present.
+              A focused lab.
               <br />
-              <span className="text-white/40">Always yours.</span>
+              <span className="text-white/40">A clear mission.</span>
             </h2>
             <p className="text-white/40 leading-relaxed mb-8 text-lg">
-              The Orb is Zoe&apos;s ambient presence — context-aware, conversational, and always one tap away on your phone or desktop.
-              It knows your goals, your health data, your schedule. You just talk, and Zoe takes care of the rest.
+              Korda Labs is an AI product studio with one driving idea: people deserve tools that work
+              for them — not the other way around. We launched with Zoe and we&apos;re just getting started.
             </p>
 
-            {/* Sample prompts */}
-            <div className="space-y-3">
-              <p className="text-white/20 text-xs uppercase tracking-widest mb-4">Say anything like —</p>
-              {quotes.map((q, i) => (
+            {/* Milestones */}
+            <div className="space-y-5">
+              {milestones.map((m, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -16 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.4 + q.delay, duration: 0.5 }}
-                  className="flex items-center gap-3 text-white/50 text-sm"
+                  transition={{ delay: 0.4 + m.delay, duration: 0.5 }}
+                  className="flex gap-4"
                 >
-                  <span className="w-1 h-1 rounded-full bg-brand-blue/60 flex-shrink-0" />
-                  <span className="font-mono">&quot;{q.text}&quot;</span>
+                  <span className="mt-1 w-1 h-1 rounded-full bg-brand-blue/60 flex-shrink-0" />
+                  <div>
+                    <span className="text-white/70 text-sm font-medium">{m.label}</span>
+                    <p className="text-white/35 text-sm leading-relaxed mt-0.5" dangerouslySetInnerHTML={{ __html: m.detail }} />
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.9, duration: 0.5 }}
+              className="mt-8"
+            >
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 text-sm text-brand-blue hover:text-white transition-colors"
+              >
+                See all products
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Right: Orb */}

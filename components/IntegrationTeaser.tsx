@@ -40,7 +40,7 @@ export default function IntegrationTeaser() {
             <span className="text-white/40">you already use.</span>
           </h2>
           <p className="text-white/40 mb-12 max-w-xl mx-auto">
-            Zoe plugs into your existing life — health, fitness, calendar, and productivity tools —
+            Our products connect to the tools you already use — health, fitness, calendar, and productivity —
             with new integrations shipping every week.
           </p>
         </motion.div>
