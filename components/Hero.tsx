@@ -43,9 +43,9 @@ export default function Hero() {
             >
               <Link
                 href="/products/zoe"
-                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-brand-blue text-sm font-medium tracking-widest uppercase hover:border-brand-blue/40 hover:bg-brand-blue/10 transition-all duration-200"
+                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-accent/25 bg-accent/5 text-accent text-sm font-medium tracking-widest uppercase hover:border-accent/40 hover:bg-accent/10 transition-all duration-200"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 Introducing Zoe
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="opacity-60">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -58,11 +58,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-serif"
             >
               <span className="text-white">Your life,</span>
               <br />
-              <span className="bg-gradient-to-r from-brand-blue to-brand-green bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
                 fully in motion.
               </span>
             </motion.h1>
@@ -87,7 +87,7 @@ export default function Hero() {
             >
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-brand-blue text-white hover:bg-brand-blue-light transition-all duration-200 shadow-[0_0_24px_#3B82F644] hover:shadow-[0_0_36px_#3B82F666]"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]"
               >
                 Sign up free
               </Link>
@@ -106,7 +106,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.75 }}
               className="flex items-center gap-2 text-white/25 text-sm mt-4"
             >
-              <span className="w-1 h-1 rounded-full bg-brand-blue/40 flex-shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-accent/40 flex-shrink-0" />
               Learns your preferences and adapts over time — the longer you use it, the better it fits you.
             </motion.p>
           </div>

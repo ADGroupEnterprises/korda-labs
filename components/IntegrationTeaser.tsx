@@ -33,7 +33,7 @@ export default function IntegrationTeaser() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
             Connects to the tools you use.
           </h2>
         </motion.div>

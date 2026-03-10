@@ -32,7 +32,7 @@ function Orb() {
         className="relative w-24 h-24 rounded-full"
         style={{
           background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 40%, #1D4ED8 80%, #1E3A8A)',
-          boxShadow: '0 0 40px #3B82F666, 0 0 80px #3B82F633, 0 0 120px #3B82F61A, inset 0 0 20px #60A5FA33',
+          boxShadow: '0 0 40px #3B82F644, 0 0 80px #3B82F622, 0 0 120px #3B82F611, inset 0 0 20px #60A5FA33',
         }}
       >
         {/* Inner highlight */}
@@ -65,7 +65,7 @@ function Orb() {
       ))}
 
       {/* Background glow */}
-      <div className="absolute inset-0 rounded-full bg-brand-blue/5 blur-3xl scale-150" />
+      <div className="absolute inset-0 rounded-full bg-brand-blue/[0.03] blur-3xl scale-150" />
     </div>
   )
 }
@@ -95,7 +95,7 @@ export default function OrbSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
               A focused lab.
               <br />
               <span className="text-white/40">A clear mission.</span>
@@ -115,7 +115,7 @@ export default function OrbSection() {
                   transition={{ delay: 0.4 + m.delay, duration: 0.5 }}
                   className="flex gap-4"
                 >
-                  <span className="mt-1 w-1 h-1 rounded-full bg-brand-blue/60 flex-shrink-0" />
+                  <span className="mt-1 w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
                   <div>
                     <span className="text-white/70 text-sm font-medium">{m.label}</span>
                     <p className="text-white/35 text-sm leading-relaxed mt-0.5">{m.detail}</p>
@@ -132,7 +132,7 @@ export default function OrbSection() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-sm text-brand-blue hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors"
               >
                 See all products
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

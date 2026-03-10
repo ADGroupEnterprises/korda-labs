@@ -20,8 +20,8 @@ function ProductsDropdown({ open }: { open: boolean }) {
               href="/products/zoe"
               className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors group"
             >
-              <div className="w-6 h-6 rounded-md bg-brand-blue/20 flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-brand-blue" />
+              <div className="w-6 h-6 rounded-md bg-accent/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-2 h-2 rounded-full bg-accent" />
               </div>
               <div>
                 <div className="text-sm font-medium text-white">Zoe</div>
@@ -120,7 +120,7 @@ export default function Nav() {
           </Link>
           <Link
             href="#"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-brand-blue text-white hover:bg-brand-blue-light transition-all duration-200 shadow-[0_0_16px_#3B82F644] hover:shadow-[0_0_24px_#3B82F666]"
+            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#C4973A44] hover:shadow-[0_0_20px_#C4973A66]"
           >
             Sign up
           </Link>

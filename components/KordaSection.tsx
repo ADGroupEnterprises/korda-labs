@@ -37,7 +37,7 @@ export default function KordaSection() {
           className="mb-16"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight">
               We build technology
               <br />
               <span className="text-white/35">centered on people.</span>
@@ -60,7 +60,7 @@ export default function KordaSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="p-6 rounded-xl border border-white/5 bg-white/[0.02]"
             >
-              <div className="w-1 h-6 rounded-full bg-brand-blue mb-4" />
+              <div className="w-1 h-6 rounded-full bg-accent mb-4" />
               <h3 className="text-white font-semibold mb-2">{v.title}</h3>
               <p className="text-white/35 text-sm leading-relaxed">{v.description}</p>
             </motion.div>

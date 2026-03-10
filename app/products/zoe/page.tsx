@@ -168,7 +168,7 @@ const integrationCategories = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">{children}</p>
+    <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">{children}</p>
   )
 }
 
@@ -290,9 +290,9 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="group relative p-6 rounded-2xl border border-white/5 bg-dark-100/40 hover:border-white/10 hover:bg-dark-100/80 transition-all duration-300"
     >
-      <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-brand-blue/0 group-hover:bg-brand-blue/[0.02]' : 'bg-brand-blue/0 group-hover:bg-brand-blue/[0.02]'} transition-all duration-300`} />
+      <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-accent/0 group-hover:bg-accent/[0.02]' : 'bg-accent/0 group-hover:bg-accent/[0.02]'} transition-all duration-300`} />
       <div className="relative">
-        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20' : 'bg-brand-blue/10 text-brand-blue group-hover:bg-brand-blue/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
+        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-accent/10 text-accent group-hover:bg-accent/20' : 'bg-accent/10 text-accent group-hover:bg-accent/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
           {feature.icon}
         </div>
         <h3 className="text-lg font-semibold text-white mb-2 leading-snug">{feature.title}</h3>
@@ -313,8 +313,8 @@ function ZoeFeaturesHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Built around your life.
         <br />
         <span className="text-white/40">Not your workflow.</span>
@@ -435,14 +435,14 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
       transition={{ duration: 0.6, delay: index * 0.15 }}
       className="flex gap-8 items-start"
     >
-      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-brand-blue/30 bg-brand-blue/10 flex items-center justify-center">
-        <span className="text-brand-blue font-bold text-sm">{step.number}</span>
-        <div className="absolute inset-0 rounded-full bg-brand-blue/5 blur-md" />
+      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-accent/30 bg-accent/10 flex items-center justify-center">
+        <span className="text-accent font-bold text-sm">{step.number}</span>
+        <div className="absolute inset-0 rounded-full bg-accent/5 blur-md" />
       </div>
       <div className="pt-2.5">
         <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
         <p className="text-white/40 leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-brand-blue/60 font-mono border border-brand-blue/20 bg-brand-blue/5 px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent/60 font-mono border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -461,8 +461,8 @@ function ZoeHowItWorksHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-20"
     >
-      <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Simple by design.
         <br />
         <span className="text-white/40">Powerful by nature.</span>
@@ -498,8 +498,8 @@ export default function ZoePage() {
           <div className="mb-10">
             <MiniOrb />
           </div>
-          <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">Personal AI Operating System</p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6">
+          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Personal AI Operating System</p>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold font-serif tracking-tight mb-6">
             Zoe
           </h1>
           <p className="text-xl text-white/50 max-w-xl mx-auto mb-10 leading-relaxed">
@@ -508,7 +508,7 @@ export default function ZoePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-brand-blue text-white hover:bg-brand-blue-light transition-all duration-200 shadow-[0_0_24px_#3B82F644] hover:shadow-[0_0_36px_#3B82F666]"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]"
             >
               Sign up free
             </Link>
@@ -563,7 +563,7 @@ export default function ZoePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
             {/* Steps */}
             <div className="relative">
-              <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-gradient-to-b from-brand-blue/20 via-brand-blue/10 to-transparent hidden md:block" />
+              <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-gradient-to-b from-accent/20 via-accent/10 to-transparent hidden md:block" />
               <div className="space-y-12">
                 {zoeSteps.map((step, i) => (
                   <ZoeStepCard key={i} step={step} index={i} />
@@ -599,7 +599,7 @@ export default function ZoePage() {
         </div>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
               Talk to Zoe.
               <br />
               <span className="text-white/40">Or just let it work.</span>
@@ -620,7 +620,7 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <SectionLabel>Meet Your Agents</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               Three agents.
               <br />
               <span className="text-white/40">One team. Built for you.</span>
@@ -703,7 +703,7 @@ export default function ZoePage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
                 Your home machine,
                 <br />
                 <span className="text-white/40">from anywhere.</span>
@@ -721,9 +721,9 @@ export default function ZoePage() {
                   'End-to-end encrypted — only you have the keys',
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm text-white/50">
-                    <span className="w-4 h-4 rounded-full bg-brand-blue/15 flex items-center justify-center flex-shrink-0">
+                    <span className="w-4 h-4 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4L3.5 6.5L9 1" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#C4973A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </span>
                     {item}
@@ -744,7 +744,7 @@ export default function ZoePage() {
             animate={intInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
               Plugs into your life.
               <br />
               <span className="text-white/40">Not the other way around.</span>
@@ -764,7 +764,7 @@ export default function ZoePage() {
                 transition={{ duration: 0.5, delay: ci * 0.1 }}
                 className="p-5 rounded-xl border border-white/5 bg-dark-100/30"
               >
-                <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-brand-blue'}`}>
+                <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-accent'}`}>
                   {cat.category}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -793,7 +793,7 @@ export default function ZoePage() {
               animate={privacyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
                 Your models.
                 <br />
                 Your keys.
@@ -820,7 +820,7 @@ export default function ZoePage() {
                 { title: 'Open audit log', desc: 'Every action Zoe takes on your behalf is logged and reviewable.' },
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl border border-white/5 bg-dark-100/40">
-                  <div className="w-1 h-4 rounded-full bg-brand-blue mb-3" />
+                  <div className="w-1 h-4 rounded-full bg-accent mb-3" />
                   <div className="font-medium text-white text-sm mb-1">{item.title}</div>
                   <div className="text-white/30 text-xs leading-relaxed">{item.desc}</div>
                 </div>
@@ -837,10 +837,10 @@ export default function ZoePage() {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-brand-blue opacity-[0.05] blur-[100px]" />
         </div>
         <div className="relative max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-4">
             Ready to put AI
             <br />
-            <span className="bg-gradient-to-r from-brand-blue to-brand-green bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
               to work for your life?
             </span>
           </h2>
@@ -849,7 +849,7 @@ export default function ZoePage() {
           </p>
           <Link
             href="#"
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-brand-blue text-white hover:bg-brand-blue-light transition-all duration-200 shadow-[0_0_30px_#3B82F644] hover:shadow-[0_0_50px_#3B82F666]"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#C4973A44] hover:shadow-[0_0_50px_#C4973A66]"
           >
             Get started with Zoe
           </Link>
