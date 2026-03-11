@@ -5,16 +5,20 @@ import Link from 'next/link'
 
 const values = [
   {
-    title: 'Privacy by design',
+    title: 'Your keys. Your models. Your data.',
     description: 'We build systems where your data serves you — not advertisers, not platforms. What you share with Zoe stays with you.',
   },
   {
-    title: 'Technology with intention',
+    title: 'AI that amplifies, not replaces.',
     description: 'We believe AI should amplify human capacity, not replace human judgment. Every tool we build starts with that principle.',
   },
   {
-    title: 'Open and accountable',
-    description: 'We use your own API keys, support open models, and give you control over every integration. No lock-in. No surprises.',
+    title: 'No lock-in. Ever.',
+    description: 'We use your own API keys, support open models, and give you control over every integration. No surprises, no walled garden.',
+  },
+  {
+    title: 'Every action, audited.',
+    description: 'Default-deny execution model. Every tool call is checked against your policies, logged immutably, and reversible at any point. You stay in control.',
   },
 ]
 
@@ -49,7 +53,7 @@ export default function KordaSection() {
         </motion.div>
 
         {/* Values */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((v, i) => (
             <motion.div
               key={i}
