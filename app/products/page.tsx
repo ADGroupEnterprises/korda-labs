@@ -13,13 +13,13 @@ export default function ProductsPage() {
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
-            Built for every scale
+            One intelligent layer.
             <br />
-            <span className="text-ink/50">of human ambition.</span>
+            <span className="text-ink/50">For your work, your goals, and your life.</span>
           </h1>
           <p className="text-ink/50 text-lg leading-relaxed">
-            Korda Labs builds intelligent platforms that give people real leverage
-            over their work, goals, and life.
+            Korda Labs builds AI platforms that do the planning, coordination, and follow-through
+            so you can focus on what actually moves the needle.
           </p>
         </div>
       </section>

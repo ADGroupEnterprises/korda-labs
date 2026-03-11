@@ -38,10 +38,12 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-serif"
             >
-              <span className="text-ink">Your life,</span>
+              <span className="text-ink">Stop managing</span>
+              <br />
+              <span className="text-ink">your tools.</span>
               <br />
               <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
-                fully in motion.
+                Let them manage themselves.
               </span>
             </motion.h1>
 
@@ -52,8 +54,9 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="text-lg sm:text-xl text-ink/50 max-w-xl mb-10 leading-relaxed"
             >
-              Zoe is your personal AI operating system — connecting your goals, health, calendar,
-              tools, and habits into one intelligent layer that works <em>for you</em>, not the other way around.
+              Zoe is your personal AI operating system — pulling your goals, tasks, calendar, and health
+              into one intelligent layer that plans your day, runs your agents, and adapts as life changes.
+              Not another tool to manage. <em>The layer that manages all your tools.</em>
             </motion.p>
 
             {/* CTAs */}
@@ -77,7 +80,7 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            {/* Memory hint */}
+            {/* Differentiator line */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -85,7 +88,7 @@ export default function Hero() {
               className="flex items-center gap-2 text-ink/35 text-sm mt-4"
             >
               <span className="w-1 h-1 rounded-full bg-accent/40 flex-shrink-0" />
-              Learns your preferences and adapts over time — the longer you use it, the better it fits you.
+              While Akiflow and Motion still make you do the planning — Zoe does it for you.
             </motion.p>
           </div>
 

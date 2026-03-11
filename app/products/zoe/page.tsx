@@ -500,7 +500,7 @@ export default function ZoePage() {
             Zoe
           </h1>
           <p className="text-xl text-ink/60 max-w-xl mx-auto mb-10 leading-relaxed">
-            A team of AI agents working quietly in the background of your life — so you can focus on living it.
+            A team of AI agents handling your schedule, tasks, and goals — so you can focus on the work that moves the needle.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

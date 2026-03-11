@@ -91,8 +91,8 @@ export default function Nav() {
           <span className="text-ink font-semibold text-sm tracking-wide">Korda Labs</span>
         </Link>
 
-        {/* Center: Products dropdown */}
-        <div className="hidden md:flex items-center">
+        {/* Center: Nav links */}
+        <div className="hidden md:flex items-center gap-6">
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setProductsOpen(v => !v)}
@@ -108,6 +108,18 @@ export default function Nav() {
               <ProductsDropdown open={productsOpen} />
             </div>
           </div>
+          <Link
+            href="/pricing"
+            className="text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/compare"
+            className="text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+          >
+            Compare
+          </Link>
         </div>
 
         {/* Right: Auth buttons */}
