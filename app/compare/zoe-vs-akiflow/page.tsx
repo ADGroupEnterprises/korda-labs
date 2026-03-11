@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Zoe vs. Akiflow — Korda Labs',
-  description: 'Akiflow consolidates your tasks. Zoe plans, schedules, and executes them — automatically. See how they compare.',
+  description: 'Akiflow organizes your work. Zoe does it. See how autonomous agents, proactive planning, and real execution separate the two.',
 }
 
 const rows = [
@@ -12,14 +12,21 @@ const rows = [
   { feature: 'Daily planning', akiflow: 'You manually schedule every task', zoe: 'Agents auto-schedule around your calendar', zoeWins: true },
   { feature: 'Calendar time-blocking', akiflow: 'Manual drag-and-drop', zoe: 'Agent-managed, adapts in real time', zoeWins: true },
   { feature: 'AI task rescheduling', akiflow: 'None — all manual', zoe: 'Automatic when priorities shift', zoeWins: true },
+  { feature: 'Autonomous file operations', akiflow: 'None', zoe: 'Read/write Google Drive, OneDrive, local disk', zoeWins: true },
+  { feature: 'Web research & browsing', akiflow: 'None', zoe: 'Agents search, fetch, and summarize autonomously', zoeWins: true },
+  { feature: 'Browser automation', akiflow: 'None', zoe: 'Headless Playwright — form fills, data extraction, web actions', zoeWins: true },
+  { feature: 'Webhook integrations', akiflow: 'Zapier only (outbound)', zoe: 'Incoming + outgoing, HMAC-signed payloads', zoeWins: true },
+  { feature: 'Proactive briefings', akiflow: 'You must open the app', zoe: '7 automated triggers — morning, stale, weekly & more', zoeWins: true },
+  { feature: 'Persona agents', akiflow: 'None', zoe: 'Researcher, writer, analyst, builder — spawned on demand', zoeWins: true },
   { feature: 'Health & fitness layer', akiflow: 'Not available', zoe: 'Apple Health, Strava, Whoop, Oura & more', zoeWins: true },
-  { feature: 'Long-term goal tracking', akiflow: 'Not available', zoe: 'Compass agent — milestones, progress, calendar-aware', zoeWins: true },
+  { feature: 'Long-term goal tracking', akiflow: 'Not available', zoe: 'Compass — milestones, progress, calendar-aware', zoeWins: true },
   { feature: 'AI memory', akiflow: 'None', zoe: 'Persistent — learns your preferences over time', zoeWins: true },
+  { feature: 'Abort running agents', akiflow: 'N/A', zoe: 'Stop any agent mid-execution, see what completed', zoeWins: true },
+  { feature: 'Audit log', akiflow: 'None', zoe: 'Immutable — every action logged, 30-day retention', zoeWins: true },
+  { feature: 'BYO API keys', akiflow: 'No — locked to their infrastructure', zoe: 'Yes — OpenAI, Anthropic, Gemini, Ollama', zoeWins: true },
+  { feature: 'Desktop bridge', akiflow: 'Not available', zoe: 'Remote access + script execution on your home machine', zoeWins: true },
   { feature: 'Free tier', akiflow: 'No — 7-day trial only', zoe: 'Yes — free forever tier available', zoeWins: true },
   { feature: 'Starting price', akiflow: '$19/month (annual) · $34/month monthly', zoe: '$12/month (annual early access)', zoeWins: true },
-  { feature: 'BYO API keys', akiflow: 'No — locked to their infrastructure', zoe: 'Yes — OpenAI, Anthropic, Gemini, Ollama', zoeWins: true },
-  { feature: 'Desktop bridge', akiflow: 'Not available', zoe: 'Remote access to your home machine', zoeWins: true },
-  { feature: 'Audit log', akiflow: 'Not available', zoe: 'Every agent action logged and reviewable', zoeWins: true },
 ]
 
 function Yes() {
@@ -42,10 +49,11 @@ export default function ZoeVsAkiflowPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Zoe vs. Akiflow
           </h1>
+          <p className="text-accent/80 font-medium text-base mb-4">Akiflow organizes your work. Zoe does it.</p>
           <p className="text-ink/50 text-lg leading-relaxed max-w-2xl mx-auto">
-            Akiflow is a great tool for consolidating tasks. But it still requires you to manually schedule,
-            re-plan, and manage your day. Zoe's agents handle all of that — automatically, in the background,
-            coordinated around your goals and health.
+            Akiflow is excellent at pulling tasks together and helping you plan your day. But when planning is done,
+            the work still falls to you. Zoe&apos;s agents don&apos;t stop at the plan — they execute it. Research, write,
+            automate, and deliver real outputs, while the proactive engine runs your week without you having to ask.
           </p>
         </div>
       </section>

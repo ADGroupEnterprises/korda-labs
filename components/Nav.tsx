@@ -52,10 +52,46 @@ function ProductsDropdown({ open }: { open: boolean }) {
   )
 }
 
+function HowItWorksDropdown({ open }: { open: boolean }) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ opacity: 0, y: 8, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 8, scale: 0.97 }}
+          transition={{ duration: 0.15 }}
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-ink/12 bg-paper-DEFAULT/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+        >
+          <div className="p-1.5">
+            {[
+              { href: '/use-cases/autonomous-agents', label: 'Autonomous Agents', sub: 'Research, write, automate, execute' },
+              { href: '/use-cases/proactive-ai', label: 'Proactive AI', sub: 'Runs your week without being asked' },
+              { href: '/use-cases/desktop-bridge', label: 'Desktop Bridge', sub: 'Your machine, from anywhere' },
+              { href: '/use-cases/daily-planning', label: 'Daily Planning', sub: 'AI morning briefing & EOD review' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors"
+              >
+                <span className="text-sm font-medium text-ink">{item.label}</span>
+                <span className="text-xs text-ink/40">{item.sub}</span>
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [howOpen, setHowOpen] = useState(false)
+  const productsRef = useRef<HTMLDivElement>(null)
+  const howRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -65,13 +101,22 @@ export default function Nav() {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (productsRef.current && !productsRef.current.contains(e.target as Node)) {
         setProductsOpen(false)
+      }
+      if (howRef.current && !howRef.current.contains(e.target as Node)) {
+        setHowOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  const chevron = (open: boolean) => (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
+      <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
 
   return (
     <motion.nav
@@ -93,32 +138,44 @@ export default function Nav() {
 
         {/* Center: Nav links */}
         <div className="hidden md:flex items-center gap-6">
-          <div className="relative" ref={dropdownRef}>
+          {/* Products */}
+          <div className="relative" ref={productsRef}>
             <button
               onClick={() => setProductsOpen(v => !v)}
               onMouseEnter={() => setProductsOpen(true)}
               className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
             >
               Products
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`}>
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              {chevron(productsOpen)}
             </button>
             <div onMouseLeave={() => setProductsOpen(false)}>
               <ProductsDropdown open={productsOpen} />
             </div>
           </div>
-          <Link
-            href="/pricing"
-            className="text-ink/50 hover:text-ink text-sm transition-colors duration-200"
-          >
+
+          {/* How it Works */}
+          <div className="relative" ref={howRef}>
+            <button
+              onClick={() => setHowOpen(v => !v)}
+              onMouseEnter={() => setHowOpen(true)}
+              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+            >
+              How it Works
+              {chevron(howOpen)}
+            </button>
+            <div onMouseLeave={() => setHowOpen(false)}>
+              <HowItWorksDropdown open={howOpen} />
+            </div>
+          </div>
+
+          <Link href="/pricing" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
             Pricing
           </Link>
-          <Link
-            href="/compare"
-            className="text-ink/50 hover:text-ink text-sm transition-colors duration-200"
-          >
+          <Link href="/compare" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
             Compare
+          </Link>
+          <Link href="/security" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+            Security
           </Link>
         </div>
 
@@ -134,7 +191,7 @@ export default function Nav() {
             href="#"
             className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#C4973A44] hover:shadow-[0_0_20px_#C4973A66]"
           >
-            Sign up
+            Sign up free
           </Link>
         </div>
       </div>

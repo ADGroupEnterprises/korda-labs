@@ -38,12 +38,12 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-serif"
             >
-              <span className="text-ink">Stop managing</span>
+              <span className="text-ink">Other tools</span>
               <br />
-              <span className="text-ink">your tools.</span>
+              <span className="text-ink">manage your tasks.</span>
               <br />
               <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
-                Let them manage themselves.
+                Zoe does them.
               </span>
             </motion.h1>
 
@@ -54,9 +54,9 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="text-lg sm:text-xl text-ink/50 max-w-xl mb-10 leading-relaxed"
             >
-              Zoe is your personal AI operating system — pulling your goals, tasks, calendar, and health
-              into one intelligent layer that plans your day, runs your agents, and adapts as life changes.
-              Not another tool to manage. <em>The layer that manages all your tools.</em>
+              Zoe is your personal AI operating system — connecting your goals, calendar, and tools into
+              one intelligent layer that doesn&apos;t just plan your day. It researches, writes, searches,
+              automates, and executes. <em>While you focus on what only you can do.</em>
             </motion.p>
 
             {/* CTAs */}
@@ -73,10 +73,10 @@ export default function Hero() {
                 Sign up free
               </Link>
               <Link
-                href="/products/zoe#how-it-works"
+                href="/products/zoe"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200"
               >
-                See how it works
+                See Zoe in action
               </Link>
             </motion.div>
 
@@ -88,7 +88,7 @@ export default function Hero() {
               className="flex items-center gap-2 text-ink/35 text-sm mt-4"
             >
               <span className="w-1 h-1 rounded-full bg-accent/40 flex-shrink-0" />
-              While Akiflow and Motion still make you do the planning — Zoe does it for you.
+              Autonomous agents. Real actions. Every step policy-gated and audit-logged.
             </motion.p>
           </div>
 

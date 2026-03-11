@@ -1,26 +1,34 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 
-const agents = [
+const coreAgents = [
   {
     name: 'Zoe',
     role: 'The Orchestrator',
-    description: 'Listens to what you need, understands your full context, and coordinates your agents on your behalf. Surfaces what matters before you have to ask.',
+    description: 'Spawns specialist agents for complex tasks. Manages cost, progress, and abort control in real time. Surfaces what matters before you have to ask.',
     color: 'blue' as const,
   },
   {
     name: 'Compass',
     role: 'Goals',
-    description: 'Holds your long-term goals, breaks them into milestones, and keeps them visible when daily chaos tries to crowd them out.',
+    description: "Tracks your long-term goals and milestones — and can propose plans, apply them to your planner, and trigger agents to act on them when you're off track.",
     color: 'green' as const,
   },
   {
     name: 'Task Manager',
     role: 'Daily Planning',
-    description: 'Takes what Compass knows and turns it into what you do today — scheduling around your meetings, adjusting when priorities shift, adapting in real time.',
+    description: 'Plans your schedule and queues tasks by priority. Can escalate any task to autonomous agent execution — one tap, then Zoe takes it from there.',
     color: 'amber' as const,
   },
+]
+
+const personaAgents = [
+  { label: 'Researcher', desc: 'Searches the web, fetches pages, builds briefs' },
+  { label: 'Writer', desc: 'Drafts documents, emails, and reports' },
+  { label: 'Analyst', desc: 'Reads data, synthesizes insights' },
+  { label: 'Builder', desc: 'Runs scripts, automates workflows' },
 ]
 
 const colorMap = {
@@ -61,25 +69,25 @@ export default function AgentDifferentiator() {
           className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end"
         >
           <div>
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">How Zoe works differently</p>
+            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Your agent team</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
-              While you're working,
+              Zoe doesn&apos;t brief you
               <br />
-              <span className="text-ink/45">Zoe is planning.</span>
+              <span className="text-ink/45">on what needs doing. It gets it done.</span>
             </h2>
           </div>
           <div>
             <p className="text-ink/50 leading-relaxed text-lg">
-              Other tools require you to manually schedule every task, reorganize your day when priorities shift,
-              and re-plan when things change. Zoe's agents handle all of that — automatically, in the background,
-              coordinated around your goals.
+              Spin up a researcher. A writer. An analyst. A builder. Zoe&apos;s agents run
+              autonomous multi-turn loops — searching the web, reading documents, writing files,
+              running scripts — until the work is complete. You approve. They execute.
             </p>
           </div>
         </motion.div>
 
-        {/* Agent cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-16">
-          {agents.map((agent, i) => {
+        {/* Core agent cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+          {coreAgents.map((agent, i) => {
             const c = colorMap[agent.color]
             return (
               <motion.div
@@ -102,26 +110,60 @@ export default function AgentDifferentiator() {
           })}
         </div>
 
+        {/* Persona agents strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.55, delay: 0.45 }}
+          className="p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-10"
+        >
+          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-4">Persona agents — spawned on demand</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {personaAgents.map((p, i) => (
+              <div key={i} className="flex flex-col gap-1">
+                <span className="text-ink/70 text-sm font-medium">{p.label}</span>
+                <span className="text-ink/35 text-xs leading-relaxed">{p.desc}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Contrast row */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+          transition={{ duration: 0.6, delay: 0.55 }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"
         >
           <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
-            <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">Other tools</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">Akiflow / Motion / Notion</p>
             <p className="text-ink/45 text-sm leading-relaxed">
-              Pull your tasks together. Then you schedule them. Then you track them. Then you re-plan when something changes. All day. Every day.
+              Consolidate your tasks. Schedule your day. Then you do the work. Every day, manually, the same process.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-accent/15 bg-accent/[0.03]">
             <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Zoe</p>
             <p className="text-ink/65 text-sm leading-relaxed">
-              You tell it your goals. It builds the plan. It runs the agents. It adjusts in real time.
-              You focus on the work that actually matters.
+              You set the goals. Agents plan, execute, and deliver real outputs — documents, research, automations —
+              while the core agents keep your life coordinated around what actually matters.
             </p>
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.7 }}
+        >
+          <Link
+            href="/use-cases/autonomous-agents"
+            className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
+          >
+            See what agents can do
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -500,7 +500,7 @@ export default function ZoePage() {
             Zoe
           </h1>
           <p className="text-xl text-ink/60 max-w-xl mx-auto mb-10 leading-relaxed">
-            A team of AI agents handling your schedule, tasks, and goals — so you can focus on the work that moves the needle.
+            An autonomous AI that researches, writes, automates, and executes — quietly running in the background of your work and life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -542,9 +542,9 @@ export default function ZoePage() {
             transition={{ duration: 0.7 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-ink/90"
           >
-            Zoe doesn&apos;t just manage tasks.
+            Zoe doesn&apos;t just plan your work.
             <br />
-            <span className="text-ink/40">It learns how you think.</span>
+            <span className="text-ink/40">It does it.</span>
           </motion.p>
         </div>
       </section>
@@ -768,6 +768,110 @@ export default function ZoePage() {
         </div>
       </section>
 
+      {/* What Zoe Actually Does — Execution examples */}
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12">
+            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Real execution</p>
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+              What Zoe actually does.
+              <br />
+              <span className="text-ink/45">Not suggestions. Not summaries. Work.</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              {
+                trigger: 'Compass detects a goal milestone approaching',
+                action: 'Researcher agent searches 12 sources, reads 8 pages, drafts a 2-page brief',
+                output: 'Delivered to your Google Drive before your morning meeting',
+                label: 'Research brief',
+              },
+              {
+                trigger: "Proactive engine fires every Sunday evening",
+                action: "Task Manager reviews the week's completed tasks, goal progress, and calendar",
+                output: 'Summary sent to your phone with next week\'s priorities pre-loaded',
+                label: 'Weekly retrospective',
+              },
+              {
+                trigger: 'Monthly file audit scheduled in Task Manager',
+                action: 'Agent reads your Drive, applies your naming convention, moves files',
+                output: 'Organized folder delivered to your approved storage location',
+                label: 'File organization',
+              },
+              {
+                trigger: 'GitHub webhook fires on new PR',
+                action: 'Analyst agent reads the diff, checks your coding standards, summarizes risks',
+                output: 'Review summary posted as a comment before you open the PR',
+                label: 'Code review assist',
+              },
+            ].map((ex, i) => (
+              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+                <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-4">{ex.label}</p>
+                <div className="space-y-3">
+                  <div className="flex gap-2.5">
+                    <span className="text-ink/25 text-xs mt-0.5 flex-shrink-0">Trigger</span>
+                    <span className="text-ink/55 text-sm leading-relaxed">{ex.trigger}</span>
+                  </div>
+                  <div className="flex gap-2.5">
+                    <span className="text-ink/25 text-xs mt-0.5 flex-shrink-0">Action</span>
+                    <span className="text-ink/55 text-sm leading-relaxed">{ex.action}</span>
+                  </div>
+                  <div className="flex gap-2.5">
+                    <span className="text-ink/25 text-xs mt-0.5 flex-shrink-0">Output</span>
+                    <span className="text-ink/80 text-sm leading-relaxed font-medium">{ex.output}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Proactive Engine */}
+      <section className="relative py-32 px-6 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+            <div>
+              <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
+              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+                Zoe runs your week.
+                <br />
+                <span className="text-ink/45">You don&apos;t have to ask.</span>
+              </h2>
+            </div>
+            <p className="text-ink/50 leading-relaxed">
+              Akiflow and Sunsama require you to open the app and plan. Zoe runs on a schedule —
+              proactively firing 7 types of triggers that keep your work, goals, and life on track
+              without you needing to remember to check in.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { time: '7:00 am daily', title: 'Morning briefing', body: 'Your goals, schedule, and priority tasks — ready before you open your laptop.' },
+              { time: 'After 4h inactivity', title: 'Stale task alert', body: 'Task sitting in review too long? Zoe flags it and asks if you want it rescheduled.' },
+              { time: 'When activity drops', title: 'Goal momentum check', body: 'Compass notices when a goal goes quiet and surfaces it before it becomes a miss.' },
+              { time: 'End of each day', title: 'Daily summary', body: "What got done, what shifted, and tomorrow's plan — automatic." },
+              { time: 'Every Sunday', title: 'Weekly retrospective', body: 'Full-week review with goal progress, time spent, and next week\'s priorities.' },
+              { time: 'When progress < 30%', title: 'Goal gap alert', body: 'A goal category falling behind? Compass flags it with a suggested action.' },
+              { time: 'When work dominates', title: 'Domain overload warning', body: 'Work taking over personal goals again? Zoe notices the imbalance and tells you.' },
+            ].map((trigger, i) => (
+              <div key={i} className="flex gap-4 p-5 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+                <div className="flex-shrink-0">
+                  <span className="text-xs font-medium text-ink/25 whitespace-nowrap">{trigger.time}</span>
+                </div>
+                <div>
+                  <h3 className="text-ink/80 font-medium text-sm mb-1">{trigger.title}</h3>
+                  <p className="text-ink/40 text-xs leading-relaxed">{trigger.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Privacy & Control */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
@@ -796,13 +900,17 @@ export default function ZoePage() {
               initial={{ opacity: 0, y: 24 }}
               animate={privacyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-3"
             >
               {[
                 { title: 'BYO API keys', desc: 'Use OpenAI, Anthropic, Gemini, or local models via Ollama.' },
                 { title: 'Zero training', desc: 'Your conversations and data are never used to train any model.' },
-                { title: 'Per-integration permissions', desc: 'Choose exactly what each connected service can read.' },
-                { title: 'Open audit log', desc: 'Every action Zoe takes on your behalf is logged and reviewable.' },
+                { title: 'Default-deny execution', desc: 'No autonomous action runs until you explicitly enable it. File access, web search, browser automation — all off by default.' },
+                { title: 'Resource pattern policies', desc: 'Specify exactly which folders, domains, and services each agent can touch. work_projects/** not /**.' },
+                { title: 'Daily action limits', desc: 'Set a max number of file writes, web searches, or tool calls per day. Zoe stops and asks when approaching the limit.' },
+                { title: 'Immutable audit log', desc: 'Every tool call logged with timestamp, result, and cost. Every action reviewable. 30-day minimum retention.' },
+                { title: 'Abort at any time', desc: 'Running agent doing something unexpected? One tap stops it mid-execution. Zoe tells you what it completed before stopping.' },
+                { title: 'Confidential task routing', desc: 'Sensitive tasks never touch cloud models — they route to local models only via your Desktop Bridge.' },
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl border border-ink/8 bg-ink/[0.03]">
                   <div className="w-1 h-4 rounded-full bg-accent mb-3" />

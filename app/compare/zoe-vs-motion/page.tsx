@@ -4,20 +4,26 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Zoe vs. Motion — Korda Labs',
-  description: 'Motion auto-schedules your work tasks. Zoe goes further — connecting your health, goals, and life into one AI layer that runs in the background.',
+  description: 'Motion schedules when you do the work. Zoe does the work — autonomously executing research, file ops, automation, and more.',
 }
 
 const rows = [
   { feature: 'AI task scheduling', motion: 'Yes — auto-schedules work tasks', zoe: 'Yes — agents auto-schedule around goals + calendar', zoeWins: false },
+  { feature: 'Autonomous file operations', motion: 'None', zoe: 'Read/write Google Drive, OneDrive, local disk', zoeWins: true },
+  { feature: 'Web research & browsing', motion: 'None', zoe: 'Agents search, fetch, and summarize autonomously', zoeWins: true },
+  { feature: 'Browser automation', motion: 'None', zoe: 'Headless Playwright — form fills, data extraction', zoeWins: true },
+  { feature: 'Webhook integrations', motion: 'None', zoe: 'Incoming + outgoing, HMAC-signed payloads', zoeWins: true },
+  { feature: 'Persona agents', motion: 'None', zoe: 'Researcher, writer, analyst, builder — on demand', zoeWins: true },
+  { feature: 'Proactive briefings', motion: 'None — reactive only', zoe: '7 automated triggers — no app needed', zoeWins: true },
   { feature: 'Health & fitness integration', motion: 'Not available', zoe: 'Apple Health, Strava, Whoop, Oura, Garmin & more', zoeWins: true },
   { feature: 'Long-term goal tracking', motion: 'Not available', zoe: 'Compass agent — milestones, progress, health-aware', zoeWins: true },
   { feature: 'AI memory', motion: 'None', zoe: 'Persistent — learns preferences, adapts over time', zoeWins: true },
-  { feature: 'Life + work in one layer', motion: 'Work-only focus', zoe: 'Calendar, health, goals, habits — unified', zoeWins: true },
+  { feature: 'Abort running agents', motion: 'N/A', zoe: 'Stop any agent mid-execution', zoeWins: true },
+  { feature: 'Audit log', motion: 'Not available', zoe: 'Immutable — every action logged, 30-day retention', zoeWins: true },
   { feature: 'BYO API keys', motion: 'No — closed infrastructure', zoe: 'Yes — OpenAI, Anthropic, Gemini, Ollama', zoeWins: true },
-  { feature: 'Desktop bridge', motion: 'Not available', zoe: 'Remote access to your home machine', zoeWins: true },
+  { feature: 'Desktop bridge', motion: 'Not available', zoe: 'Remote access + script execution on home machine', zoeWins: true },
   { feature: 'Free tier', motion: 'No — trial only', zoe: 'Yes — free forever tier', zoeWins: true },
   { feature: 'Starting price', motion: '$19/month (annual)', zoe: '$12/month (annual early access)', zoeWins: true },
-  { feature: 'Audit log', motion: 'Not available', zoe: 'Every agent action logged and reviewable', zoeWins: true },
 ]
 
 function Check() {
