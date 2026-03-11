@@ -29,6 +29,11 @@ const personaAgents = [
   { label: 'Writer', desc: 'Drafts documents, emails, and reports' },
   { label: 'Analyst', desc: 'Reads data, synthesizes insights' },
   { label: 'Builder', desc: 'Runs scripts, automates workflows' },
+  { label: 'Designer', desc: 'Creates mockups, visual assets' },
+  { label: 'Strategist', desc: 'Plans campaigns, roadmaps' },
+  { label: 'Editor', desc: 'Reviews, refines, polishes content' },
+  { label: 'Coordinator', desc: 'Manages schedules, logistics' },
+  { label: '+ many more', desc: 'Created as your needs evolve', isPlaceholder: true },
 ]
 
 const colorMap = {
@@ -118,10 +123,10 @@ export default function AgentDifferentiator() {
           className="p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-10"
         >
           <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-4">Spawn specialist agents</p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {personaAgents.map((p, i) => (
-              <div key={i} className="flex flex-col gap-1">
-                <span className="text-ink/70 text-sm font-medium">{p.label}</span>
+              <div key={i} className={`flex flex-col gap-1 ${p.isPlaceholder ? 'opacity-50' : ''}`}>
+                <span className={`text-ink/70 text-sm font-medium ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
                 <span className="text-ink/35 text-xs leading-relaxed">{p.desc}</span>
               </div>
             ))}
@@ -136,7 +141,7 @@ export default function AgentDifferentiator() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"
         >
           <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
-            <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">To-do lists / Email / Calendar</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">The old way: Akiflow / Notion / Sunsama</p>
             <p className="text-ink/45 text-sm leading-relaxed">
               Consolidate your tasks. Schedule your day. Then you do the work. Every day, manually, the same process.
             </p>
