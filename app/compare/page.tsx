@@ -17,8 +17,14 @@ const comparisons = [
   {
     opponent: 'Motion',
     href: '/compare/zoe-vs-motion',
-    description: 'Motion auto-schedules your work calendar. Zoe connects your health, goals, and life into the same layer.',
+    description: 'Motion auto-schedules your work calendar. Zoe connects your personal goals, fitness, and life into the same layer.',
     angle: 'AI scheduling that goes beyond your calendar.',
+  },
+  {
+    opponent: 'Sunsama',
+    href: '/compare/zoe-vs-sunsama',
+    description: 'Sunsama guides mindful daily planning. Zoe adds autonomous agents, personal goals, and fitness tracking to the mix.',
+    angle: 'Daily planning that connects to your whole life.',
   },
 ]
 
@@ -49,7 +55,7 @@ export default function ComparePage() {
       <section className="py-8 px-6 pb-20">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-8">Head-to-head</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {comparisons.map((c, i) => (
               <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-ink/10 bg-ink/[0.02] hover:border-accent/20 hover:bg-accent/[0.02] transition-all duration-200">
                 <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-3">Zoe vs.</p>

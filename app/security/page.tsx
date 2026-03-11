@@ -15,7 +15,7 @@ const principles = [
   },
   {
     title: 'Resource pattern policies',
-    body: "You don't just turn capabilities on — you specify exactly what they can touch. Glob-based resource patterns let you say 'work_projects/**' not '/**'. Agents are bounded to the paths, domains, and services you define.",
+    body: "You don't just turn capabilities on — you specify exactly what they can touch. Define which folders, domains, and services agents can access. Agents are bounded to the paths and services you define.",
     tag: 'Scope control',
   },
   {
@@ -35,7 +35,7 @@ const principles = [
   },
   {
     title: 'End-to-end encryption',
-    body: 'All API keys, OAuth tokens, and webhook secrets are encrypted with AES-256-GCM using a per-user key derived via HKDF from your root key. Keys are never stored in plaintext. The ZOE_ROOT_KEY lives only in your environment.',
+    body: 'All API keys, OAuth tokens, and webhook secrets are encrypted using industry-standard encryption. Keys are never stored in plaintext. Your credentials stay secure.',
     tag: 'Encryption',
   },
   {
@@ -50,22 +50,22 @@ const principles = [
   },
   {
     title: 'Three-surface auth',
-    body: 'Web app uses session cookies (SameSite=Strict, HttpOnly, Secure). Desktop app uses JWT stored in your system Keychain. Phone app uses JWT stored in SecureStore. Bridge tokens use a ztk_ prefix and are stored hashed in the database.',
+    body: 'Web app uses secure session cookies. Desktop app stores credentials in your system Keychain. Phone app uses secure device storage. All authentication tokens are stored securely and never exposed.',
     tag: 'Authentication',
   },
   {
-    title: 'SSRF & injection protection',
-    body: "Webhook URLs are validated against private IP ranges at both creation and delivery time — preventing server-side request forgery. Web fetch responses are sanitized to structured JSON via Readability — agents never receive raw HTML.",
+    title: 'Network security',
+    body: "Webhook URLs are validated to prevent security attacks. Web content is sanitized before agents see it — agents never receive raw web data that could contain malicious code.",
     tag: 'Network security',
   },
   {
-    title: 'TOCTOU-safe file delivery',
-    body: "Files are read using O_NOFOLLOW to prevent symlink attacks. Delivery destinations are validated against a manifest snapshot taken at task approval time — not live state — so destinations can't be swapped between approval and delivery.",
+    title: 'File safety',
+    body: "Files are read and written with security protections to prevent attacks. Delivery destinations are validated at task approval time so they can't be changed between approval and delivery.",
     tag: 'File safety',
   },
   {
     title: 'No security delegated to LLMs',
-    body: 'Confidentiality enforcement lives in code, not in prompts. We never rely on an LLM to decide whether an action is safe. All policy checks, rate limits, and security boundaries are enforced at the infrastructure layer.',
+    body: 'Security enforcement lives in code, not in prompts. We never rely on an AI model to decide whether an action is safe. All policy checks, rate limits, and security boundaries are enforced at the infrastructure layer.',
     tag: 'Non-negotiable',
   },
 ]
@@ -108,11 +108,11 @@ export default function SecurityPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-4">The non-negotiables</p>
             <ul className="space-y-3">
               {[
-                'No security decision is ever delegated to an LLM — enforcement lives in code, not prompts',
-                'When the database is unavailable, Zoe returns 503 — it never fails open',
-                'ZOE_ROOT_KEY is used only for encryption. JWT secrets are separate. Keys never cross purposes',
-                'Session tokens and JWTs are never passed in URLs',
-                'All token comparisons use constant-time equality to prevent timing attacks',
+                'No security decision is ever delegated to an AI model — enforcement lives in code, not prompts',
+                'When the database is unavailable, Zoe returns an error — it never fails open',
+                'Encryption keys are used only for their intended purpose and never cross purposes',
+                'Session tokens are never passed in URLs',
+                'All security comparisons use constant-time equality to prevent timing attacks',
               ].map((rule, i) => (
                 <li key={i} className="flex gap-3 text-sm text-ink/60">
                   <span className="text-accent/60 flex-shrink-0">—</span>

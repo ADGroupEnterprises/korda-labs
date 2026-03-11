@@ -3,29 +3,30 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Zoe vs. Motion — Korda Labs',
-  description: 'Motion schedules when you do the work. Zoe does the work — autonomously executing research, file ops, automation, and more.',
+  title: 'Zoe vs. Sunsama — Korda Labs',
+  description: 'Sunsama helps you plan your day mindfully. Zoe goes further — connecting your personal goals, fitness, and life context into one AI layer.',
 }
 
 const rows = [
-  { feature: 'AI task scheduling', motion: 'Yes — auto-schedules work tasks', zoe: 'Yes — agents auto-schedule around goals + calendar', zoeWins: false },
-  { feature: 'Agent selection matrix', motion: 'N/A', zoe: 'Auto-selects best model per task', zoeWins: true },
-  { feature: 'One-click model addition', motion: 'N/A', zoe: 'Add any model instantly', zoeWins: true },
-  { feature: 'Autonomous file operations', motion: 'None', zoe: 'Read/write Google Drive, OneDrive, local disk', zoeWins: true },
-  { feature: 'Web research & browsing', motion: 'None', zoe: 'Agents search, fetch, and summarize autonomously', zoeWins: true },
-  { feature: 'Browser automation', motion: 'None', zoe: 'Headless automation — form fills, data extraction', zoeWins: true },
-  { feature: 'Webhook integrations', motion: 'None', zoe: 'Incoming + outgoing, HMAC-signed payloads', zoeWins: true },
-  { feature: 'Persona agents', motion: 'None', zoe: 'Researcher, writer, analyst, builder — created as needed', zoeWins: true },
-  { feature: 'Proactive briefings', motion: 'None — reactive only', zoe: '7 automated triggers — no app needed', zoeWins: true },
-  { feature: 'Personal & fitness integration', motion: 'Not available', zoe: 'Apple Health, Strava, Whoop, Oura, Garmin & more', zoeWins: true },
-  { feature: 'Long-term goal tracking', motion: 'Not available', zoe: 'Compass agent — milestones, progress, personal-aware', zoeWins: true },
-  { feature: 'AI memory', motion: 'None', zoe: 'Persistent — learns preferences, adapts over time', zoeWins: true },
-  { feature: 'Abort running agents', motion: 'N/A', zoe: 'Stop any agent mid-execution', zoeWins: true },
-  { feature: 'Audit log', motion: 'Not available', zoe: 'Immutable — every action logged, 30-day retention', zoeWins: true },
-  { feature: 'BYO API keys', motion: 'No — closed infrastructure', zoe: 'Yes — OpenAI, Anthropic, Gemini, Ollama', zoeWins: true },
-  { feature: 'Desktop bridge', motion: 'Not available', zoe: 'Remote access + task execution on home machine', zoeWins: true },
-  { feature: 'Free tier', motion: 'No — trial only', zoe: 'Yes — free forever tier', zoeWins: true },
-  { feature: 'Starting price', motion: '$19/month (annual)', zoe: '$12/month (annual early access)', zoeWins: true },
+  { feature: 'Daily planning ritual', sunsama: 'Guided daily planning flow', zoe: 'Automated + guided options available', zoeWins: false },
+  { feature: 'Task consolidation', sunsama: 'Multiple integrations (manual)', zoe: '20+ integrations, growing weekly', zoeWins: false },
+  { feature: 'Agent selection matrix', sunsama: 'N/A', zoe: 'Auto-selects best model per task', zoeWins: true },
+  { feature: 'One-click model addition', sunsama: 'N/A', zoe: 'Add any model instantly', zoeWins: true },
+  { feature: 'Autonomous file operations', sunsama: 'None', zoe: 'Read/write Google Drive, OneDrive, local disk', zoeWins: true },
+  { feature: 'Web research & browsing', sunsama: 'None', zoe: 'Agents search, fetch, and summarize autonomously', zoeWins: true },
+  { feature: 'Browser automation', sunsama: 'None', zoe: 'Headless automation — form fills, data extraction', zoeWins: true },
+  { feature: 'Webhook integrations', sunsama: 'Limited', zoe: 'Incoming + outgoing, HMAC-signed payloads', zoeWins: true },
+  { feature: 'Persona agents', sunsama: 'None', zoe: 'Researcher, writer, analyst, builder — created as needed', zoeWins: true },
+  { feature: 'Proactive briefings', sunsama: 'Manual daily ritual', zoe: '7 automated triggers — no app needed', zoeWins: true },
+  { feature: 'Personal & fitness integration', sunsama: 'Not available', zoe: 'Apple Health, Strava, Whoop, Oura, Garmin & more', zoeWins: true },
+  { feature: 'Long-term goal tracking', sunsama: 'Basic objectives', zoe: 'Compass agent — milestones, progress, personal-aware', zoeWins: true },
+  { feature: 'AI memory', sunsama: 'None', zoe: 'Persistent — learns preferences, adapts over time', zoeWins: true },
+  { feature: 'Abort running agents', sunsama: 'N/A', zoe: 'Stop any agent mid-execution', zoeWins: true },
+  { feature: 'Audit log', sunsama: 'Not available', zoe: 'Immutable — every action logged, 30-day retention', zoeWins: true },
+  { feature: 'BYO API keys', sunsama: 'No — closed infrastructure', zoe: 'Yes — OpenAI, Anthropic, Gemini, Ollama', zoeWins: true },
+  { feature: 'Desktop bridge', sunsama: 'Not available', zoe: 'Remote access + task execution on home machine', zoeWins: true },
+  { feature: 'Free tier', sunsama: 'No — 14-day trial only', zoe: 'Yes — free forever tier', zoeWins: true },
+  { feature: 'Starting price', sunsama: '$20/month (annual)', zoe: '$12/month (annual early access)', zoeWins: true },
 ]
 
 function Check() {
@@ -36,7 +37,7 @@ function Check() {
   )
 }
 
-export default function ZoeVsMotionPage() {
+export default function ZoeVsSunsamaPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -44,12 +45,12 @@ export default function ZoeVsMotionPage() {
         <div className="relative max-w-3xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
-            Zoe vs. Motion
+            Zoe vs. Sunsama
           </h1>
           <p className="text-ink/50 text-lg leading-relaxed max-w-2xl mx-auto">
-            Motion is excellent at auto-scheduling your work tasks. But it stops at the calendar.
-            Zoe connects your health, long-term goals, and life context into one AI layer —
-            so your schedule reflects who you actually are, not just what's on your plate today.
+            Sunsama is excellent at mindful daily planning. But it stops at your work tasks.
+            Zoe connects your personal goals, fitness data, and life context into one AI layer —
+            so your planning reflects who you actually are, not just what's on your plate today.
           </p>
         </div>
       </section>
@@ -59,17 +60,17 @@ export default function ZoeVsMotionPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
             <div className="p-6 rounded-2xl border border-ink/10 bg-ink/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">Motion</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">Sunsama</p>
               <p className="text-ink/50 leading-relaxed">
-                Automatically schedules your work tasks into your calendar. Solid AI time-blocking,
-                project management, and meeting coordination — all within your work context.
+                Guides you through a mindful daily planning ritual. Consolidates tasks from multiple sources
+                and helps you schedule your day with intention. Focused on work and productivity.
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-accent/20 bg-accent/[0.03]">
               <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Zoe</p>
               <p className="text-ink/65 leading-relaxed">
-                Does everything Motion does for scheduling — and then connects it to your health data,
-                long-term goals, habits, and personal life. Your AI layer knows the whole picture, not just your work queue.
+                Does everything Sunsama does for daily planning — and then connects it to your personal goals,
+                fitness data, habits, and life context. Your AI layer knows the whole picture, not just your work queue.
               </p>
             </div>
           </div>
@@ -81,7 +82,7 @@ export default function ZoeVsMotionPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
             <div className="text-xs font-medium tracking-widest uppercase text-ink/30">Feature</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-ink/30 text-center">Motion</div>
+            <div className="text-xs font-medium tracking-widest uppercase text-ink/30 text-center">Sunsama</div>
             <div className="text-xs font-medium tracking-widest uppercase text-accent/70 text-center">Zoe</div>
           </div>
 
@@ -92,7 +93,7 @@ export default function ZoeVsMotionPage() {
                 className={`grid grid-cols-3 gap-4 px-4 py-4 items-start ${i % 2 === 0 ? 'bg-ink/[0.02]' : 'bg-transparent'} border-b border-ink/6 last:border-0`}
               >
                 <div className="text-sm text-ink/70 font-medium">{row.feature}</div>
-                <div className="text-sm text-ink/40 text-center">{row.motion}</div>
+                <div className="text-sm text-ink/40 text-center">{row.sunsama}</div>
                 <div className={`text-sm text-center font-medium ${row.zoeWins ? 'text-ink/80' : 'text-ink/50'}`}>
                   {row.zoeWins && <><Check />{' '}</>}
                   {row.zoe}
@@ -104,7 +105,7 @@ export default function ZoeVsMotionPage() {
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
-              AI scheduling that goes beyond your calendar.
+              Daily planning that connects to your whole life.
             </h2>
             <p className="text-ink/40 mb-8">Try Zoe free — no credit card required.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -128,6 +129,9 @@ export default function ZoeVsMotionPage() {
             <div className="flex justify-center gap-6">
               <Link href="/compare/zoe-vs-akiflow" className="text-sm text-accent hover:text-accent-light transition-colors">
                 Zoe vs. Akiflow →
+              </Link>
+              <Link href="/compare/zoe-vs-motion" className="text-sm text-accent hover:text-accent-light transition-colors">
+                Zoe vs. Motion →
               </Link>
               <Link href="/compare" className="text-sm text-ink/40 hover:text-ink transition-colors">
                 All comparisons →

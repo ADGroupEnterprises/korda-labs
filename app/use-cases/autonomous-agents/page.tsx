@@ -15,69 +15,63 @@ const capabilities = [
     detail: 'Every file write is reviewed before delivery. Agents never overwrite without your policy allowing it.',
   },
   {
-    tag: 'Web research',
-    title: 'Search & browse the web',
-    body: 'Agents run web searches and fetch full page content — building research briefs, checking facts, and surfacing information without you switching tabs.',
-    detail: 'Responses are sanitized to structured JSON. No raw HTML ever reaches agents.',
+    tag: 'Web research & automation',
+    title: 'Search, browse & automate the web',
+    body: 'Agents run web searches, fetch full page content, fill forms, extract data, and navigate web apps — building research briefs, checking facts, and handling the work that used to take 30 minutes of your time.',
+    detail: 'Responses are sanitized to structured JSON. Runs in a policy-gated instance. No file downloads without explicit approval.',
   },
   {
-    tag: 'Browser automation',
-    title: 'Automate your browser',
-    body: 'Headless browser automation lets agents fill forms, extract data, navigate web apps, and interact with services — the work that used to take 30 minutes of your time.',
-    detail: 'Runs in a policy-gated, role-restricted Playwright instance. No file downloads without explicit approval.',
-  },
-  {
-    tag: 'Webhooks',
+    tag: 'Integrations',
     title: 'Connect to anything',
-    body: 'GitHub, Zapier, and any webhook-capable service can trigger Zoe agents or receive HMAC-signed notifications when agent work completes.',
+    body: 'Google Calendar, Notion, Todoist, Gmail, Apple Calendar, Apple Health, Strava, Whoop, Oura Ring, Garmin, Fitbit, MyFitnessPal, Spotify, Readwise, Kindle, Audible, GitHub, Zapier, and any webhook-capable service.',
     detail: 'All webhook URLs validated against private IP ranges at both creation and delivery time.',
   },
   {
     tag: 'Persona agents',
-    title: 'Specialist agents on demand',
-    body: 'Researcher. Writer. Analyst. Builder. Designer. Zoe selects the right agent and model for the job — automatically — based on task type and complexity.',
-    detail: 'Agents run multi-turn loops until the work is done, coordinating with Compass and Task Manager for goal and schedule context.',
+    title: 'Specialist agents created as needed',
+    body: 'Researcher. Writer. Analyst. Builder. Designer. Zoe creates the right agent and selects the best model for the job — automatically — based on task type and complexity.',
+    detail: 'Agents work under your direction, coordinating with Compass and Task Manager for goal and schedule context.',
   },
   {
-    tag: 'Script execution',
-    title: 'Run scripts on your machine',
-    body: 'The Desktop Bridge lets agents run local scripts, access local files, and control your home machine — securely, from anywhere, end-to-end encrypted.',
-    detail: 'Requires execution_capable role + explicit policy configuration. All execution logged to audit trail.',
+    tag: 'Desktop access',
+    title: 'Access your desktop as needed',
+    body: 'The Desktop Bridge lets agents access local files and run tasks on your machine when needed — perfect for sensitive work you want to keep on local models only.',
+    detail: 'Requires explicit policy configuration. All execution logged to audit trail.',
   },
 ]
 
 const workflowExamples = [
   {
-    name: 'Competitive research brief',
+    name: 'Personal goal planning',
     steps: [
-      'You set a goal: "Launch product in Q2"',
-      'Compass flags a milestone: "Market research due"',
-      'Researcher agent spawned automatically',
-      'Searches 15 sources, fetches 8 pages, reads 3 competitor sites',
-      '2-page brief drafted in your writing style',
-      'Delivered to Google Drive — you review before it saves',
+      'You set a goal: "Run a marathon in 6 months"',
+      'Compass breaks it into weekly milestones',
+      'Task Manager schedules training runs around your calendar',
+      'Zoe monitors your progress via Apple Health',
+      'Weekly check-ins notify you of adjustments needed',
+      'You execute the plan — Zoe keeps you on track',
     ],
   },
   {
-    name: 'Weekly file organization',
+    name: 'Founder weekly review',
     steps: [
-      'Task Manager schedules a monthly file audit',
-      'Agent connects to your Drive via approved policy',
-      'Reads folder structure, applies your naming convention',
-      'Moves 43 files, renames 12, flags 3 for your review',
-      'Manifest of all changes delivered to your phone',
-      'You approve, changes apply — or abort any action',
+      'Every Sunday, Zoe reviews your week automatically',
+      'Analyzes completed tasks, goal progress, and time spent',
+      'Identifies what got done vs. what shifted',
+      'Prepares next week\'s priorities based on your goals',
+      'Summary delivered to your phone',
+      'You review and adjust — Zoe handles the scheduling',
     ],
   },
   {
-    name: 'PR review assist',
+    name: 'Freelancer client workflow',
     steps: [
-      'GitHub webhook fires on new pull request',
-      'Analyst agent reads the diff + your style guide',
-      'Checks against your coding standards',
-      'Identifies 2 potential issues, summarizes changes',
-      'Review posted as PR comment in under 90 seconds',
-      'Full action log reviewable in audit trail',
+      'New client project added to Notion',
+      'Task Manager breaks it into deliverables',
+      'Schedules work blocks around your other commitments',
+      'Zoe tracks deadlines and sends proactive reminders',
+      'Research agent prepares briefs when needed',
+      'You execute the work — Zoe manages the logistics',
     ],
   },
 ]
@@ -132,9 +126,9 @@ export default function AutonomousAgentsPage() {
           <div className="mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-4">End-to-end examples</p>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
-              Real workflows.
+              Personal goals. Founder activities. Freelancer flows.
               <br />
-              <span className="text-ink/45">Real outputs.</span>
+              <span className="text-ink/45">Real workflows for real people.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
@@ -157,10 +151,9 @@ export default function AutonomousAgentsPage() {
           <div className="p-6 rounded-2xl border border-accent/15 bg-accent/[0.02] mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Built-in safety model</p>
             <p className="text-ink/55 text-sm leading-relaxed">
-              Every capability is off by default. You enable exactly what you want, set resource pattern policies
-              (e.g. <code className="text-accent/70 bg-ink/5 px-1 rounded">work_projects/**</code>), and configure daily action limits.
-              Every tool call is checked against your policies before it fires. Every action is logged in an immutable audit trail.
-              Abort any running agent with one tap.
+              You control what models can access which storage and integrations. Every capability is off by default.
+              You enable exactly what you want and set policies for where work gets done and saved. Every action is logged
+              in an immutable audit trail. Abort any running agent with one tap.
             </p>
           </div>
 
