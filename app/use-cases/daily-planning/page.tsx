@@ -16,12 +16,12 @@ const morningSteps = [
   {
     time: 'During the day',
     title: 'Agents running in the background.',
-    body: 'Task Manager tracks what's getting done, adjusts your queue as priorities shift, and surfaces anything that needs your attention — without interrupting your flow. Compass keeps your long-term goals in view even when the day gets loud.',
+    body: "Task Manager tracks what's getting done, adjusts your queue as priorities shift, and surfaces anything that needs your attention — without interrupting your flow. Compass keeps your long-term goals in view even when the day gets loud.",
   },
   {
     time: 'End of day',
     title: 'Log it. Learn from it. Prep for tomorrow.',
-    body: 'Zoe reviews what got done, notes what shifted, and automatically prepares your plan for tomorrow — factoring in what's still open, what's coming up, and how you're tracking toward your goals.',
+    body: "Zoe reviews what got done, notes what shifted, and automatically prepares your plan for tomorrow — factoring in what's still open, what's coming up, and how you're tracking toward your goals.",
   },
 ]
 
