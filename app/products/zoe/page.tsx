@@ -2,7 +2,7 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
-import ZoeDemo from '@/components/ZoeDemo'
+import ZoeProductDemo from '@/components/ZoeProductDemo'
 
 // --- Orb component (compact version) ---
 function MiniOrb() {
@@ -601,7 +601,7 @@ export default function ZoePage() {
               keeping your day on track without interrupting it.
             </p>
           </div>
-          <ZoeDemo />
+          <ZoeProductDemo />
         </div>
       </section>
 
