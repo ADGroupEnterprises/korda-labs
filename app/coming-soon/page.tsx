@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import ComingSoonClient from './ComingSoonClient'
+import ComingSoonContent from './ComingSoonContent'
 
 export const metadata: Metadata = {
   title: 'Coming Soon — Korda Labs',
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function ComingSoonPage() {
-  return <ComingSoonClient />
+  return <ComingSoonContent />
 }
