@@ -182,13 +182,13 @@ export default function Nav() {
         {/* Right: Auth buttons */}
         <div className="flex items-center gap-3">
           <Link
-            href="#"
+            href="/coming-soon"
             className="hidden sm:inline-flex px-4 py-2 text-sm text-ink/50 hover:text-ink transition-colors duration-200"
           >
             Sign in
           </Link>
           <Link
-            href="#"
+            href="/coming-soon"
             className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#C4973A44] hover:shadow-[0_0_20px_#C4973A66]"
           >
             Sign up free

@@ -511,7 +511,7 @@ export default function ZoePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#"
+              href="/coming-soon"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]"
             >
               Sign up free
@@ -946,7 +946,7 @@ export default function ZoePage() {
             Sign up free. No credit card required.
           </p>
           <Link
-            href="#"
+            href="/coming-soon"
             className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#C4973A44] hover:shadow-[0_0_50px_#C4973A66]"
           >
             Get started with Zoe
