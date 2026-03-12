@@ -5,6 +5,17 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Zoe vs. Sunsama — Korda Labs',
   description: 'Sunsama helps you plan your day mindfully. Zoe goes further — connecting your personal goals, fitness, and life context into one AI layer.',
+  openGraph: {
+    title: 'Zoe vs. Sunsama',
+    description: 'Sunsama helps you plan your day mindfully. Zoe goes further — connecting your personal goals, fitness, and life context into one AI layer.',
+    images: ['/og-zoe-vs-sunsama.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zoe vs. Sunsama',
+    description: 'Sunsama helps you plan your day mindfully. Zoe goes further — connecting your personal goals, fitness, and life context into one AI layer.',
+    images: ['/og-zoe-vs-sunsama.jpg'],
+  },
 }
 
 const rows = [
