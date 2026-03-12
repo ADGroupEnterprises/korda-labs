@@ -512,7 +512,7 @@ export default function ZoePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/coming-soon"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]"
             >
               Sign up free
             </Link>
@@ -719,7 +719,7 @@ export default function ZoePage() {
                   <li key={i} className="flex items-center gap-3 text-sm text-ink/60">
                     <span className="w-4 h-4 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4L3.5 6.5L9 1" stroke="#C4973A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </span>
                     {item}
@@ -947,7 +947,7 @@ export default function ZoePage() {
           </p>
           <Link
             href="/coming-soon"
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#C4973A44] hover:shadow-[0_0_50px_#C4973A66]"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#0D948844] hover:shadow-[0_0_50px_#0D948866]"
           >
             Get started with Zoe
           </Link>

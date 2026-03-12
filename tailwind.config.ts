@@ -20,10 +20,15 @@ const config: Config = {
           faint: '#9a948e',
         },
         accent: {
-          DEFAULT: '#C4973A',
-          light: '#D4A94E',
-          dark: '#A07828',
-          glow: '#C4973A33',
+          DEFAULT: '#0D9488',
+          light: '#14B8A6',
+          dark: '#0F766E',
+          glow: '#0D948833',
+        },
+        taupe: {
+          DEFAULT: '#A89F91',
+          light: '#C9C5BA',
+          dark: '#8A8175',
         },
         brand: {
           blue: '#3B82F6',
