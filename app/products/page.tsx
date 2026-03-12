@@ -54,7 +54,7 @@ export default function ProductsPage() {
                     <li key={i} className="flex items-start gap-2.5 text-sm text-ink/60">
                       <span className="mt-0.5 w-4 h-4 flex-shrink-0 rounded-full flex items-center justify-center bg-accent/15">
                         <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
-                          <path d="M1 4L3.5 6.5L9 1" stroke="#C4973A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M1 4L3.5 6.5L9 1" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </span>
                       {f}
@@ -64,7 +64,7 @@ export default function ProductsPage() {
                 <div className="flex items-center gap-4">
                   <Link
                     href="#"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_20px_#C4973A44] hover:shadow-[0_0_30px_#C4973A66]"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_20px_#0D948844] hover:shadow-[0_0_30px_#0D948866]"
                   >
                     Sign up free
                   </Link>

@@ -73,7 +73,7 @@ export default function ProactiveAIPage() {
             Morning briefings at 7am. Stale task alerts after 4 hours. Weekly retrospectives every Sunday. All automatic.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]">
+            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]">
               Get started free
             </Link>
             <Link href="/products/zoe" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200">
@@ -121,7 +121,7 @@ export default function ProactiveAIPage() {
               <span className="text-ink/45">Now it runs itself.</span>
             </h2>
             <p className="text-ink/40 mb-8">Free to start. No credit card.</p>
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]">
+            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]">
               Get started with Zoe
             </Link>
           </div>

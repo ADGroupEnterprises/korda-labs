@@ -92,7 +92,7 @@ export default function ComparePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#C4973A44] hover:shadow-[0_0_36px_#C4973A66]"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]"
               >
                 Get started free
               </Link>
