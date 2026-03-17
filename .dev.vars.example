@@ -1,0 +1,7 @@
+# Resend — waitlist email storage
+# 1. Create a free account at https://resend.com
+# 2. Generate an API key (Sending access)
+# 3. Create an Audience in Resend and copy its ID
+# Copy this file to .dev.vars and fill in values for local dev
+RESEND_API_KEY=re_your_api_key_here
+RESEND_AUDIENCE_ID=your_audience_id_here

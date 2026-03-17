@@ -11,14 +11,29 @@ export default function ComingSoonClient() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
-    
-    // TODO: Replace with actual API endpoint
-    // For now, just simulate success
-    setTimeout(() => {
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setStatus('error')
+        setMessage(data.error || 'Something went wrong. Please try again.')
+        return
+      }
+
       setStatus('success')
-      setMessage('Thanks for joining the waitlist! We\'ll be in touch soon.')
+      setMessage("Thanks for joining the waitlist! We'll be in touch soon.")
       setEmail('')
-    }, 1000)
+    } catch {
+      setStatus('error')
+      setMessage('Network error. Please check your connection and try again.')
+    }
   }
 
   return (

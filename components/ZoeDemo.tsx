@@ -23,11 +23,11 @@ const DEMOS = [
 ]
 
 const RETRIEVAL_STEPS = [
-  { call: 'cloud.scan', args: '"Drive/Meetings/"', result: 'standup-mar11.m4a · 12MB' },
-  { call: 'ingest.transcribe', args: 'file, engine="whisper-local"', result: 'Transcript · 847 words' },
-  { call: 'embed', args: 'transcript, model="text-embedding-004"', result: '1,024 tokens indexed' },
-  { call: 'tasks.match', args: '"Q2 Launch", source="transcript"', result: '3 items identified' },
-  { call: 'tasks.update', args: 'project="Q2 Launch"', result: '3 tasks created ✓' },
+  { action: 'Scanning Cloud Drive', detail: 'Drive/Meetings/', result: 'standup-mar11.m4a · 12MB' },
+  { action: 'Transcribing audio', detail: 'Using Whisper', result: 'Transcript · 847 words' },
+  { action: 'Indexing content', detail: 'Creating embeddings', result: '1,024 tokens indexed' },
+  { action: 'Matching tasks', detail: 'Q2 Launch project', result: '3 items identified' },
+  { action: 'Updating project', detail: 'Adding new tasks', result: '3 tasks created ✓' },
 ]
 
 // ─── UI Panels ────────────────────────────────────────────────────────────────
@@ -151,10 +151,10 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
             className="px-1.5 py-1"
           >
             <div className="flex items-baseline gap-1.5">
-              <span className="font-mono text-[10px] text-ink/65 font-medium">{step.call}</span>
-              <span className="font-mono text-[9px] text-ink/22 truncate max-w-[140px]">({step.args})</span>
+              <span className="text-[10px] text-ink/65 font-medium">{step.action}</span>
             </div>
-            <p className="text-[9px] text-ink/38 pl-0.5 mt-0.5">→ {step.result}</p>
+            <p className="text-[9px] text-ink/38 pl-0.5 mt-0.5">{step.detail}</p>
+            <p className="text-[9px] text-ink/50 pl-0.5 mt-0.5">→ {step.result}</p>
           </motion.div>
         ))}
       </div>
