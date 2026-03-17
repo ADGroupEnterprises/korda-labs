@@ -81,7 +81,7 @@ const DEMOS = [
   {
     id: 'fitness' as const,
     query: 'How are my strength goals looking?',
-    response: 'Your lifts dropped 8% over two weeks. Carb intake is down 15% — let's adjust your macros.',
+    response: "Your lifts dropped 8% over two weeks. Carb intake is down 15% — let's adjust your macros.",
   },
 ]
 
