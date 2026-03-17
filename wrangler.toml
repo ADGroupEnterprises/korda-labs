@@ -1,3 +1,7 @@
 name = "korda-labs"
 compatibility_date = "2025-10-08"
-pages_build_output_dir = ".open-next"
+main = ".open-next/worker.js"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
