@@ -1,7 +1,6 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 
 function ProductsDropdown({ open }: { open: boolean }) {
@@ -93,10 +92,58 @@ export default function Nav() {
   const productsRef = useRef<HTMLDivElement>(null)
   const howRef = useRef<HTMLDivElement>(null)
 
+  // Logo animation
+  const needlesRef = useRef<SVGGElement>(null)
+  const angleRef = useRef(0)
+  const rafRef = useRef<number | null>(null)
+  const spinningRef = useRef(false)
+
+  const applyRotation = (angle: number) => {
+    if (needlesRef.current) {
+      needlesRef.current.setAttribute('transform', `rotate(${angle} 218.111 218.111)`)
+    }
+  }
+
+  const startSpin = () => {
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
+    spinningRef.current = true
+    const spin = () => {
+      if (!spinningRef.current) return
+      angleRef.current -= 0.8
+      applyRotation(angleRef.current)
+      rafRef.current = requestAnimationFrame(spin)
+    }
+    rafRef.current = requestAnimationFrame(spin)
+  }
+
+  const startEaseBack = () => {
+    spinningRef.current = false
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
+    let angle = ((angleRef.current % 360) + 360) % 360
+    if (angle > 180) angle -= 360
+    angleRef.current = angle
+    const ease = () => {
+      const diff = -angleRef.current
+      if (Math.abs(diff) < 0.5) {
+        angleRef.current = 0
+        applyRotation(0)
+        return
+      }
+      angleRef.current += diff * 0.06
+      applyRotation(angleRef.current)
+      rafRef.current = requestAnimationFrame(ease)
+    }
+    rafRef.current = requestAnimationFrame(ease)
+  }
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    return () => { if (rafRef.current !== null) cancelAnimationFrame(rafRef.current) }
   }, [])
 
   useEffect(() => {
@@ -131,9 +178,54 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Left: Brand */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <Image src="/logo.png" alt="Korda Labs" width={28} height={28} className="rounded-sm" />
-          <span className="text-ink font-semibold text-sm tracking-wide">Korda Labs</span>
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 group"
+          onMouseEnter={startSpin}
+          onMouseLeave={startEaseBack}
+        >
+          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 436.222 436.222" aria-hidden="true">
+            <defs>
+              <style>{`
+                .kl-cls-1 { fill: #dddad4; }
+                .kl-cls-2 { fill: #d1cdc7; }
+                .kl-cls-3 { fill: #512b19; }
+                .kl-cls-4 { stroke: #512b19; stroke-dasharray: 2.784 28.508; stroke-width: 17.008px; fill: none; stroke-miterlimit: 10; }
+                .kl-cls-5 { fill: none; stroke: #8a4e28; stroke-miterlimit: 25; stroke-width: 12.394px; }
+                .kl-cls-6 { fill: none; stroke: #d1cdc7; stroke-width: 8.504px; stroke-miterlimit: 10; }
+                .kl-cls-7 { fill: #60351d; }
+                .kl-cls-8 { fill: #66381f; }
+                .kl-cls-9 { fill: #8a4e28; }
+              `}</style>
+            </defs>
+            {/* Primary needles — N, S, E, W — this group rotates */}
+            <g ref={needlesRef}>
+              {/* East needle */}
+              <polygon className="kl-cls-1" points="239.771 208.428 239.771 234.244 303.836 221.336 239.771 208.428"/>
+              <polygon className="kl-cls-2" points="239.848 208.23 239.848 220.512 303.913 221.138 239.848 208.23"/>
+              {/* West needle */}
+              <polygon className="kl-cls-1" points="203.42 208.329 203.42 234.145 139.354 221.237 203.42 208.329"/>
+              <polygon className="kl-cls-2" points="203.343 208.131 203.343 220.413 139.278 221.039 203.343 208.131"/>
+              {/* South needle */}
+              <polygon className="kl-cls-1" points="237.748 214.007 201.653 212.345 207.879 387.374 237.748 214.007"/>
+              <polygon className="kl-cls-2" points="219.575 211.321 201.545 210.49 207.772 385.519 219.575 211.321"/>
+              {/* North needle */}
+              <polygon className="kl-cls-9" points="236.914 212.144 200.837 214.172 206.283 51.769 236.914 212.144"/>
+              <polygon className="kl-cls-8" points="218.483 209.845 200.463 210.858 205.908 48.455 218.483 209.845"/>
+            </g>
+            {/* Diagonal needles — static */}
+            <polygon className="kl-cls-1" points="203.724 223.271 233.394 212.069 328.76 349.063 203.724 223.271"/>
+            <polygon className="kl-cls-2" points="203.105 222.304 217.936 216.705 328.141 348.096 203.105 222.304"/>
+            <polygon className="kl-cls-1" points="205.327 215.08 234.388 228.339 338.519 98.007 205.327 215.08"/>
+            <polygon className="kl-cls-2" points="205.246 214.83 219.071 221.138 338.438 97.757 205.246 214.83"/>
+            {/* Center and rings — static, render on top */}
+            <circle className="kl-cls-7" cx="217.161" cy="218.168" r="18.75"/>
+            <path className="kl-cls-3" d="M217.865,199.305c9.895,0,17.917,8.395,17.917,18.75s-8.022,18.75-17.917,18.75"/>
+            <circle className="kl-cls-4" cx="219.393" cy="217.725" r="184.26"/>
+            <circle className="kl-cls-5" cx="218.111" cy="218.111" r="211.914"/>
+            <circle className="kl-cls-6" cx="219.509" cy="217.751" r="188.704"/>
+          </svg>
+          <span className="font-serif font-medium text-sm" style={{ color: '#37332E', fontWeight: 500 }}>Korda Labs</span>
         </Link>
 
         {/* Center: Nav links */}
@@ -189,7 +281,7 @@ export default function Nav() {
           </Link>
           <Link
             href="/coming-soon"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#0D948844] hover:shadow-[0_0_20px_#0D948866]"
+            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#8A4E2844] hover:shadow-[0_0_20px_#8A4E2866]"
           >
             Sign up free
           </Link>

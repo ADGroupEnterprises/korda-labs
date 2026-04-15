@@ -31,7 +31,7 @@ const rows = [
 function Check() {
   return (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="inline flex-shrink-0">
-      <path d="M2 7L5.5 10.5L12 3" stroke="#10B981" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M2 7L5.5 10.5L12 3" stroke="#8A4E28" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
 }
@@ -110,7 +110,7 @@ export default function ZoeVsMotionPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
               >
                 Get started free
               </Link>

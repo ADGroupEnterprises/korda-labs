@@ -168,7 +168,7 @@ export default function Hero() {
             >
               <Link
                 href="/coming-soon"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
               >
                 Sign up free
               </Link>

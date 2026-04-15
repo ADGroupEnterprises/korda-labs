@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Lora, DM_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 
-const playfair = Playfair_Display({
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-lora',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
@@ -39,7 +45,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} bg-paper text-ink antialiased`}>
+      <body className={`${lora.variable} ${dmSans.variable} bg-paper text-ink antialiased`}>
         <Nav />
         <div className="pt-16">{children}</div>
       </body>
