@@ -32,7 +32,7 @@ export default function Input({
         w-full px-4 py-3 rounded-lg
         bg-dark-200 border border-white/10
         text-white placeholder-white/30
-        focus:outline-none focus:border-brand-blue/50 focus:bg-dark-300
+        focus:outline-none focus:border-accent/50 focus:bg-dark-300
         transition-all duration-200
         disabled:opacity-50
         ${className}

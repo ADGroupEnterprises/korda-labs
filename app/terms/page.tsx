@@ -98,7 +98,7 @@ export default function TermsPage() {
             <h2 className="text-lg font-semibold text-white mb-3">10. Contact</h2>
             <p>
               For questions about these Terms, please contact us at{' '}
-              <a href="mailto:legal@kordalabs.com" className="text-brand-blue hover:underline">
+              <a href="mailto:legal@kordalabs.com" className="text-accent hover:underline">
                 legal@kordalabs.com
               </a>.
             </p>

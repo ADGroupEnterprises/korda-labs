@@ -91,7 +91,7 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-semibold text-white mb-3">9. Contact</h2>
             <p>
               If you have questions about this Privacy Policy, please contact us at{' '}
-              <a href="mailto:privacy@kordalabs.com" className="text-brand-blue hover:underline">
+              <a href="mailto:privacy@kordalabs.com" className="text-accent hover:underline">
                 privacy@kordalabs.com
               </a>.
             </p>

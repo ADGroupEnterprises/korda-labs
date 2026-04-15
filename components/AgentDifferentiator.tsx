@@ -38,10 +38,10 @@ const personaAgents = [
 
 const colorMap = {
   blue: {
-    dot: 'bg-brand-blue',
-    badge: 'bg-brand-blue/10 text-brand-blue/70',
-    border: 'border-brand-blue/15',
-    bg: 'bg-brand-blue/[0.03]',
+    dot: 'bg-accent',
+    badge: 'bg-accent/10 text-accent/70',
+    border: 'border-accent/15',
+    bg: 'bg-accent/[0.03]',
   },
   green: {
     dot: 'bg-brand-green',

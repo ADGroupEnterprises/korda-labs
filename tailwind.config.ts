@@ -31,10 +31,6 @@ const config: Config = {
           dark: '#8A8175',
         },
         brand: {
-          blue: '#3B82F6',
-          'blue-light': '#60A5FA',
-          'blue-dark': '#1D4ED8',
-          'blue-glow': '#3B82F633',
           green: '#8A4E28',
           'green-light': '#A0612F',
           'green-dark': '#5C3018',
@@ -65,7 +61,6 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'radial-blue': 'radial-gradient(circle, #3B82F622 0%, transparent 70%)',
         'radial-green': 'radial-gradient(circle, #8A4E2822 0%, transparent 70%)',
       },
     },

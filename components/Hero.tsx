@@ -80,7 +80,7 @@ function WeekCalendar() {
                   <div
                     key={ei}
                     className={`absolute left-0.5 right-0.5 rounded px-1 overflow-hidden ${
-                      ev.color === 'blue'  ? 'bg-brand-blue/20 border-l-[2px] border-brand-blue/60' :
+                      ev.color === 'blue'  ? 'bg-accent/20 border-l-[2px] border-accent/55' :
                       ev.color === 'green' ? 'bg-brand-green/18 border-l-[2px] border-brand-green/55' :
                       'bg-accent/15 border-l-[2px] border-accent/50'
                     }`}
@@ -90,7 +90,7 @@ function WeekCalendar() {
                     }}
                   >
                     <span className={`text-[8px] font-medium leading-tight block truncate pt-0.5 ${
-                      ev.color === 'blue'  ? 'text-brand-blue/70' :
+                      ev.color === 'blue'  ? 'text-accent/65' :
                       ev.color === 'green' ? 'text-brand-green/65' :
                       'text-accent/65'
                     }`}>

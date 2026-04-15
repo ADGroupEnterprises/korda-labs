@@ -29,7 +29,7 @@ export default function ProductsPage() {
         <div className="max-w-5xl mx-auto">
 
           {/* Featured: Zoe Personal */}
-          <div className="relative rounded-2xl border border-brand-blue/15 bg-brand-blue/[0.03] p-8 sm:p-10 mb-5">
+          <div className="relative rounded-2xl border border-accent/15 bg-accent/[0.03] p-8 sm:p-10 mb-5">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
@@ -88,8 +88,8 @@ export default function ProductsPage() {
             <div className="relative rounded-2xl border border-ink/8 bg-ink/[0.04] p-8 overflow-hidden">
               <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-ink/[0.04] flex items-center justify-center">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
-                  <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#1c1a17" strokeOpacity="0.15" strokeWidth="1.2"/>
-                  <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#1c1a17" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
+                  <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2"/>
+                  <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="mb-4">
@@ -109,8 +109,8 @@ export default function ProductsPage() {
             <div className="relative rounded-2xl border border-ink/8 bg-ink/[0.04] p-8 overflow-hidden">
               <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-ink/[0.04] flex items-center justify-center">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
-                  <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#1c1a17" strokeOpacity="0.15" strokeWidth="1.2"/>
-                  <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#1c1a17" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
+                  <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2"/>
+                  <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="mb-4">
