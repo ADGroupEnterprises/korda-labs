@@ -103,7 +103,7 @@ function GoalUI() {
           <motion.div
             initial={{ width: 0 }} animate={{ width: '67%' }}
             transition={{ duration: 1.1, ease: 'easeOut', delay: 0.15 }}
-            className="h-full rounded-full bg-gradient-to-r from-accent to-accent-light"
+            className="h-full rounded-full bg-gradient-to-r from-accent to-accent-dark"
           />
         </div>
       </div>

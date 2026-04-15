@@ -122,7 +122,7 @@ export default function ZoeVsSunsamaPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
               >
                 Get started free
               </Link>
@@ -138,10 +138,10 @@ export default function ZoeVsSunsamaPage() {
           <div className="mt-16 pt-12 border-t border-ink/8 text-center">
             <p className="text-ink/30 text-sm mb-4">Also comparing</p>
             <div className="flex justify-center gap-6">
-              <Link href="/compare/zoe-vs-akiflow" className="text-sm text-accent hover:text-accent-light transition-colors">
+              <Link href="/compare/zoe-vs-akiflow" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 Zoe vs. Akiflow →
               </Link>
-              <Link href="/compare/zoe-vs-motion" className="text-sm text-accent hover:text-accent-light transition-colors">
+              <Link href="/compare/zoe-vs-motion" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 Zoe vs. Motion →
               </Link>
               <Link href="/compare" className="text-sm text-ink/40 hover:text-ink transition-colors">

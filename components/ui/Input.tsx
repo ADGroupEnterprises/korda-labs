@@ -30,9 +30,9 @@ export default function Input({
       disabled={disabled}
       className={`
         w-full px-4 py-3 rounded-lg
-        bg-dark-200 border border-white/10
-        text-white placeholder-white/30
-        focus:outline-none focus:border-accent/50 focus:bg-dark-300
+        bg-paper-100 border border-ink/15
+        text-ink placeholder-ink/30
+        focus:outline-none focus:border-accent/50 focus:bg-paper
         transition-all duration-200
         disabled:opacity-50
         ${className}

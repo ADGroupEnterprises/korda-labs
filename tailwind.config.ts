@@ -16,33 +16,16 @@ const config: Config = {
         },
         ink: {
           DEFAULT: '#37332E',
-          muted: '#6b6560',
-          faint: '#9a948e',
         },
         accent: {
           DEFAULT: '#8A4E28',
-          light: '#A0612F',
           dark: '#5C3018',
           glow: '#8A4E2833',
         },
-        taupe: {
-          DEFAULT: '#A89F91',
-          light: '#C9C5BA',
-          dark: '#8A8175',
-        },
         brand: {
           green: '#8A4E28',
-          'green-light': '#A0612F',
           'green-dark': '#5C3018',
           'green-glow': '#8A4E2833',
-        },
-        dark: {
-          DEFAULT: '#0e0d0b',
-          50: '#121109',
-          100: '#141210',
-          200: '#1a1815',
-          300: '#222019',
-          400: '#2c2a22',
         },
       },
       fontFamily: {

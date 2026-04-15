@@ -65,7 +65,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="group relative p-6 rounded-2xl border border-white/5 bg-dark-100/40 hover:border-white/10 hover:bg-dark-100/80 transition-all duration-300"
+      className="group relative p-6 rounded-2xl border border-ink/10 bg-paper-100 hover:border-ink/20 hover:bg-paper-200 transition-all duration-300"
     >
       {/* Hover glow */}
       <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-accent/0 group-hover:bg-accent/[0.02]' : 'bg-brand-green/0 group-hover:bg-brand-green/[0.02]'} transition-all duration-300`} />
@@ -74,10 +74,10 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
         <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-accent/10 text-accent group-hover:bg-accent/20' : 'bg-brand-green/10 text-brand-green group-hover:bg-brand-green/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
           {feature.icon}
         </div>
-        <h3 className="text-lg font-semibold text-white mb-2 leading-snug">
+        <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">
           {feature.title}
         </h3>
-        <p className="text-white/40 text-sm leading-relaxed">
+        <p className="text-ink/50 text-sm leading-relaxed">
           {feature.description}
         </p>
       </div>
@@ -106,7 +106,7 @@ export default function Features() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Everything you need to live
             <br />
-            <span className="text-white/40">with intention.</span>
+            <span className="text-ink/40">with intention.</span>
           </h2>
         </motion.div>
 

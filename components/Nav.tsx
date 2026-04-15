@@ -394,7 +394,7 @@ export default function Nav() {
           </Link>
           <Link
             href="/coming-soon"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#8A4E2844] hover:shadow-[0_0_20px_#8A4E2866]"
+            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_16px_#8A4E2844] hover:shadow-[0_0_20px_#8A4E2866]"
           >
             Sign up free
           </Link>

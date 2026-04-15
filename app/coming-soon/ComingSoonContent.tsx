@@ -76,7 +76,7 @@ export default function ComingSoonClient() {
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="px-8 py-4 rounded-xl bg-accent text-white font-medium hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
+                className="px-8 py-4 rounded-xl bg-accent text-paper font-medium hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
               >
                 {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Join Waitlist'}
               </button>
@@ -108,13 +108,13 @@ export default function ComingSoonClient() {
           <div className="mt-16 pt-12 border-t border-ink/8">
             <p className="text-ink/30 text-sm mb-4">Want to learn more?</p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link href="/products/zoe" className="text-sm text-accent hover:text-accent-light transition-colors">
+              <Link href="/products/zoe" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 About Zoe →
               </Link>
-              <Link href="/use-cases/autonomous-agents" className="text-sm text-accent hover:text-accent-light transition-colors">
+              <Link href="/use-cases/autonomous-agents" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 Autonomous Agents →
               </Link>
-              <Link href="/security" className="text-sm text-accent hover:text-accent-light transition-colors">
+              <Link href="/security" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 Security →
               </Link>
             </div>

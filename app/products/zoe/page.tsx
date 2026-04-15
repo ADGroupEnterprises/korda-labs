@@ -161,7 +161,7 @@ function TaskManagerAnimation() {
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
           className="w-1.5 h-1.5 rounded-full bg-accent" />
-        <span className="text-[10px] font-mono text-accent/55 tracking-widest uppercase">
+        <span className="text-[10px] font-sans text-accent/55 tracking-widest uppercase">
           {phase === 0 ? 'Task Manager — Analyzing' : phase === 1 ? 'Task Manager — Prioritizing' : 'Task Manager — Done'}
         </span>
       </div>
@@ -490,7 +490,7 @@ function AdaptiveMemoryAnimation() {
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
           className="w-1.5 h-1.5 rounded-full bg-brand-green" />
-        <span className="text-[10px] font-mono text-brand-green/55 tracking-widest uppercase">
+        <span className="text-[10px] font-sans text-brand-green/55 tracking-widest uppercase">
           Zoe Memory — Learning preferences
         </span>
       </div>
@@ -522,7 +522,7 @@ function AdaptiveMemoryAnimation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-3 p-2.5 rounded-lg bg-accent/5 border border-accent/15 text-[10px] text-accent/60 font-mono"
+          className="mt-3 p-2.5 rounded-lg bg-accent/5 border border-accent/15 text-[10px] text-accent/60 font-sans"
         >
           ↑ Rescheduled tomorrow&apos;s standup — you have a focus block at 9am.
         </motion.div>
@@ -550,7 +550,7 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
       <div className="pt-2.5">
         <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
         <p className="text-ink/50 leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent/60 font-mono border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent/60 font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -613,7 +613,7 @@ export default function ZoePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/coming-soon"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
             >
               Sign up free
             </Link>
@@ -757,24 +757,24 @@ export default function ZoePage() {
               transition={{ duration: 0.7 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative rounded-2xl border border-white/5 bg-dark-100 p-6 overflow-hidden">
+              <div className="relative rounded-2xl border border-paper/10 bg-ink p-6 overflow-hidden">
                 {/* Fake terminal / bridge UI */}
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 rounded-full bg-brand-green/60" />
-                  <span className="text-brand-green text-xs font-mono">Desktop Bridge — Connected</span>
+                  <span className="text-brand-green text-xs font-sans">Desktop Bridge — Connected</span>
                   <div className="ml-auto flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" style={{ animationDelay: '0.3s' }} />
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" style={{ animationDelay: '0.6s' }} />
+                    <div className="w-1.5 h-1.5 rounded-full bg-paper/10 animate-pulse" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-paper/10 animate-pulse" style={{ animationDelay: '0.3s' }} />
+                    <div className="w-1.5 h-1.5 rounded-full bg-paper/10 animate-pulse" style={{ animationDelay: '0.6s' }} />
                   </div>
                 </div>
-                <div className="space-y-2 font-mono text-xs">
+                <div className="space-y-2 font-sans text-xs">
                   {[
-                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-white/30' },
-                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-blue-400/60' },
-                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-blue-400/60' },
+                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper/30' },
+                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-ink/40' },
+                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-ink/40' },
                     { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent/70' },
-                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-white/30' },
+                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper/30' },
                     { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent/70' },
                   ].map((line, i) => (
                     <motion.div
@@ -1039,7 +1039,7 @@ export default function ZoePage() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-4">
             Ready to put AI
             <br />
-            <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
               to work for your life?
             </span>
           </h2>
@@ -1048,7 +1048,7 @@ export default function ZoePage() {
           </p>
           <Link
             href="/coming-soon"
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#8A4E2844] hover:shadow-[0_0_50px_#8A4E2866]"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_30px_#8A4E2844] hover:shadow-[0_0_50px_#8A4E2866]"
           >
             Get started with Zoe
           </Link>

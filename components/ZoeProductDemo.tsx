@@ -90,7 +90,7 @@ function PlannerUI() {
               'border-ink/8 bg-ink/[0.02]'
             }`}
           >
-            <span className="text-[9px] text-ink/28 font-mono w-8 flex-shrink-0 mt-0.5">{b.time}</span>
+            <span className="text-[9px] text-ink/28 font-sans w-8 flex-shrink-0 mt-0.5">{b.time}</span>
             {b.type === 'focus' && (
               <div className={`w-0.5 self-stretch rounded-full flex-shrink-0 ${
                 b.type === 'focus' ? 'bg-accent-dark' : 'bg-brand-green'
@@ -128,12 +128,12 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
             className="px-1.5 py-1"
           >
             <div className="flex items-baseline gap-1.5">
-              <span className={`font-mono text-[10px] font-medium ${
+              <span className={`font-sans text-[10px] font-medium ${
                 step.call.startsWith('notion') ? 'text-ink/60' :
                 step.call.startsWith('cloud')  ? 'text-accent/60' :
                 'text-ink/60'
               }`}>{step.call}</span>
-              <span className="font-mono text-[9px] text-ink/22 truncate max-w-[130px]">({step.args})</span>
+              <span className="font-sans text-[9px] text-ink/22 truncate max-w-[130px]">({step.args})</span>
             </div>
             <p className="text-[9px] text-ink/35 pl-0.5 mt-0.5">→ {step.result}</p>
           </motion.div>

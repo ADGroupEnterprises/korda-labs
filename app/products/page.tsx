@@ -64,7 +64,7 @@ export default function ProductsPage() {
                 <div className="flex items-center gap-4">
                   <Link
                     href="#"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]"
                   >
                     Sign up free
                   </Link>

@@ -102,7 +102,7 @@ function FitnessUI() {
         </p>
         <div className="flex items-baseline gap-2">
           <span className="text-2xl font-bold text-ink/88 leading-none">-8%</span>
-          <span className="text-xs text-amber-600 font-medium">↓ drop detected</span>
+          <span className="text-xs text-ink/55 font-medium">↓ drop detected</span>
         </div>
       </div>
 
@@ -116,14 +116,14 @@ function FitnessUI() {
           >
             <div className="flex justify-between text-[10px] text-ink/40 mb-1">
               <span>{item.period}</span>
-              <span className={i === 1 ? 'text-amber-600 font-medium' : ''}>{item.label}</span>
+              <span className={i === 1 ? 'text-ink/55 font-medium' : ''}>{item.label}</span>
             </div>
             <div className="h-6 rounded-lg bg-ink/8 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }} animate={{ width: `${item.value}%` }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 + i * 0.1 }}
                 className={`h-full rounded-lg ${
-                  i === 0 ? 'bg-accent-dark' : 'bg-amber-500'
+                  i === 0 ? 'bg-accent-dark' : 'bg-accent-dark/60'
                 }`}
               />
             </div>
@@ -141,9 +141,9 @@ function FitnessUI() {
           Nutrition Analysis
         </p>
         <div className="grid grid-cols-2 gap-1.5">
-          <div className="p-2 rounded-lg border border-amber-500/20 bg-amber-500/[0.06]">
+          <div className="p-2 rounded-lg border border-ink/12 bg-ink/[0.03]">
             <div className="text-[9px] text-ink/40 mb-0.5">Carbs (avg)</div>
-            <div className="text-xs font-medium text-amber-600">-15% ↓</div>
+            <div className="text-xs font-medium text-ink/55">-15% ↓</div>
           </div>
           <div className="p-2 rounded-lg border border-ink/10 bg-ink/[0.02]">
             <div className="text-[9px] text-ink/40 mb-0.5">Protein</div>
