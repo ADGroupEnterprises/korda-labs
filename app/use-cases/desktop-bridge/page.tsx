@@ -34,7 +34,7 @@ export default function DesktopBridgePage() {
             as if you were sitting right there.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
+            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
               Get started free
             </Link>
             <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200">
@@ -92,7 +92,7 @@ export default function DesktopBridgePage() {
                 { label: 'Results delivered to your phone', detail: 'CSV exported, notification sent, task marked complete.' },
               ].map((step, i) => (
                 <div key={i} className="flex gap-4">
-                  <span className="text-ink/20 text-xs font-mono flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-ink/20 text-xs font-sans flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, '0')}</span>
                   <div>
                     <p className="text-ink/70 text-sm font-medium">{step.label}</p>
                     <p className="text-ink/35 text-xs">{step.detail}</p>
@@ -109,7 +109,7 @@ export default function DesktopBridgePage() {
               <span className="text-ink/45">From anywhere.</span>
             </h2>
             <p className="text-ink/40 mb-8">Free to start. No credit card.</p>
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
+            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
               Get started with Zoe
             </Link>
           </div>

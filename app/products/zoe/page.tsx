@@ -4,25 +4,126 @@ import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import ZoeProductDemo from '@/components/ZoeProductDemo'
 
-// --- Orb component (compact version) ---
+// --- Zoe logo hero (replaces MiniOrb) ---
 function MiniOrb() {
   return (
-    <div className="relative flex items-center justify-center w-40 h-40 mx-auto">
-      <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-0 rounded-full border border-brand-blue/10" />
-      <motion.div animate={{ rotate: -360 }} transition={{ duration: 13, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-5 rounded-full border border-brand-blue/15" style={{ borderStyle: 'dashed' }} />
-      <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="w-16 h-16 rounded-full"
-        style={{
-          background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 40%, #1D4ED8 80%, #1E3A8A)',
-          boxShadow: '0 0 32px #3B82F666, 0 0 64px #3B82F633, inset 0 0 16px #60A5FA33',
-        }}
-      >
-        <div className="absolute top-3 left-4 w-3 h-3 rounded-full bg-white/25 blur-sm" />
-        <div className="absolute top-2.5 left-3.5 w-1.5 h-1.5 rounded-full bg-white/50" />
-      </motion.div>
-      <div className="absolute inset-0 rounded-full bg-brand-blue/5 blur-2xl scale-150" />
+    <div className="zoe-logo-wrapper flex justify-center">
+      <svg viewBox="0 0 472.797 423.24" width="120" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="Zoe">
+        <defs>
+          <style>{`
+            .zoe-spark { opacity: 0; }
+            .zoe-logo-wrapper:hover .sp1  { animation: zoe-spk 2.2s 0.00s infinite; }
+            .zoe-logo-wrapper:hover .sp2  { animation: zoe-spk 1.9s 0.35s infinite; }
+            .zoe-logo-wrapper:hover .sp3  { animation: zoe-spk 2.5s 0.70s infinite; }
+            .zoe-logo-wrapper:hover .sp4  { animation: zoe-spk 1.7s 1.05s infinite; }
+            .zoe-logo-wrapper:hover .sp5  { animation: zoe-spk 2.0s 0.15s infinite; }
+            .zoe-logo-wrapper:hover .sp6  { animation: zoe-spk 2.3s 0.50s infinite; }
+            .zoe-logo-wrapper:hover .sp7  { animation: zoe-spk 1.8s 0.85s infinite; }
+            .zoe-logo-wrapper:hover .sp8  { animation: zoe-spk 2.4s 0.28s infinite; }
+            .zoe-logo-wrapper:hover .sp9  { animation: zoe-spk 1.6s 0.62s infinite; }
+            .zoe-logo-wrapper:hover .sp10 { animation: zoe-spk 2.1s 0.97s infinite; }
+            .zoe-logo-wrapper:hover .sp11 { animation: zoe-spk 2.6s 0.42s infinite; }
+            .zoe-logo-wrapper:hover .sp12 { animation: zoe-spk 1.8s 0.78s infinite; }
+            .zoe-logo-wrapper:hover .sp13 { animation: zoe-spk 2.2s 0.20s infinite; }
+            .zoe-logo-wrapper:hover .sp14 { animation: zoe-spk 1.9s 0.55s infinite; }
+            @keyframes zoe-spk {
+              0%,  7% { opacity: 0; }
+              9%      { opacity: 1; }
+              14%     { opacity: 0.3; }
+              16%     { opacity: 1; }
+              24%     { opacity: 0; }
+              100%    { opacity: 0; }
+            }
+          `}</style>
+        </defs>
+        <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
+        <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
+        {/* sp1 tiny cream */}
+        <g className="zoe-spark sp1" transform="translate(150,145)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.8" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-12,0 L-12,8 L-5,8 L-5,14"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.5" strokeLinecap="square" strokeLinejoin="miter" d="M-12,0 L-18,-7"/>
+        </g>
+        {/* sp2 tiny cream */}
+        <g className="zoe-spark sp2" transform="translate(178,190)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.8" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L0,-11 L9,-11 L9,-5 L15,-5"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.5" strokeLinecap="square" strokeLinejoin="miter" d="M0,-11 L-6,-17"/>
+        </g>
+        {/* sp3 small copper */}
+        <g className="zoe-spark sp3" transform="translate(195,222)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="1.2" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-8,-7 L-17,-7 L-17,-15 L-10,-15 L-10,-22"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-17,-7 L-22,2"/>
+        </g>
+        {/* sp4 small copper */}
+        <g className="zoe-spark sp4" transform="translate(220,258)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="1.0" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L7,-9 L7,-18 L-1,-18 L-1,-25"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.5" strokeLinecap="square" strokeLinejoin="miter" d="M7,-9 L14,-7"/>
+        </g>
+        {/* sp5 medium cream */}
+        <g className="zoe-spark sp5" transform="translate(245,112)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="1.8" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-7,-13 L-16,-13 L-16,-5 L-24,-5 L-24,-15 L-17,-15"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-16,-13 L-9,-21 L-9,-28"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-24,-5 L-31,-11"/>
+        </g>
+        {/* sp6 medium cream */}
+        <g className="zoe-spark sp6" transform="translate(314,128)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="1.6" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-9,0 L-9,-12 L0,-12 L0,-21 L-9,-21"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-9,-12 L-15,-7 L-22,-12"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M0,-12 L6,-7"/>
+        </g>
+        {/* sp7 medium cream */}
+        <g className="zoe-spark sp7" transform="translate(348,162)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-7,-9 L-7,-20 L2,-20 L2,-28"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-7,-20 L-15,-16 L-20,-23"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M2,-20 L8,-16"/>
+        </g>
+        {/* sp8 medium copper */}
+        <g className="zoe-spark sp8" transform="translate(288,148)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="2.0" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-4,-15 L-13,-15 L-13,-6 L-22,-6 L-22,-16"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-13,-15 L-7,-23 L-13,-30"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-4,-15 L4,-11 L4,-19"/>
+        </g>
+        {/* sp9 medium copper */}
+        <g className="zoe-spark sp9" transform="translate(355,210)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="1.8" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L0,-13 L-9,-13 L-9,-5 L-18,-5 L-18,-15"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-9,-13 L-3,-21 L-9,-27"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-18,-5 L-25,-11"/>
+        </g>
+        {/* sp10 medium copper */}
+        <g className="zoe-spark sp10" transform="translate(378,238)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="2.0" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-9,-7 L-9,-19 L-2,-19 L-2,-28 L-11,-28"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-9,-19 L-17,-14 L-24,-20"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-2,-19 L5,-15"/>
+        </g>
+        {/* sp11 LARGE copper — the anchor spark */}
+        <g className="zoe-spark sp11" transform="translate(264,198)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="3.0" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-11,-13 L-11,-26 L-3,-26 L-3,-36"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-11,-13 L-22,-9 L-30,-16"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-11,-26 L-21,-22 L-29,-29"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-3,-26 L8,-22 L15,-30"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L11,-5 L11,-17 L4,-17"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-4,11 L-13,11 L-13,4"/>
+        </g>
+        {/* sp12 large cream */}
+        <g className="zoe-spark sp12" transform="translate(184,228)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-7,-13 L-7,-24 L2,-24 L2,-34 L-7,-34"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-7,-13 L-18,-9 L-24,-16"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-7,-24 L-17,-20"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M2,-24 L11,-20 L16,-28"/>
+        </g>
+        {/* sp13 medium copper */}
+        <g className="zoe-spark sp13" transform="translate(308,194)">
+          <path fill="none" stroke="#8A4E28" strokeWidth="1.8" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L-9,-7 L-16,-7 L-16,-16 L-7,-16 L-7,-24"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-16,-7 L-23,-14 L-28,-9"/>
+          <path fill="none" stroke="#8A4E28" strokeWidth="0.6" strokeLinecap="square" strokeLinejoin="miter" d="M-7,-16 L0,-22"/>
+        </g>
+        {/* sp14 medium cream */}
+        <g className="zoe-spark sp14" transform="translate(357,268)">
+          <path fill="none" stroke="#d1cdc7" strokeWidth="2.0" strokeLinecap="square" strokeLinejoin="miter" d="M0,0 L0,-13 L-9,-13 L-9,-22 L-2,-22 L-2,-31"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-9,-13 L-17,-9 L-22,-16"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-9,-22 L-17,-27"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="0.7" strokeLinecap="square" strokeLinejoin="miter" d="M-2,-22 L5,-18"/>
+        </g>
+      </svg>
     </div>
   )
 }
@@ -59,8 +160,8 @@ function TaskManagerAnimation() {
     <div ref={ref} className="rounded-2xl border border-ink/10 bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
-          className="w-1.5 h-1.5 rounded-full bg-brand-blue" />
-        <span className="text-[10px] font-mono text-brand-blue/55 tracking-widest uppercase">
+          className="w-1.5 h-1.5 rounded-full bg-accent" />
+        <span className="text-[10px] font-sans text-accent/55 tracking-widest uppercase">
           {phase === 0 ? 'Task Manager — Analyzing' : phase === 1 ? 'Task Manager — Prioritizing' : 'Task Manager — Done'}
         </span>
       </div>
@@ -75,13 +176,13 @@ function TaskManagerAnimation() {
               transition={{ layout: { type: 'spring', stiffness: 300, damping: 28 } }}
               className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl border transition-colors duration-500 ${
                 isDone ? 'border-ink/8 opacity-40' :
-                isHigh ? 'border-brand-blue/20 bg-brand-blue/5' :
+                isHigh ? 'border-accent/20 bg-accent/5' :
                 'border-ink/8 bg-ink/[0.03]'
               }`}
             >
               <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors duration-500 ${
                 isDone ? 'border-brand-green/40 bg-brand-green/15' :
-                isHigh ? 'border-brand-blue/30' : 'border-ink/15'
+                isHigh ? 'border-accent/30' : 'border-ink/15'
               }`}>
                 {isDone && (
                   <motion.svg initial={{ scale: 0 }} animate={{ scale: 1 }} width="8" height="8" viewBox="0 0 10 8" fill="none">
@@ -96,7 +197,7 @@ function TaskManagerAnimation() {
                 {task.time && phase >= 1 && (
                   <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                     className={`text-[10px] px-2 py-0.5 rounded-full transition-colors duration-500 ${
-                      isHigh ? 'bg-brand-blue/15 text-brand-blue/70' : 'bg-ink/[0.04] text-ink/35'
+                      isHigh ? 'bg-accent/15 text-accent/70' : 'bg-ink/[0.04] text-ink/35'
                     }`}>
                     {task.time}
                   </motion.span>
@@ -185,20 +286,20 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
       transition={{ duration: 0.6, delay: index * 0.12 }}
       className={`group relative p-7 rounded-2xl border transition-all duration-300 ${
         isBlue
-          ? 'border-brand-blue/25 bg-brand-blue/[0.03] hover:border-brand-blue/40'
+          ? 'border-accent/25 bg-accent/[0.03] hover:border-accent/40'
           : 'border-brand-green/25 bg-brand-green/[0.03] hover:border-brand-green/40'
       }`}
     >
       {/* Icon + name */}
       <div className="flex items-start gap-4 mb-4">
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-          isBlue ? 'bg-brand-blue/20 text-brand-blue' : 'bg-brand-green/20 text-brand-green'
+          isBlue ? 'bg-accent/20 text-accent' : 'bg-brand-green/20 text-brand-green'
         }`}>
           {agent.icon}
         </div>
         <div>
-          <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-brand-blue' : 'text-brand-green'}`}>{agent.name}</h3>
-          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-brand-blue/70' : 'text-brand-green/70'}`}>
+          <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-accent' : 'text-brand-green'}`}>{agent.name}</h3>
+          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent/70' : 'text-brand-green/70'}`}>
             {agent.role}
           </p>
         </div>
@@ -214,7 +315,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
             key={skill}
             className={`text-xs px-2.5 py-1 rounded-full border ${
               isBlue
-                ? 'border-brand-blue/25 bg-brand-blue/15 text-brand-blue/80'
+                ? 'border-accent/25 bg-accent/15 text-accent/80'
                 : 'border-brand-green/25 bg-brand-green/15 text-brand-green/80'
             }`}
           >
@@ -389,7 +490,7 @@ function AdaptiveMemoryAnimation() {
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
           className="w-1.5 h-1.5 rounded-full bg-brand-green" />
-        <span className="text-[10px] font-mono text-brand-green/55 tracking-widest uppercase">
+        <span className="text-[10px] font-sans text-brand-green/55 tracking-widest uppercase">
           Zoe Memory — Learning preferences
         </span>
       </div>
@@ -403,12 +504,12 @@ function AdaptiveMemoryAnimation() {
                 transition={{ duration: 0.35, ease: 'easeOut' }}
                 className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border ${
                   item.color === 'blue'
-                    ? 'border-brand-blue/15 bg-brand-blue/5'
+                    ? 'border-accent/15 bg-accent/5'
                     : 'border-brand-green/15 bg-brand-green/5'
                 }`}
               >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="flex-shrink-0">
-                  <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke={item.color === 'blue' ? '#3B82F6' : '#8A4E28'} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke="#8A4E28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <span className={`text-xs ${item.color === 'blue' ? 'text-ink/70' : 'text-ink/70'}`}>{item.label}</span>
               </motion.div>
@@ -421,7 +522,7 @@ function AdaptiveMemoryAnimation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-3 p-2.5 rounded-lg bg-brand-blue/5 border border-brand-blue/15 text-[10px] text-brand-blue/60 font-mono"
+          className="mt-3 p-2.5 rounded-lg bg-accent/5 border border-accent/15 text-[10px] text-accent/60 font-sans"
         >
           ↑ Rescheduled tomorrow&apos;s standup — you have a focus block at 9am.
         </motion.div>
@@ -449,7 +550,7 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
       <div className="pt-2.5">
         <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
         <p className="text-ink/50 leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent/60 font-mono border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent/60 font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -512,7 +613,7 @@ export default function ZoePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/coming-soon"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
             >
               Sign up free
             </Link>
@@ -656,24 +757,24 @@ export default function ZoePage() {
               transition={{ duration: 0.7 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative rounded-2xl border border-white/5 bg-dark-100 p-6 overflow-hidden">
+              <div className="relative rounded-2xl border border-paper/10 bg-ink p-6 overflow-hidden">
                 {/* Fake terminal / bridge UI */}
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 rounded-full bg-brand-green/60" />
-                  <span className="text-brand-green text-xs font-mono">Desktop Bridge — Connected</span>
+                  <span className="text-brand-green text-xs font-sans">Desktop Bridge — Connected</span>
                   <div className="ml-auto flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" style={{ animationDelay: '0.3s' }} />
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/10 animate-pulse" style={{ animationDelay: '0.6s' }} />
+                    <div className="w-1.5 h-1.5 rounded-full bg-paper/10 animate-pulse" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-paper/10 animate-pulse" style={{ animationDelay: '0.3s' }} />
+                    <div className="w-1.5 h-1.5 rounded-full bg-paper/10 animate-pulse" style={{ animationDelay: '0.6s' }} />
                   </div>
                 </div>
-                <div className="space-y-2 font-mono text-xs">
+                <div className="space-y-2 font-sans text-xs">
                   {[
-                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-white/30' },
-                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-blue-400/60' },
-                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-blue-400/60' },
+                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper/30' },
+                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-ink/40' },
+                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-ink/40' },
                     { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent/70' },
-                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-white/30' },
+                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper/30' },
                     { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent/70' },
                   ].map((line, i) => (
                     <motion.div
@@ -938,7 +1039,7 @@ export default function ZoePage() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-4">
             Ready to put AI
             <br />
-            <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
               to work for your life?
             </span>
           </h2>
@@ -947,7 +1048,7 @@ export default function ZoePage() {
           </p>
           <Link
             href="/coming-soon"
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#8A4E2844] hover:shadow-[0_0_50px_#8A4E2866]"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_30px_#8A4E2844] hover:shadow-[0_0_50px_#8A4E2866]"
           >
             Get started with Zoe
           </Link>

@@ -83,17 +83,17 @@ function PlannerUI() {
             initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.07, duration: 0.22 }}
             className={`flex items-start gap-2 px-2.5 py-2 rounded-xl border ${
-              b.type === 'focus'   ? 'border-brand-blue/20 bg-brand-blue/[0.06]' :
+              b.type === 'focus'   ? 'border-accent-dark/20 bg-accent-dark/[0.06]' :
               b.type === 'meeting' ? 'border-brand-green/15 bg-brand-green/[0.04]' :
               b.type === 'high'    ? 'border-accent/18 bg-accent/[0.04]' :
               b.type === 'rest'    ? 'border-ink/6 bg-transparent opacity-60' :
               'border-ink/8 bg-ink/[0.02]'
             }`}
           >
-            <span className="text-[9px] text-ink/28 font-mono w-8 flex-shrink-0 mt-0.5">{b.time}</span>
+            <span className="text-[9px] text-ink/28 font-sans w-8 flex-shrink-0 mt-0.5">{b.time}</span>
             {b.type === 'focus' && (
               <div className={`w-0.5 self-stretch rounded-full flex-shrink-0 ${
-                b.type === 'focus' ? 'bg-brand-blue' : 'bg-brand-green'
+                b.type === 'focus' ? 'bg-accent-dark' : 'bg-brand-green'
               }`} style={{ minHeight: 14 }} />
             )}
             <span className={`text-xs flex-1 leading-tight ${
@@ -128,12 +128,12 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
             className="px-1.5 py-1"
           >
             <div className="flex items-baseline gap-1.5">
-              <span className={`font-mono text-[10px] font-medium ${
-                step.call.startsWith('notion') ? 'text-brand-blue/60' :
+              <span className={`font-sans text-[10px] font-medium ${
+                step.call.startsWith('notion') ? 'text-ink/60' :
                 step.call.startsWith('cloud')  ? 'text-accent/60' :
                 'text-ink/60'
               }`}>{step.call}</span>
-              <span className="font-mono text-[9px] text-ink/22 truncate max-w-[130px]">({step.args})</span>
+              <span className="font-sans text-[9px] text-ink/22 truncate max-w-[130px]">({step.args})</span>
             </div>
             <p className="text-[9px] text-ink/35 pl-0.5 mt-0.5">→ {step.result}</p>
           </motion.div>
@@ -150,11 +150,11 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
             className="mt-2.5 pt-2.5 border-t border-ink/8"
           >
             {/* Summary */}
-            <div className="flex items-center gap-2 px-1.5 py-1.5 rounded-lg bg-brand-blue/[0.05] border border-brand-blue/15 mb-2">
+            <div className="flex items-center gap-2 px-1.5 py-1.5 rounded-lg bg-accent/[0.05] border border-accent/15 mb-2">
               <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6l3 3 5-5" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 6l3 3 5-5" stroke="#8A4E28" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-[10px] text-brand-blue/70 font-medium">6 gaps · Drive → Notion → Q2 Launch synced</span>
+              <span className="text-[10px] text-accent/70 font-medium">6 gaps · Drive → Notion → Q2 Launch synced</span>
             </div>
             {/* Sample tasks */}
             {GAP_TASKS.slice(0, 3).map((task, i) => (
@@ -164,9 +164,9 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
                 transition={{ delay: i * 0.09 + 0.2 }}
                 className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-ink/8 bg-ink/[0.02] mb-1"
               >
-                <div className="w-1 h-3 rounded-full bg-brand-blue/40 flex-shrink-0" />
+                <div className="w-1 h-3 rounded-full bg-accent/40 flex-shrink-0" />
                 <span className="text-[11px] text-ink/65 truncate">{task}</span>
-                <span className="ml-auto text-[9px] font-semibold text-brand-blue/40 flex-shrink-0">new</span>
+                <span className="ml-auto text-[9px] font-semibold text-accent/40 flex-shrink-0">new</span>
               </motion.div>
             ))}
             <p className="text-[9px] text-ink/28 pl-2 mt-1">+ 3 more tasks created</p>
@@ -262,16 +262,11 @@ export default function ZoeProductDemo() {
     <div ref={ref} className="rounded-2xl border border-ink/12 bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
       {/* Header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-ink/8">
-        <motion.div
-          animate={{ scale: isThinking ? [1, 1.22, 1, 1.18, 1] : [1, 1.07, 1] }}
-          transition={{ duration: isThinking ? 0.6 : 2.8, repeat: Infinity }}
-          className="w-5 h-5 rounded-full flex-shrink-0"
-          style={{
-            background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 50%, #1D4ED8)',
-            boxShadow: isThinking ? '0 0 14px #3B82F6BB' : '0 0 8px #3B82F666',
-          }}
-        />
-        <span className="text-brand-blue text-xs font-semibold">Zoe</span>
+        <svg viewBox="0 0 472.797 423.24" width="22" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
+          <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
+        </svg>
+        <span className="text-ink text-xs font-semibold">Zoe</span>
         <span className="text-ink/20 text-xs">/</span>
         <AnimatePresence mode="wait">
           <motion.span key={demoIdx} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -288,14 +283,14 @@ export default function ZoeProductDemo() {
                 {[0, 1, 2].map(i => (
                   <motion.div key={i} animate={{ y: [0, -3, 0] }}
                     transition={{ duration: 0.45, repeat: Infinity, delay: i * 0.11 }}
-                    className="w-1 h-1 rounded-full bg-brand-blue/50" />
+                    className="w-1 h-1 rounded-full bg-accent/50" />
                 ))}
               </motion.div>
             )}
           </AnimatePresence>
           <div className="flex gap-1">
             {DEMOS.map((_, i) => (
-              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-brand-blue' : 'bg-ink/15'}`} />
+              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-accent' : 'bg-ink/15'}`} />
             ))}
           </div>
           <div className="w-px h-3 bg-ink/12" />
@@ -333,7 +328,7 @@ export default function ZoeProductDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[90%] bg-brand-blue/12 border border-brand-blue/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
+                <div className="max-w-[90%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -357,11 +352,12 @@ export default function ZoeProductDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                 className="flex gap-2"
               >
-                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5"
-                  style={{ background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 50%, #1D4ED8)', boxShadow: '0 0 6px #3B82F666' }}
-                />
+                <svg viewBox="0 0 472.797 423.24" width="22" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0 mt-0.5">
+                  <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
+                  <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
+                </svg>
                 <div>
-                  <p className="text-brand-blue text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-ink text-[10px] font-semibold mb-1">Zoe</p>
                   <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
                   <p className="text-ink/20 text-[10px] mt-1.5 flex items-center gap-1">
                     Full view in right panel

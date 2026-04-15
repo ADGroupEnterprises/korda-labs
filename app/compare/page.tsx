@@ -62,7 +62,7 @@ export default function ComparePage() {
                 <h2 className="text-2xl font-bold font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent/70 text-sm font-medium mb-3">{c.angle}</p>
                 <p className="text-ink/45 text-sm leading-relaxed mb-5">{c.description}</p>
-                <span className="text-sm text-accent group-hover:text-accent-light transition-colors flex items-center gap-1.5">
+                <span className="text-sm text-accent group-hover:text-accent-dark transition-colors flex items-center gap-1.5">
                   See comparison
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7h9M8 4l3.5 3L8 10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -92,7 +92,7 @@ export default function ComparePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
               >
                 Get started free
               </Link>

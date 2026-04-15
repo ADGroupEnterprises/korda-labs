@@ -80,7 +80,7 @@ function WeekCalendar() {
                   <div
                     key={ei}
                     className={`absolute left-0.5 right-0.5 rounded px-1 overflow-hidden ${
-                      ev.color === 'blue'  ? 'bg-brand-blue/20 border-l-[2px] border-brand-blue/60' :
+                      ev.color === 'blue'  ? 'bg-accent/20 border-l-[2px] border-accent/55' :
                       ev.color === 'green' ? 'bg-brand-green/18 border-l-[2px] border-brand-green/55' :
                       'bg-accent/15 border-l-[2px] border-accent/50'
                     }`}
@@ -90,7 +90,7 @@ function WeekCalendar() {
                     }}
                   >
                     <span className={`text-[8px] font-medium leading-tight block truncate pt-0.5 ${
-                      ev.color === 'blue'  ? 'text-brand-blue/70' :
+                      ev.color === 'blue'  ? 'text-accent/65' :
                       ev.color === 'green' ? 'text-brand-green/65' :
                       'text-accent/65'
                     }`}>
@@ -144,7 +144,7 @@ export default function Hero() {
               <br />
               <span className="text-ink">manage your tasks.</span>
               <br />
-              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent">
                 Zoe does them.
               </span>
             </motion.h1>
@@ -168,7 +168,7 @@ export default function Hero() {
             >
               <Link
                 href="/coming-soon"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
               >
                 Sign up free
               </Link>

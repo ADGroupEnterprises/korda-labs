@@ -37,16 +37,16 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
       className="flex gap-8 items-start"
     >
       {/* Number badge */}
-      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-brand-blue/30 bg-brand-blue/10 flex items-center justify-center">
-        <span className="text-brand-blue font-bold text-sm">{step.number}</span>
+      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-accent/30 bg-accent/10 flex items-center justify-center">
+        <span className="text-accent font-bold text-sm">{step.number}</span>
         {/* Glow dot */}
-        <div className="absolute inset-0 rounded-full bg-brand-blue/5 blur-md" />
+        <div className="absolute inset-0 rounded-full bg-accent/5 blur-md" />
       </div>
 
       <div className="pt-2.5">
-        <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-        <p className="text-white/40 leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-brand-blue/60 font-mono border border-brand-blue/20 bg-brand-blue/5 px-3 py-1 rounded-full">
+        <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
+        <p className="text-ink/50 leading-relaxed mb-3 max-w-xl">{step.description}</p>
+        <span className="inline-block text-xs text-accent/60 font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -62,7 +62,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="relative py-32 px-6">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-brand-blue opacity-[0.03] blur-[100px] -translate-y-1/2" />
+        <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-accent opacity-[0.03] blur-[100px] -translate-y-1/2" />
       </div>
 
       <div className="max-w-5xl mx-auto">
@@ -73,17 +73,17 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <p className="text-brand-blue text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
+          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Simple by design.
             <br />
-            <span className="text-white/40">Powerful by nature.</span>
+            <span className="text-ink/40">Powerful by nature.</span>
           </h2>
         </motion.div>
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-gradient-to-b from-brand-blue/20 via-brand-blue/10 to-transparent hidden md:block" />
+          <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-gradient-to-b from-accent/20 via-accent/10 to-transparent hidden md:block" />
 
           <div className="space-y-12">
             {steps.map((step, i) => (

@@ -5,67 +5,11 @@ import Link from 'next/link'
 
 function Orb() {
   return (
-    <div className="relative flex items-center justify-center w-64 h-64 mx-auto">
-      {/* Outer rings */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-0 rounded-full border border-brand-blue/10"
-      />
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-12 rounded-full border border-brand-blue/20"
-      />
-
-      {/* Glowing rings */}
-      <motion.div
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute inset-16 rounded-full bg-brand-blue/5 blur-sm"
-      />
-
-      {/* Core orb */}
-      <motion.div
-        animate={{ scale: [1, 1.04, 1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative w-24 h-24 rounded-full"
-        style={{
-          background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 40%, #1D4ED8 80%, #1E3A8A)',
-          boxShadow: '0 0 40px #3B82F644, 0 0 80px #3B82F622, 0 0 120px #3B82F611, inset 0 0 20px #60A5FA33',
-        }}
-      >
-        {/* Inner highlight */}
-        <div className="absolute top-4 left-5 w-5 h-5 rounded-full bg-white/30 blur-sm" />
-        <div className="absolute top-3 left-4 w-2 h-2 rounded-full bg-white/60" />
-      </motion.div>
-
-      {/* Particles */}
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className={`absolute w-1 h-1 rounded-full ${'bg-brand-blue/60'}`}
-          style={{
-            top: '50%',
-            left: '50%',
-          }}
-          animate={{
-            x: Math.cos((i / 6) * Math.PI * 2) * 100,
-            y: Math.sin((i / 6) * Math.PI * 2) * 100,
-            opacity: [0.8, 0.3, 0.8],
-            scale: [1, 0.6, 1],
-          }}
-          transition={{
-            duration: 4 + i * 0.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: i * 0.4,
-          }}
-        />
-      ))}
-
-      {/* Background glow */}
-      <div className="absolute inset-0 rounded-full bg-brand-blue/[0.03] blur-3xl scale-150" />
+    <div className="flex items-center justify-center w-64 h-64 mx-auto">
+      <svg viewBox="0 0 472.797 423.24" width="120" height="108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
+        <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
+      </svg>
     </div>
   )
 }
@@ -110,20 +54,20 @@ function AccountingUI() {
             initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
             className={`flex items-center justify-between px-2.5 py-2 rounded-lg border ${
-              item.status === 'up' 
-                ? 'border-brand-green/20 bg-brand-green/[0.06]' 
-                : 'border-brand-blue/20 bg-brand-blue/[0.06]'
+              item.status === 'up'
+                ? 'border-brand-green/20 bg-brand-green/[0.06]'
+                : 'border-accent-dark/20 bg-accent-dark/[0.06]'
             }`}
           >
             <span className="text-xs text-ink/70">{item.field}</span>
             <div className="flex items-center gap-1.5">
               <span className={`text-xs font-medium ${
-                item.status === 'up' ? 'text-brand-green' : 'text-brand-blue'
+                item.status === 'up' ? 'text-brand-green' : 'text-accent-dark'
               }`}>
                 {item.change}
               </span>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={
-                item.status === 'up' ? 'text-brand-green' : 'text-brand-blue rotate-180'
+                item.status === 'up' ? 'text-brand-green' : 'text-accent-dark rotate-180'
               }>
                 <path d="M6 9V3M3 6l3-3 3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -158,7 +102,7 @@ function FitnessUI() {
         </p>
         <div className="flex items-baseline gap-2">
           <span className="text-2xl font-bold text-ink/88 leading-none">-8%</span>
-          <span className="text-xs text-amber-600 font-medium">↓ drop detected</span>
+          <span className="text-xs text-ink/55 font-medium">↓ drop detected</span>
         </div>
       </div>
 
@@ -172,14 +116,14 @@ function FitnessUI() {
           >
             <div className="flex justify-between text-[10px] text-ink/40 mb-1">
               <span>{item.period}</span>
-              <span className={i === 1 ? 'text-amber-600 font-medium' : ''}>{item.label}</span>
+              <span className={i === 1 ? 'text-ink/55 font-medium' : ''}>{item.label}</span>
             </div>
             <div className="h-6 rounded-lg bg-ink/8 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }} animate={{ width: `${item.value}%` }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 + i * 0.1 }}
                 className={`h-full rounded-lg ${
-                  i === 0 ? 'bg-brand-blue' : 'bg-amber-500'
+                  i === 0 ? 'bg-accent-dark' : 'bg-accent-dark/60'
                 }`}
               />
             </div>
@@ -197,9 +141,9 @@ function FitnessUI() {
           Nutrition Analysis
         </p>
         <div className="grid grid-cols-2 gap-1.5">
-          <div className="p-2 rounded-lg border border-amber-500/20 bg-amber-500/[0.06]">
+          <div className="p-2 rounded-lg border border-ink/12 bg-ink/[0.03]">
             <div className="text-[9px] text-ink/40 mb-0.5">Carbs (avg)</div>
-            <div className="text-xs font-medium text-amber-600">-15% ↓</div>
+            <div className="text-xs font-medium text-ink/55">-15% ↓</div>
           </div>
           <div className="p-2 rounded-lg border border-ink/10 bg-ink/[0.02]">
             <div className="text-[9px] text-ink/40 mb-0.5">Protein</div>
@@ -212,7 +156,7 @@ function FitnessUI() {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
         className="pt-2 border-t border-ink/8"
       >
-        <p className="text-[10px] text-brand-blue/70 leading-relaxed font-medium">
+        <p className="text-[10px] text-ink/70 leading-relaxed font-medium">
           💡 Suggestion: Increase carbs by 50g/day to support strength goals
         </p>
       </motion.div>
@@ -287,16 +231,11 @@ function OrbDemo() {
     <div ref={ref} className="rounded-2xl border border-ink/12 bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
       {/* Header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-ink/8">
-        <motion.div
-          animate={{ scale: isThinking ? [1, 1.22, 1, 1.18, 1] : [1, 1.07, 1] }}
-          transition={{ duration: isThinking ? 0.6 : 2.8, repeat: Infinity }}
-          className="w-5 h-5 rounded-full flex-shrink-0"
-          style={{
-            background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 50%, #1D4ED8)',
-            boxShadow: isThinking ? '0 0 14px #3B82F6BB' : '0 0 8px #3B82F666',
-          }}
-        />
-        <span className="text-brand-blue text-xs font-semibold">Zoe</span>
+        <svg viewBox="0 0 472.797 423.24" width="22" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
+          <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
+          <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
+        </svg>
+        <span className="text-ink text-xs font-semibold">Zoe</span>
         <AnimatePresence>
           {isThinking && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -304,7 +243,7 @@ function OrbDemo() {
               {[0, 1, 2].map(i => (
                 <motion.div key={i} animate={{ y: [0, -3, 0] }}
                   transition={{ duration: 0.45, repeat: Infinity, delay: i * 0.11 }}
-                  className="w-1 h-1 rounded-full bg-brand-blue/50" />
+                  className="w-1 h-1 rounded-full bg-accent/50" />
               ))}
             </motion.div>
           )}
@@ -313,7 +252,7 @@ function OrbDemo() {
         <div className="ml-auto flex items-center gap-2">
           <div className="flex gap-1">
             {DEMOS.map((_, i) => (
-              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-brand-blue' : 'bg-ink/15'}`} />
+              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-accent' : 'bg-ink/15'}`} />
             ))}
           </div>
           <div className="w-px h-3 bg-ink/12" />
@@ -334,7 +273,7 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[85%] bg-brand-blue/12 border border-brand-blue/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
+                <div className="max-w-[85%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -347,11 +286,12 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                 className="flex gap-2"
               >
-                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5"
-                  style={{ background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 50%, #1D4ED8)', boxShadow: '0 0 6px #3B82F666' }}
-                />
+                <svg viewBox="0 0 472.797 423.24" width="22" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0 mt-0.5">
+                  <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
+                  <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
+                </svg>
                 <div>
-                  <p className="text-brand-blue text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-ink text-[10px] font-semibold mb-1">Zoe</p>
                   <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
                 </div>
               </motion.div>
@@ -382,9 +322,9 @@ function OrbDemo() {
         <div className="flex-1 h-7 rounded-lg bg-ink/[0.03] border border-ink/8 flex items-center px-3">
           <span className="text-ink/25 text-xs">Ask Zoe anything...</span>
         </div>
-        <div className="w-6 h-6 rounded-lg bg-brand-blue/15 flex items-center justify-center flex-shrink-0">
+        <div className="w-6 h-6 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-            <path d="M1 6h10M7 2l4 4-4 4" stroke="#3B82F6" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M1 6h10M7 2l4 4-4 4" stroke="#8A4E28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>

@@ -4,7 +4,7 @@
 
 :root {
   --background: #FAFAF8;
-  --foreground: #1c1a17;
+  --foreground: #37332E;
 }
 
 * {
@@ -23,8 +23,8 @@ body {
 }
 
 ::selection {
-  background: #C4973A33;
-  color: #A07828;
+  background: #8A4E2833;
+  color: #8A4E28;
 }
 
 /* Custom scrollbar */
@@ -35,9 +35,9 @@ body {
   background: #FAFAF8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e0dbd0;
+  background: #EDE8DF;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C4973A55;
+  background: #8A4E2855;
 }

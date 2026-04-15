@@ -24,9 +24,9 @@ export default function Button({
   const base = 'inline-flex items-center justify-center font-medium tracking-wide transition-all duration-200 rounded-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
 
   const variants = {
-    primary: 'bg-brand-blue text-white hover:bg-brand-blue-light shadow-[0_0_20px_#3B82F644] hover:shadow-[0_0_30px_#3B82F666]',
-    secondary: 'border border-white/10 text-white hover:border-white/30 hover:bg-white/5',
-    ghost: 'text-white/60 hover:text-white',
+    primary: 'bg-accent text-paper hover:bg-accent-dark shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]',
+    secondary: 'border border-ink/15 text-ink hover:border-ink/30 hover:bg-ink/5',
+    ghost: 'text-ink/60 hover:text-ink',
   }
 
   const sizes = {

@@ -171,7 +171,7 @@ export default function PricingPage() {
                 }`}
               >
                 {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-white text-xs font-medium">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-paper text-xs font-medium">
                     Most Popular
                   </div>
                 )}
@@ -195,7 +195,7 @@ export default function PricingPage() {
                   href="/coming-soon"
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 mb-8 ${
                     tier.ctaStyle === 'accent'
-                      ? 'bg-accent text-white hover:bg-accent-light shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]'
+                      ? 'bg-accent text-paper hover:bg-accent-dark shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]'
                       : 'border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5'
                   }`}
                 >
@@ -352,7 +352,7 @@ export default function PricingPage() {
           <div className="mt-12 text-center">
             <p className="text-ink/35 text-sm mb-4">
               Comparing tools?{' '}
-              <Link href="/compare" className="text-accent hover:text-accent-light transition-colors">
+              <Link href="/compare" className="text-accent hover:text-accent-dark transition-colors">
                 See how Zoe stacks up →
               </Link>
             </p>
