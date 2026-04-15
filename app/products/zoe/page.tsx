@@ -85,7 +85,7 @@ function TaskManagerAnimation() {
               }`}>
                 {isDone && (
                   <motion.svg initial={{ scale: 0 }} animate={{ scale: 1 }} width="8" height="8" viewBox="0 0 10 8" fill="none">
-                    <path d="M1 4L3.5 6.5L9 1" stroke="#10B981" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M1 4L3.5 6.5L9 1" stroke="#8A4E28" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                   </motion.svg>
                 )}
               </div>
@@ -408,7 +408,7 @@ function AdaptiveMemoryAnimation() {
                 }`}
               >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="flex-shrink-0">
-                  <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke={item.color === 'blue' ? '#3B82F6' : '#10B981'} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke={item.color === 'blue' ? '#3B82F6' : '#8A4E28'} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <span className={`text-xs ${item.color === 'blue' ? 'text-ink/70' : 'text-ink/70'}`}>{item.label}</span>
               </motion.div>
@@ -512,7 +512,7 @@ export default function ZoePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/coming-soon"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
             >
               Sign up free
             </Link>
@@ -672,9 +672,9 @@ export default function ZoePage() {
                     { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-white/30' },
                     { prompt: '◆', text: 'Locating file on home machine...', color: 'text-blue-400/60' },
                     { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-blue-400/60' },
-                    { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-emerald-400/70' },
+                    { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent/70' },
                     { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-white/30' },
-                    { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-emerald-400/70' },
+                    { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent/70' },
                   ].map((line, i) => (
                     <motion.div
                       key={i}
@@ -719,7 +719,7 @@ export default function ZoePage() {
                   <li key={i} className="flex items-center gap-3 text-sm text-ink/60">
                     <span className="w-4 h-4 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
-                        <path d="M1 4L3.5 6.5L9 1" stroke="#0D9488" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#8A4E28" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </span>
                     {item}
@@ -947,7 +947,7 @@ export default function ZoePage() {
           </p>
           <Link
             href="/coming-soon"
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#0D948844] hover:shadow-[0_0_50px_#0D948866]"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_30px_#8A4E2844] hover:shadow-[0_0_50px_#8A4E2866]"
           >
             Get started with Zoe
           </Link>
