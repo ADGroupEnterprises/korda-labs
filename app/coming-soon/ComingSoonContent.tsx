@@ -57,7 +57,7 @@ export default function ComingSoonClient() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Coming Soon
           </h1>
-          <p className="text-xl text-ink/60 max-w-lg mx-auto mb-12 leading-relaxed">
+          <p className="text-xl text-ink max-w-lg mx-auto mb-12 leading-relaxed">
             Zoe is almost ready. Join the waitlist to be among the first to experience your personal AI operating system.
           </p>
 
@@ -71,7 +71,7 @@ export default function ComingSoonClient() {
                 placeholder="Enter your email"
                 required
                 disabled={status === 'loading' || status === 'success'}
-                className="flex-1 px-6 py-4 rounded-xl border border-ink/15 bg-paper text-ink placeholder:text-ink/30 focus:outline-none focus:border-accent/40 focus:ring-2 focus:ring-accent/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-4 rounded-xl border border-ink/15 bg-paper text-ink placeholder:text-ink focus:outline-none focus:border-accent/40 focus:ring-2 focus:ring-accent/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
@@ -96,7 +96,7 @@ export default function ComingSoonClient() {
           {/* Back Link */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-ink/40 hover:text-ink transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-ink hover:text-accent transition-colors"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -106,7 +106,7 @@ export default function ComingSoonClient() {
 
           {/* Additional Info */}
           <div className="mt-16 pt-12 border-t border-ink/8">
-            <p className="text-ink/30 text-sm mb-4">Want to learn more?</p>
+            <p className="text-ink text-sm mb-4">Want to learn more?</p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link href="/products/zoe" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 About Zoe →

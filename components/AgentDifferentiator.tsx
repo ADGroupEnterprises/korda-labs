@@ -39,7 +39,7 @@ const personaAgents = [
 const colorMap = {
   blue: {
     dot: 'bg-accent',
-    badge: 'bg-accent/10 text-accent/70',
+    badge: 'bg-accent/10 text-accent',
     border: 'border-accent/15',
     bg: 'bg-accent/[0.03]',
   },
@@ -51,7 +51,7 @@ const colorMap = {
   },
   amber: {
     dot: 'bg-accent',
-    badge: 'bg-accent/10 text-accent/80',
+    badge: 'bg-accent/10 text-accent',
     border: 'border-accent/15',
     bg: 'bg-accent/[0.03]',
   },
@@ -78,11 +78,11 @@ export default function AgentDifferentiator() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
               Zoe doesn&apos;t brief you
               <br />
-              <span className="text-ink/45">on what needs doing. It gets it done.</span>
+              <span className="text-ink">on what needs doing. It gets it done.</span>
             </h2>
           </div>
           <div>
-            <p className="text-ink/50 leading-relaxed text-lg">
+            <p className="text-ink leading-relaxed text-lg">
               Spin up a researcher. A writer. An analyst. A builder. Zoe&apos;s agents work under your direction —
               searching the web, reading documents, writing files, running scripts. You review their work,
               execute what needs your touch in the real world, and stay in control of every step.
@@ -109,7 +109,7 @@ export default function AgentDifferentiator() {
                   </span>
                 </div>
                 <h3 className="text-ink font-semibold text-lg mb-2">{agent.name}</h3>
-                <p className="text-ink/45 text-sm leading-relaxed">{agent.description}</p>
+                <p className="text-ink text-sm leading-relaxed">{agent.description}</p>
               </motion.div>
             )
           })}
@@ -122,12 +122,12 @@ export default function AgentDifferentiator() {
           transition={{ duration: 0.55, delay: 0.45 }}
           className="p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-10"
         >
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-4">Spawn specialist agents</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">Spawn specialist agents</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {personaAgents.map((p, i) => (
               <div key={i} className={`flex flex-col gap-1 ${p.isPlaceholder ? 'opacity-50' : ''}`}>
-                <span className={`text-ink/70 text-sm font-medium ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
-                <span className="text-ink/35 text-xs leading-relaxed">{p.desc}</span>
+                <span className={`text-ink text-sm font-medium ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
+                <span className="text-ink text-xs leading-relaxed">{p.desc}</span>
               </div>
             ))}
           </div>
@@ -141,14 +141,14 @@ export default function AgentDifferentiator() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"
         >
           <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
-            <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">The old way: Akiflow / Notion / Sunsama</p>
-            <p className="text-ink/45 text-sm leading-relaxed">
+            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">The old way: Akiflow / Notion / Sunsama</p>
+            <p className="text-ink text-sm leading-relaxed">
               Consolidate your tasks. Schedule your day. Then you do the work. Every day, manually, the same process.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-accent/15 bg-accent/[0.03]">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Zoe</p>
-            <p className="text-ink/65 text-sm leading-relaxed">
+            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+            <p className="text-ink text-sm leading-relaxed">
               You set the goals. Agents work under your direction to plan, research, and prepare outputs — documents, briefs, automations —
               while you review and execute what needs your touch. You stay in control.
             </p>
@@ -162,7 +162,7 @@ export default function AgentDifferentiator() {
         >
           <Link
             href="/use-cases/autonomous-agents"
-            className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark transition-colors"
           >
             See what agents can do
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

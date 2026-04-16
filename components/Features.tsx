@@ -77,7 +77,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
         <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">
           {feature.title}
         </h3>
-        <p className="text-ink/50 text-sm leading-relaxed">
+        <p className="text-ink text-sm leading-relaxed">
           {feature.description}
         </p>
       </div>
@@ -106,7 +106,7 @@ export default function Features() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Everything you need to live
             <br />
-            <span className="text-ink/40">with intention.</span>
+            <span className="text-ink">with intention.</span>
           </h2>
         </motion.div>
 

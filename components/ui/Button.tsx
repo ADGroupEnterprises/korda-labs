@@ -26,7 +26,7 @@ export default function Button({
   const variants = {
     primary: 'bg-accent text-paper hover:bg-accent-dark shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]',
     secondary: 'border border-ink/15 text-ink hover:border-ink/30 hover:bg-ink/5',
-    ghost: 'text-ink/60 hover:text-ink',
+    ghost: 'text-ink hover:text-accent',
   }
 
   const sizes = {

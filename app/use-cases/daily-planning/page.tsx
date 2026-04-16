@@ -35,9 +35,9 @@ export default function DailyPlanningPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Your AI morning briefing.
             <br />
-            <span className="text-ink/50">Your AI end-of-day review.</span>
+            <span className="text-ink">Your AI end-of-day review.</span>
           </h1>
-          <p className="text-ink/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
             Tools like Akiflow and Sunsama give you a structured planning ritual. Zoe automates it —
             so the discipline is built in, not something you have to summon every morning.
           </p>
@@ -63,8 +63,8 @@ export default function DailyPlanningPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
             <div className="p-6 rounded-2xl border border-ink/10 bg-ink/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">Manual daily planning</p>
-              <ul className="space-y-2.5 text-sm text-ink/45 leading-relaxed">
+              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Manual daily planning</p>
+              <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>— Open 4+ apps to see what's due</li>
                 <li>— Manually decide what to work on first</li>
                 <li>— Drag tasks onto your calendar one by one</li>
@@ -73,8 +73,8 @@ export default function DailyPlanningPage() {
               </ul>
             </div>
             <div className="p-6 rounded-2xl border border-accent/20 bg-accent/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Zoe daily planning</p>
-              <ul className="space-y-2.5 text-sm text-ink/65 leading-relaxed">
+              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe daily planning</p>
+              <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>✓ Agents review your goals, calendar, and health overnight</li>
                 <li>✓ Wake up to a prioritized, scheduled day</li>
                 <li>✓ Agents adjust in real time as things shift</li>
@@ -94,7 +94,7 @@ export default function DailyPlanningPage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               The planning that used to take
               <br />
-              <span className="text-ink/45">30 minutes. Now runs in the background.</span>
+              <span className="text-ink">30 minutes. Now runs in the background.</span>
             </h2>
           </div>
 
@@ -102,13 +102,13 @@ export default function DailyPlanningPage() {
             {morningSteps.map((step, i) => (
               <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/40">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent">
                     {step.time}
                   </span>
                 </div>
                 <div className="sm:col-span-3">
                   <h3 className="text-ink font-semibold mb-2">{step.title}</h3>
-                  <p className="text-ink/45 text-sm leading-relaxed">{step.body}</p>
+                  <p className="text-ink text-sm leading-relaxed">{step.body}</p>
                 </div>
               </div>
             ))}
@@ -119,7 +119,7 @@ export default function DailyPlanningPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
               Let Zoe own your daily planning.
             </h2>
-            <p className="text-ink/40 mb-8">Start free. No credit card required.</p>
+            <p className="text-ink mb-8">Start free. No credit card required.</p>
             <Link
               href="#"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"

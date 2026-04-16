@@ -30,7 +30,7 @@ export default function FoundersPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             The one AI layer that runs at the speed of a founder.
           </h1>
-          <p className="text-ink/50 text-xl leading-relaxed max-w-2xl mb-10">
+          <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
             You already use Notion, Linear, Slack, and five other tools. Zoe connects them all into one
             intelligent layer that plans your day, tracks your goals, and handles the logistics — so you
             can focus on what actually moves the company forward.
@@ -55,13 +55,13 @@ export default function FoundersPage() {
       {/* Pain points */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-10">Sound familiar?</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">Sound familiar?</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {painPoints.map((p, i) => (
               <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
                 <div className="w-1 h-5 rounded-full bg-accent/40 mb-4" />
                 <h3 className="text-ink font-semibold mb-2">{p.title}</h3>
-                <p className="text-ink/45 text-sm leading-relaxed">{p.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{p.body}</p>
               </div>
             ))}
           </div>
@@ -75,14 +75,14 @@ export default function FoundersPage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               What Zoe does
               <br />
-              <span className="text-ink/45">for founders specifically.</span>
+              <span className="text-ink">for founders specifically.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20">
             {features.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
                 <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{f.label}</p>
-                <p className="text-ink/55 text-sm leading-relaxed">{f.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
@@ -91,9 +91,9 @@ export default function FoundersPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
               Stop managing your tools.
               <br />
-              <span className="text-ink/45">Start building.</span>
+              <span className="text-ink">Start building.</span>
             </h2>
-            <p className="text-ink/40 mb-8">Free to start. No credit card.</p>
+            <p className="text-ink mb-8">Free to start. No credit card.</p>
             <Link
               href="#"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"

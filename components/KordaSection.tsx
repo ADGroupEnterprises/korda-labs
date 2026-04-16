@@ -42,9 +42,9 @@ export default function KordaSection() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight">
               We build technology
               <br />
-              <span className="text-ink/45">centered on people.</span>
+              <span className="text-ink">centered on people.</span>
             </h2>
-            <p className="text-ink/50 leading-relaxed text-lg pt-1">
+            <p className="text-ink leading-relaxed text-lg pt-1">
               KORDA LABS creates products that give people genuine leverage
               over their own lives — starting with Zoe, and with more to come.
               We care deeply about privacy, intentional AI, and software that respects the humans using it.
@@ -64,7 +64,7 @@ export default function KordaSection() {
             >
               <div className="w-1 h-6 rounded-full bg-accent mb-4" />
               <h3 className="text-ink font-semibold mb-2">{v.title}</h3>
-              <p className="text-ink/45 text-sm leading-relaxed">{v.description}</p>
+              <p className="text-ink text-sm leading-relaxed">{v.description}</p>
             </motion.div>
           ))}
         </div>

@@ -36,10 +36,10 @@ function WeekCalendar() {
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
         </div>
-        <span className="text-[10px] font-semibold text-ink/55 tracking-wide">Week of Mar 11</span>
+        <span className="text-[10px] font-semibold text-ink tracking-wide">Week of Mar 11</span>
         <div className="ml-auto flex items-center gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-accent/60" />
-          <span className="text-[9px] text-ink/30">Zoe managed</span>
+          <span className="text-[9px] text-ink">Zoe managed</span>
         </div>
       </div>
 
@@ -49,7 +49,7 @@ function WeekCalendar() {
         <div className="flex-shrink-0 w-7 border-r border-ink/6">
           {TIMES.map((t, i) => (
             <div key={t} style={{ height: SLOT_H }} className="flex items-start justify-end pr-1.5 pt-0.5">
-              <span className="text-[8px] text-ink/22 leading-none">{t}</span>
+              <span className="text-[8px] text-ink leading-none">{t}</span>
             </div>
           ))}
         </div>
@@ -61,7 +61,7 @@ function WeekCalendar() {
             <div key={day} className={`flex-1 border-r border-ink/6 last:border-0 relative ${isToday ? 'bg-accent/[0.025]' : ''}`}>
               {/* Day header */}
               <div className={`text-center py-1 border-b border-ink/6 ${isToday ? 'bg-accent/[0.04]' : ''}`}>
-                <span className={`text-[9px] font-semibold ${isToday ? 'text-accent' : 'text-ink/30'}`}>{day}</span>
+                <span className={`text-[9px] font-semibold ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
               </div>
               {/* Hour rows */}
               <div className="relative" style={{ height: totalH }}>
@@ -90,9 +90,9 @@ function WeekCalendar() {
                     }}
                   >
                     <span className={`text-[8px] font-medium leading-tight block truncate pt-0.5 ${
-                      ev.color === 'blue'  ? 'text-accent/65' :
+                      ev.color === 'blue'  ? 'text-accent' :
                       ev.color === 'green' ? 'text-brand-green/65' :
-                      'text-accent/65'
+                      'text-accent'
                     }`}>
                       {ev.label}
                     </span>
@@ -153,7 +153,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35 }}
-              className="text-lg sm:text-xl text-ink/50 max-w-xl mb-10 leading-relaxed"
+              className="text-lg sm:text-xl text-ink max-w-xl mb-10 leading-relaxed"
             >
               Zoe is your personal AI operating system — connecting your goals, calendar, and tools into
               one intelligent layer that doesn&apos;t just plan your day. It researches, writes, searches,
@@ -184,7 +184,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.75 }}
-              className="flex items-center gap-2 text-ink/35 text-sm mt-4"
+              className="flex items-center gap-2 text-ink text-sm mt-4"
             >
               <span className="w-1 h-1 rounded-full bg-accent/40 flex-shrink-0" />
               Autonomous agents. Real actions. Every step policy-gated and audit-logged.

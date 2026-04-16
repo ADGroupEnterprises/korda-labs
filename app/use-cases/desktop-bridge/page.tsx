@@ -26,9 +26,9 @@ export default function DesktopBridgePage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             Your home machine,
             <br />
-            <span className="text-ink/50">fully under Zoe&apos;s control.</span>
+            <span className="text-ink">fully under Zoe&apos;s control.</span>
           </h1>
-          <p className="text-ink/50 text-xl leading-relaxed max-w-2xl mb-10">
+          <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
             The Desktop Bridge runs quietly on your home computer. From your phone, your office, or anywhere —
             Zoe can read your local files, run scripts, organize folders, and execute local automations
             as if you were sitting right there.
@@ -49,15 +49,15 @@ export default function DesktopBridgePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-ink/25 mb-3">Every other AI tool</p>
-              <p className="text-ink/45 text-sm leading-relaxed">
+              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Every other AI tool</p>
+              <p className="text-ink text-sm leading-relaxed">
                 Lives in the cloud. Can&apos;t touch your local files. Can&apos;t run your scripts. Can&apos;t access the apps
                 installed on your machine. The moment you close the browser, it stops.
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-accent/20 bg-accent/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Zoe + Desktop Bridge</p>
-              <p className="text-ink/65 text-sm leading-relaxed">
+              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe + Desktop Bridge</p>
+              <p className="text-ink text-sm leading-relaxed">
                 Your home machine is always available to your agents — local files, local scripts, local apps.
                 Encrypted end-to-end. Sandboxed to the paths you approve. Controlled by your policy settings.
               </p>
@@ -69,20 +69,20 @@ export default function DesktopBridgePage() {
       {/* Features */}
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-10">What the bridge enables</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">What the bridge enables</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {features.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
                 <h3 className="text-ink font-semibold mb-2">{f.title}</h3>
-                <p className="text-ink/45 text-sm leading-relaxed">{f.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
 
           {/* Example workflow */}
           <div className="p-8 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-6">Example workflow</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-6">Example workflow</p>
             <div className="space-y-3">
               {[
                 { label: 'You\'re at the office', detail: 'Phone in hand. Home machine sitting at your desk.' },
@@ -92,10 +92,10 @@ export default function DesktopBridgePage() {
                 { label: 'Results delivered to your phone', detail: 'CSV exported, notification sent, task marked complete.' },
               ].map((step, i) => (
                 <div key={i} className="flex gap-4">
-                  <span className="text-ink/20 text-xs font-sans flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-ink text-xs font-sans flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, '0')}</span>
                   <div>
-                    <p className="text-ink/70 text-sm font-medium">{step.label}</p>
-                    <p className="text-ink/35 text-xs">{step.detail}</p>
+                    <p className="text-ink text-sm font-medium">{step.label}</p>
+                    <p className="text-ink text-xs">{step.detail}</p>
                   </div>
                 </div>
               ))}
@@ -106,9 +106,9 @@ export default function DesktopBridgePage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
               Your machine. Your agents.
               <br />
-              <span className="text-ink/45">From anywhere.</span>
+              <span className="text-ink">From anywhere.</span>
             </h2>
-            <p className="text-ink/40 mb-8">Free to start. No credit card.</p>
+            <p className="text-ink mb-8">Free to start. No credit card.</p>
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
               Get started with Zoe
             </Link>
