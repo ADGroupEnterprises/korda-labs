@@ -444,24 +444,12 @@ export default function ZoeProductDemo() {
             )}
           </AnimatePresence>
 
-          {/* Generating state — avatar with sparks */}
-          <AnimatePresence>
-            {(phase === 1 || phase === 2) && (
-              <motion.div key={`gen-${demoIdx}`}
-                initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
-                className="flex gap-2 items-center"
-              >
-                <ZoeAvatarIcon generating={true} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-
           {/* Executing hint */}
           <AnimatePresence>
             {isCloud && phase === 2 && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 className="flex items-center gap-1.5 text-[10px] text-ink">
-                <Spinner />
+                <ZoeAvatarIcon generating={true} />
                 <span>Connecting Drive, Notion, and task manager...</span>
               </motion.div>
             )}
