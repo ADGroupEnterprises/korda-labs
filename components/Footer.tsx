@@ -1,7 +1,6 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -21,7 +20,22 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/logo.png" alt="Korda Labs" width={26} height={26} className="rounded-sm" />
+              {/* VISUAL-003a — light background variant, verbatim */}
+              <svg width="26" height="26" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M40 5 C44 4.5 50 7 57 12 C65 18 72 28 72.5 40 C73 52 66 63 57 68.5 C48 74 30 74 21 68.5 C12 63 7 52 7.5 40 C8 28 14.5 17 24 11 C29 8 36 5.5 40 5Z" stroke="#8A4E28" strokeWidth="2" fill="none"/>
+                <path d="M40 2 C44.5 1.5 52 5 60 11 C69 18 76 29 76.5 40 C77 51 70 63 60 69.5 C50 76 28 76 18 69.5 C8 63 3 51 3.5 40 C4 29 11 17 22 11 C28 7.5 35.5 2.5 40 2Z" stroke="#8A4E28" strokeWidth="1" fill="none" opacity="0.3"/>
+                <path d="M40.4 7 C41.4 9.5 42.5 20.5 42.8 31 C43 36.5 42.2 39.5 40.4 41.5 C38.6 39.5 37.8 36.5 38 31 C38.3 20.5 39.4 9.5 40.4 7Z" fill="#8A4E28"/>
+                <path d="M40.4 7 C39.4 8 38.5 13.5 38.1 23 C37.7 31 37.9 37 40.4 41.5 Z" fill="#5C3018" opacity="0.55"/>
+                <path d="M39.6 73 C38.6 70.5 37.5 59.5 37.2 49 C37 43.5 37.8 40.5 39.6 38.5 C41.4 40.5 42.2 43.5 42 49 C41.7 59.5 40.6 70.5 39.6 73Z" fill="#EDE8DF" stroke="#c8b5a0" strokeWidth="0.4"/>
+                <path d="M7 40.4 C9.5 39.4 20.5 38.3 31 38.6 C36.5 38.8 39.5 39.6 41.5 41.4 C39.5 43.2 36.5 44 31 43.8 C20.5 43.5 9.5 42.4 7 40.4Z" fill="#EDE8DF" stroke="#c8b5a0" strokeWidth="0.4"/>
+                <path d="M73 39.6 C70.5 40.6 59.5 41.7 49 41.4 C43.5 41.2 40.5 40.4 38.5 38.6 C40.5 36.8 43.5 36 49 36.2 C59.5 36.5 70.5 37.6 73 39.6Z" fill="#EDE8DF" stroke="#c8b5a0" strokeWidth="0.4"/>
+                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(45 40 40)"/>
+                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(135 40 40)"/>
+                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(225 40 40)"/>
+                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(315 40 40)"/>
+                <circle cx="40" cy="40" r="3.5" fill="#FAFAF8" stroke="#8A4E28" strokeWidth="1.2"/>
+                <circle cx="40" cy="40" r="1.4" fill="#8A4E28"/>
+              </svg>
               <span className="font-semibold text-ink/80 tracking-wide text-sm">Korda Labs</span>
             </div>
             <p className="text-ink/35 text-sm leading-relaxed max-w-[220px]">
