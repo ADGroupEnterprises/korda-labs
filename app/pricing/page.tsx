@@ -140,9 +140,9 @@ export default function PricingPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Start free on web.
             <br />
-            <span className="text-ink/50">Upgrade for desktop and phone.</span>
+            <span className="text-ink">Upgrade for desktop and phone.</span>
           </h1>
-          <p className="text-ink/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
             Choose your surfaces. Bring your own API keys or use managed credits. No hidden fees.
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function PricingPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-3 text-center">
               Platform Subscription Tiers
             </h2>
-            <p className="text-ink/50 text-center max-w-2xl mx-auto">
+            <p className="text-ink text-center max-w-2xl mx-auto">
               Access to Zoe infrastructure and surfaces. All tiers support BYO API keys.
             </p>
           </div>
@@ -177,9 +177,9 @@ export default function PricingPage() {
                 )}
                 
                 <div className="flex items-center justify-between mb-6">
-                  <p className="text-xs font-medium tracking-widest uppercase text-ink/35">{tier.name}</p>
+                  <p className="text-xs font-medium tracking-widest uppercase text-accent">{tier.name}</p>
                   <span className={`text-xs px-2 py-0.5 rounded-full ${
-                    tier.badge === 'Free' ? 'bg-ink/10 text-ink/50' : 'bg-accent/15 text-accent'
+                    tier.badge === 'Free' ? 'bg-ink/10 text-ink' : 'bg-accent/15 text-accent'
                   }`}>
                     {tier.badge}
                   </span>
@@ -187,9 +187,9 @@ export default function PricingPage() {
 
                 <div className="mb-2">
                   <span className="text-5xl font-bold font-serif text-ink">{tier.price}</span>
-                  {tier.price !== '$0' && <span className="text-ink/40 text-sm ml-2">/ month</span>}
+                  {tier.price !== '$0' && <span className="text-ink text-sm ml-2">/ month</span>}
                 </div>
-                <p className="text-ink/35 text-sm mb-6">{tier.description}</p>
+                <p className="text-ink text-sm mb-6">{tier.description}</p>
 
                 <Link
                   href="/coming-soon"
@@ -203,10 +203,10 @@ export default function PricingPage() {
                 </Link>
 
                 <div className="mb-6">
-                  <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-3">Surfaces</p>
+                  <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Surfaces</p>
                   <div className="flex flex-wrap gap-2">
                     {tier.surfaces.map((surface, si) => (
-                      <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-accent/10 text-accent/70 border border-accent/20">
+                      <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">
                         {surface}
                       </span>
                     ))}
@@ -214,10 +214,10 @@ export default function PricingPage() {
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-3">Features</p>
+                  <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Features</p>
                   <ul className="space-y-2.5">
                     {tier.features.map((f, fi) => (
-                      <li key={fi} className="flex items-start gap-2.5 text-sm text-ink/65">
+                      <li key={fi} className="flex items-start gap-2.5 text-sm text-ink">
                         <Check />
                         {f}
                       </li>
@@ -227,10 +227,10 @@ export default function PricingPage() {
 
                 {tier.limitations.length > 0 && (
                   <div className="pt-6 border-t border-ink/8">
-                    <p className="text-xs text-ink/30 mb-2">Not included:</p>
+                    <p className="text-xs text-ink mb-2">Not included:</p>
                     <ul className="space-y-1.5">
                       {tier.limitations.map((l, li) => (
-                        <li key={li} className="text-xs text-ink/30">
+                        <li key={li} className="text-xs text-ink">
                           • {l}
                         </li>
                       ))}
@@ -250,7 +250,7 @@ export default function PricingPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-3">
               AI Execution Models
             </h2>
-            <p className="text-ink/50 max-w-2xl mx-auto">
+            <p className="text-ink max-w-2xl mx-auto">
               Choose who pays for inference and how background costs are handled.
             </p>
           </div>
@@ -261,16 +261,16 @@ export default function PricingPage() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-ink mb-1">{model.name}</h3>
-                    <p className="text-sm text-ink/50">{model.subtitle}</p>
+                    <p className="text-sm text-ink">{model.subtitle}</p>
                   </div>
                   <span className="text-accent font-semibold">{model.price}</span>
                 </div>
 
-                <p className="text-ink/60 text-sm mb-6 leading-relaxed">{model.description}</p>
+                <p className="text-ink text-sm mb-6 leading-relaxed">{model.description}</p>
 
                 <ul className="space-y-2.5 mb-6">
                   {model.features.map((f, fi) => (
-                    <li key={fi} className="flex items-start gap-2.5 text-sm text-ink/65">
+                    <li key={fi} className="flex items-start gap-2.5 text-sm text-ink">
                       <Check />
                       {f}
                     </li>
@@ -278,7 +278,7 @@ export default function PricingPage() {
                 </ul>
 
                 <div className="pt-4 border-t border-ink/8">
-                  <p className="text-xs text-ink/40">{model.note}</p>
+                  <p className="text-xs text-ink">{model.note}</p>
                 </div>
               </div>
             ))}
@@ -293,7 +293,7 @@ export default function PricingPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-3">
               Usage Bundle Packs
             </h2>
-            <p className="text-ink/50 max-w-2xl mx-auto">
+            <p className="text-ink max-w-2xl mx-auto">
               Zero-config managed credits. No API key management required.
             </p>
           </div>
@@ -307,11 +307,11 @@ export default function PricingPage() {
                 </div>
                 <div className="mb-4 pb-4 border-b border-ink/8">
                   <p className="text-sm text-accent font-medium mb-1">{bundle.credits}</p>
-                  <p className="text-xs text-ink/40">{bundle.tasks}</p>
+                  <p className="text-xs text-ink">{bundle.tasks}</p>
                 </div>
                 <div className="mb-6">
-                  <p className="text-xs text-ink/30 mb-1">Best for:</p>
-                  <p className="text-sm text-ink/60">{bundle.bestFor}</p>
+                  <p className="text-xs text-ink mb-1">Best for:</p>
+                  <p className="text-sm text-ink">{bundle.bestFor}</p>
                 </div>
                 <Link
                   href="/coming-soon"
@@ -324,7 +324,7 @@ export default function PricingPage() {
           </div>
 
           <div className="mt-8 p-6 rounded-xl border border-accent/15 bg-accent/[0.03] text-center">
-            <p className="text-sm text-ink/60">
+            <p className="text-sm text-ink">
               <span className="font-medium text-ink">Note:</span> Bundle credits account for the Tri-Agent Consultation Loop overhead.
               Unused credits roll over for 12 months.
             </p>
@@ -344,13 +344,13 @@ export default function PricingPage() {
               <div key={i} className="p-6 rounded-xl border border-ink/8 bg-paper">
                 <div className="w-1 h-5 rounded-full bg-accent mb-3" />
                 <h3 className="text-ink font-semibold text-sm mb-1.5">{item.title}</h3>
-                <p className="text-ink/40 text-sm leading-relaxed">{item.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-ink/35 text-sm mb-4">
+            <p className="text-ink text-sm mb-4">
               Comparing tools?{' '}
               <Link href="/compare" className="text-accent hover:text-accent-dark transition-colors">
                 See how Zoe stacks up →

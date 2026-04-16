@@ -51,7 +51,7 @@ export default function IntegrationTeaser() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.3 + i * 0.04, duration: 0.3 }}
-              className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/50 text-sm hover:border-accent/30 hover:text-ink hover:bg-accent/5 transition-all duration-200 cursor-default"
+              className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.04] text-ink text-sm hover:border-accent/30 hover:text-accent hover:bg-accent/5 transition-all duration-200 cursor-default"
             >
               {name}
             </motion.span>
@@ -60,7 +60,7 @@ export default function IntegrationTeaser() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.3 + integrations.length * 0.04, duration: 0.3 }}
-            className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.03] text-ink/35 text-sm"
+            className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.03] text-ink text-sm"
           >
             + more every week
           </motion.span>

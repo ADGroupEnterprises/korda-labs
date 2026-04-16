@@ -51,8 +51,8 @@ export default function ZoeVsAkiflowPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Zoe vs. Akiflow
           </h1>
-          <p className="text-accent/80 font-medium text-base mb-4">Akiflow organizes your work. Zoe does it.</p>
-          <p className="text-ink/50 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-accent font-medium text-base mb-4">Akiflow organizes your work. Zoe does it.</p>
+          <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
             Akiflow is excellent at pulling tasks together and helping you plan your day. But when planning is done,
             the work still falls to you. Zoe&apos;s agents don&apos;t stop at the plan — they execute it. Research, write,
             automate, and deliver real outputs, while the proactive engine runs your week without you having to ask.
@@ -65,9 +65,9 @@ export default function ZoeVsAkiflowPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header row */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-            <div className="text-xs font-medium tracking-widest uppercase text-ink/30">Feature</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-ink/30 text-center">Akiflow</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent/70 text-center">Zoe</div>
+            <div className="text-xs font-medium tracking-widest uppercase text-accent">Feature</div>
+            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Akiflow</div>
+            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
           </div>
 
           <div className="rounded-2xl border border-ink/10 overflow-hidden">
@@ -76,9 +76,9 @@ export default function ZoeVsAkiflowPage() {
                 key={i}
                 className={`grid grid-cols-3 gap-4 px-4 py-4 items-start ${i % 2 === 0 ? 'bg-ink/[0.02]' : 'bg-transparent'} border-b border-ink/6 last:border-0`}
               >
-                <div className="text-sm text-ink/70 font-medium">{row.feature}</div>
-                <div className="text-sm text-ink/40 text-center">{row.akiflow}</div>
-                <div className={`text-sm text-center font-medium ${row.zoeWins ? 'text-ink/80' : 'text-ink/40'}`}>
+                <div className="text-sm text-ink font-medium">{row.feature}</div>
+                <div className="text-sm text-ink text-center">{row.akiflow}</div>
+                <div className={`text-sm text-center font-medium ${row.zoeWins ? 'text-ink' : 'text-ink'}`}>
                   {row.zoeWins && <Yes />}
                   <span className="ml-1">{row.zoe}</span>
                 </div>
@@ -91,7 +91,7 @@ export default function ZoeVsAkiflowPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
               Ready to let AI do the planning?
             </h2>
-            <p className="text-ink/40 mb-8">Try Zoe free — no credit card required.</p>
+            <p className="text-ink mb-8">Try Zoe free — no credit card required.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
@@ -110,12 +110,12 @@ export default function ZoeVsAkiflowPage() {
 
           {/* Other comparisons */}
           <div className="mt-16 pt-12 border-t border-ink/8 text-center">
-            <p className="text-ink/30 text-sm mb-4">Also comparing</p>
+            <p className="text-ink text-sm mb-4">Also comparing</p>
             <div className="flex justify-center gap-6">
               <Link href="/compare/zoe-vs-motion" className="text-sm text-accent hover:text-accent-dark transition-colors">
                 Zoe vs. Motion →
               </Link>
-              <Link href="/compare" className="text-sm text-ink/40 hover:text-ink transition-colors">
+              <Link href="/compare" className="text-sm text-ink hover:text-accent transition-colors">
                 All comparisons →
               </Link>
             </div>

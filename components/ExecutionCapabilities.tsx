@@ -109,11 +109,11 @@ export default function ExecutionCapabilities() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
               Your agents don&apos;t just plan.
               <br />
-              <span className="text-ink/45">They act.</span>
+              <span className="text-ink">They act.</span>
             </h2>
           </div>
           <div>
-            <p className="text-ink/50 leading-relaxed text-lg">
+            <p className="text-ink leading-relaxed text-lg">
               Zoe&apos;s agents run autonomous multi-turn loops — up to hundreds of tool calls per task —
               to complete real work. Not suggestions. Not summaries. Actual output, delivered to your storage,
               with a full audit trail of every action taken.
@@ -131,15 +131,15 @@ export default function ExecutionCapabilities() {
               transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
               className="flex gap-4 p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] hover:border-ink/14 hover:bg-ink/[0.035] transition-colors duration-200"
             >
-              <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-ink/[0.04] flex items-center justify-center text-ink/45">
+              <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-ink/[0.04] flex items-center justify-center text-ink">
                 {cap.icon}
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <h3 className="text-ink/85 font-medium text-sm">{cap.title}</h3>
+                  <h3 className="text-ink font-medium text-sm">{cap.title}</h3>
                 </div>
-                <p className="text-xs font-medium text-accent/60 mb-1.5 tracking-wide">{cap.tag}</p>
-                <p className="text-ink/40 text-sm leading-relaxed">{cap.body}</p>
+                <p className="text-xs font-medium text-accent mb-1.5 tracking-wide">{cap.tag}</p>
+                <p className="text-ink text-sm leading-relaxed">{cap.body}</p>
               </div>
             </motion.div>
           ))}
@@ -152,12 +152,12 @@ export default function ExecutionCapabilities() {
           transition={{ duration: 0.5, delay: 0.65 }}
           className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-ink/8"
         >
-          <p className="text-ink/35 text-sm leading-relaxed max-w-xl">
+          <p className="text-ink text-sm leading-relaxed max-w-xl">
             Every tool call checked against your policies. Every action logged. Every output reviewed before delivery to your storage.
           </p>
           <Link
             href="/use-cases/autonomous-agents"
-            className="flex-shrink-0 inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
+            className="flex-shrink-0 inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark transition-colors"
           >
             Learn how execution works
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

@@ -44,7 +44,7 @@ export default function ComparePage() {
           <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
             See how Zoe stacks up.
           </h1>
-          <p className="text-ink/50 text-lg leading-relaxed">
+          <p className="text-ink text-lg leading-relaxed">
             Evaluating tools? Start here. We've put together honest, direct comparisons
             so you can see exactly where Zoe fits — and where it goes further.
           </p>
@@ -54,14 +54,14 @@ export default function ComparePage() {
       {/* Comparisons */}
       <section className="py-8 px-6 pb-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-8">Head-to-head</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-8">Head-to-head</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {comparisons.map((c, i) => (
               <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-ink/10 bg-ink/[0.02] hover:border-accent/20 hover:bg-accent/[0.02] transition-all duration-200">
-                <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-3">Zoe vs.</p>
+                <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe vs.</p>
                 <h2 className="text-2xl font-bold font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
-                <p className="text-accent/70 text-sm font-medium mb-3">{c.angle}</p>
-                <p className="text-ink/45 text-sm leading-relaxed mb-5">{c.description}</p>
+                <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
+                <p className="text-ink text-sm leading-relaxed mb-5">{c.description}</p>
                 <span className="text-sm text-accent group-hover:text-accent-dark transition-colors flex items-center gap-1.5">
                   See comparison
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -73,12 +73,12 @@ export default function ComparePage() {
           </div>
 
           {/* Use cases */}
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-8">By use case</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-8">By use case</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
               <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-ink/8 bg-ink/[0.02] hover:border-accent/20 hover:bg-accent/[0.02] transition-all duration-200">
                 <h3 className="text-ink font-semibold mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
-                <p className="text-ink/40 text-sm leading-relaxed mb-4">{u.description}</p>
+                <p className="text-ink text-sm leading-relaxed mb-4">{u.description}</p>
                 <span className="text-xs text-accent flex items-center gap-1">
                   Read more →
                 </span>
@@ -88,7 +88,7 @@ export default function ComparePage() {
 
           {/* CTA */}
           <div className="text-center pt-4">
-            <p className="text-ink/35 text-sm mb-6">Ready to try it yourself?</p>
+            <p className="text-ink text-sm mb-6">Ready to try it yourself?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"

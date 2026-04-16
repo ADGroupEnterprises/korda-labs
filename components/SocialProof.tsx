@@ -51,7 +51,7 @@ export default function SocialProof() {
               className="text-center"
             >
               <p className="text-3xl sm:text-4xl font-bold font-serif text-ink mb-1">{s.value}</p>
-              <p className="text-ink/40 text-sm">{s.label}</p>
+              <p className="text-ink text-sm">{s.label}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -61,7 +61,7 @@ export default function SocialProof() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-10 text-center"
+          className="text-xs font-medium tracking-widest uppercase text-accent mb-10 text-center"
         >
           From early access users
         </motion.p>
@@ -74,12 +74,12 @@ export default function SocialProof() {
               transition={{ duration: 0.55, delay: 0.3 + i * 0.1 }}
               className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]"
             >
-              <p className="text-ink/60 text-sm leading-relaxed mb-5">&ldquo;{t.quote}&rdquo;</p>
+              <p className="text-ink text-sm leading-relaxed mb-5">&ldquo;{t.quote}&rdquo;</p>
               <div className="flex items-center gap-2">
                 <div className="w-1 h-4 rounded-full bg-accent/40" />
                 <div>
-                  <p className="text-ink/60 text-xs font-medium">{t.name}</p>
-                  <p className="text-ink/30 text-xs">{t.role}</p>
+                  <p className="text-ink text-xs font-medium">{t.name}</p>
+                  <p className="text-ink text-xs">{t.role}</p>
                 </div>
               </div>
             </motion.div>

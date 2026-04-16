@@ -65,10 +65,10 @@ function PlannerUI() {
 
       {/* Date header */}
       <div className="flex items-center justify-between px-1 mb-0.5">
-        <span className="text-[10px] font-semibold text-ink/45 uppercase tracking-widest">Wednesday, Mar 11</span>
+        <span className="text-[10px] font-semibold text-accent uppercase tracking-widest">Wednesday, Mar 11</span>
         <div className="flex gap-1">
           {['Q1 67%', 'Fitness 71%'].map(g => (
-            <span key={g} className="text-[9px] px-1.5 py-0.5 rounded-full bg-accent/10 text-accent/55 border border-accent/15 font-medium">
+            <span key={g} className="text-[9px] px-1.5 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/15 font-medium">
               {g}
             </span>
           ))}
@@ -90,20 +90,20 @@ function PlannerUI() {
               'border-ink/8 bg-ink/[0.02]'
             }`}
           >
-            <span className="text-[9px] text-ink/28 font-sans w-8 flex-shrink-0 mt-0.5">{b.time}</span>
+            <span className="text-[9px] text-ink font-sans w-8 flex-shrink-0 mt-0.5">{b.time}</span>
             {b.type === 'focus' && (
               <div className={`w-0.5 self-stretch rounded-full flex-shrink-0 ${
                 b.type === 'focus' ? 'bg-accent-dark' : 'bg-brand-green'
               }`} style={{ minHeight: 14 }} />
             )}
             <span className={`text-xs flex-1 leading-tight ${
-              b.type === 'rest' ? 'text-ink/35' : 'text-ink/72'
+              b.type === 'rest' ? 'text-ink' : 'text-ink'
             }`}>{b.label}</span>
             {b.tag && (
               <span className={`text-[9px] px-1.5 py-0.5 rounded-full font-medium flex-shrink-0 ${
-                b.tag === 'HIGH' ? 'bg-accent/12 text-accent/55' :
+                b.tag === 'HIGH' ? 'bg-accent/12 text-accent' :
                 b.tag === 'MTG'  ? 'bg-brand-green/12 text-brand-green/55' :
-                'bg-ink/[0.04] text-ink/28'
+                'bg-ink/[0.04] text-ink'
               }`}>{b.tag}</span>
             )}
           </motion.div>
@@ -129,13 +129,13 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
           >
             <div className="flex items-baseline gap-1.5">
               <span className={`font-sans text-[10px] font-medium ${
-                step.call.startsWith('notion') ? 'text-ink/60' :
-                step.call.startsWith('cloud')  ? 'text-accent/60' :
-                'text-ink/60'
+                step.call.startsWith('notion') ? 'text-ink' :
+                step.call.startsWith('cloud')  ? 'text-accent' :
+                'text-ink'
               }`}>{step.call}</span>
-              <span className="font-sans text-[9px] text-ink/22 truncate max-w-[130px]">({step.args})</span>
+              <span className="font-sans text-[9px] text-ink truncate max-w-[130px]">({step.args})</span>
             </div>
-            <p className="text-[9px] text-ink/35 pl-0.5 mt-0.5">→ {step.result}</p>
+            <p className="text-[9px] text-ink pl-0.5 mt-0.5">→ {step.result}</p>
           </motion.div>
         ))}
       </div>
@@ -154,7 +154,7 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
               <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6l3 3 5-5" stroke="#8A4E28" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span className="text-[10px] text-accent/70 font-medium">6 gaps · Drive → Notion → Q2 Launch synced</span>
+              <span className="text-[10px] text-accent font-medium">6 gaps · Drive → Notion → Q2 Launch synced</span>
             </div>
             {/* Sample tasks */}
             {GAP_TASKS.slice(0, 3).map((task, i) => (
@@ -165,11 +165,11 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
                 className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-ink/8 bg-ink/[0.02] mb-1"
               >
                 <div className="w-1 h-3 rounded-full bg-accent/40 flex-shrink-0" />
-                <span className="text-[11px] text-ink/65 truncate">{task}</span>
-                <span className="ml-auto text-[9px] font-semibold text-accent/40 flex-shrink-0">new</span>
+                <span className="text-[11px] text-ink truncate">{task}</span>
+                <span className="ml-auto text-[9px] font-semibold text-accent flex-shrink-0">new</span>
               </motion.div>
             ))}
-            <p className="text-[9px] text-ink/28 pl-2 mt-1">+ 3 more tasks created</p>
+            <p className="text-[9px] text-ink pl-2 mt-1">+ 3 more tasks created</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -183,7 +183,7 @@ function Spinner() {
   return (
     <motion.svg width="11" height="11" viewBox="0 0 12 12"
       animate={{ rotate: 360 }} transition={{ duration: 0.85, repeat: Infinity, ease: 'linear' }}
-      className="text-ink/28"
+      className="text-ink"
     >
       <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"
         strokeDasharray="13" strokeDashoffset="5" strokeLinecap="round" fill="none"/>
@@ -267,10 +267,10 @@ export default function ZoeProductDemo() {
           <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
         </svg>
         <span className="text-ink text-xs font-semibold">Zoe</span>
-        <span className="text-ink/20 text-xs">/</span>
+        <span className="text-ink text-xs">/</span>
         <AnimatePresence mode="wait">
           <motion.span key={demoIdx} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="text-ink/35 text-xs">
+            className="text-ink text-xs">
             {demo.label}
           </motion.span>
         </AnimatePresence>
@@ -307,10 +307,10 @@ export default function ZoeProductDemo() {
             className="border-b border-ink/8 px-4 py-2 bg-accent/[0.025] overflow-hidden"
           >
             <div className="flex items-center gap-2">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent/60">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
                 <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
               </svg>
-              <span className="text-[9px] text-accent/55 font-medium">{demo.trigger}</span>
+              <span className="text-[9px] text-accent font-medium">{demo.trigger}</span>
             </div>
           </motion.div>
         )}
@@ -320,7 +320,7 @@ export default function ZoeProductDemo() {
       <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/8">
         {/* LEFT: Chat */}
         <div className="p-4 flex flex-col gap-3 min-h-[300px]">
-          <div className="text-[10px] text-ink/22 uppercase tracking-widest font-medium mb-0.5">Chat</div>
+          <div className="text-[10px] text-accent uppercase tracking-widest font-medium mb-0.5">Chat</div>
 
           <AnimatePresence mode="wait">
             {phase >= 0 && (
@@ -328,7 +328,7 @@ export default function ZoeProductDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[90%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
+                <div className="max-w-[90%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -339,7 +339,7 @@ export default function ZoeProductDemo() {
           <AnimatePresence>
             {isCloud && phase === 2 && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                className="flex items-center gap-1.5 text-[10px] text-ink/28">
+                className="flex items-center gap-1.5 text-[10px] text-ink">
                 <Spinner />
                 <span>Connecting Drive, Notion, and task manager...</span>
               </motion.div>
@@ -358,8 +358,8 @@ export default function ZoeProductDemo() {
                 </svg>
                 <div>
                   <p className="text-ink text-[10px] font-semibold mb-1">Zoe</p>
-                  <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
-                  <p className="text-ink/20 text-[10px] mt-1.5 flex items-center gap-1">
+                  <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
+                  <p className="text-ink text-[10px] mt-1.5 flex items-center gap-1">
                     Full view in right panel
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                       <path d="M2 5h6M5.5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -373,18 +373,18 @@ export default function ZoeProductDemo() {
 
         {/* RIGHT: Rendered UI */}
         <div className="p-4 min-h-[300px] flex flex-col">
-          <div className="text-[10px] text-ink/22 uppercase tracking-widest font-medium mb-3">Rendered UI</div>
+          <div className="text-[10px] text-accent uppercase tracking-widest font-medium mb-3">Rendered UI</div>
           <div className="flex-1 overflow-hidden">
             <AnimatePresence mode="wait">
               {rightKey === 'idle' && (
                 <motion.div key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="h-full flex items-center justify-center">
-                  <p className="text-ink/15 text-xs">Awaiting query...</p>
+                  <p className="text-ink text-xs">Awaiting query...</p>
                 </motion.div>
               )}
               {rightKey === 'loading' && (
                 <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                  className="flex items-center gap-2 text-xs text-ink/28">
+                  className="flex items-center gap-2 text-xs text-ink">
                   <Spinner />
                   <span>Rendering...</span>
                 </motion.div>
@@ -410,7 +410,7 @@ export default function ZoeProductDemo() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-ink/8 px-4 py-2 flex items-center gap-2 text-[10px] text-ink/22">
+      <div className="border-t border-ink/8 px-4 py-2 flex items-center gap-2 text-[10px] text-ink">
         <div className="w-1.5 h-1.5 rounded-full bg-brand-green/45 animate-pulse" />
         <span>Audit log active</span>
         <span className="ml-auto">Policy: default-deny</span>

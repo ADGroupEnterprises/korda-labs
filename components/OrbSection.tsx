@@ -41,10 +41,10 @@ function AccountingUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent/55 font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
           Q1 Accounting — Key Changes
         </p>
-        <p className="text-[10px] text-ink/40 mb-2">Last 3 days · 8 updates detected</p>
+        <p className="text-[10px] text-ink mb-2">Last 3 days · 8 updates detected</p>
       </div>
 
       <div className="space-y-1.5">
@@ -59,7 +59,7 @@ function AccountingUI() {
                 : 'border-accent-dark/20 bg-accent-dark/[0.06]'
             }`}
           >
-            <span className="text-xs text-ink/70">{item.field}</span>
+            <span className="text-xs text-ink">{item.field}</span>
             <div className="flex items-center gap-1.5">
               <span className={`text-xs font-medium ${
                 item.status === 'up' ? 'text-brand-green' : 'text-accent-dark'
@@ -80,7 +80,7 @@ function AccountingUI() {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
         className="pt-2 border-t border-ink/8"
       >
-        <p className="text-[10px] text-ink/50 leading-relaxed">
+        <p className="text-[10px] text-ink leading-relaxed">
           Revenue growth accelerating. Operating costs trending down. Net margin improved by 2.4 percentage points.
         </p>
       </motion.div>
@@ -97,12 +97,12 @@ function FitnessUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent/55 font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
           Strength Performance
         </p>
         <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold text-ink/88 leading-none">-8%</span>
-          <span className="text-xs text-ink/55 font-medium">↓ drop detected</span>
+          <span className="text-2xl font-bold text-ink leading-none">-8%</span>
+          <span className="text-xs text-ink font-medium">↓ drop detected</span>
         </div>
       </div>
 
@@ -114,9 +114,9 @@ function FitnessUI() {
             initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            <div className="flex justify-between text-[10px] text-ink/40 mb-1">
+            <div className="flex justify-between text-[10px] text-ink mb-1">
               <span>{item.period}</span>
-              <span className={i === 1 ? 'text-ink/55 font-medium' : ''}>{item.label}</span>
+              <span className={i === 1 ? 'text-ink font-medium' : ''}>{item.label}</span>
             </div>
             <div className="h-6 rounded-lg bg-ink/8 overflow-hidden">
               <motion.div
@@ -137,17 +137,17 @@ function FitnessUI() {
         transition={{ delay: 0.4 }}
         className="pt-2 border-t border-ink/8"
       >
-        <p className="text-[9px] text-ink/40 font-semibold uppercase tracking-widest mb-2">
+        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-2">
           Nutrition Analysis
         </p>
         <div className="grid grid-cols-2 gap-1.5">
           <div className="p-2 rounded-lg border border-ink/12 bg-ink/[0.03]">
-            <div className="text-[9px] text-ink/40 mb-0.5">Carbs (avg)</div>
-            <div className="text-xs font-medium text-ink/55">-15% ↓</div>
+            <div className="text-[9px] text-ink mb-0.5">Carbs (avg)</div>
+            <div className="text-xs font-medium text-ink">-15% ↓</div>
           </div>
           <div className="p-2 rounded-lg border border-ink/10 bg-ink/[0.02]">
-            <div className="text-[9px] text-ink/40 mb-0.5">Protein</div>
-            <div className="text-xs font-medium text-ink/60">Stable</div>
+            <div className="text-[9px] text-ink mb-0.5">Protein</div>
+            <div className="text-xs font-medium text-ink">Stable</div>
           </div>
         </div>
       </motion.div>
@@ -156,7 +156,7 @@ function FitnessUI() {
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
         className="pt-2 border-t border-ink/8"
       >
-        <p className="text-[10px] text-ink/70 leading-relaxed font-medium">
+        <p className="text-[10px] text-ink leading-relaxed font-medium">
           💡 Suggestion: Increase carbs by 50g/day to support strength goals
         </p>
       </motion.div>
@@ -172,7 +172,7 @@ function Spinner() {
       width="11" height="11" viewBox="0 0 12 12"
       animate={{ rotate: 360 }}
       transition={{ duration: 0.85, repeat: Infinity, ease: 'linear' }}
-      className="text-ink/30"
+      className="text-ink"
     >
       <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"
         strokeDasharray="13" strokeDashoffset="5" strokeLinecap="round" fill="none" />
@@ -258,7 +258,7 @@ function OrbDemo() {
           <div className="w-px h-3 bg-ink/12" />
           <div className="flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-brand-green/60 animate-pulse" />
-            <span className="text-ink/28 text-[10px]">online</span>
+            <span className="text-ink text-[10px]">online</span>
           </div>
         </div>
       </div>
@@ -273,7 +273,7 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[85%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
+                <div className="max-w-[85%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -292,7 +292,7 @@ function OrbDemo() {
                 </svg>
                 <div>
                   <p className="text-ink text-[10px] font-semibold mb-1">Zoe</p>
-                  <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
+                  <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
                 </div>
               </motion.div>
             )}
@@ -320,7 +320,7 @@ function OrbDemo() {
       {/* Input bar */}
       <div className="border-t border-ink/8 px-4 py-2.5 flex items-center gap-2.5">
         <div className="flex-1 h-7 rounded-lg bg-ink/[0.03] border border-ink/8 flex items-center px-3">
-          <span className="text-ink/25 text-xs">Ask Zoe anything...</span>
+          <span className="text-ink text-xs">Ask Zoe anything...</span>
         </div>
         <div className="w-6 h-6 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
@@ -359,9 +359,9 @@ export default function OrbSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
               A focused lab.
               <br />
-              <span className="text-ink/50">A clear mission.</span>
+              <span className="text-ink">A clear mission.</span>
             </h2>
-            <p className="text-ink/50 leading-relaxed mb-8 text-lg">
+            <p className="text-ink leading-relaxed mb-8 text-lg">
               Korda Labs is an AI product studio with one driving idea: people deserve tools that work
               for them — not the other way around. We launched with Zoe and we&apos;re just getting started.
             </p>
@@ -378,8 +378,8 @@ export default function OrbSection() {
                 >
                   <span className="mt-1 w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
                   <div>
-                    <span className="text-ink/80 text-sm font-medium">{m.label}</span>
-                    <p className="text-ink/45 text-sm leading-relaxed mt-0.5">{m.detail}</p>
+                    <span className="text-ink text-sm font-medium">{m.label}</span>
+                    <p className="text-ink text-sm leading-relaxed mt-0.5">{m.detail}</p>
                   </div>
                 </motion.div>
               ))}
@@ -393,7 +393,7 @@ export default function OrbSection() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark transition-colors"
               >
                 See all products
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

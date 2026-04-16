@@ -161,7 +161,7 @@ function TaskManagerAnimation() {
       <div className="flex items-center gap-2 mb-4">
         <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
           className="w-1.5 h-1.5 rounded-full bg-accent" />
-        <span className="text-[10px] font-sans text-accent/55 tracking-widest uppercase">
+        <span className="text-[10px] font-sans text-accent tracking-widest uppercase">
           {phase === 0 ? 'Task Manager — Analyzing' : phase === 1 ? 'Task Manager — Prioritizing' : 'Task Manager — Done'}
         </span>
       </div>
@@ -190,14 +190,14 @@ function TaskManagerAnimation() {
                   </motion.svg>
                 )}
               </div>
-              <span className={`text-xs flex-1 transition-colors duration-500 ${isDone ? 'line-through text-ink/30' : isHigh ? 'text-ink/85' : 'text-ink/55'}`}>
+              <span className={`text-xs flex-1 transition-colors duration-500 ${isDone ? 'line-through text-ink' : isHigh ? 'text-ink' : 'text-ink'}`}>
                 {task.label}
               </span>
               <AnimatePresence>
                 {task.time && phase >= 1 && (
                   <motion.span initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
                     className={`text-[10px] px-2 py-0.5 rounded-full transition-colors duration-500 ${
-                      isHigh ? 'bg-accent/15 text-accent/70' : 'bg-ink/[0.04] text-ink/35'
+                      isHigh ? 'bg-accent/15 text-accent' : 'bg-ink/[0.04] text-ink'
                     }`}>
                     {task.time}
                   </motion.span>
@@ -299,14 +299,14 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
         </div>
         <div>
           <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-accent' : 'text-brand-green'}`}>{agent.name}</h3>
-          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent/70' : 'text-brand-green/70'}`}>
+          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent' : 'text-brand-green/70'}`}>
             {agent.role}
           </p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-ink/70 text-sm leading-relaxed mb-5">{agent.description}</p>
+      <p className="text-ink text-sm leading-relaxed mb-5">{agent.description}</p>
 
       {/* Skills */}
       <div className="flex flex-wrap gap-2">
@@ -315,7 +315,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
             key={skill}
             className={`text-xs px-2.5 py-1 rounded-full border ${
               isBlue
-                ? 'border-accent/25 bg-accent/15 text-accent/80'
+                ? 'border-accent/25 bg-accent/15 text-accent'
                 : 'border-brand-green/25 bg-brand-green/15 text-brand-green/80'
             }`}
           >
@@ -398,7 +398,7 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
           {feature.icon}
         </div>
         <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">{feature.title}</h3>
-        <p className="text-ink/50 text-sm leading-relaxed">{feature.description}</p>
+        <p className="text-ink text-sm leading-relaxed">{feature.description}</p>
       </div>
     </motion.div>
   )
@@ -419,7 +419,7 @@ function ZoeFeaturesHeader() {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Built around your life.
         <br />
-        <span className="text-ink/50">Not your workflow.</span>
+        <span className="text-ink">Not your workflow.</span>
       </h2>
     </motion.div>
   )
@@ -511,7 +511,7 @@ function AdaptiveMemoryAnimation() {
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="flex-shrink-0">
                   <path d="M1.5 5L3.5 7.5L8.5 2.5" stroke="#8A4E28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className={`text-xs ${item.color === 'blue' ? 'text-ink/70' : 'text-ink/70'}`}>{item.label}</span>
+                <span className={`text-xs ${item.color === 'blue' ? 'text-ink' : 'text-ink'}`}>{item.label}</span>
               </motion.div>
             )}
           </AnimatePresence>
@@ -522,7 +522,7 @@ function AdaptiveMemoryAnimation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-3 p-2.5 rounded-lg bg-accent/5 border border-accent/15 text-[10px] text-accent/60 font-sans"
+          className="mt-3 p-2.5 rounded-lg bg-accent/5 border border-accent/15 text-[10px] text-accent font-sans"
         >
           ↑ Rescheduled tomorrow&apos;s standup — you have a focus block at 9am.
         </motion.div>
@@ -549,8 +549,8 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
       </div>
       <div className="pt-2.5">
         <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
-        <p className="text-ink/50 leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent/60 font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
+        <p className="text-ink leading-relaxed mb-3 max-w-xl">{step.description}</p>
+        <span className="inline-block text-xs text-accent font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -573,7 +573,7 @@ function ZoeHowItWorksHeader() {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Simple by design.
         <br />
-        <span className="text-ink/50">Powerful by nature.</span>
+        <span className="text-ink">Powerful by nature.</span>
       </h2>
     </motion.div>
   )
@@ -607,7 +607,7 @@ export default function ZoePage() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold font-serif tracking-tight mb-6">
             Zoe
           </h1>
-          <p className="text-xl text-ink/60 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl text-ink max-w-xl mx-auto mb-10 leading-relaxed">
             An autonomous AI that researches, writes, automates, and executes — quietly running in the background of your work and life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -619,7 +619,7 @@ export default function ZoePage() {
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink/60 hover:text-ink hover:border-ink/25 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:text-accent hover:border-ink/25 transition-all duration-200"
             >
               All products
             </Link>
@@ -648,11 +648,11 @@ export default function ZoePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-ink/90"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-ink"
           >
             Zoe doesn&apos;t just plan your work.
             <br />
-            <span className="text-ink/40">It does it.</span>
+            <span className="text-ink">It does it.</span>
           </motion.p>
         </div>
       </section>
@@ -675,16 +675,16 @@ export default function ZoePage() {
             {/* Animations */}
             <div className="lg:pt-4 space-y-6">
               <div>
-                <div className="text-[10px] text-ink/30 uppercase tracking-widest mb-3 font-medium">Task analysis</div>
+                <div className="text-[10px] text-accent uppercase tracking-widest mb-3 font-medium">Task analysis</div>
                 <TaskManagerAnimation />
-                <p className="text-ink/30 text-xs mt-3 leading-relaxed">
+                <p className="text-ink text-xs mt-3 leading-relaxed">
                   Task Manager sorts your day by priority, deadline, and energy level — in real time.
                 </p>
               </div>
               <div>
-                <div className="text-[10px] text-ink/30 uppercase tracking-widest mb-3 font-medium">Adaptive memory</div>
+                <div className="text-[10px] text-accent uppercase tracking-widest mb-3 font-medium">Adaptive memory</div>
                 <AdaptiveMemoryAnimation />
-                <p className="text-ink/30 text-xs mt-3 leading-relaxed">
+                <p className="text-ink text-xs mt-3 leading-relaxed">
                   Zoe builds a model of your habits and preferences — and starts acting on them without being asked.
                 </p>
               </div>
@@ -701,9 +701,9 @@ export default function ZoePage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
               Talk to Zoe.
               <br />
-              <span className="text-ink/50">Or just let it work.</span>
+              <span className="text-ink">Or just let it work.</span>
             </h2>
-            <p className="text-ink/50 max-w-xl mx-auto">
+            <p className="text-ink max-w-xl mx-auto">
               The Orb is always a tap away — on your phone, your desktop, your lock screen.
               Ask it anything. Or say nothing, and watch your agents run quietly in the background,
               keeping your day on track without interrupting it.
@@ -722,9 +722,9 @@ export default function ZoePage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               Three agents.
               <br />
-              <span className="text-ink/50">One team. Built for you.</span>
+              <span className="text-ink">One team. Built for you.</span>
             </h2>
-            <p className="text-ink/45 mt-4 max-w-2xl mx-auto">
+            <p className="text-ink mt-4 max-w-2xl mx-auto">
               Zoe orchestrates everything. Compass holds your goals. Task Manager owns your day.
               Together, they share context through your integrations — so nothing is ever siloed,
               and nothing falls through the cracks.
@@ -737,7 +737,7 @@ export default function ZoePage() {
           </div>
           {/* Connection callout */}
           <div className="mt-8 p-5 rounded-xl border border-ink/8 bg-ink/[0.03] text-center">
-            <p className="text-ink/40 text-sm">
+            <p className="text-ink text-sm">
               All three agents share context through your connected tools — health apps, calendar, productivity platforms, and more.
               They coordinate, not just coexist.
             </p>
@@ -770,12 +770,12 @@ export default function ZoePage() {
                 </div>
                 <div className="space-y-2 font-sans text-xs">
                   {[
-                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper/30' },
-                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-ink/40' },
-                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-ink/40' },
-                    { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent/70' },
-                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper/30' },
-                    { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent/70' },
+                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper' },
+                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-ink' },
+                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-ink' },
+                    { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent' },
+                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper' },
+                    { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent' },
                   ].map((line, i) => (
                     <motion.div
                       key={i}
@@ -802,9 +802,9 @@ export default function ZoePage() {
               <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
                 Your home machine,
                 <br />
-                <span className="text-ink/50">from anywhere.</span>
+                <span className="text-ink">from anywhere.</span>
               </h2>
-              <p className="text-ink/50 leading-relaxed mb-6">
+              <p className="text-ink leading-relaxed mb-6">
                 The Zoe Desktop Bridge runs quietly on your home computer. When you&apos;re out,
                 on your phone, or on a different machine, Zoe can still access your local files,
                 open applications, update documents, and manage your system — as if you were sitting right there.
@@ -817,7 +817,7 @@ export default function ZoePage() {
                   'Run automations and tasks from your phone',
                   'End-to-end encrypted — only you have the keys',
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm text-ink/60">
+                  <li key={i} className="flex items-center gap-3 text-sm text-ink">
                     <span className="w-4 h-4 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                       <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
                         <path d="M1 4L3.5 6.5L9 1" stroke="#8A4E28" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -844,9 +844,9 @@ export default function ZoePage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
               Plugs into your life.
               <br />
-              <span className="text-ink/50">Not the other way around.</span>
+              <span className="text-ink">Not the other way around.</span>
             </h2>
-            <p className="text-ink/45 max-w-xl mx-auto mb-12">
+            <p className="text-ink max-w-xl mx-auto mb-12">
               Zoe connects to the apps you already use — health, fitness, calendar,
               and productivity — with new integrations shipping every week.
             </p>
@@ -866,7 +866,7 @@ export default function ZoePage() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map(item => (
-                    <span key={item} className="px-2.5 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/50 text-xs">
+                    <span key={item} className="px-2.5 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-ink text-xs">
                       {item}
                     </span>
                   ))}
@@ -886,7 +886,7 @@ export default function ZoePage() {
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               What Zoe actually does.
               <br />
-              <span className="text-ink/45">Not suggestions. Not summaries. Work.</span>
+              <span className="text-ink">Not suggestions. Not summaries. Work.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -917,19 +917,19 @@ export default function ZoePage() {
               },
             ].map((ex, i) => (
               <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
-                <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-4">{ex.label}</p>
+                <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">{ex.label}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2.5">
-                    <span className="text-ink/25 text-xs mt-0.5 flex-shrink-0">Trigger</span>
-                    <span className="text-ink/55 text-sm leading-relaxed">{ex.trigger}</span>
+                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Trigger</span>
+                    <span className="text-ink text-sm leading-relaxed">{ex.trigger}</span>
                   </div>
                   <div className="flex gap-2.5">
-                    <span className="text-ink/25 text-xs mt-0.5 flex-shrink-0">Action</span>
-                    <span className="text-ink/55 text-sm leading-relaxed">{ex.action}</span>
+                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Action</span>
+                    <span className="text-ink text-sm leading-relaxed">{ex.action}</span>
                   </div>
                   <div className="flex gap-2.5">
-                    <span className="text-ink/25 text-xs mt-0.5 flex-shrink-0">Output</span>
-                    <span className="text-ink/80 text-sm leading-relaxed font-medium">{ex.output}</span>
+                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Output</span>
+                    <span className="text-ink text-sm leading-relaxed font-medium">{ex.output}</span>
                   </div>
                 </div>
               </div>
@@ -948,10 +948,10 @@ export default function ZoePage() {
               <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
                 Zoe keeps you on track.
                 <br />
-                <span className="text-ink/45">Proactively, when you need it.</span>
+                <span className="text-ink">Proactively, when you need it.</span>
               </h2>
             </div>
-            <p className="text-ink/50 leading-relaxed">
+            <p className="text-ink leading-relaxed">
               Zoe notices when you need a nudge and surfaces what matters before you have to ask.
               Some things it handles itself. Others, it works with you to notify you what to do.
               You stay in control — Zoe just makes sure nothing falls through the cracks.
@@ -969,11 +969,11 @@ export default function ZoePage() {
             ].map((trigger, i) => (
               <div key={i} className="flex gap-4 p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] items-start">
                 <div className="flex-shrink-0 pt-0.5">
-                  <span className="text-xs font-medium text-ink/25 whitespace-nowrap">{trigger.time}</span>
+                  <span className="text-xs font-medium text-ink whitespace-nowrap">{trigger.time}</span>
                 </div>
                 <div>
-                  <h3 className="text-ink/80 font-medium text-sm mb-1">{trigger.title}</h3>
-                  <p className="text-ink/40 text-xs leading-relaxed">{trigger.body}</p>
+                  <h3 className="text-ink font-medium text-sm mb-1">{trigger.title}</h3>
+                  <p className="text-ink text-xs leading-relaxed">{trigger.body}</p>
                 </div>
               </div>
             ))}
@@ -996,9 +996,9 @@ export default function ZoePage() {
                 <br />
                 Your keys.
                 <br />
-                <span className="text-ink/50">Your data.</span>
+                <span className="text-ink">Your data.</span>
               </h2>
-              <p className="text-ink/50 leading-relaxed">
+              <p className="text-ink leading-relaxed">
                 Zoe is built on the principle that your intelligence system should be yours — fully.
                 You connect your own API keys, choose which models power which agents,
                 and decide exactly what data each integration can see.
@@ -1024,7 +1024,7 @@ export default function ZoePage() {
                 <div key={i} className="p-4 rounded-xl border border-ink/8 bg-ink/[0.03]">
                   <div className="w-1 h-4 rounded-full bg-accent mb-3" />
                   <div className="font-medium text-ink text-sm mb-1">{item.title}</div>
-                  <div className="text-ink/40 text-xs leading-relaxed">{item.desc}</div>
+                  <div className="text-ink text-xs leading-relaxed">{item.desc}</div>
                 </div>
               ))}
             </motion.div>
@@ -1043,7 +1043,7 @@ export default function ZoePage() {
               to work for your life?
             </span>
           </h2>
-          <p className="text-ink/50 mb-10">
+          <p className="text-ink mb-10">
             Sign up free. No credit card required.
           </p>
           <Link

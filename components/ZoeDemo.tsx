@@ -60,13 +60,13 @@ function TasksUI() {
             t.type === 'meeting' ? 'bg-brand-green' :
             'bg-ink/15'
           }`} />
-          <span className={`text-xs flex-1 ${t.type === 'low' ? 'text-ink/38' : 'text-ink/75'}`}>
+          <span className={`text-xs flex-1 ${t.type === 'low' ? 'text-ink' : 'text-ink'}`}>
             {t.label}
           </span>
           <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${
             t.type === 'focus' ? 'bg-accent-dark/12 text-accent-dark/55' :
-            t.type === 'high'  ? 'bg-accent/12 text-accent/55' :
-            'bg-ink/[0.04] text-ink/28'
+            t.type === 'high'  ? 'bg-accent/12 text-accent' :
+            'bg-ink/[0.04] text-ink'
           }`}>{t.time}</span>
         </motion.div>
       ))}
@@ -85,17 +85,17 @@ function GoalUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent/55 font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
           Q1 Revenue Growth
         </p>
         <div className="flex items-baseline gap-2.5">
-          <span className="text-3xl font-bold text-ink/88 leading-none">67%</span>
+          <span className="text-3xl font-bold text-ink leading-none">67%</span>
           <span className="text-xs text-brand-green font-medium">↑ on track</span>
         </div>
       </div>
 
       <div>
-        <div className="flex justify-between text-[10px] text-ink/28 mb-1.5">
+        <div className="flex justify-between text-[10px] text-ink mb-1.5">
           <span>Progress to target</span>
           <span>14 days left</span>
         </div>
@@ -116,8 +116,8 @@ function GoalUI() {
           { label: 'Status', value: 'On track', green: true },
         ].map(s => (
           <div key={s.label} className="p-2 rounded-lg border border-ink/7 bg-ink/[0.02]">
-            <div className="text-[9px] text-ink/28 mb-0.5">{s.label}</div>
-            <div className={`text-xs font-medium ${s.green ? 'text-brand-green/70' : 'text-ink/60'}`}>
+            <div className="text-[9px] text-ink mb-0.5">{s.label}</div>
+            <div className={`text-xs font-medium ${s.green ? 'text-brand-green/70' : 'text-ink'}`}>
               {s.value}
             </div>
           </div>
@@ -126,7 +126,7 @@ function GoalUI() {
 
       <motion.p
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }}
-        className="text-[10px] text-ink/28 px-0.5"
+        className="text-[10px] text-ink px-0.5"
       >
         ↑ Best week this month · Compass monitoring
       </motion.p>
@@ -151,10 +151,10 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
             className="px-1.5 py-1"
           >
             <div className="flex items-baseline gap-1.5">
-              <span className="text-[10px] text-ink/65 font-medium">{step.action}</span>
+              <span className="text-[10px] text-ink font-medium">{step.action}</span>
             </div>
-            <p className="text-[9px] text-ink/38 pl-0.5 mt-0.5">{step.detail}</p>
-            <p className="text-[9px] text-ink/50 pl-0.5 mt-0.5">→ {step.result}</p>
+            <p className="text-[9px] text-ink pl-0.5 mt-0.5">{step.detail}</p>
+            <p className="text-[9px] text-ink pl-0.5 mt-0.5">→ {step.result}</p>
           </motion.div>
         ))}
       </div>
@@ -167,7 +167,7 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
             transition={{ delay: 0.15, duration: 0.3 }}
             className="mt-2.5 pt-2.5 border-t border-ink/8 space-y-1.5"
           >
-            <p className="text-[9px] text-accent/50 font-semibold uppercase tracking-widest px-1 mb-1.5">
+            <p className="text-[9px] text-accent font-semibold uppercase tracking-widest px-1 mb-1.5">
               Q2 Launch — 3 new tasks
             </p>
             {newTasks.map((task, i) => (
@@ -178,8 +178,8 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
                 className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-accent/14 bg-accent/[0.035]"
               >
                 <div className="w-1 h-3 rounded-full bg-accent/50 flex-shrink-0" />
-                <span className="text-xs text-ink/70">{task}</span>
-                <span className="ml-auto text-[9px] font-semibold text-accent/45">new</span>
+                <span className="text-xs text-ink">{task}</span>
+                <span className="ml-auto text-[9px] font-semibold text-accent">new</span>
               </motion.div>
             ))}
           </motion.div>
@@ -197,7 +197,7 @@ function Spinner() {
       width="11" height="11" viewBox="0 0 12 12"
       animate={{ rotate: 360 }}
       transition={{ duration: 0.85, repeat: Infinity, ease: 'linear' }}
-      className="text-ink/30"
+      className="text-ink"
     >
       <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"
         strokeDasharray="13" strokeDashoffset="5" strokeLinecap="round" fill="none" />
@@ -306,7 +306,7 @@ export default function ZoeDemo() {
           <div className="w-px h-3 bg-ink/12" />
           <div className="flex items-center gap-1">
             <div className="w-1.5 h-1.5 rounded-full bg-brand-green/60 animate-pulse" />
-            <span className="text-ink/28 text-[10px]">online</span>
+            <span className="text-ink text-[10px]">online</span>
           </div>
         </div>
       </div>
@@ -315,7 +315,7 @@ export default function ZoeDemo() {
       <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-ink/8">
         {/* LEFT: Chat */}
         <div className="p-4 flex flex-col gap-3 min-h-[280px]">
-          <div className="text-[10px] text-ink/22 uppercase tracking-widest font-medium mb-0.5">Chat</div>
+          <div className="text-[10px] text-accent uppercase tracking-widest font-medium mb-0.5">Chat</div>
 
           <AnimatePresence mode="wait">
             {phase >= 0 && (
@@ -323,7 +323,7 @@ export default function ZoeDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[90%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
+                <div className="max-w-[90%] bg-accent/12 border border-accent/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -334,7 +334,7 @@ export default function ZoeDemo() {
           <AnimatePresence>
             {isNotes && phase === 2 && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                className="flex items-center gap-1.5 text-[10px] text-ink/30">
+                className="flex items-center gap-1.5 text-[10px] text-ink">
                 <Spinner />
                 <span>Executing retrieval pipeline...</span>
               </motion.div>
@@ -353,8 +353,8 @@ export default function ZoeDemo() {
                 </svg>
                 <div>
                   <p className="text-ink text-[10px] font-semibold mb-1">Zoe</p>
-                  <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
-                  <p className="text-ink/20 text-[10px] mt-1.5 flex items-center gap-1">
+                  <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
+                  <p className="text-ink text-[10px] mt-1.5 flex items-center gap-1">
                     UI rendered in right panel
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                       <path d="M2 5h6M5.5 2l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -368,18 +368,18 @@ export default function ZoeDemo() {
 
         {/* RIGHT: Rendered UI */}
         <div className="p-4 min-h-[280px] flex flex-col">
-          <div className="text-[10px] text-ink/22 uppercase tracking-widest font-medium mb-3">Rendered UI</div>
+          <div className="text-[10px] text-accent uppercase tracking-widest font-medium mb-3">Rendered UI</div>
           <div className="flex-1">
             <AnimatePresence mode="wait">
               {rightKey === 'idle' && (
                 <motion.div key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                   className="h-full flex items-center justify-center">
-                  <p className="text-ink/15 text-xs">Awaiting query...</p>
+                  <p className="text-ink text-xs">Awaiting query...</p>
                 </motion.div>
               )}
               {rightKey === 'loading' && (
                 <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                  className="flex items-center gap-2 text-xs text-ink/28">
+                  className="flex items-center gap-2 text-xs text-ink">
                   <Spinner />
                   <span>Rendering...</span>
                 </motion.div>
@@ -408,7 +408,7 @@ export default function ZoeDemo() {
       {/* Input bar */}
       <div className="border-t border-ink/8 px-4 py-2.5 flex items-center gap-2.5">
         <div className="flex-1 h-7 rounded-lg bg-ink/[0.03] border border-ink/8 flex items-center px-3">
-          <span className="text-ink/25 text-xs">Ask Zoe anything...</span>
+          <span className="text-ink text-xs">Ask Zoe anything...</span>
         </div>
         <div className="w-6 h-6 rounded-lg bg-accent/15 flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">

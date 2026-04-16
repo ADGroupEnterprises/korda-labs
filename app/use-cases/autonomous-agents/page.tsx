@@ -86,9 +86,9 @@ export default function AutonomousAgentsPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             Your agents don&apos;t just plan.
             <br />
-            <span className="text-ink/50">They execute.</span>
+            <span className="text-ink">They execute.</span>
           </h1>
-          <p className="text-ink/50 text-xl leading-relaxed max-w-2xl mb-10">
+          <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
             Zoe&apos;s agents run autonomous multi-turn loops — up to hundreds of tool calls per task — to complete real work.
             Not suggestions. Not summaries. Actual output, delivered to your storage, policy-gated and audit-logged.
           </p>
@@ -106,14 +106,14 @@ export default function AutonomousAgentsPage() {
       {/* Capabilities */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-10">What agents can do</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">What agents can do</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
             {capabilities.map((cap, i) => (
               <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
                 <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{cap.tag}</p>
                 <h3 className="text-ink font-semibold mb-2">{cap.title}</h3>
-                <p className="text-ink/50 text-sm leading-relaxed mb-3">{cap.body}</p>
-                <p className="text-ink/30 text-xs leading-relaxed border-t border-ink/6 pt-3">{cap.detail}</p>
+                <p className="text-ink text-sm leading-relaxed mb-3">{cap.body}</p>
+                <p className="text-ink text-xs leading-relaxed border-t border-ink/6 pt-3">{cap.detail}</p>
               </div>
             ))}
           </div>
@@ -124,11 +124,11 @@ export default function AutonomousAgentsPage() {
       <section className="py-8 px-6 pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
-            <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-4">End-to-end examples</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">End-to-end examples</p>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               Personal goals. Founder activities. Freelancer flows.
               <br />
-              <span className="text-ink/45">Real workflows for real people.</span>
+              <span className="text-ink">Real workflows for real people.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
@@ -138,8 +138,8 @@ export default function AutonomousAgentsPage() {
                 <ol className="space-y-2">
                   {ex.steps.map((step, j) => (
                     <li key={j} className="flex gap-2.5">
-                      <span className="text-ink/20 text-xs flex-shrink-0 mt-0.5 font-sans">{j + 1}</span>
-                      <span className="text-ink/50 text-xs leading-relaxed">{step}</span>
+                      <span className="text-ink text-xs flex-shrink-0 mt-0.5 font-sans">{j + 1}</span>
+                      <span className="text-ink text-xs leading-relaxed">{step}</span>
                     </li>
                   ))}
                 </ol>
@@ -149,8 +149,8 @@ export default function AutonomousAgentsPage() {
 
           {/* Safety note */}
           <div className="p-6 rounded-2xl border border-accent/15 bg-accent/[0.02] mb-12">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-3">Built-in safety model</p>
-            <p className="text-ink/55 text-sm leading-relaxed">
+            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Built-in safety model</p>
+            <p className="text-ink text-sm leading-relaxed">
               You control what models can access which storage and integrations. Every capability is off by default.
               You enable exactly what you want and set policies for where work gets done and saved. Every action is logged
               in an immutable audit trail. Abort any running agent with one tap.

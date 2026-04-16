@@ -45,8 +45,8 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
 
       <div className="pt-2.5">
         <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
-        <p className="text-ink/50 leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent/60 font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
+        <p className="text-ink leading-relaxed mb-3 max-w-xl">{step.description}</p>
+        <span className="inline-block text-xs text-accent font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -77,7 +77,7 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Simple by design.
             <br />
-            <span className="text-ink/40">Powerful by nature.</span>
+            <span className="text-ink">Powerful by nature.</span>
           </h2>
         </motion.div>
 

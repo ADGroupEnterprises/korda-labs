@@ -55,7 +55,7 @@ export default function BlogPage() {
           <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
             Thinking on AI, productivity,
             <br />
-            <span className="text-ink/50">and the tools that should work for you.</span>
+            <span className="text-ink">and the tools that should work for you.</span>
           </h1>
         </div>
       </section>
@@ -70,21 +70,21 @@ export default function BlogPage() {
                 className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]"
               >
                 <div className="sm:col-span-1">
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-2.5 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/35 mb-2">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-2.5 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent mb-2">
                     {post.tag}
                   </span>
-                  <p className="text-ink/25 text-xs mt-1">{post.date}</p>
+                  <p className="text-ink text-xs mt-1">{post.date}</p>
                 </div>
                 <div className="sm:col-span-3">
                   <h2 className="text-ink font-semibold text-lg mb-2">{post.title}</h2>
-                  <p className="text-ink/45 text-sm leading-relaxed">{post.excerpt}</p>
+                  <p className="text-ink text-sm leading-relaxed">{post.excerpt}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-16 p-8 rounded-2xl border border-accent/15 bg-accent/[0.03] text-center">
-            <p className="text-ink/50 text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
+            <p className="text-ink text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
             <Link
               href="#"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_16px_#8A4E2844]"

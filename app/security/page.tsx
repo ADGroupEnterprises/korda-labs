@@ -80,9 +80,9 @@ export default function SecurityPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             Zoe acts in the world.
             <br />
-            <span className="text-ink/50">Here&apos;s how we make that safe.</span>
+            <span className="text-ink">Here&apos;s how we make that safe.</span>
           </h1>
-          <p className="text-ink/50 text-xl leading-relaxed max-w-2xl mb-10">
+          <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
             When an AI can read your files, search the web, automate your browser, and run scripts on your machine,
             the safety model matters. Here&apos;s exactly how Zoe&apos;s security infrastructure works — and why it starts
             from a position of default-deny, not default-trust.
@@ -98,14 +98,14 @@ export default function SecurityPage() {
               <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
                 <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{p.tag}</p>
                 <h3 className="text-ink font-semibold mb-2">{p.title}</h3>
-                <p className="text-ink/45 text-sm leading-relaxed">{p.body}</p>
+                <p className="text-ink text-sm leading-relaxed">{p.body}</p>
               </div>
             ))}
           </div>
 
           {/* Non-negotiables callout */}
           <div className="p-8 rounded-2xl border border-accent/15 bg-accent/[0.02] mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent/60 mb-4">The non-negotiables</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">The non-negotiables</p>
             <ul className="space-y-3">
               {[
                 'No security decision is ever delegated to an AI model — enforcement lives in code, not prompts',
@@ -114,8 +114,8 @@ export default function SecurityPage() {
                 'Session tokens are never passed in URLs',
                 'All security comparisons use constant-time equality to prevent timing attacks',
               ].map((rule, i) => (
-                <li key={i} className="flex gap-3 text-sm text-ink/60">
-                  <span className="text-accent/60 flex-shrink-0">—</span>
+                <li key={i} className="flex gap-3 text-sm text-ink">
+                  <span className="text-accent flex-shrink-0">—</span>
                   {rule}
                 </li>
               ))}
@@ -123,7 +123,7 @@ export default function SecurityPage() {
           </div>
 
           <div className="text-center">
-            <p className="text-ink/35 text-sm mb-6">Questions about our security model?</p>
+            <p className="text-ink text-sm mb-6">Questions about our security model?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
                 Get started free

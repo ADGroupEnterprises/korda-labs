@@ -137,7 +137,7 @@ function ProductsDropdown({ open }: { open: boolean }) {
               </svg>
               <div>
                 <div className="text-sm font-serif font-medium" style={{ color: '#37332E' }}>Zoe</div>
-                <div className="text-xs text-ink/40">Personal AI OS</div>
+                <div className="text-xs text-ink">Personal AI OS</div>
               </div>
             </Link>
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg opacity-40 cursor-default">
@@ -145,15 +145,15 @@ function ProductsDropdown({ open }: { open: boolean }) {
                 <div className="w-2 h-2 rounded-full bg-ink/30" />
               </div>
               <div>
-                <div className="text-sm font-medium text-ink/60">More products</div>
-                <div className="text-xs text-ink/35">Coming soon</div>
+                <div className="text-sm font-medium text-ink">More products</div>
+                <div className="text-xs text-ink">Coming soon</div>
               </div>
             </div>
           </div>
           <div className="border-t border-ink/8 p-2">
             <Link
               href="/products"
-              className="block text-center text-xs text-ink/40 hover:text-ink/70 py-1.5 transition-colors"
+              className="block text-center text-xs text-ink hover:text-accent py-1.5 transition-colors"
             >
               View all products →
             </Link>
@@ -188,7 +188,7 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
                 className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors"
               >
                 <span className="text-sm font-medium text-ink">{item.label}</span>
-                <span className="text-xs text-ink/40">{item.sub}</span>
+                <span className="text-xs text-ink">{item.sub}</span>
               </Link>
             ))}
           </div>
@@ -348,7 +348,7 @@ export default function Nav() {
             <button
               onClick={() => setProductsOpen(v => !v)}
               onMouseEnter={() => setProductsOpen(true)}
-              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+              className="flex items-center gap-1 text-ink hover:text-accent text-sm transition-colors duration-200"
             >
               Products
               {chevron(productsOpen)}
@@ -363,7 +363,7 @@ export default function Nav() {
             <button
               onClick={() => setHowOpen(v => !v)}
               onMouseEnter={() => setHowOpen(true)}
-              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+              className="flex items-center gap-1 text-ink hover:text-accent text-sm transition-colors duration-200"
             >
               How it Works
               {chevron(howOpen)}
@@ -373,13 +373,13 @@ export default function Nav() {
             </div>
           </div>
 
-          <Link href="/pricing" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+          <Link href="/pricing" className="text-ink hover:text-accent text-sm transition-colors duration-200">
             Pricing
           </Link>
-          <Link href="/compare" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+          <Link href="/compare" className="text-ink hover:text-accent text-sm transition-colors duration-200">
             Compare
           </Link>
-          <Link href="/security" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+          <Link href="/security" className="text-ink hover:text-accent text-sm transition-colors duration-200">
             Security
           </Link>
         </div>
@@ -388,7 +388,7 @@ export default function Nav() {
         <div className="flex items-center gap-3">
           <Link
             href="/coming-soon"
-            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink/50 hover:text-ink transition-colors duration-200"
+            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink hover:text-accent transition-colors duration-200"
           >
             Sign in
           </Link>
