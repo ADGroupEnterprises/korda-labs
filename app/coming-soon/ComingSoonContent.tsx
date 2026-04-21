@@ -71,7 +71,7 @@ export default function ComingSoonClient() {
                 placeholder="Enter your email"
                 required
                 disabled={status === 'loading' || status === 'success'}
-                className="flex-1 px-6 py-4 rounded-xl border border-ink/15 bg-paper text-ink placeholder:text-ink focus:outline-none focus:border-accent/40 focus:ring-2 focus:ring-accent/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-4 rounded-xl border border-paper-100 bg-paper text-ink placeholder:text-paper-100 focus:outline-none focus:border-accent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
