@@ -665,7 +665,6 @@ export default function ZoePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
             {/* Steps */}
             <div className="relative">
-              <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-gradient-to-b from-accent/20 via-accent/10 to-transparent hidden md:block" />
               <div className="space-y-12">
                 {zoeSteps.map((step, i) => (
                   <ZoeStepCard key={i} step={step} index={i} />
