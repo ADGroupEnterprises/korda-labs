@@ -20,21 +20,38 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              {/* VISUAL-003a — light background variant, verbatim */}
-              <svg width="26" height="26" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M40 5 C44 4.5 50 7 57 12 C65 18 72 28 72.5 40 C73 52 66 63 57 68.5 C48 74 30 74 21 68.5 C12 63 7 52 7.5 40 C8 28 14.5 17 24 11 C29 8 36 5.5 40 5Z" stroke="#8A4E28" strokeWidth="2" fill="none"/>
-                <path d="M40 2 C44.5 1.5 52 5 60 11 C69 18 76 29 76.5 40 C77 51 70 63 60 69.5 C50 76 28 76 18 69.5 C8 63 3 51 3.5 40 C4 29 11 17 22 11 C28 7.5 35.5 2.5 40 2Z" stroke="#8A4E28" strokeWidth="1" fill="none" opacity="0.3"/>
-                <path d="M40.4 7 C41.4 9.5 42.5 20.5 42.8 31 C43 36.5 42.2 39.5 40.4 41.5 C38.6 39.5 37.8 36.5 38 31 C38.3 20.5 39.4 9.5 40.4 7Z" fill="#8A4E28"/>
-                <path d="M40.4 7 C39.4 8 38.5 13.5 38.1 23 C37.7 31 37.9 37 40.4 41.5 Z" fill="#5C3018" opacity="0.55"/>
-                <path d="M39.6 73 C38.6 70.5 37.5 59.5 37.2 49 C37 43.5 37.8 40.5 39.6 38.5 C41.4 40.5 42.2 43.5 42 49 C41.7 59.5 40.6 70.5 39.6 73Z" fill="#EDE8DF" stroke="#c8b5a0" strokeWidth="0.4"/>
-                <path d="M7 40.4 C9.5 39.4 20.5 38.3 31 38.6 C36.5 38.8 39.5 39.6 41.5 41.4 C39.5 43.2 36.5 44 31 43.8 C20.5 43.5 9.5 42.4 7 40.4Z" fill="#EDE8DF" stroke="#c8b5a0" strokeWidth="0.4"/>
-                <path d="M73 39.6 C70.5 40.6 59.5 41.7 49 41.4 C43.5 41.2 40.5 40.4 38.5 38.6 C40.5 36.8 43.5 36 49 36.2 C59.5 36.5 70.5 37.6 73 39.6Z" fill="#EDE8DF" stroke="#c8b5a0" strokeWidth="0.4"/>
-                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(45 40 40)"/>
-                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(135 40 40)"/>
-                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(225 40 40)"/>
-                <path d="M40.3 40 L41.6 33 L40.3 28.5 L39 33 Z" fill="#8A4E28" opacity="0.45" transform="rotate(315 40 40)"/>
-                <circle cx="40" cy="40" r="3.5" fill="#FAFAF8" stroke="#8A4E28" strokeWidth="1.2"/>
-                <circle cx="40" cy="40" r="1.4" fill="#8A4E28"/>
+              {/* VISUAL-003a Version 1 — light background, verbatim */}
+              <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 436.222 436.222" aria-hidden="true">
+                <defs>
+                  <style>{`
+                    .footer-cls-1 { fill: #dddad4; }
+                    .footer-cls-2 { fill: #d1cdc7; }
+                    .footer-cls-3 { fill: #512b19; }
+                    .footer-cls-4 { stroke: #512b19; stroke-dasharray: 2.784 28.508; stroke-width: 17.008px; fill: none; stroke-miterlimit: 10; }
+                    .footer-cls-5 { fill: none; stroke: #8a4e28; stroke-miterlimit: 25; stroke-width: 12.394px; }
+                    .footer-cls-6 { fill: none; stroke: #d1cdc7; stroke-width: 8.504px; stroke-miterlimit: 10; }
+                    .footer-cls-7 { fill: #60351d; }
+                    .footer-cls-8 { fill: #66381f; }
+                    .footer-cls-9 { fill: #8a4e28; }
+                  `}</style>
+                </defs>
+                <polygon className="footer-cls-1" points="239.771 208.428 239.771 234.244 303.836 221.336 239.771 208.428"/>
+                <polygon className="footer-cls-2" points="239.848 208.23 239.848 220.512 303.913 221.138 239.848 208.23"/>
+                <circle className="footer-cls-4" cx="219.393" cy="217.725" r="184.26"/>
+                <polygon className="footer-cls-1" points="203.42 208.329 203.42 234.145 139.354 221.237 203.42 208.329"/>
+                <polygon className="footer-cls-2" points="203.343 208.131 203.343 220.413 139.278 221.039 203.343 208.131"/>
+                <polygon className="footer-cls-1" points="237.748 214.007 201.653 212.345 207.879 387.374 237.748 214.007"/>
+                <polygon className="footer-cls-9" points="236.914 212.144 200.837 214.172 206.283 51.769 236.914 212.144"/>
+                <polygon className="footer-cls-8" points="218.483 209.845 200.463 210.858 205.908 48.455 218.483 209.845"/>
+                <polygon className="footer-cls-2" points="219.575 211.321 201.545 210.49 207.772 385.519 219.575 211.321"/>
+                <polygon className="footer-cls-1" points="203.724 223.271 233.394 212.069 328.76 349.063 203.724 223.271"/>
+                <polygon className="footer-cls-2" points="203.105 222.304 217.936 216.705 328.141 348.096 203.105 222.304"/>
+                <polygon className="footer-cls-1" points="205.327 215.08 234.388 228.339 338.519 98.007 205.327 215.08"/>
+                <polygon className="footer-cls-2" points="205.246 214.83 219.071 221.138 338.438 97.757 205.246 214.83"/>
+                <circle className="footer-cls-7" cx="217.161" cy="218.168" r="18.75"/>
+                <path className="footer-cls-3" d="M217.865,199.305c9.895,0,17.917,8.395,17.917,18.75s-8.022,18.75-17.917,18.75"/>
+                <circle className="footer-cls-5" cx="218.111" cy="218.111" r="211.914"/>
+                <circle className="footer-cls-6" cx="219.509" cy="217.751" r="188.704"/>
               </svg>
               <span className="font-semibold text-ink tracking-wide text-sm">Korda Labs</span>
             </div>
