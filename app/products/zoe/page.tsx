@@ -307,11 +307,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
         {agent.skills.map(skill => (
           <span
             key={skill}
-            className={`text-xs px-2.5 py-1 rounded-full border ${
-              isBlue
-                ? 'border-accent bg-paper-100 text-accent'
-                : 'border-paper-100 bg-paper-100 text-accent'
-            }`}
+            className="text-xs px-2.5 py-1 rounded-full border border-accent bg-paper-100 text-accent"
           >
             {skill}
           </span>
