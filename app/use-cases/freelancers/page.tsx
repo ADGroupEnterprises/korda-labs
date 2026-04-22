@@ -27,7 +27,7 @@ export default function FreelancersPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">For freelancers</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">For freelancers</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             Client work, personal goals,
             <br />
@@ -47,7 +47,7 @@ export default function FreelancersPage() {
             </Link>
             <Link
               href="/products/zoe"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200"
             >
               See how Zoe works
             </Link>
@@ -58,10 +58,10 @@ export default function FreelancersPage() {
       {/* Features */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">Available now</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10">Available now</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20">
             {features.map((f, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
                 <h3 className="text-ink font-semibold mb-2">{f.label}</h3>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
@@ -70,9 +70,9 @@ export default function FreelancersPage() {
           </div>
 
           {/* Coming soon */}
-          <div className="p-8 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-20">
+          <div className="p-8 rounded-2xl border border-paper-100 bg-paper-100 mb-20">
             <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent">
+              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-paper-100 bg-paper-100 text-accent">
                 Coming soon
               </span>
               <span className="text-ink text-sm">Freelancer Platform — built on Zoe</span>
@@ -84,7 +84,7 @@ export default function FreelancersPage() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {comingSoon.map((item, i) => (
                 <li key={i} className="flex items-center gap-2.5 text-sm text-ink">
-                  <span className="w-1 h-1 rounded-full bg-ink/20 flex-shrink-0" />
+                  <span className="w-1 h-1 rounded-full bg-paper-100 flex-shrink-0" />
                   {item}
                 </li>
               ))}

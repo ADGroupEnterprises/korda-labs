@@ -12,12 +12,12 @@ function ProductsDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.15 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-ink/12 bg-paper shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-paper-100 bg-paper shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             <Link
               href="/products/zoe"
-              className="zoe-logo-wrapper flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors group"
+              className="zoe-logo-wrapper flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-paper-100 transition-colors group"
             >
               <svg viewBox="0 0 472.797 423.24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
                 <defs>
@@ -141,8 +141,8 @@ function ProductsDropdown({ open }: { open: boolean }) {
               </div>
             </Link>
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg opacity-40 cursor-default">
-              <div className="w-6 h-6 rounded-md bg-ink/[0.04] flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-ink/30" />
+              <div className="w-6 h-6 rounded-md bg-paper-100 flex items-center justify-center flex-shrink-0">
+                <div className="w-2 h-2 rounded-full bg-paper-100" />
               </div>
               <div>
                 <div className="text-sm font-medium text-ink">More products</div>
@@ -150,7 +150,7 @@ function ProductsDropdown({ open }: { open: boolean }) {
               </div>
             </div>
           </div>
-          <div className="border-t border-ink/8 p-2">
+          <div className="border-t border-paper-100 p-2">
             <Link
               href="/products"
               className="block text-center text-xs text-ink hover:text-accent py-1.5 transition-colors"
@@ -173,7 +173,7 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.15 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-ink/12 bg-paper shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-paper-100 bg-paper shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             {[
@@ -185,7 +185,7 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors"
+                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-paper-100 transition-colors"
               >
                 <span className="text-sm font-medium text-ink">{item.label}</span>
                 <span className="text-xs text-ink">{item.sub}</span>
@@ -285,7 +285,7 @@ export default function Nav() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-paper-DEFAULT/90 backdrop-blur-xl border-b border-ink/8'
+          ? 'bg-paper border-b border-paper-100'
           : 'bg-transparent'
       }`}
     >

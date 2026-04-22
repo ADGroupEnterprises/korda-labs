@@ -29,11 +29,11 @@ export default function ProductsPage() {
         <div className="max-w-5xl mx-auto">
 
           {/* Featured: Zoe Personal */}
-          <div className="relative rounded-2xl border border-accent/15 bg-accent/[0.03] p-8 sm:p-10 mb-5">
+          <div className="relative rounded-2xl border border-accent bg-paper-100 p-8 sm:p-10 mb-5">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-accent/30 bg-accent/10 text-accent">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-accent bg-paper-100 text-accent">
                     Available now
                   </span>
                 </div>
@@ -52,7 +52,7 @@ export default function ProductsPage() {
                     'Your models, your keys, your data',
                   ].map((f, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-ink">
-                      <span className="mt-0.5 w-4 h-4 flex-shrink-0 rounded-full flex items-center justify-center bg-accent/15">
+                      <span className="mt-0.5 w-4 h-4 flex-shrink-0 rounded-full flex items-center justify-center bg-paper-100">
                         <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
                           <path d="M1 4L3.5 6.5L9 1" stroke="#8A4E28" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
@@ -85,15 +85,15 @@ export default function ProductsPage() {
           {/* Locked cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Locked card 1 */}
-            <div className="relative rounded-2xl border border-ink/8 bg-ink/[0.04] p-8 overflow-hidden">
-              <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-ink/[0.04] flex items-center justify-center">
+            <div className="relative rounded-2xl border border-paper-100 bg-paper-100 p-8 overflow-hidden">
+              <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-paper-100 flex items-center justify-center">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
                   <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2"/>
                   <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="mb-4">
-                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent">
+                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-paper-100 bg-paper-100 text-accent">
                   Coming soon
                 </span>
               </div>
@@ -106,15 +106,15 @@ export default function ProductsPage() {
             </div>
 
             {/* Locked card 2 */}
-            <div className="relative rounded-2xl border border-ink/8 bg-ink/[0.04] p-8 overflow-hidden">
-              <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-ink/[0.04] flex items-center justify-center">
+            <div className="relative rounded-2xl border border-paper-100 bg-paper-100 p-8 overflow-hidden">
+              <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-paper-100 flex items-center justify-center">
                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
                   <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2"/>
                   <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
                 </svg>
               </div>
               <div className="mb-4">
-                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent">
+                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-paper-100 bg-paper-100 text-accent">
                   Coming soon
                 </span>
               </div>
@@ -133,9 +133,9 @@ export default function ProductsPage() {
           {/* Korda note */}
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-2 text-ink text-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
               All products are built by KORDA LABS.
-              <div className="w-1.5 h-1.5 rounded-full bg-accent/40" />
+              <div className="w-1.5 h-1.5 rounded-full bg-accent" />
             </div>
           </div>
         </div>

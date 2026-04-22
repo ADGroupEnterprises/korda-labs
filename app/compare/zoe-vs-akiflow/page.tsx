@@ -47,7 +47,7 @@ export default function ZoeVsAkiflowPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Zoe vs. Akiflow
           </h1>
@@ -65,16 +65,16 @@ export default function ZoeVsAkiflowPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header row */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-            <div className="text-xs font-medium tracking-widest uppercase text-accent">Feature</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Akiflow</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent">Feature</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent text-center">Akiflow</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent text-center">Zoe</div>
           </div>
 
-          <div className="rounded-2xl border border-ink/10 overflow-hidden">
+          <div className="rounded-2xl border border-paper-100 overflow-hidden">
             {rows.map((row, i) => (
               <div
                 key={i}
-                className={`grid grid-cols-3 gap-4 px-4 py-4 items-start ${i % 2 === 0 ? 'bg-ink/[0.02]' : 'bg-transparent'} border-b border-ink/6 last:border-0`}
+                className={`grid grid-cols-3 gap-4 px-4 py-4 items-start ${i % 2 === 0 ? 'bg-paper-100' : 'bg-transparent'} border-b border-paper-100 last:border-0`}
               >
                 <div className="text-sm text-ink font-medium">{row.feature}</div>
                 <div className="text-sm text-ink text-center">{row.akiflow}</div>
@@ -101,7 +101,7 @@ export default function ZoeVsAkiflowPage() {
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200"
               >
                 See pricing
               </Link>
@@ -109,7 +109,7 @@ export default function ZoeVsAkiflowPage() {
           </div>
 
           {/* Other comparisons */}
-          <div className="mt-16 pt-12 border-t border-ink/8 text-center">
+          <div className="mt-16 pt-12 border-t border-paper-100 text-center">
             <p className="text-ink text-sm mb-4">Also comparing</p>
             <div className="flex justify-center gap-6">
               <Link href="/compare/zoe-vs-motion" className="text-sm text-accent hover:text-accent-dark transition-colors">

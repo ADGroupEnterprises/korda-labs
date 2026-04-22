@@ -39,21 +39,21 @@ const personaAgents = [
 const colorMap = {
   blue: {
     dot: 'bg-accent',
-    badge: 'bg-accent/10 text-accent',
-    border: 'border-accent/15',
-    bg: 'bg-accent/[0.03]',
+    badge: 'bg-paper-100 text-accent',
+    border: 'border-accent',
+    bg: 'bg-paper-100',
   },
   green: {
-    dot: 'bg-brand-green',
-    badge: 'bg-brand-green/10 text-brand-green/70',
-    border: 'border-brand-green/15',
-    bg: 'bg-brand-green/[0.03]',
+    dot: 'bg-accent',
+    badge: 'bg-paper-100 text-accent',
+    border: 'border-accent',
+    bg: 'bg-paper-100',
   },
   amber: {
     dot: 'bg-accent',
-    badge: 'bg-accent/10 text-accent',
-    border: 'border-accent/15',
-    bg: 'bg-accent/[0.03]',
+    badge: 'bg-paper-100 text-accent',
+    border: 'border-accent',
+    bg: 'bg-paper-100',
   },
 }
 
@@ -63,7 +63,6 @@ export default function AgentDifferentiator() {
 
   return (
     <section className="relative py-40 px-6 overflow-hidden" ref={ref}>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
         {/* Header */}
@@ -74,7 +73,7 @@ export default function AgentDifferentiator() {
           className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end"
         >
           <div>
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Your agent team</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Your agent team</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
               Zoe doesn&apos;t brief you
               <br />
@@ -120,13 +119,13 @@ export default function AgentDifferentiator() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55, delay: 0.45 }}
-          className="p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-10"
+          className="p-5 rounded-2xl border border-paper-100 bg-paper-100 mb-10"
         >
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">Spawn specialist agents</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">Spawn specialist agents</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {personaAgents.map((p, i) => (
               <div key={i} className={`flex flex-col gap-1 ${p.isPlaceholder ? 'opacity-50' : ''}`}>
-                <span className={`text-ink text-sm font-medium ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
+                <span className={`text-ink text-sm font-bold ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
                 <span className="text-ink text-xs leading-relaxed">{p.desc}</span>
               </div>
             ))}
@@ -140,14 +139,14 @@ export default function AgentDifferentiator() {
           transition={{ duration: 0.6, delay: 0.55 }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"
         >
-          <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">The old way: Akiflow / Notion / Sunsama</p>
+          <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">The old way: Akiflow / Notion / Sunsama</p>
             <p className="text-ink text-sm leading-relaxed">
               Consolidate your tasks. Schedule your day. Then you do the work. Every day, manually, the same process.
             </p>
           </div>
-          <div className="p-6 rounded-2xl border border-accent/15 bg-accent/[0.03]">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+          <div className="p-6 rounded-2xl border border-accent bg-paper-100">
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe</p>
             <p className="text-ink text-sm leading-relaxed">
               You set the goals. Agents work under your direction to plan, research, and prepare outputs — documents, briefs, automations —
               while you review and execute what needs your touch. You stay in control.

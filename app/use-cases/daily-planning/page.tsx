@@ -31,7 +31,7 @@ export default function DailyPlanningPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Use case</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Use case</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Your AI morning briefing.
             <br />
@@ -50,7 +50,7 @@ export default function DailyPlanningPage() {
             </Link>
             <Link
               href="/products/zoe"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200"
             >
               Learn about Zoe
             </Link>
@@ -62,8 +62,8 @@ export default function DailyPlanningPage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
-            <div className="p-6 rounded-2xl border border-ink/10 bg-ink/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Manual daily planning</p>
+            <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Manual daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>— Open 4+ apps to see what's due</li>
                 <li>— Manually decide what to work on first</li>
@@ -72,8 +72,8 @@ export default function DailyPlanningPage() {
                 <li>— Do it all again tomorrow</li>
               </ul>
             </div>
-            <div className="p-6 rounded-2xl border border-accent/20 bg-accent/[0.03]">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe daily planning</p>
+            <div className="p-6 rounded-2xl border border-accent bg-paper-100">
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>✓ Agents review your goals, calendar, and health overnight</li>
                 <li>✓ Wake up to a prioritized, scheduled day</li>
@@ -90,7 +90,7 @@ export default function DailyPlanningPage() {
       <section className="py-8 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">The ritual — automated</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">The ritual — automated</p>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               The planning that used to take
               <br />
@@ -100,9 +100,9 @@ export default function DailyPlanningPage() {
 
           <div className="space-y-5">
             {morningSteps.map((step, i) => (
-              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-paper-100 bg-paper-100">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-paper-100 bg-paper-100 text-accent">
                     {step.time}
                   </span>
                 </div>

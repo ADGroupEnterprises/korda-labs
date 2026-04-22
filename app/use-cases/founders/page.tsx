@@ -26,7 +26,7 @@ export default function FoundersPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">For founders</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">For founders</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             The one AI layer that runs at the speed of a founder.
           </h1>
@@ -44,7 +44,7 @@ export default function FoundersPage() {
             </Link>
             <Link
               href="/products/zoe"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200"
             >
               See how Zoe works
             </Link>
@@ -55,11 +55,11 @@ export default function FoundersPage() {
       {/* Pain points */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">Sound familiar?</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10">Sound familiar?</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {painPoints.map((p, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
-                <div className="w-1 h-5 rounded-full bg-accent/40 mb-4" />
+              <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
+                <div className="w-1 h-5 rounded-full bg-accent mb-4" />
                 <h3 className="text-ink font-semibold mb-2">{p.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{p.body}</p>
               </div>
@@ -80,8 +80,8 @@ export default function FoundersPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20">
             {features.map((f, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
-                <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{f.label}</p>
+              <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
+                <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-3">{f.label}</p>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
               </div>
             ))}

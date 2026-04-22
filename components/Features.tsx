@@ -65,13 +65,13 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="group relative p-6 rounded-2xl border border-ink/10 bg-paper-100 hover:border-ink/20 hover:bg-paper-200 transition-all duration-300"
+      className="group relative p-6 rounded-2xl border border-paper-100 bg-paper-100 hover:bg-paper-200 transition-all duration-300"
     >
       {/* Hover glow */}
-      <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-accent/0 group-hover:bg-accent/[0.02]' : 'bg-brand-green/0 group-hover:bg-brand-green/[0.02]'} transition-all duration-300`} />
+      <div className="absolute inset-0 rounded-2xl transition-all duration-300" />
 
       <div className="relative">
-        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-accent/10 text-accent group-hover:bg-accent/20' : 'bg-brand-green/10 text-brand-green group-hover:bg-brand-green/20'} flex items-center justify-center mb-4 transition-colors duration-300`}>
+        <div className="w-10 h-10 rounded-xl bg-paper-100 text-accent flex items-center justify-center mb-4 transition-colors duration-300">
           {feature.icon}
         </div>
         <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">
@@ -92,7 +92,6 @@ export default function Features() {
   return (
     <section id="features" className="relative py-32 px-6">
       {/* Section divider */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
         <motion.div
@@ -102,7 +101,7 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
+          <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">What Zoe Does</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Everything you need to live
             <br />

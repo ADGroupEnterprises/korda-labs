@@ -58,7 +58,7 @@ export default function ProactiveAIPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Proactive engine</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             The AI operating system
             <br />
@@ -76,7 +76,7 @@ export default function ProactiveAIPage() {
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
               Get started free
             </Link>
-            <Link href="/products/zoe" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200">
+            <Link href="/products/zoe" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200">
               See all of Zoe
             </Link>
           </div>
@@ -86,12 +86,12 @@ export default function ProactiveAIPage() {
       {/* The 7 triggers */}
       <section className="py-16 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">7 proactive triggers</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10">7 proactive triggers</p>
           <div className="space-y-4 mb-20">
             {triggers.map((t, i) => (
-              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-paper-100 bg-paper-100">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-accent mb-2">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-paper-100 bg-paper-100 text-accent mb-2">
                     {t.time}
                   </span>
                   <p className="text-xs text-ink mt-2">Replaces: <em>{t.replaces}</em></p>
@@ -105,8 +105,8 @@ export default function ProactiveAIPage() {
           </div>
 
           {/* Sensitivity note */}
-          <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Your sensitivity, your control</p>
+          <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100 mb-16">
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Your sensitivity, your control</p>
             <p className="text-ink text-sm leading-relaxed">
               Every trigger has a priority level. A single sensitivity slider (1–5) controls which priorities fire for you —
               from only urgent cost alerts, to the full proactive stack. Triggers deduplicate automatically and respect

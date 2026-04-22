@@ -32,7 +32,6 @@ export default function SocialProof() {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden" ref={ref}>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
         {/* Stats row */}
@@ -40,7 +39,7 @@ export default function SocialProof() {
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-3 gap-6 mb-20 pb-20 border-b border-ink/8"
+          className="grid grid-cols-3 gap-6 mb-20 pb-20 border-b border-paper-100"
         >
           {stats.map((s, i) => (
             <motion.div
@@ -50,7 +49,7 @@ export default function SocialProof() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="text-center"
             >
-              <p className="text-3xl sm:text-4xl font-bold font-serif text-ink mb-1">{s.value}</p>
+              <p className="text-3xl sm:text-4xl font-bold font-serif text-accent mb-1">{s.value}</p>
               <p className="text-ink text-sm">{s.label}</p>
             </motion.div>
           ))}
@@ -61,7 +60,7 @@ export default function SocialProof() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xs font-medium tracking-widest uppercase text-accent mb-10 text-center"
+          className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10 text-center"
         >
           From early access users
         </motion.p>
@@ -72,11 +71,11 @@ export default function SocialProof() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, delay: 0.3 + i * 0.1 }}
-              className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]"
+              className="p-6 rounded-2xl border border-paper-100 bg-paper-100"
             >
               <p className="text-ink text-sm leading-relaxed mb-5">&ldquo;{t.quote}&rdquo;</p>
               <div className="flex items-center gap-2">
-                <div className="w-1 h-4 rounded-full bg-accent/40" />
+                <div className="w-1 h-4 rounded-full bg-accent" />
                 <div>
                   <p className="text-ink text-xs font-medium">{t.name}</p>
                   <p className="text-ink text-xs">{t.role}</p>

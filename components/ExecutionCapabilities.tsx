@@ -94,7 +94,6 @@ export default function ExecutionCapabilities() {
 
   return (
     <section className="relative py-40 px-6 overflow-hidden" ref={ref}>
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
         {/* Header */}
@@ -105,7 +104,7 @@ export default function ExecutionCapabilities() {
           className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end"
         >
           <div>
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">What agents can do</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">What agents can do</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
               Your agents don&apos;t just plan.
               <br />
@@ -129,14 +128,14 @@ export default function ExecutionCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.06 }}
-              className="flex gap-4 p-5 rounded-2xl border border-ink/8 bg-ink/[0.02] hover:border-ink/14 hover:bg-ink/[0.035] transition-colors duration-200"
+              className="flex gap-4 p-5 rounded-2xl border border-paper-100 bg-paper-100 transition-colors duration-200"
             >
-              <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-ink/[0.04] flex items-center justify-center text-ink">
+              <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-paper-100 flex items-center justify-center text-ink">
                 {cap.icon}
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <h3 className="text-ink font-medium text-sm">{cap.title}</h3>
+                  <h3 className="text-ink font-bold text-sm">{cap.title}</h3>
                 </div>
                 <p className="text-xs font-medium text-accent mb-1.5 tracking-wide">{cap.tag}</p>
                 <p className="text-ink text-sm leading-relaxed">{cap.body}</p>
@@ -150,7 +149,7 @@ export default function ExecutionCapabilities() {
           initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.65 }}
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-ink/8"
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-paper-100"
         >
           <p className="text-ink text-sm leading-relaxed max-w-xl">
             Every tool call checked against your policies. Every action logged. Every output reviewed before delivery to your storage.
