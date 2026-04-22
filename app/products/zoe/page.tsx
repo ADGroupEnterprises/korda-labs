@@ -291,19 +291,12 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
           : 'border-paper-100 bg-paper-100 hover:border-accent'
       }`}
     >
-      {/* Icon + name */}
-      <div className="flex items-start gap-4 mb-4">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-          isBlue ? 'bg-paper-100 text-accent' : 'bg-paper-100 text-accent'
-        }`}>
-          {agent.icon}
-        </div>
-        <div>
-          <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-accent' : 'text-brand-green'}`}>{agent.name}</h3>
-          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent' : 'text-accent'}`}>
-            {agent.role}
-          </p>
-        </div>
+      {/* Name */}
+      <div className="mb-4">
+        <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-accent' : 'text-brand-green'}`}>{agent.name}</h3>
+        <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent' : 'text-accent'}`}>
+          {agent.role}
+        </p>
       </div>
 
       {/* Description */}
@@ -394,9 +387,6 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
       className="group relative p-6 rounded-2xl border border-paper-100 bg-paper-100 hover:border-accent transition-all duration-300"
     >
       <div className="relative">
-        <div className="w-10 h-10 rounded-xl bg-paper text-accent flex items-center justify-center mb-4 transition-colors duration-300">
-          {feature.icon}
-        </div>
         <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">{feature.title}</h3>
         <p className="text-ink text-sm leading-relaxed">{feature.description}</p>
       </div>
