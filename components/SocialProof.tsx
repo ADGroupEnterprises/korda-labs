@@ -60,7 +60,7 @@ export default function SocialProof() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xs font-medium tracking-widest uppercase text-accent mb-10 text-center"
+          className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10 text-center"
         >
           From early access users
         </motion.p>

@@ -51,7 +51,7 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Blog</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Blog</p>
           <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
             Thinking on AI, productivity,
             <br />

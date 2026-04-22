@@ -62,7 +62,7 @@ export default function Footer() {
 
           {/* Product */}
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">Product</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">Product</p>
             <ul className="space-y-3">
               {[
                 { label: 'Zoe', href: '/products/zoe' },
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* How it Works */}
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">How it Works</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">How it Works</p>
             <ul className="space-y-3">
               {[
                 { label: 'Autonomous Agents', href: '/use-cases/autonomous-agents' },
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Compare */}
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">Compare</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">Compare</p>
             <ul className="space-y-3">
               {[
                 { label: 'Zoe vs. Akiflow', href: '/compare/zoe-vs-akiflow' },
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">Company</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">Company</p>
             <ul className="space-y-3">
               {[
                 { label: 'Blog', href: '/blog' },

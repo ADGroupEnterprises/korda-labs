@@ -47,7 +47,7 @@ export default function ZoeVsAkiflowPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Zoe vs. Akiflow
           </h1>
@@ -65,9 +65,9 @@ export default function ZoeVsAkiflowPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header row */}
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-            <div className="text-xs font-medium tracking-widest uppercase text-accent">Feature</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Akiflow</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent">Feature</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent text-center">Akiflow</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent text-center">Zoe</div>
           </div>
 
           <div className="rounded-2xl border border-paper-100 overflow-hidden">

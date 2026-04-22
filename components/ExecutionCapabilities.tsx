@@ -104,7 +104,7 @@ export default function ExecutionCapabilities() {
           className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end"
         >
           <div>
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">What agents can do</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">What agents can do</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
               Your agents don&apos;t just plan.
               <br />

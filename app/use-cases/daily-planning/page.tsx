@@ -31,7 +31,7 @@ export default function DailyPlanningPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Use case</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Use case</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Your AI morning briefing.
             <br />
@@ -63,7 +63,7 @@ export default function DailyPlanningPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
             <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Manual daily planning</p>
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Manual daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>— Open 4+ apps to see what's due</li>
                 <li>— Manually decide what to work on first</li>
@@ -73,7 +73,7 @@ export default function DailyPlanningPage() {
               </ul>
             </div>
             <div className="p-6 rounded-2xl border border-accent bg-paper-100">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe daily planning</p>
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>✓ Agents review your goals, calendar, and health overnight</li>
                 <li>✓ Wake up to a prioritized, scheduled day</li>
@@ -90,7 +90,7 @@ export default function DailyPlanningPage() {
       <section className="py-8 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">The ritual — automated</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">The ritual — automated</p>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               The planning that used to take
               <br />

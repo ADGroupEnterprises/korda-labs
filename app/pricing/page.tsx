@@ -136,7 +136,7 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Pricing</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Pricing</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Start free on web.
             <br />
@@ -177,7 +177,7 @@ export default function PricingPage() {
                 )}
                 
                 <div className="flex items-center justify-between mb-6">
-                  <p className="text-xs font-medium tracking-widest uppercase text-accent">{tier.name}</p>
+                  <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent">{tier.name}</p>
                   <span className={`text-xs px-2 py-0.5 rounded-full ${
                     tier.badge === 'Free' ? 'bg-paper-100 text-ink' : 'bg-paper-100 text-accent'
                   }`}>
@@ -203,7 +203,7 @@ export default function PricingPage() {
                 </Link>
 
                 <div className="mb-6">
-                  <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Surfaces</p>
+                  <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Surfaces</p>
                   <div className="flex flex-wrap gap-2">
                     {tier.surfaces.map((surface, si) => (
                       <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-paper-100 text-accent border border-accent">
@@ -214,7 +214,7 @@ export default function PricingPage() {
                 </div>
 
                 <div className="mb-6">
-                  <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Features</p>
+                  <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Features</p>
                   <ul className="space-y-2.5">
                     {tier.features.map((f, fi) => (
                       <li key={fi} className="flex items-start gap-2.5 text-sm text-ink">

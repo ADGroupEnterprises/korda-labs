@@ -76,7 +76,7 @@ export default function SecurityPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Security & trust</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Security & trust</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             Zoe acts in the world.
             <br />
@@ -96,7 +96,7 @@ export default function SecurityPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {principles.map((p, i) => (
               <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
-                <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{p.tag}</p>
+                <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-3">{p.tag}</p>
                 <h3 className="text-ink font-semibold mb-2">{p.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{p.body}</p>
               </div>
@@ -105,7 +105,7 @@ export default function SecurityPage() {
 
           {/* Non-negotiables callout */}
           <div className="p-8 rounded-2xl border border-accent bg-paper-100 mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">The non-negotiables</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">The non-negotiables</p>
             <ul className="space-y-3">
               {[
                 'No security decision is ever delegated to an AI model — enforcement lives in code, not prompts',

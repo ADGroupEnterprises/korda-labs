@@ -54,7 +54,7 @@ export default function ZoeVsSunsamaPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
             Zoe vs. Sunsama
           </h1>
@@ -71,14 +71,14 @@ export default function ZoeVsSunsamaPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
             <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Sunsama</p>
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Sunsama</p>
               <p className="text-ink leading-relaxed">
                 Guides you through a mindful daily planning ritual. Consolidates tasks from multiple sources
                 and helps you schedule your day with intention. Focused on work and productivity.
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-accent bg-paper-100">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe</p>
               <p className="text-ink leading-relaxed">
                 Does everything Sunsama does for daily planning — and then connects it to your personal goals,
                 fitness data, habits, and life context. Your AI layer knows the whole picture, not just your work queue.
@@ -92,9 +92,9 @@ export default function ZoeVsSunsamaPage() {
       <section className="py-4 px-6 pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
-            <div className="text-xs font-medium tracking-widest uppercase text-accent">Feature</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Sunsama</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent">Feature</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent text-center">Sunsama</div>
+            <div className="text-[0.9rem] font-bold tracking-widest uppercase text-accent text-center">Zoe</div>
           </div>
 
           <div className="rounded-2xl border border-paper-100 overflow-hidden">

@@ -40,7 +40,7 @@ export default function ComparePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-2xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
             See how Zoe stacks up.
           </h1>
@@ -54,11 +54,11 @@ export default function ComparePage() {
       {/* Comparisons */}
       <section className="py-8 px-6 pb-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-8">Head-to-head</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-8">Head-to-head</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {comparisons.map((c, i) => (
               <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-paper-100 bg-paper-100 hover:border-accent hover:bg-paper-100 transition-all duration-200">
-                <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe vs.</p>
+                <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe vs.</p>
                 <h2 className="text-2xl font-bold font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
                 <p className="text-ink text-sm leading-relaxed mb-5">{c.description}</p>
@@ -73,7 +73,7 @@ export default function ComparePage() {
           </div>
 
           {/* Use cases */}
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-8">By use case</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-8">By use case</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
               <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-paper-100 bg-paper-100 hover:border-accent hover:bg-paper-100 transition-all duration-200">

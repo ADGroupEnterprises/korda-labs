@@ -22,7 +22,7 @@ export default function DesktopBridgePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Desktop Bridge</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Desktop Bridge</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             Your home machine,
             <br />
@@ -49,14 +49,14 @@ export default function DesktopBridgePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Every other AI tool</p>
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Every other AI tool</p>
               <p className="text-ink text-sm leading-relaxed">
                 Lives in the cloud. Can&apos;t touch your local files. Can&apos;t run your scripts. Can&apos;t access the apps
                 installed on your machine. The moment you close the browser, it stops.
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-accent bg-paper-100">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe + Desktop Bridge</p>
+              <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe + Desktop Bridge</p>
               <p className="text-ink text-sm leading-relaxed">
                 Your home machine is always available to your agents — local files, local scripts, local apps.
                 Encrypted end-to-end. Sandboxed to the paths you approve. Controlled by your policy settings.
@@ -69,7 +69,7 @@ export default function DesktopBridgePage() {
       {/* Features */}
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">What the bridge enables</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10">What the bridge enables</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {features.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
@@ -82,7 +82,7 @@ export default function DesktopBridgePage() {
 
           {/* Example workflow */}
           <div className="p-8 rounded-2xl border border-paper-100 bg-paper-100 mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-6">Example workflow</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-6">Example workflow</p>
             <div className="space-y-3">
               {[
                 { label: 'You\'re at the office', detail: 'Phone in hand. Home machine sitting at your desk.' },

@@ -73,7 +73,7 @@ export default function AgentDifferentiator() {
           className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end"
         >
           <div>
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Your agent team</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Your agent team</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
               Zoe doesn&apos;t brief you
               <br />
@@ -121,7 +121,7 @@ export default function AgentDifferentiator() {
           transition={{ duration: 0.55, delay: 0.45 }}
           className="p-5 rounded-2xl border border-paper-100 bg-paper-100 mb-10"
         >
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">Spawn specialist agents</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">Spawn specialist agents</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {personaAgents.map((p, i) => (
               <div key={i} className={`flex flex-col gap-1 ${p.isPlaceholder ? 'opacity-50' : ''}`}>
@@ -140,13 +140,13 @@ export default function AgentDifferentiator() {
           className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10"
         >
           <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">The old way: Akiflow / Notion / Sunsama</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">The old way: Akiflow / Notion / Sunsama</p>
             <p className="text-ink text-sm leading-relaxed">
               Consolidate your tasks. Schedule your day. Then you do the work. Every day, manually, the same process.
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-accent bg-paper-100">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Zoe</p>
             <p className="text-ink text-sm leading-relaxed">
               You set the goals. Agents work under your direction to plan, research, and prepare outputs — documents, briefs, automations —
               while you review and execute what needs your touch. You stay in control.

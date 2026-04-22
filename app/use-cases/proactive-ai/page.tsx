@@ -58,7 +58,7 @@ export default function ProactiveAIPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Proactive engine</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             The AI operating system
             <br />
@@ -86,7 +86,7 @@ export default function ProactiveAIPage() {
       {/* The 7 triggers */}
       <section className="py-16 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">7 proactive triggers</p>
+          <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-10">7 proactive triggers</p>
           <div className="space-y-4 mb-20">
             {triggers.map((t, i) => (
               <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-paper-100 bg-paper-100">
@@ -106,7 +106,7 @@ export default function ProactiveAIPage() {
 
           {/* Sensitivity note */}
           <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100 mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Your sensitivity, your control</p>
+            <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-3">Your sensitivity, your control</p>
             <p className="text-ink text-sm leading-relaxed">
               Every trigger has a priority level. A single sensitivity slider (1–5) controls which priorities fire for you —
               from only urgent cost alerts, to the full proactive stack. Triggers deduplicate automatically and respect

@@ -101,7 +101,7 @@ export default function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
+          <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">What Zoe Does</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Everything you need to live
             <br />

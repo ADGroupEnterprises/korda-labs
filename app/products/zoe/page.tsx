@@ -270,7 +270,7 @@ const integrationCategories = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">{children}</p>
+    <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">{children}</p>
   )
 }
 
@@ -415,7 +415,7 @@ function ZoeFeaturesHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
+      <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">What Zoe Does</p>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Built around your life.
         <br />
@@ -564,7 +564,7 @@ function ZoeHowItWorksHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-20"
     >
-      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
+      <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">How It Works</p>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
         Simple by design.
         <br />
@@ -598,7 +598,7 @@ export default function ZoePage() {
           <div className="mb-10">
             <MiniOrb />
           </div>
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Personal AI Operating System</p>
+          <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">Personal AI Operating System</p>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold font-serif tracking-tight mb-6">
             Zoe
           </h1>
@@ -855,7 +855,7 @@ export default function ZoePage() {
                 transition={{ duration: 0.5, delay: ci * 0.1 }}
                 className="p-5 rounded-xl border border-paper-100 bg-paper-100"
               >
-                <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-accent'}`}>
+                <div className={`text-[0.9rem] font-bold tracking-widest uppercase mb-4 ${'text-accent'}`}>
                   {cat.category}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -876,7 +876,7 @@ export default function ZoePage() {
 
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Real execution</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Real execution</p>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
               What Zoe actually does.
               <br />
@@ -911,7 +911,7 @@ export default function ZoePage() {
               },
             ].map((ex, i) => (
               <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
-                <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">{ex.label}</p>
+                <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">{ex.label}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2.5">
                     <span className="text-ink text-xs mt-0.5 flex-shrink-0">Trigger</span>
@@ -938,7 +938,7 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div>
-              <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
+              <p className="text-accent text-[0.9rem] font-bold tracking-widest uppercase mb-4">Proactive engine</p>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
                 Zoe keeps you on track.
                 <br />

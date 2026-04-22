@@ -72,7 +72,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
+          <p className="text-accent text-[1.05rem] font-bold tracking-widest uppercase mb-4">How It Works</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Simple by design.
             <br />
