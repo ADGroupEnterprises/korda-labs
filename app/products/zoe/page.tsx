@@ -915,15 +915,15 @@ export default function ZoePage() {
                 <p className="text-[0.9rem] font-bold tracking-widest uppercase text-accent mb-4">{ex.label}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2.5">
-                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Trigger</span>
+                    <span className="text-ink text-xs font-bold mt-0.5 flex-shrink-0">Trigger</span>
                     <span className="text-ink text-sm leading-relaxed">{ex.trigger}</span>
                   </div>
                   <div className="flex gap-2.5">
-                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Action</span>
+                    <span className="text-ink text-xs font-bold mt-0.5 flex-shrink-0">Action</span>
                     <span className="text-ink text-sm leading-relaxed">{ex.action}</span>
                   </div>
                   <div className="flex gap-2.5">
-                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Output</span>
+                    <span className="text-ink text-xs font-bold mt-0.5 flex-shrink-0">Output</span>
                     <span className="text-ink text-sm leading-relaxed font-medium">{ex.output}</span>
                   </div>
                 </div>
@@ -964,7 +964,7 @@ export default function ZoePage() {
             ].map((trigger, i) => (
               <div key={i} className="flex gap-4 p-5 rounded-2xl border border-paper-100 bg-paper-100 items-start">
                 <div className="flex-shrink-0 pt-0.5">
-                  <span className="text-xs font-medium text-ink whitespace-nowrap">{trigger.time}</span>
+                  <span className="text-xs font-bold text-ink whitespace-nowrap">{trigger.time}</span>
                 </div>
                 <div>
                   <h3 className="text-ink font-medium text-sm mb-1">{trigger.title}</h3>
@@ -1018,7 +1018,7 @@ export default function ZoePage() {
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl border border-paper-100 bg-paper-100">
                   <div className="w-1 h-4 rounded-full bg-accent mb-3" />
-                  <div className="font-medium text-ink text-sm mb-1">{item.title}</div>
+                  <div className="font-bold text-ink text-sm mb-1">{item.title}</div>
                   <div className="text-ink text-xs leading-relaxed">{item.desc}</div>
                 </div>
               ))}
