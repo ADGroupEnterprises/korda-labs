@@ -37,7 +37,7 @@ export default function DesktopBridgePage() {
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
               Get started free
             </Link>
-            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200">
+            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200">
               How we keep it safe
             </Link>
           </div>
@@ -48,14 +48,14 @@ export default function DesktopBridgePage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
-            <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.03]">
+            <div className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
               <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Every other AI tool</p>
               <p className="text-ink text-sm leading-relaxed">
                 Lives in the cloud. Can&apos;t touch your local files. Can&apos;t run your scripts. Can&apos;t access the apps
                 installed on your machine. The moment you close the browser, it stops.
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-accent/20 bg-accent/[0.03]">
+            <div className="p-6 rounded-2xl border border-accent bg-paper-100">
               <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe + Desktop Bridge</p>
               <p className="text-ink text-sm leading-relaxed">
                 Your home machine is always available to your agents — local files, local scripts, local apps.
@@ -72,7 +72,7 @@ export default function DesktopBridgePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">What the bridge enables</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {features.map((f, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
                 <h3 className="text-ink font-semibold mb-2">{f.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
@@ -81,7 +81,7 @@ export default function DesktopBridgePage() {
           </div>
 
           {/* Example workflow */}
-          <div className="p-8 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-16">
+          <div className="p-8 rounded-2xl border border-paper-100 bg-paper-100 mb-16">
             <p className="text-xs font-medium tracking-widest uppercase text-accent mb-6">Example workflow</p>
             <div className="space-y-3">
               {[

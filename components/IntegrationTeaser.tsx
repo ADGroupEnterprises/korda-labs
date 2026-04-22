@@ -26,7 +26,6 @@ export default function IntegrationTeaser() {
 
   return (
     <section className="relative py-32 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
       <div className="max-w-4xl mx-auto text-center" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +50,7 @@ export default function IntegrationTeaser() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.3 + i * 0.04, duration: 0.3 }}
-              className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.04] text-ink text-sm hover:border-accent/30 hover:text-accent hover:bg-accent/5 transition-all duration-200 cursor-default"
+              className="px-4 py-2 rounded-full border border-paper-100 bg-paper-100 text-ink text-sm hover:border-accent hover:text-accent transition-all duration-200 cursor-default"
             >
               {name}
             </motion.span>
@@ -60,7 +59,7 @@ export default function IntegrationTeaser() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.3 + integrations.length * 0.04, duration: 0.3 }}
-            className="px-4 py-2 rounded-full border border-ink/10 bg-ink/[0.03] text-ink text-sm"
+            className="px-4 py-2 rounded-full border border-paper-100 bg-paper-100 text-ink text-sm"
           >
             + more every week
           </motion.span>

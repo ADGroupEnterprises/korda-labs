@@ -8,7 +8,7 @@ export default function Footer() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <footer className="relative border-t border-ink/8 pt-16 pb-10 px-6" ref={ref}>
+    <footer className="relative border-t border-paper-100 pt-16 pb-10 px-6" ref={ref}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-ink/8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-paper-100">
           <p className="text-ink text-xs">
             &copy; {new Date().getFullYear()} Korda Labs. All rights reserved.
           </p>

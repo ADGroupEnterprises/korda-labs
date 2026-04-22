@@ -37,16 +37,16 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
       className="flex gap-8 items-start"
     >
       {/* Number badge */}
-      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-accent/30 bg-accent/10 flex items-center justify-center">
+      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-accent bg-paper-100 flex items-center justify-center">
         <span className="text-accent font-bold text-sm">{step.number}</span>
         {/* Glow dot */}
-        <div className="absolute inset-0 rounded-full bg-accent/5 blur-md" />
+        <div className="absolute inset-0 rounded-full blur-md" />
       </div>
 
       <div className="pt-2.5">
         <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
         <p className="text-ink leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent font-sans border border-accent/20 bg-accent/5 px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent font-sans border border-accent bg-paper-100 px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -60,7 +60,6 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="relative py-32 px-6">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-accent opacity-[0.03] blur-[100px] -translate-y-1/2" />
       </div>
@@ -83,7 +82,7 @@ export default function HowItWorks() {
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-gradient-to-b from-accent/20 via-accent/10 to-transparent hidden md:block" />
+          <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-accent hidden md:block" />
 
           <div className="space-y-12">
             {steps.map((step, i) => (

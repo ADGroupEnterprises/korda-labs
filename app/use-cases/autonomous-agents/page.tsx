@@ -96,7 +96,7 @@ export default function AutonomousAgentsPage() {
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent-dark transition-all duration-200 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
               Get started free
             </Link>
-            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200">
+            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-paper-100 text-ink hover:border-ink transition-all duration-200">
               How we keep it safe
             </Link>
           </div>
@@ -109,11 +109,11 @@ export default function AutonomousAgentsPage() {
           <p className="text-xs font-medium tracking-widest uppercase text-accent mb-10">What agents can do</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
             {capabilities.map((cap, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
                 <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{cap.tag}</p>
                 <h3 className="text-ink font-semibold mb-2">{cap.title}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-3">{cap.body}</p>
-                <p className="text-ink text-xs leading-relaxed border-t border-ink/6 pt-3">{cap.detail}</p>
+                <p className="text-ink text-xs leading-relaxed border-t border-paper-100 pt-3">{cap.detail}</p>
               </div>
             ))}
           </div>
@@ -133,7 +133,7 @@ export default function AutonomousAgentsPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {workflowExamples.map((ex, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="p-6 rounded-2xl border border-paper-100 bg-paper-100">
                 <h3 className="text-ink font-semibold mb-4">{ex.name}</h3>
                 <ol className="space-y-2">
                   {ex.steps.map((step, j) => (
@@ -148,7 +148,7 @@ export default function AutonomousAgentsPage() {
           </div>
 
           {/* Safety note */}
-          <div className="p-6 rounded-2xl border border-accent/15 bg-accent/[0.02] mb-12">
+          <div className="p-6 rounded-2xl border border-accent bg-paper-100 mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Built-in safety model</p>
             <p className="text-ink text-sm leading-relaxed">
               You control what models can access which storage and integrations. Every capability is off by default.
