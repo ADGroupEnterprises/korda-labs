@@ -135,7 +135,7 @@ export default function ExecutionCapabilities() {
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1.5">
-                  <h3 className="text-ink font-medium text-sm">{cap.title}</h3>
+                  <h3 className="text-ink font-bold text-sm">{cap.title}</h3>
                 </div>
                 <p className="text-xs font-medium text-accent mb-1.5 tracking-wide">{cap.tag}</p>
                 <p className="text-ink text-sm leading-relaxed">{cap.body}</p>

@@ -125,7 +125,7 @@ export default function AgentDifferentiator() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {personaAgents.map((p, i) => (
               <div key={i} className={`flex flex-col gap-1 ${p.isPlaceholder ? 'opacity-50' : ''}`}>
-                <span className={`text-ink text-sm font-medium ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
+                <span className={`text-ink text-sm font-bold ${p.isPlaceholder ? 'italic' : ''}`}>{p.label}</span>
                 <span className="text-ink text-xs leading-relaxed">{p.desc}</span>
               </div>
             ))}
