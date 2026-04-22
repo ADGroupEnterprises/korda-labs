@@ -49,7 +49,7 @@ export default function SocialProof() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="text-center"
             >
-              <p className="text-3xl sm:text-4xl font-bold font-serif text-ink mb-1">{s.value}</p>
+              <p className="text-3xl sm:text-4xl font-bold font-serif text-accent mb-1">{s.value}</p>
               <p className="text-ink text-sm">{s.label}</p>
             </motion.div>
           ))}
