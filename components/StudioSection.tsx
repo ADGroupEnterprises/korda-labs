@@ -1,65 +1,34 @@
 'use client'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 
-function Orb() {
+function LensVisual() {
   return (
     <div className="relative flex items-center justify-center w-64 h-64 mx-auto">
       {/* Outer rings */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-0 rounded-full border border-linen"
-      />
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-12 rounded-full border border-linen"
-      />
+      <div className="absolute inset-0 rounded-full border border-linen" />
+      <div className="absolute inset-12 rounded-full border border-linen" />
 
       {/* Glowing rings */}
-      <motion.div
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute inset-16 rounded-full bg-linen"
-      />
+      <div className="absolute inset-16 rounded-full bg-linen" />
 
-      {/* Core orb */}
-      <motion.div
-        animate={{ scale: [1, 1.04, 1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative w-24 h-24 rounded-full"
-        style={{
-          background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 40%, #5C3018 80%, #5C3018)',
-          boxShadow: '0 0 40px #8A4E2844, 0 0 80px #8A4E2822, 0 0 120px #8A4E2811, inset 0 0 20px #8A4E2833',
-        }}
-      >
+      {/* The Lens */}
+      <div className="relative w-24 h-24 rounded-full bg-copper">
         {/* Inner highlight */}
         <div className="absolute top-4 left-5 w-5 h-5 rounded-full bg-mahogany" />
         <div className="absolute top-3 left-4 w-2 h-2 rounded-full bg-paper" />
-      </motion.div>
+      </div>
 
       {/* Particles */}
       {[...Array(6)].map((_, i) => (
-        <motion.div
+        <div
           key={i}
-          className={`absolute w-1 h-1 rounded-full ${'bg-accent'}`}
+          className="absolute w-1 h-1 rounded-full bg-accent"
           style={{
             top: '50%',
             left: '50%',
-          }}
-          animate={{
-            x: Math.cos((i / 6) * Math.PI * 2) * 100,
-            y: Math.sin((i / 6) * Math.PI * 2) * 100,
-            opacity: [0.8, 0.3, 0.8],
-            scale: [1, 0.6, 1],
-          }}
-          transition={{
-            duration: 4 + i * 0.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: i * 0.4,
+            transform: `translate(${Math.cos((i / 6) * Math.PI * 2) * 100}px, ${Math.sin((i / 6) * Math.PI * 2) * 100}px)`,
           }}
         />
       ))}
@@ -242,9 +211,9 @@ const TYPE_MS  = 36
 const HOLD_MS  = 3500
 const INIT_MS  = 700
 
-// ─── Orb Demo Component ───────────────────────────────────────────────────────
+// ─── Lens Demo Component ───────────────────────────────────────────────────────
 
-function OrbDemo() {
+function LensDemo() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
   const [active, setActive]   = useState(false)
@@ -255,10 +224,16 @@ function OrbDemo() {
 
   const demo = DEMOS[demoIdx]
 
+  const prefersReduced = useReducedMotion()
+
   useEffect(() => { if (isInView && !active) setActive(true) }, [isInView, active])
 
   useEffect(() => {
     if (!active) return
+    if (prefersReduced) {
+      if (phase < 3) { setChars(demo.query.length); setPhase(3) }
+      return
+    }
     let t: ReturnType<typeof setTimeout>
 
     if (phase === -1) {
@@ -274,11 +249,13 @@ function OrbDemo() {
     } else if (phase === 2) {
       t = setTimeout(() => setPhase(3), HOLD_MS)
     } else if (phase === 3) {
-      t = setTimeout(() => { setDemoIdx(i => (i + 1) % DEMOS.length); setPhase(-1) }, 200)
+      if (demoIdx + 1 < DEMOS.length) {
+        t = setTimeout(() => { setDemoIdx(demoIdx + 1); setPhase(-1) }, 200)
+      }
     }
 
     return () => clearTimeout(t)
-  }, [active, phase, chars, demo.query.length])
+  }, [active, phase, chars, demoIdx, prefersReduced, demo.query.length])
 
   const isThinking  = phase === 1
   const showPanel = phase >= 2
@@ -288,13 +265,9 @@ function OrbDemo() {
       {/* Header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-linen">
         <motion.div
-          animate={{ scale: isThinking ? [1, 1.22, 1, 1.18, 1] : [1, 1.07, 1] }}
-          transition={{ duration: isThinking ? 0.6 : 2.8, repeat: Infinity }}
-          className="w-5 h-5 rounded-full flex-shrink-0"
-          style={{
-            background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 50%, #5C3018)',
-            boxShadow: isThinking ? '0 0 14px #8A4E28BB' : '0 0 8px #8A4E2866',
-          }}
+          animate={isThinking ? { scale: [1, 1.22, 1, 1.18, 1] } : { scale: 1 }}
+          transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
+          className="w-5 h-5 rounded-full flex-shrink-0 bg-copper"
         />
         <span className="text-accent text-xs font-semibold">Zoe</span>
         <AnimatePresence>
@@ -318,7 +291,7 @@ function OrbDemo() {
           </div>
           <div className="w-px h-3 bg-linen" />
           <div className="flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
             <span className="text-ink text-[10px]">online</span>
           </div>
         </div>
@@ -347,9 +320,7 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                 className="flex gap-2"
               >
-                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5"
-                  style={{ background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 50%, #5C3018)', boxShadow: '0 0 6px #8A4E2866' }}
-                />
+                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 bg-copper" />
                 <div>
                   <p className="text-accent text-[10px] font-semibold mb-1">Zoe</p>
                   <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
@@ -400,7 +371,7 @@ const milestones = [
   { label: "What's next", detail: 'Platforms for startups, freelancers, and teams. The same intelligence layer, tuned for every scale.', delay: 0.3 },
 ]
 
-export default function OrbSection() {
+export default function StudioSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -416,7 +387,7 @@ export default function OrbSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight mb-6">
               A focused lab.
               <br />
               <span className="text-ink">A clear mission.</span>
@@ -463,13 +434,13 @@ export default function OrbSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Orb Demo */}
+          {/* Right: Lens Demo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <OrbDemo />
+            <LensDemo />
           </motion.div>
         </div>
       </div>

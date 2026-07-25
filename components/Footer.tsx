@@ -1,8 +1,9 @@
 'use client'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+import KordaMark from '@/components/marks/KordaMark'
+import ZoeMark from '@/components/marks/ZoeMark'
 
 export default function Footer() {
   const ref = useRef(null)
@@ -21,7 +22,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/logo.png" alt="Korda Labs" width={26} height={26} className="rounded-sm" />
+              <KordaMark size={26} />
               <span className="font-semibold text-ink tracking-wide text-sm">Korda Labs</span>
             </div>
             <p className="text-ink text-sm leading-relaxed max-w-[220px]">
@@ -102,6 +103,11 @@ export default function Footer() {
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-linen">
+          <div className="flex items-center gap-2">
+            <ZoeMark size={20} />
+            <span className="text-ink text-xs">Zoe by Korda Labs.</span>
+          </div>
+
           <p className="text-ink text-xs">
             &copy; {new Date().getFullYear()} Korda Labs. All rights reserved.
           </p>

@@ -32,7 +32,7 @@ export default function DailyPlanningPage() {
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Use case</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Your AI morning briefing.
             <br />
             <span className="text-ink">Your AI end-of-day review.</span>
@@ -91,7 +91,7 @@ export default function DailyPlanningPage() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
             <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">The ritual — automated</p>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               The planning that used to take
               <br />
               <span className="text-ink">30 minutes. Now runs in the background.</span>
@@ -116,7 +116,7 @@ export default function DailyPlanningPage() {
 
           {/* CTA */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Let Zoe own your daily planning.
             </h2>
             <p className="text-ink mb-8">Start free. No credit card required.</p>

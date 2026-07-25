@@ -75,7 +75,7 @@ export default function AgentDifferentiator() {
         >
           <div>
             <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Your agent team</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight leading-tight">
               Zoe doesn&apos;t brief you
               <br />
               <span className="text-ink">on what needs doing. It gets it done.</span>

@@ -55,7 +55,7 @@ export default function ZoeVsSunsamaPage() {
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Zoe vs. Sunsama
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
@@ -115,7 +115,7 @@ export default function ZoeVsSunsamaPage() {
 
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Daily planning that connects to your whole life.
             </h2>
             <p className="text-ink mb-8">Try Zoe free — no credit card required.</p>

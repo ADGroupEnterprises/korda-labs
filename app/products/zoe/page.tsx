@@ -4,24 +4,16 @@ import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import ZoeProductDemo from '@/components/ZoeProductDemo'
 
-// --- Orb component (compact version) ---
-function MiniOrb() {
+// --- Lens component (compact version) ---
+function MiniLens() {
   return (
     <div className="relative flex items-center justify-center w-40 h-40 mx-auto">
-      <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-0 rounded-full border border-linen" />
-      <motion.div animate={{ rotate: -360 }} transition={{ duration: 13, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-5 rounded-full border border-linen" style={{ borderStyle: 'dashed' }} />
-      <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="w-16 h-16 rounded-full"
-        style={{
-          background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 40%, #5C3018 80%, #5C3018)',
-          boxShadow: '0 0 32px #8A4E2866, 0 0 64px #8A4E2833, inset 0 0 16px #8A4E2833',
-        }}
-      >
+      <div className="absolute inset-0 rounded-full border border-linen" />
+      <div className="absolute inset-5 rounded-full border border-linen" style={{ borderStyle: 'dashed' }} />
+      <div className="w-16 h-16 rounded-full bg-copper relative">
         <div className="absolute top-3 left-4 w-3 h-3 rounded-full bg-mahogany" />
         <div className="absolute top-2.5 left-3.5 w-1.5 h-1.5 rounded-full bg-paper" />
-      </motion.div>
+      </div>
       <div className="absolute inset-0 rounded-full bg-linen" />
     </div>
   )
@@ -48,8 +40,7 @@ function TaskManagerAnimation() {
     if (!isInView) return
     const t1 = setTimeout(() => setPhase(1), 1400)
     const t2 = setTimeout(() => setPhase(2), 2800)
-    const t3 = setTimeout(() => { setPhase(0); setTick(n => n + 1) }, 5400)
-    return () => [t1, t2, t3].forEach(clearTimeout)
+    return () => [t1, t2].forEach(clearTimeout)
   }, [isInView, tick])
 
   const order = phase === 0 ? UNSORTED : SORTED
@@ -58,8 +49,7 @@ function TaskManagerAnimation() {
   return (
     <div ref={ref} className="rounded-2xl border border-linen bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
-        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
-          className="w-1.5 h-1.5 rounded-full bg-accent" />
+        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
           {phase === 0 ? 'Task Manager — Analyzing' : phase === 1 ? 'Task Manager — Prioritizing' : 'Task Manager — Done'}
         </span>
@@ -315,7 +305,7 @@ function ZoeFeaturesHeader() {
       className="text-center mb-16"
     >
       <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight">
         Built around your life.
         <br />
         <span className="text-ink">Not your workflow.</span>
@@ -387,8 +377,7 @@ function AdaptiveMemoryAnimation() {
   return (
     <div ref={ref} className="rounded-2xl border border-linen bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
-        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
-          className="w-1.5 h-1.5 rounded-full bg-accent" />
+        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
           Zoe Memory — Learning preferences
         </span>
@@ -469,7 +458,7 @@ function ZoeHowItWorksHeader() {
       className="text-center mb-20"
     >
       <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight">
         Simple by design.
         <br />
         <span className="text-ink">Powerful by nature.</span>
@@ -500,10 +489,10 @@ export default function ZoePage() {
           className="relative max-w-3xl mx-auto"
         >
           <div className="mb-10">
-            <MiniOrb />
+            <MiniLens />
           </div>
           <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Personal AI Operating System</p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium font-serif tracking-tight mb-6">
             Zoe
           </h1>
           <p className="text-xl text-ink max-w-xl mx-auto mb-10 leading-relaxed">
@@ -592,18 +581,18 @@ export default function ZoePage() {
         </div>
       </section>
 
-      {/* Orb Experience */}
+      {/* Lens Experience */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-4">
               Talk to Zoe.
               <br />
               <span className="text-ink">Or just let it work.</span>
             </h2>
             <p className="text-ink max-w-xl mx-auto">
-              The Orb is always a tap away — on your phone, your desktop, your lock screen.
+              The Lens is always a tap away — on your phone, your desktop, your lock screen.
               Ask it anything. Or say nothing, and watch your agents run quietly in the background,
               keeping your day on track without interrupting it.
             </p>
@@ -618,7 +607,7 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <SectionLabel>Meet Your Agents</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               Three agents.
               <br />
               <span className="text-ink">One team. Built for you.</span>
@@ -698,7 +687,7 @@ export default function ZoePage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-6">
                 Your home machine,
                 <br />
                 <span className="text-ink">from anywhere.</span>
@@ -740,7 +729,7 @@ export default function ZoePage() {
             animate={intInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-4">
               Plugs into your life.
               <br />
               <span className="text-ink">Not the other way around.</span>
@@ -782,7 +771,7 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Real execution</p>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               What Zoe actually does.
               <br />
               <span className="text-ink">Not suggestions. Not summaries. Work.</span>
@@ -844,7 +833,7 @@ export default function ZoePage() {
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div>
               <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
                 Zoe keeps you on track.
                 <br />
                 <span className="text-ink">Proactively, when you need it.</span>
@@ -890,7 +879,7 @@ export default function ZoePage() {
               animate={privacyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-6">
                 Your models.
                 <br />
                 Your keys.
@@ -935,7 +924,7 @@ export default function ZoePage() {
       <section className="relative py-40 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
         <div className="relative max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight mb-4">
             Ready to put AI
             <br />
             <span className="text-accent">

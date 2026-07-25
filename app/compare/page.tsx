@@ -41,7 +41,7 @@ export default function ComparePage() {
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-2xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
-          <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
             See how Zoe stacks up.
           </h1>
           <p className="text-ink text-lg leading-relaxed">
@@ -59,7 +59,7 @@ export default function ComparePage() {
             {comparisons.map((c, i) => (
               <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-linen bg-linen hover:border-linen hover:bg-linen transition-all duration-300">
                 <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Zoe vs.</p>
-                <h2 className="text-2xl font-bold font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
+                <h2 className="text-2xl font-medium font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
                 <p className="text-ink text-sm leading-relaxed mb-5">{c.description}</p>
                 <span className="text-sm text-accent group-hover:text-accent transition-colors flex items-center gap-1.5">

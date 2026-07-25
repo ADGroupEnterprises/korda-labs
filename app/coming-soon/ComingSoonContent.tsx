@@ -45,36 +45,19 @@ export default function ComingSoonClient() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* Orb */}
+          {/* The Lens */}
           <div className="relative flex items-center justify-center w-32 h-32 mx-auto mb-12">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-0 rounded-full border border-linen"
-            />
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 13, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-4 rounded-full border border-linen"
-              style={{ borderStyle: 'dashed' }}
-            />
-            <motion.div
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="w-12 h-12 rounded-full"
-              style={{
-                background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 40%, #5C3018 80%, #5C3018)',
-                boxShadow: '0 0 32px #8A4E2866, 0 0 64px #8A4E2833, inset 0 0 16px #8A4E2833',
-              }}
-            >
+            <div className="absolute inset-0 rounded-full border border-linen" />
+            <div className="absolute inset-4 rounded-full border border-linen" style={{ borderStyle: 'dashed' }} />
+            <div className="w-12 h-12 rounded-full bg-copper relative">
               <div className="absolute top-2 left-3 w-2 h-2 rounded-full bg-mahogany" />
               <div className="absolute top-1.5 left-2.5 w-1 h-1 rounded-full bg-paper" />
-            </motion.div>
+            </div>
             <div className="absolute inset-0 rounded-full bg-linen" />
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Coming Soon
           </h1>
           <p className="text-xl text-ink max-w-lg mx-auto mb-12 leading-relaxed">

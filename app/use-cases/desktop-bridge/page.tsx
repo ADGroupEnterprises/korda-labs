@@ -23,7 +23,7 @@ export default function DesktopBridgePage() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Desktop Bridge</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             Your home machine,
             <br />
             <span className="text-ink">fully under Zoe&apos;s control.</span>
@@ -86,7 +86,7 @@ export default function DesktopBridgePage() {
             <div className="space-y-3">
               {[
                 { label: 'You\'re at the office', detail: 'Phone in hand. Home machine sitting at your desk.' },
-                { label: 'Ask Zoe: "Run my weekly export script"', detail: 'Natural language request via the Orb on your phone.' },
+                { label: 'Ask Zoe: "Run my weekly export script"', detail: 'Natural language request via the Lens on your phone.' },
                 { label: 'Bridge receives the task', detail: 'Dispatched via SSE to your home machine in real time.' },
                 { label: 'Script runs in your workspace sandbox', detail: 'Output captured, logged to audit trail.' },
                 { label: 'Results delivered to your phone', detail: 'CSV exported, notification sent, task marked complete.' },
@@ -103,7 +103,7 @@ export default function DesktopBridgePage() {
           </div>
 
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Your machine. Your agents.
               <br />
               <span className="text-ink">From anywhere.</span>

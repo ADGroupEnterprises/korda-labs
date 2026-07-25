@@ -1,5 +1,5 @@
 'use client'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 
 // ─── Demo data ────────────────────────────────────────────────────────────────
@@ -59,7 +59,7 @@ function PlannerUI() {
         transition={{ duration: 0.3 }}
         className="flex items-center gap-3 px-2.5 py-2 rounded-xl bg-linen border border-linen"
       >
-        <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse flex-shrink-0" />
+        <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
         <span className="text-[10px] text-accent font-medium">Recovery 82% · HRV 58 · Deep work window: 9–11am</span>
       </motion.div>
 
@@ -212,10 +212,16 @@ export default function ZoeProductDemo() {
   const demo    = DEMOS[demoIdx]
   const isCloud = demo.id === 'cloud-compare'
 
+  const prefersReduced = useReducedMotion()
+
   useEffect(() => { if (isInView && !active) setActive(true) }, [isInView, active])
 
   useEffect(() => {
     if (!active) return
+    if (prefersReduced) {
+      if (phase < 3) { setChars(demo.query.length); setPhase(3) }
+      return
+    }
     let t: ReturnType<typeof setTimeout>
 
     if (phase === -1) {
@@ -241,11 +247,13 @@ export default function ZoeProductDemo() {
     } else if (phase === 3) {
       t = setTimeout(() => setPhase(4), HOLD_MS)
     } else if (phase === 4) {
-      t = setTimeout(() => { setDemoIdx(i => (i + 1) % DEMOS.length); setPhase(-1) }, 200)
+      if (demoIdx + 1 < DEMOS.length) {
+        t = setTimeout(() => { setDemoIdx(demoIdx + 1); setPhase(-1) }, 200)
+      }
     }
 
     return () => clearTimeout(t)
-  }, [active, phase, chars, stepIdx, demo.query.length, isCloud])
+  }, [active, phase, chars, stepIdx, demoIdx, prefersReduced, demo.query.length, isCloud])
 
   const isThinking  = phase === 1
   const showResponse = phase >= 3
@@ -263,13 +271,9 @@ export default function ZoeProductDemo() {
       {/* Header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-linen">
         <motion.div
-          animate={{ scale: isThinking ? [1, 1.22, 1, 1.18, 1] : [1, 1.07, 1] }}
-          transition={{ duration: isThinking ? 0.6 : 2.8, repeat: Infinity }}
-          className="w-5 h-5 rounded-full flex-shrink-0"
-          style={{
-            background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 50%, #5C3018)',
-            boxShadow: isThinking ? '0 0 14px #8A4E28BB' : '0 0 8px #8A4E2866',
-          }}
+          animate={isThinking ? { scale: [1, 1.22, 1, 1.18, 1] } : { scale: 1 }}
+          transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
+          className="w-5 h-5 rounded-full flex-shrink-0 bg-copper"
         />
         <span className="text-accent text-xs font-semibold">Zoe</span>
         <span className="text-ink text-xs">/</span>
@@ -299,7 +303,7 @@ export default function ZoeProductDemo() {
             ))}
           </div>
           <div className="w-px h-3 bg-linen" />
-          <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+          <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         </div>
       </div>
 
@@ -357,9 +361,7 @@ export default function ZoeProductDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                 className="flex gap-2"
               >
-                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5"
-                  style={{ background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 50%, #5C3018)', boxShadow: '0 0 6px #8A4E2866' }}
-                />
+                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 bg-copper" />
                 <div>
                   <p className="text-accent text-[10px] font-semibold mb-1">Zoe</p>
                   <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
@@ -415,7 +417,7 @@ export default function ZoeProductDemo() {
 
       {/* Footer */}
       <div className="border-t border-linen px-4 py-2 flex items-center gap-2 text-[10px] text-ink">
-        <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span>Audit log active</span>
         <span className="ml-auto">Policy: default-deny</span>
       </div>

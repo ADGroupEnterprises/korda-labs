@@ -39,7 +39,7 @@ export default function KordaSection() {
           className="mb-16"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight leading-tight">
               We build technology
               <br />
               <span className="text-ink">centered on people.</span>

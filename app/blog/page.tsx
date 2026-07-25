@@ -52,7 +52,7 @@ export default function BlogPage() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Blog</p>
-          <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
             Thinking on AI, productivity,
             <br />
             <span className="text-ink">and the tools that should work for you.</span>

@@ -2,7 +2,7 @@ import Hero from '@/components/Hero'
 import SocialProof from '@/components/SocialProof'
 import AgentDifferentiator from '@/components/AgentDifferentiator'
 import ExecutionCapabilities from '@/components/ExecutionCapabilities'
-import OrbSection from '@/components/OrbSection'
+import StudioSection from '@/components/StudioSection'
 import KordaSection from '@/components/KordaSection'
 import Footer from '@/components/Footer'
 
@@ -13,7 +13,7 @@ export default function Home() {
       <SocialProof />
       <AgentDifferentiator />
       <ExecutionCapabilities />
-      <OrbSection />
+      <StudioSection />
       <KordaSection />
       <Footer />
     </main>

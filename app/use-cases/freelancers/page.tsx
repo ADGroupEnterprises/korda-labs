@@ -28,7 +28,7 @@ export default function FreelancersPage() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">For freelancers</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             Client work, personal goals,
             <br />
             <span className="text-ink">and your calendar — one intelligent layer.</span>
@@ -92,7 +92,7 @@ export default function FreelancersPage() {
           </div>
 
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Your AI operating system for independent work.
             </h2>
             <p className="text-ink mb-8">Free to start. No credit card.</p>

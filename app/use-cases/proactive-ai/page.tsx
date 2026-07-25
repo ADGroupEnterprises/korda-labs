@@ -59,7 +59,7 @@ export default function ProactiveAIPage() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             The AI operating system
             <br />
             <span className="text-ink">that runs without you.</span>
@@ -115,7 +115,7 @@ export default function ProactiveAIPage() {
           </div>
 
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               The operating rhythm you always wanted.
               <br />
               <span className="text-ink">Now it runs itself.</span>

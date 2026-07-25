@@ -27,7 +27,7 @@ export default function FoundersPage() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">For founders</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             The one AI layer that runs at the speed of a founder.
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
@@ -72,7 +72,7 @@ export default function FoundersPage() {
       <section className="py-16 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               What Zoe does
               <br />
               <span className="text-ink">for founders specifically.</span>
@@ -88,7 +88,7 @@ export default function FoundersPage() {
           </div>
 
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Stop managing your tools.
               <br />
               <span className="text-ink">Start building.</span>

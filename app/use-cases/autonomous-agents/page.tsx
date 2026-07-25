@@ -83,7 +83,7 @@ export default function AutonomousAgentsPage() {
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Autonomous agents</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             Your agents don&apos;t just plan.
             <br />
             <span className="text-ink">They execute.</span>
@@ -125,7 +125,7 @@ export default function AutonomousAgentsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-ink mb-4">End-to-end examples</p>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               Personal goals. Founder activities. Freelancer flows.
               <br />
               <span className="text-ink">Real workflows for real people.</span>

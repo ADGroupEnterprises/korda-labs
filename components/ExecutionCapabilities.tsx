@@ -106,7 +106,7 @@ export default function ExecutionCapabilities() {
         >
           <div>
             <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">What agents can do</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight leading-tight">
               Your agents don&apos;t just plan.
               <br />
               <span className="text-ink">They act.</span>

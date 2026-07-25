@@ -12,7 +12,7 @@ export default function ProductsPage() {
       {/* Header */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             One intelligent layer.
             <br />
             <span className="text-ink">For your work, your goals, and your life.</span>
@@ -37,7 +37,7 @@ export default function ProductsPage() {
                     Available now
                   </span>
                 </div>
-                <h2 className="text-3xl font-bold font-serif text-ink mb-1">Zoe</h2>
+                <h2 className="text-3xl font-medium font-serif text-ink mb-1">Zoe</h2>
                 <p className="text-accent text-sm font-medium mb-4">Personal AI Operating System</p>
                 <p className="text-ink leading-relaxed max-w-xl mb-6">
                   The flagship Korda Labs product. Connect your personal tools, set goals, and let a team of AI agents
