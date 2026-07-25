@@ -1,11 +1,24 @@
 import type { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Lora, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 
-const playfair = Playfair_Display({
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-lora',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+// TYPE: JetBrains Mono — code, log lines, terminal output, version strings only.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
   display: 'swap',
 })
 
@@ -39,7 +52,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} bg-paper text-ink antialiased`}>
+      <body className={`${lora.variable} ${dmSans.variable} ${jetbrainsMono.variable} bg-paper text-ink antialiased`}>
         <Nav />
         <div className="pt-16">{children}</div>
       </body>

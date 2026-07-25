@@ -62,21 +62,21 @@ export default function ProactiveAIPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
             The AI operating system
             <br />
-            <span className="text-ink/50">that runs without you.</span>
+            <span className="text-ink">that runs without you.</span>
           </h1>
-          <p className="text-ink/50 text-xl leading-relaxed max-w-2xl mb-6">
+          <p className="text-ink text-xl leading-relaxed max-w-2xl mb-6">
             Akiflow and Sunsama give you a structured planning ritual. You still have to show up and do it.
             Zoe automates the ritual — firing 7 types of proactive triggers that keep your work, goals, and life
             on track without you needing to open the app.
           </p>
-          <p className="text-ink/35 text-sm mb-10">
+          <p className="text-ink text-sm mb-10">
             Morning briefings at 7am. Stale task alerts after 4 hours. Weekly retrospectives every Sunday. All automatic.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]">
+            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300">
               Get started free
             </Link>
-            <Link href="/products/zoe" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200">
+            <Link href="/products/zoe" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-linen text-ink hover:border-linen hover:bg-linen transition-all duration-300">
               See all of Zoe
             </Link>
           </div>
@@ -86,28 +86,28 @@ export default function ProactiveAIPage() {
       {/* The 7 triggers */}
       <section className="py-16 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-10">7 proactive triggers</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-ink mb-10">7 proactive triggers</p>
           <div className="space-y-4 mb-20">
             {triggers.map((t, i) => (
-              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-ink/8 bg-ink/[0.02]">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-linen bg-linen">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-ink/10 bg-ink/[0.04] text-ink/35 mb-2">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink mb-2">
                     {t.time}
                   </span>
-                  <p className="text-xs text-ink/25 mt-2">Replaces: <em>{t.replaces}</em></p>
+                  <p className="text-xs text-ink mt-2">Replaces: <em>{t.replaces}</em></p>
                 </div>
                 <div className="sm:col-span-3">
                   <h3 className="text-ink font-semibold mb-2">{t.name}</h3>
-                  <p className="text-ink/45 text-sm leading-relaxed">{t.body}</p>
+                  <p className="text-ink text-sm leading-relaxed">{t.body}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Sensitivity note */}
-          <div className="p-6 rounded-2xl border border-ink/8 bg-ink/[0.02] mb-16">
-            <p className="text-xs font-medium tracking-widest uppercase text-ink/30 mb-3">Your sensitivity, your control</p>
-            <p className="text-ink/50 text-sm leading-relaxed">
+          <div className="p-6 rounded-2xl border border-linen bg-linen mb-16">
+            <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Your sensitivity, your control</p>
+            <p className="text-ink text-sm leading-relaxed">
               Every trigger has a priority level. A single sensitivity slider (1–5) controls which priorities fire for you —
               from only urgent cost alerts, to the full proactive stack. Triggers deduplicate automatically and respect
               cooldown windows so you&apos;re never spammed.
@@ -118,10 +118,10 @@ export default function ProactiveAIPage() {
             <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
               The operating rhythm you always wanted.
               <br />
-              <span className="text-ink/45">Now it runs itself.</span>
+              <span className="text-ink">Now it runs itself.</span>
             </h2>
-            <p className="text-ink/40 mb-8">Free to start. No credit card.</p>
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]">
+            <p className="text-ink mb-8">Free to start. No credit card.</p>
+            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300">
               Get started with Zoe
             </Link>
           </div>

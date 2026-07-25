@@ -28,28 +28,28 @@ function WeekCalendar() {
   const totalH = TIMES.length * SLOT_H
 
   return (
-    <div className="rounded-2xl border border-ink/10 bg-paper-100/90 overflow-hidden shadow-lg">
+    <div className="rounded-2xl border border-linen bg-paper-100 overflow-hidden shadow-lg">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-3 py-2.5 border-b border-ink/8 bg-paper-100">
+      <div className="flex items-center gap-2.5 px-3 py-2.5 border-b border-linen bg-paper-100">
         <div className="w-4 h-4 rounded flex items-center justify-center">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
         </div>
-        <span className="text-[10px] font-semibold text-ink/55 tracking-wide">Week of Mar 11</span>
+        <span className="text-[10px] font-semibold text-ink tracking-wide">Week of Mar 11</span>
         <div className="ml-auto flex items-center gap-1">
-          <div className="w-1.5 h-1.5 rounded-full bg-accent/60" />
-          <span className="text-[9px] text-ink/30">Zoe managed</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+          <span className="text-[9px] text-ink">Zoe managed</span>
         </div>
       </div>
 
       {/* Grid */}
       <div className="flex">
         {/* Time axis */}
-        <div className="flex-shrink-0 w-7 border-r border-ink/6">
+        <div className="flex-shrink-0 w-7 border-r border-linen">
           {TIMES.map((t, i) => (
             <div key={t} style={{ height: SLOT_H }} className="flex items-start justify-end pr-1.5 pt-0.5">
-              <span className="text-[8px] text-ink/22 leading-none">{t}</span>
+              <span className="text-[8px] text-ink leading-none">{t}</span>
             </div>
           ))}
         </div>
@@ -58,21 +58,21 @@ function WeekCalendar() {
         {DAYS.map((day, di) => {
           const isToday = di === 2 // Wed
           return (
-            <div key={day} className={`flex-1 border-r border-ink/6 last:border-0 relative ${isToday ? 'bg-accent/[0.025]' : ''}`}>
+            <div key={day} className={`flex-1 border-r border-linen last:border-0 relative ${isToday ? 'bg-linen' : ''}`}>
               {/* Day header */}
-              <div className={`text-center py-1 border-b border-ink/6 ${isToday ? 'bg-accent/[0.04]' : ''}`}>
-                <span className={`text-[9px] font-semibold ${isToday ? 'text-accent' : 'text-ink/30'}`}>{day}</span>
+              <div className={`text-center py-1 border-b border-linen ${isToday ? 'bg-linen' : ''}`}>
+                <span className={`text-[9px] font-semibold ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
               </div>
               {/* Hour rows */}
               <div className="relative" style={{ height: totalH }}>
                 {TIMES.map((_, ti) => (
-                  <div key={ti} style={{ height: SLOT_H }} className="border-b border-ink/5 last:border-0" />
+                  <div key={ti} style={{ height: SLOT_H }} className="border-b border-linen last:border-0" />
                 ))}
                 {/* Today current time indicator */}
                 {isToday && (
                   <div className="absolute left-0 right-0 flex items-center" style={{ top: SLOT_H * 1.7 }}>
                     <div className="w-1.5 h-1.5 rounded-full bg-accent -ml-0.5 flex-shrink-0" />
-                    <div className="h-px flex-1 bg-accent/50" />
+                    <div className="h-px flex-1 bg-accent" />
                   </div>
                 )}
                 {/* Events */}
@@ -80,9 +80,9 @@ function WeekCalendar() {
                   <div
                     key={ei}
                     className={`absolute left-0.5 right-0.5 rounded px-1 overflow-hidden ${
-                      ev.color === 'blue'  ? 'bg-brand-blue/20 border-l-[2px] border-brand-blue/60' :
-                      ev.color === 'green' ? 'bg-brand-green/18 border-l-[2px] border-brand-green/55' :
-                      'bg-accent/15 border-l-[2px] border-accent/50'
+                      ev.color === 'blue'  ? 'bg-linen border-l-[2px] border-accent' :
+                      ev.color === 'green' ? 'bg-linen border-l-[2px] border-accent' :
+                      'bg-linen border-l-[2px] border-accent'
                     }`}
                     style={{
                       top: ev.start * SLOT_H + 1,
@@ -90,9 +90,9 @@ function WeekCalendar() {
                     }}
                   >
                     <span className={`text-[8px] font-medium leading-tight block truncate pt-0.5 ${
-                      ev.color === 'blue'  ? 'text-brand-blue/70' :
-                      ev.color === 'green' ? 'text-brand-green/65' :
-                      'text-accent/65'
+                      ev.color === 'blue'  ? 'text-accent' :
+                      ev.color === 'green' ? 'text-accent' :
+                      'text-accent'
                     }`}>
                       {ev.label}
                     </span>
@@ -124,9 +124,9 @@ export default function Hero() {
             >
               <Link
                 href="/products/zoe"
-                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-accent/25 bg-accent/5 text-accent text-sm font-medium tracking-widest uppercase hover:border-accent/40 hover:bg-accent/10 transition-all duration-200"
+                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-linen bg-linen text-accent text-sm font-medium tracking-widest uppercase hover:border-accent hover:bg-linen transition-all duration-300"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 Introducing Zoe
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="opacity-60">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -144,7 +144,7 @@ export default function Hero() {
               <br />
               <span className="text-ink">manage your tasks.</span>
               <br />
-              <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
+              <span className="text-accent">
                 Zoe does them.
               </span>
             </motion.h1>
@@ -153,7 +153,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.35 }}
-              className="text-lg sm:text-xl text-ink/50 max-w-xl mb-10 leading-relaxed"
+              className="text-lg sm:text-xl text-ink max-w-xl mb-10 leading-relaxed"
             >
               Zoe is your personal AI operating system — connecting your goals, calendar, and tools into
               one intelligent layer that doesn&apos;t just plan your day. It researches, writes, searches,
@@ -168,13 +168,13 @@ export default function Hero() {
             >
               <Link
                 href="/coming-soon"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_24px_#0D948844] hover:shadow-[0_0_36px_#0D948866]"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
               >
                 Sign up free
               </Link>
               <Link
                 href="/products/zoe"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl border border-ink/15 text-ink hover:border-ink/25 hover:bg-ink/5 transition-all duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl border border-linen text-ink hover:border-linen hover:bg-linen transition-all duration-300"
               >
                 See Zoe in action
               </Link>
@@ -184,9 +184,9 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.75 }}
-              className="flex items-center gap-2 text-ink/35 text-sm mt-4"
+              className="flex items-center gap-2 text-ink text-sm mt-4"
             >
-              <span className="w-1 h-1 rounded-full bg-accent/40 flex-shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
               Autonomous agents. Real actions. Every step policy-gated and audit-logged.
             </motion.p>
           </div>

@@ -1,5 +1,8 @@
 import type { Config } from 'tailwindcss'
 
+// ZOE-434: five-colour brand system (Brand Strategy §6.1 / Collateral Guidance PAL-01..03).
+// Paper, Linen, Copper, Mahogany, Ink — full opacity only; copper is the only strong accent.
+// `accent` is kept as an alias of copper for existing class names.
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,63 +13,33 @@ const config: Config = {
     extend: {
       colors: {
         paper: {
-          DEFAULT: '#f5f0e8',
-          100: '#ede8df',
-          200: '#e0dbd0',
+          DEFAULT: '#FAFAF8',
+          100: '#EDE8DF',
+          200: '#EDE8DF',
         },
+        linen: '#EDE8DF',
+        copper: '#8A4E28',
+        mahogany: '#5C3018',
         ink: {
-          DEFAULT: '#1c1a17',
-          muted: '#6b6560',
-          faint: '#9a948e',
+          DEFAULT: '#37332E',
         },
         accent: {
-          DEFAULT: '#0D9488',
-          light: '#14B8A6',
-          dark: '#0F766E',
-          glow: '#0D948833',
-        },
-        taupe: {
-          DEFAULT: '#A89F91',
-          light: '#C9C5BA',
-          dark: '#8A8175',
-        },
-        brand: {
-          blue: '#3B82F6',
-          'blue-light': '#60A5FA',
-          'blue-dark': '#1D4ED8',
-          'blue-glow': '#3B82F633',
-          green: '#10B981',
-          'green-light': '#34D399',
-          'green-dark': '#059669',
-          'green-glow': '#10B98133',
-        },
-        dark: {
-          DEFAULT: '#0e0d0b',
-          50: '#121109',
-          100: '#141210',
-          200: '#1a1815',
-          300: '#222019',
-          400: '#2c2a22',
+          DEFAULT: '#8A4E28',
+          dark: '#5C3018',
         },
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'Inter', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        sans: ['var(--font-dm-sans)', 'DM Sans', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-lora)', 'Lora', 'Georgia', 'serif'],
+        mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'ui-monospace', 'monospace'],
       },
-      animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'spin-slow': 'spin 8s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
+      fontSize: {
+        // Marketing hero scale (TYPE-01) — marketing-only sizes.
+        hero: ['72px', { lineHeight: '80px', fontWeight: '500' }],
+        'hero-sm': ['56px', { lineHeight: '64px', fontWeight: '500' }],
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-      },
-      backgroundImage: {
-        'radial-blue': 'radial-gradient(circle, #3B82F622 0%, transparent 70%)',
-        'radial-green': 'radial-gradient(circle, #10B98122 0%, transparent 70%)',
+      maxWidth: {
+        content: '1200px',
       },
     },
   },
