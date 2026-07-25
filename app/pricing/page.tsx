@@ -195,7 +195,7 @@ export default function PricingPage() {
                   href="/coming-soon"
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 mb-8 ${
                     tier.ctaStyle === 'accent'
-                      ? 'bg-accent text-paper hover:bg-accent shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]'
+                      ? 'bg-accent text-paper hover:bg-mahogany'
                       : 'border border-linen text-ink hover:border-linen hover:bg-linen'
                   }`}
                 >

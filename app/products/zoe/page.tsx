@@ -512,7 +512,7 @@ export default function ZoePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/coming-soon"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent transition-all duration-300 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Sign up free
             </Link>
@@ -947,7 +947,7 @@ export default function ZoePage() {
           </p>
           <Link
             href="/coming-soon"
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-accent transition-all duration-300 shadow-[0_0_30px_#8A4E2844] hover:shadow-[0_0_50px_#8A4E2866]"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
           >
             Get started with Zoe
           </Link>

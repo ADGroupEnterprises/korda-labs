@@ -96,7 +96,7 @@ export default function ComingSoonClient() {
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="px-8 py-4 rounded-xl bg-accent text-paper font-medium hover:bg-accent transition-all duration-300 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
+                className="px-8 py-4 rounded-xl bg-accent text-paper font-medium hover:bg-mahogany transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
               >
                 {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Join Waitlist'}
               </button>

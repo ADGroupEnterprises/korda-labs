@@ -87,7 +87,7 @@ export default function BlogPage() {
             <p className="text-ink text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-accent transition-all duration-300 shadow-[0_0_16px_#8A4E2844]"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Join early access
             </Link>

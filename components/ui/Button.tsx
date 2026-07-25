@@ -24,7 +24,7 @@ export default function Button({
   const base = 'inline-flex items-center justify-center font-medium tracking-wide transition-all duration-300 rounded-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
 
   const variants = {
-    primary: 'bg-accent text-paper hover:bg-accent shadow-[0_0_20px_#8A4E2844] hover:shadow-[0_0_30px_#8A4E2866]',
+    primary: 'bg-accent text-paper hover:bg-mahogany',
     secondary: 'border border-mahogany text-paper hover:border-mahogany hover:bg-mahogany',
     ghost: 'text-paper hover:text-paper',
   }

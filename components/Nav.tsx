@@ -281,7 +281,7 @@ export default function Nav() {
           </Link>
           <Link
             href="/coming-soon"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-paper hover:bg-accent transition-all duration-300 shadow-[0_0_16px_#8A4E2844] hover:shadow-[0_0_20px_#8A4E2866]"
+            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-paper hover:bg-mahogany transition-all duration-300"
           >
             Sign up free
           </Link>

@@ -125,7 +125,7 @@ export default function SecurityPage() {
           <div className="text-center">
             <p className="text-ink text-sm mb-6">Questions about our security model?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-accent transition-all duration-300 shadow-[0_0_24px_#8A4E2844] hover:shadow-[0_0_36px_#8A4E2866]">
+              <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300">
                 Get started free
               </Link>
               <a href="mailto:security@kordalabs.com" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-linen text-ink hover:border-linen hover:bg-linen transition-all duration-300">
