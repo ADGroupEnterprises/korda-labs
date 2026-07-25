@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ZOE-434: five-colour brand system — Paper, Linen, Copper, Mahogany, Ink.
+   Full opacity only (PAL-01/02); copper is the only strong accent (PAL-03). */
 :root {
   --background: #FAFAF8;
-  --foreground: #1c1a17;
+  --foreground: #37332E;
 }
 
 * {
@@ -23,8 +25,8 @@ body {
 }
 
 ::selection {
-  background: #C4973A33;
-  color: #A07828;
+  background: #EDE8DF;
+  color: #37332E;
 }
 
 /* Custom scrollbar */
@@ -35,9 +37,21 @@ body {
   background: #FAFAF8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e0dbd0;
+  background: #EDE8DF;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C4973A55;
+  background: #8A4E28;
+}
+
+/* MOTION-01: respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

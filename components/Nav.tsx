@@ -11,36 +11,36 @@ function ProductsDropdown({ open }: { open: boolean }) {
           initial={{ opacity: 0, y: 8, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
-          transition={{ duration: 0.15 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-ink/12 bg-paper-DEFAULT/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+          transition={{ duration: 0.3 }}
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-linen bg-paper shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             <Link
               href="/products/zoe"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors group"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-linen transition-colors group"
             >
-              <div className="w-6 h-6 rounded-md bg-accent/20 flex items-center justify-center flex-shrink-0">
+              <div className="w-6 h-6 rounded-md bg-linen flex items-center justify-center flex-shrink-0">
                 <div className="w-2 h-2 rounded-full bg-accent" />
               </div>
               <div>
                 <div className="text-sm font-medium text-ink">Zoe</div>
-                <div className="text-xs text-ink/40">Personal AI OS</div>
+                <div className="text-xs text-ink">Personal AI OS</div>
               </div>
             </Link>
             <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg opacity-40 cursor-default">
-              <div className="w-6 h-6 rounded-md bg-ink/[0.04] flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-ink/30" />
+              <div className="w-6 h-6 rounded-md bg-linen flex items-center justify-center flex-shrink-0">
+                <div className="w-2 h-2 rounded-full bg-linen" />
               </div>
               <div>
-                <div className="text-sm font-medium text-ink/60">More products</div>
-                <div className="text-xs text-ink/35">Coming soon</div>
+                <div className="text-sm font-medium text-ink">More products</div>
+                <div className="text-xs text-ink">Coming soon</div>
               </div>
             </div>
           </div>
-          <div className="border-t border-ink/8 p-2">
+          <div className="border-t border-linen p-2">
             <Link
               href="/products"
-              className="block text-center text-xs text-ink/40 hover:text-ink/70 py-1.5 transition-colors"
+              className="block text-center text-xs text-ink hover:text-ink py-1.5 transition-colors"
             >
               View all products →
             </Link>
@@ -59,8 +59,8 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
           initial={{ opacity: 0, y: 8, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
-          transition={{ duration: 0.15 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-ink/12 bg-paper-DEFAULT/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+          transition={{ duration: 0.3 }}
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-linen bg-paper shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             {[
@@ -72,10 +72,10 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-ink/[0.04] transition-colors"
+                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-linen transition-colors"
               >
                 <span className="text-sm font-medium text-ink">{item.label}</span>
-                <span className="text-xs text-ink/40">{item.sub}</span>
+                <span className="text-xs text-ink">{item.sub}</span>
               </Link>
             ))}
           </div>
@@ -160,7 +160,7 @@ export default function Nav() {
   }, [])
 
   const chevron = (open: boolean) => (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}>
       <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   )
@@ -172,7 +172,7 @@ export default function Nav() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-paper-DEFAULT/90 backdrop-blur-xl border-b border-ink/8'
+          ? 'bg-paper border-b border-linen'
           : 'bg-transparent'
       }`}
     >
@@ -187,14 +187,14 @@ export default function Nav() {
           <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 436.222 436.222" aria-hidden="true">
             <defs>
               <style>{`
-                .kl-cls-1 { fill: #dddad4; }
+                .kl-cls-1 { fill: #EDE8DF; }
                 .kl-cls-2 { fill: #d1cdc7; }
-                .kl-cls-3 { fill: #512b19; }
-                .kl-cls-4 { stroke: #512b19; stroke-dasharray: 2.784 28.508; stroke-width: 17.008px; fill: none; stroke-miterlimit: 10; }
+                .kl-cls-3 { fill: #5C3018; }
+                .kl-cls-4 { stroke: #5C3018; stroke-dasharray: 2.784 28.508; stroke-width: 17.008px; fill: none; stroke-miterlimit: 10; }
                 .kl-cls-5 { fill: none; stroke: #8a4e28; stroke-miterlimit: 25; stroke-width: 12.394px; }
                 .kl-cls-6 { fill: none; stroke: #d1cdc7; stroke-width: 8.504px; stroke-miterlimit: 10; }
-                .kl-cls-7 { fill: #60351d; }
-                .kl-cls-8 { fill: #66381f; }
+                .kl-cls-7 { fill: #5C3018; }
+                .kl-cls-8 { fill: #5C3018; }
                 .kl-cls-9 { fill: #8a4e28; }
               `}</style>
             </defs>
@@ -235,7 +235,7 @@ export default function Nav() {
             <button
               onClick={() => setProductsOpen(v => !v)}
               onMouseEnter={() => setProductsOpen(true)}
-              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+              className="flex items-center gap-1 text-ink hover:text-ink text-sm transition-colors duration-300"
             >
               Products
               {chevron(productsOpen)}
@@ -250,7 +250,7 @@ export default function Nav() {
             <button
               onClick={() => setHowOpen(v => !v)}
               onMouseEnter={() => setHowOpen(true)}
-              className="flex items-center gap-1 text-ink/50 hover:text-ink text-sm transition-colors duration-200"
+              className="flex items-center gap-1 text-ink hover:text-ink text-sm transition-colors duration-300"
             >
               How it Works
               {chevron(howOpen)}
@@ -260,13 +260,13 @@ export default function Nav() {
             </div>
           </div>
 
-          <Link href="/pricing" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+          <Link href="/pricing" className="text-ink hover:text-ink text-sm transition-colors duration-300">
             Pricing
           </Link>
-          <Link href="/compare" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+          <Link href="/compare" className="text-ink hover:text-ink text-sm transition-colors duration-300">
             Compare
           </Link>
-          <Link href="/security" className="text-ink/50 hover:text-ink text-sm transition-colors duration-200">
+          <Link href="/security" className="text-ink hover:text-ink text-sm transition-colors duration-300">
             Security
           </Link>
         </div>
@@ -275,13 +275,13 @@ export default function Nav() {
         <div className="flex items-center gap-3">
           <Link
             href="/coming-soon"
-            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink/50 hover:text-ink transition-colors duration-200"
+            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink hover:text-ink transition-colors duration-300"
           >
             Sign in
           </Link>
           <Link
             href="/coming-soon"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white hover:bg-accent-light transition-all duration-200 shadow-[0_0_16px_#8A4E2844] hover:shadow-[0_0_20px_#8A4E2866]"
+            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-paper hover:bg-accent transition-all duration-300 shadow-[0_0_16px_#8A4E2844] hover:shadow-[0_0_20px_#8A4E2866]"
           >
             Sign up free
           </Link>

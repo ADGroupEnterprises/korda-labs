@@ -10,19 +10,19 @@ function Orb() {
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-0 rounded-full border border-brand-blue/10"
+        className="absolute inset-0 rounded-full border border-linen"
       />
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-12 rounded-full border border-brand-blue/20"
+        className="absolute inset-12 rounded-full border border-linen"
       />
 
       {/* Glowing rings */}
       <motion.div
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute inset-16 rounded-full bg-brand-blue/5 blur-sm"
+        className="absolute inset-16 rounded-full bg-linen"
       />
 
       {/* Core orb */}
@@ -31,20 +31,20 @@ function Orb() {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         className="relative w-24 h-24 rounded-full"
         style={{
-          background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 40%, #1D4ED8 80%, #1E3A8A)',
-          boxShadow: '0 0 40px #3B82F644, 0 0 80px #3B82F622, 0 0 120px #3B82F611, inset 0 0 20px #60A5FA33',
+          background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 40%, #5C3018 80%, #5C3018)',
+          boxShadow: '0 0 40px #8A4E2844, 0 0 80px #8A4E2822, 0 0 120px #8A4E2811, inset 0 0 20px #8A4E2833',
         }}
       >
         {/* Inner highlight */}
-        <div className="absolute top-4 left-5 w-5 h-5 rounded-full bg-white/30 blur-sm" />
-        <div className="absolute top-3 left-4 w-2 h-2 rounded-full bg-white/60" />
+        <div className="absolute top-4 left-5 w-5 h-5 rounded-full bg-mahogany" />
+        <div className="absolute top-3 left-4 w-2 h-2 rounded-full bg-paper" />
       </motion.div>
 
       {/* Particles */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className={`absolute w-1 h-1 rounded-full ${'bg-brand-blue/60'}`}
+          className={`absolute w-1 h-1 rounded-full ${'bg-accent'}`}
           style={{
             top: '50%',
             left: '50%',
@@ -65,7 +65,7 @@ function Orb() {
       ))}
 
       {/* Background glow */}
-      <div className="absolute inset-0 rounded-full bg-brand-blue/[0.03] blur-3xl scale-150" />
+      <div className="absolute inset-0 rounded-full bg-linen" />
     </div>
   )
 }
@@ -97,10 +97,10 @@ function AccountingUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent/55 font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
           Q1 Accounting — Key Changes
         </p>
-        <p className="text-[10px] text-ink/40 mb-2">Last 3 days · 8 updates detected</p>
+        <p className="text-[10px] text-ink mb-2">Last 3 days · 8 updates detected</p>
       </div>
 
       <div className="space-y-1.5">
@@ -111,19 +111,19 @@ function AccountingUI() {
             transition={{ delay: i * 0.1 }}
             className={`flex items-center justify-between px-2.5 py-2 rounded-lg border ${
               item.status === 'up' 
-                ? 'border-brand-green/20 bg-brand-green/[0.06]' 
-                : 'border-brand-blue/20 bg-brand-blue/[0.06]'
+                ? 'border-linen bg-linen' 
+                : 'border-linen bg-linen'
             }`}
           >
-            <span className="text-xs text-ink/70">{item.field}</span>
+            <span className="text-xs text-ink">{item.field}</span>
             <div className="flex items-center gap-1.5">
               <span className={`text-xs font-medium ${
-                item.status === 'up' ? 'text-brand-green' : 'text-brand-blue'
+                item.status === 'up' ? 'text-accent' : 'text-accent'
               }`}>
                 {item.change}
               </span>
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={
-                item.status === 'up' ? 'text-brand-green' : 'text-brand-blue rotate-180'
+                item.status === 'up' ? 'text-accent' : 'text-accent rotate-180'
               }>
                 <path d="M6 9V3M3 6l3-3 3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -134,9 +134,9 @@ function AccountingUI() {
 
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
-        className="pt-2 border-t border-ink/8"
+        className="pt-2 border-t border-linen"
       >
-        <p className="text-[10px] text-ink/50 leading-relaxed">
+        <p className="text-[10px] text-ink leading-relaxed">
           Revenue growth accelerating. Operating costs trending down. Net margin improved by 2.4 percentage points.
         </p>
       </motion.div>
@@ -153,11 +153,11 @@ function FitnessUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent/55 font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
           Strength Performance
         </p>
         <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold text-ink/88 leading-none">-8%</span>
+          <span className="text-2xl font-bold text-ink leading-none">-8%</span>
           <span className="text-xs text-amber-600 font-medium">↓ drop detected</span>
         </div>
       </div>
@@ -170,16 +170,16 @@ function FitnessUI() {
             initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            <div className="flex justify-between text-[10px] text-ink/40 mb-1">
+            <div className="flex justify-between text-[10px] text-ink mb-1">
               <span>{item.period}</span>
               <span className={i === 1 ? 'text-amber-600 font-medium' : ''}>{item.label}</span>
             </div>
-            <div className="h-6 rounded-lg bg-ink/8 overflow-hidden">
+            <div className="h-6 rounded-lg bg-linen overflow-hidden">
               <motion.div
                 initial={{ width: 0 }} animate={{ width: `${item.value}%` }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 + i * 0.1 }}
                 className={`h-full rounded-lg ${
-                  i === 0 ? 'bg-brand-blue' : 'bg-amber-500'
+                  i === 0 ? 'bg-accent' : 'bg-amber-500'
                 }`}
               />
             </div>
@@ -191,28 +191,28 @@ function FitnessUI() {
       <motion.div
         initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="pt-2 border-t border-ink/8"
+        className="pt-2 border-t border-linen"
       >
-        <p className="text-[9px] text-ink/40 font-semibold uppercase tracking-widest mb-2">
+        <p className="text-[9px] text-ink font-semibold uppercase tracking-widest mb-2">
           Nutrition Analysis
         </p>
         <div className="grid grid-cols-2 gap-1.5">
           <div className="p-2 rounded-lg border border-amber-500/20 bg-amber-500/[0.06]">
-            <div className="text-[9px] text-ink/40 mb-0.5">Carbs (avg)</div>
+            <div className="text-[9px] text-ink mb-0.5">Carbs (avg)</div>
             <div className="text-xs font-medium text-amber-600">-15% ↓</div>
           </div>
-          <div className="p-2 rounded-lg border border-ink/10 bg-ink/[0.02]">
-            <div className="text-[9px] text-ink/40 mb-0.5">Protein</div>
-            <div className="text-xs font-medium text-ink/60">Stable</div>
+          <div className="p-2 rounded-lg border border-linen bg-linen">
+            <div className="text-[9px] text-ink mb-0.5">Protein</div>
+            <div className="text-xs font-medium text-ink">Stable</div>
           </div>
         </div>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
-        className="pt-2 border-t border-ink/8"
+        className="pt-2 border-t border-linen"
       >
-        <p className="text-[10px] text-brand-blue/70 leading-relaxed font-medium">
+        <p className="text-[10px] text-accent leading-relaxed font-medium">
           💡 Suggestion: Increase carbs by 50g/day to support strength goals
         </p>
       </motion.div>
@@ -228,7 +228,7 @@ function Spinner() {
       width="11" height="11" viewBox="0 0 12 12"
       animate={{ rotate: 360 }}
       transition={{ duration: 0.85, repeat: Infinity, ease: 'linear' }}
-      className="text-ink/30"
+      className="text-ink"
     >
       <circle cx="6" cy="6" r="4" stroke="currentColor" strokeWidth="1.5"
         strokeDasharray="13" strokeDashoffset="5" strokeLinecap="round" fill="none" />
@@ -284,19 +284,19 @@ function OrbDemo() {
   const showPanel = phase >= 2
 
   return (
-    <div ref={ref} className="rounded-2xl border border-ink/12 bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
+    <div ref={ref} className="rounded-2xl border border-linen bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-ink/8">
+      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-linen">
         <motion.div
           animate={{ scale: isThinking ? [1, 1.22, 1, 1.18, 1] : [1, 1.07, 1] }}
           transition={{ duration: isThinking ? 0.6 : 2.8, repeat: Infinity }}
           className="w-5 h-5 rounded-full flex-shrink-0"
           style={{
-            background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 50%, #1D4ED8)',
-            boxShadow: isThinking ? '0 0 14px #3B82F6BB' : '0 0 8px #3B82F666',
+            background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 50%, #5C3018)',
+            boxShadow: isThinking ? '0 0 14px #8A4E28BB' : '0 0 8px #8A4E2866',
           }}
         />
-        <span className="text-brand-blue text-xs font-semibold">Zoe</span>
+        <span className="text-accent text-xs font-semibold">Zoe</span>
         <AnimatePresence>
           {isThinking && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -304,7 +304,7 @@ function OrbDemo() {
               {[0, 1, 2].map(i => (
                 <motion.div key={i} animate={{ y: [0, -3, 0] }}
                   transition={{ duration: 0.45, repeat: Infinity, delay: i * 0.11 }}
-                  className="w-1 h-1 rounded-full bg-brand-blue/50" />
+                  className="w-1 h-1 rounded-full bg-accent" />
               ))}
             </motion.div>
           )}
@@ -313,13 +313,13 @@ function OrbDemo() {
         <div className="ml-auto flex items-center gap-2">
           <div className="flex gap-1">
             {DEMOS.map((_, i) => (
-              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-brand-blue' : 'bg-ink/15'}`} />
+              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-accent' : 'bg-linen'}`} />
             ))}
           </div>
-          <div className="w-px h-3 bg-ink/12" />
+          <div className="w-px h-3 bg-linen" />
           <div className="flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-brand-green/60 animate-pulse" />
-            <span className="text-ink/28 text-[10px]">online</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="text-ink text-[10px]">online</span>
           </div>
         </div>
       </div>
@@ -334,7 +334,7 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[85%] bg-brand-blue/12 border border-brand-blue/18 rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink/75">
+                <div className="max-w-[85%] bg-linen border border-linen rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -348,11 +348,11 @@ function OrbDemo() {
                 className="flex gap-2"
               >
                 <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5"
-                  style={{ background: 'radial-gradient(circle at 35% 35%, #60A5FA, #3B82F6 50%, #1D4ED8)', boxShadow: '0 0 6px #3B82F666' }}
+                  style={{ background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 50%, #5C3018)', boxShadow: '0 0 6px #8A4E2866' }}
                 />
                 <div>
-                  <p className="text-brand-blue text-[10px] font-semibold mb-1">Zoe</p>
-                  <p className="text-ink/65 text-xs leading-relaxed">{demo.response}</p>
+                  <p className="text-accent text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
                 </div>
               </motion.div>
             )}
@@ -368,7 +368,7 @@ function OrbDemo() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute top-0 right-0 bottom-0 w-[320px] border-l border-ink/10 bg-paper-100/95 backdrop-blur-sm p-4"
+              className="absolute top-0 right-0 bottom-0 w-[320px] border-l border-linen bg-paper-100 p-4"
             >
               {demo.id === 'accounting' && <AccountingUI />}
               {demo.id === 'fitness' && <FitnessUI />}
@@ -378,13 +378,13 @@ function OrbDemo() {
       </div>
 
       {/* Input bar */}
-      <div className="border-t border-ink/8 px-4 py-2.5 flex items-center gap-2.5">
-        <div className="flex-1 h-7 rounded-lg bg-ink/[0.03] border border-ink/8 flex items-center px-3">
-          <span className="text-ink/25 text-xs">Ask Zoe anything...</span>
+      <div className="border-t border-linen px-4 py-2.5 flex items-center gap-2.5">
+        <div className="flex-1 h-7 rounded-lg bg-linen border border-linen flex items-center px-3">
+          <span className="text-ink text-xs">Ask Zoe anything...</span>
         </div>
-        <div className="w-6 h-6 rounded-lg bg-brand-blue/15 flex items-center justify-center flex-shrink-0">
+        <div className="w-6 h-6 rounded-lg bg-linen flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-            <path d="M1 6h10M7 2l4 4-4 4" stroke="#3B82F6" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M1 6h10M7 2l4 4-4 4" stroke="#8A4E28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>
@@ -406,7 +406,7 @@ export default function OrbSection() {
 
   return (
     <section className="relative py-40 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ink/8 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
 
       <div className="max-w-6xl mx-auto" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -419,9 +419,9 @@ export default function OrbSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
               A focused lab.
               <br />
-              <span className="text-ink/50">A clear mission.</span>
+              <span className="text-ink">A clear mission.</span>
             </h2>
-            <p className="text-ink/50 leading-relaxed mb-8 text-lg">
+            <p className="text-ink leading-relaxed mb-8 text-lg">
               Korda Labs is an AI product studio with one driving idea: people deserve tools that work
               for them — not the other way around. We launched with Zoe and we&apos;re just getting started.
             </p>
@@ -436,10 +436,10 @@ export default function OrbSection() {
                   transition={{ delay: 0.4 + m.delay, duration: 0.5 }}
                   className="flex gap-4"
                 >
-                  <span className="mt-1 w-1 h-1 rounded-full bg-accent/50 flex-shrink-0" />
+                  <span className="mt-1 w-1 h-1 rounded-full bg-accent flex-shrink-0" />
                   <div>
-                    <span className="text-ink/80 text-sm font-medium">{m.label}</span>
-                    <p className="text-ink/45 text-sm leading-relaxed mt-0.5">{m.detail}</p>
+                    <span className="text-ink text-sm font-medium">{m.label}</span>
+                    <p className="text-ink text-sm leading-relaxed mt-0.5">{m.detail}</p>
                   </div>
                 </motion.div>
               ))}
