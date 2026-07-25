@@ -167,7 +167,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
-                href="/coming-soon"
+                href="/signup"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
               >
                 Sign up free

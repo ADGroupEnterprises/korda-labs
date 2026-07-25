@@ -192,7 +192,7 @@ export default function PricingPage() {
                 <p className="text-ink text-sm mb-6">{tier.description}</p>
 
                 <Link
-                  href="/coming-soon"
+                  href="/signup"
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 mb-8 ${
                     tier.ctaStyle === 'accent'
                       ? 'bg-accent text-paper hover:bg-mahogany'
@@ -314,7 +314,7 @@ export default function PricingPage() {
                   <p className="text-sm text-ink">{bundle.bestFor}</p>
                 </div>
                 <Link
-                  href="/coming-soon"
+                  href="/signup"
                   className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-linen text-ink hover:border-accent hover:bg-linen transition-all duration-300"
                 >
                   Purchase

@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { APP_SIGNIN_URL } from '@/lib/links'
 
 function ProductsDropdown({ open }: { open: boolean }) {
   return (
@@ -273,14 +274,14 @@ export default function Nav() {
 
         {/* Right: Auth buttons */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/coming-soon"
+          <a
+            href={APP_SIGNIN_URL}
             className="hidden sm:inline-flex px-4 py-2 text-sm text-ink hover:text-ink transition-colors duration-300"
           >
             Sign in
-          </Link>
+          </a>
           <Link
-            href="/coming-soon"
+            href="/signup"
             className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-paper hover:bg-mahogany transition-all duration-300"
           >
             Sign up free
