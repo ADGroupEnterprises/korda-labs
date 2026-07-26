@@ -36,7 +36,7 @@ function WeekCalendar() {
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
         </div>
-        <span className="text-[10px] font-semibold text-ink tracking-wide">Week of Mar 11</span>
+        <span className="text-[10px] font-medium text-ink tracking-wide">Week of Mar 11</span>
         <div className="ml-auto flex items-center gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-accent" />
           <span className="text-[9px] text-ink">Zoe managed</span>
@@ -61,7 +61,7 @@ function WeekCalendar() {
             <div key={day} className={`flex-1 border-r border-linen last:border-0 relative ${isToday ? 'bg-linen' : ''}`}>
               {/* Day header */}
               <div className={`text-center py-1 border-b border-linen ${isToday ? 'bg-linen' : ''}`}>
-                <span className={`text-[9px] font-semibold ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
+                <span className={`text-[9px] font-medium ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
               </div>
               {/* Hour rows */}
               <div className="relative" style={{ height: totalH }}>
@@ -138,7 +138,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-serif"
+              className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.05] mb-6 font-serif"
             >
               <span className="text-ink">Other tools</span>
               <br />

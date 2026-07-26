@@ -188,7 +188,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
           {agent.icon}
         </div>
         <div>
-          <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-accent' : 'text-accent'}`}>{agent.name}</h3>
+          <h3 className={`font-medium text-lg leading-none ${isBlue ? 'text-accent' : 'text-accent'}`}>{agent.name}</h3>
           <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent' : 'text-accent'}`}>
             {agent.role}
           </p>
@@ -287,7 +287,7 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
         <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-linen text-accent group-hover:bg-linen' : 'bg-linen text-accent group-hover:bg-linen'} flex items-center justify-center mb-4 transition-colors duration-300`}>
           {feature.icon}
         </div>
-        <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">{feature.title}</h3>
+        <h3 className="text-lg font-medium text-ink mb-2 leading-snug">{feature.title}</h3>
         <p className="text-ink text-sm leading-relaxed">{feature.description}</p>
       </div>
     </motion.div>
@@ -321,7 +321,7 @@ const zoeSteps = [
     number: '01',
     title: 'Connect your world',
     description: "Link your calendar, personal apps, goals, and tools. Zoe learns how you live — not how you work.",
-    detail: '20+ integrations, more every week',
+    detail: '20+ integrations and growing',
   },
   {
     number: '02',
@@ -433,13 +433,13 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
       className="flex gap-8 items-start"
     >
       <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-linen bg-linen flex items-center justify-center">
-        <span className="text-accent font-bold text-sm">{step.number}</span>
+        <span className="text-accent font-medium text-sm">{step.number}</span>
         <div className="absolute inset-0 rounded-full bg-linen" />
       </div>
       <div className="pt-2.5">
-        <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
+        <h3 className="text-xl font-medium text-ink mb-2">{step.title}</h3>
         <p className="text-ink leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent font-mono border border-linen bg-linen px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent font-medium border border-linen bg-linen px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -540,7 +540,7 @@ export default function ZoePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-ink"
+            className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] text-ink"
           >
             Zoe doesn&apos;t just plan your work.
             <br />

@@ -260,10 +260,10 @@ export default function PricingPage() {
               <div key={i} className="p-8 rounded-2xl border border-linen bg-paper">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-ink mb-1">{model.name}</h3>
+                    <h3 className="text-xl font-medium text-ink mb-1">{model.name}</h3>
                     <p className="text-sm text-ink">{model.subtitle}</p>
                   </div>
-                  <span className="text-accent font-semibold">{model.price}</span>
+                  <span className="text-accent font-medium">{model.price}</span>
                 </div>
 
                 <p className="text-ink text-sm mb-6 leading-relaxed">{model.description}</p>
@@ -301,7 +301,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {usageBundles.map((bundle, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <h3 className="text-lg font-bold text-ink mb-2">{bundle.name}</h3>
+                <h3 className="text-lg font-medium text-ink mb-2">{bundle.name}</h3>
                 <div className="mb-4">
                   <span className="text-3xl font-medium font-serif text-ink">{bundle.price}</span>
                 </div>
@@ -343,7 +343,7 @@ export default function PricingPage() {
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border border-linen bg-paper">
                 <div className="w-1 h-5 rounded-full bg-accent mb-3" />
-                <h3 className="text-ink font-semibold text-sm mb-1.5">{item.title}</h3>
+                <h3 className="text-ink font-medium text-sm mb-1.5">{item.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}

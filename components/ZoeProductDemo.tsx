@@ -65,7 +65,7 @@ function PlannerUI() {
 
       {/* Date header */}
       <div className="flex items-center justify-between px-1 mb-0.5">
-        <span className="text-[10px] font-semibold text-ink uppercase tracking-widest">Wednesday, Mar 11</span>
+        <span className="text-[10px] font-medium text-ink uppercase tracking-widest">Wednesday, Mar 11</span>
         <div className="flex gap-1">
           {['Q1 67%', 'Fitness 71%'].map(g => (
             <span key={g} className="text-[9px] px-1.5 py-0.5 rounded-full bg-linen text-accent border border-linen font-medium">
@@ -166,7 +166,7 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
               >
                 <div className="w-1 h-3 rounded-full bg-accent flex-shrink-0" />
                 <span className="text-[11px] text-ink truncate">{task}</span>
-                <span className="ml-auto text-[9px] font-semibold text-accent flex-shrink-0">new</span>
+                <span className="ml-auto text-[9px] font-medium text-accent flex-shrink-0">new</span>
               </motion.div>
             ))}
             <p className="text-[9px] text-ink pl-2 mt-1">+ 3 more tasks created</p>
@@ -275,7 +275,7 @@ export default function ZoeProductDemo() {
           transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
           className="w-5 h-5 rounded-full flex-shrink-0 bg-copper"
         />
-        <span className="text-accent text-xs font-semibold">Zoe</span>
+        <span className="text-accent text-xs font-medium">Zoe</span>
         <span className="text-ink text-xs">/</span>
         <AnimatePresence mode="wait">
           <motion.span key={demoIdx} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -363,7 +363,7 @@ export default function ZoeProductDemo() {
               >
                 <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 bg-copper" />
                 <div>
-                  <p className="text-accent text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-accent text-[10px] font-medium mb-1">Zoe</p>
                   <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
                   <p className="text-ink text-[10px] mt-1.5 flex items-center gap-1">
                     Full view in right panel

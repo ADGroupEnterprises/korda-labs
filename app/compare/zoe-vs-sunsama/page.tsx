@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const rows = [
   { feature: 'Daily planning ritual', sunsama: 'Guided daily planning flow', zoe: 'Automated + guided options available', zoeWins: false },
-  { feature: 'Task consolidation', sunsama: 'Multiple integrations (manual)', zoe: '20+ integrations, growing weekly', zoeWins: false },
+  { feature: 'Task consolidation', sunsama: 'Multiple integrations (manual)', zoe: '20+ integrations and growing', zoeWins: false },
   { feature: 'Agent selection matrix', sunsama: 'N/A', zoe: 'Auto-selects best model per task', zoeWins: true },
   { feature: 'One-click model addition', sunsama: 'N/A', zoe: 'Add any model instantly', zoeWins: true },
   { feature: 'Autonomous file operations', sunsama: 'None', zoe: 'Read/write Google Drive, OneDrive, local disk', zoeWins: true },

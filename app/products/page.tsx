@@ -18,8 +18,8 @@ export default function ProductsPage() {
             <span className="text-ink">For your work, your goals, and your life.</span>
           </h1>
           <p className="text-ink text-lg leading-relaxed">
-            Korda Labs builds AI platforms that do the planning, coordination, and follow-through
-            so you can focus on what actually moves the needle.
+            Korda Labs builds dedicated AI partners that do the planning, coordination, and
+            follow-through — so you can focus on what only you can do.
           </p>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default function ProductsPage() {
           <div className="mt-16 text-center">
             <div className="inline-flex items-center gap-2 text-ink text-sm">
               <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-              All products are built by KORDA LABS.
+              All products are built by Korda Labs.
               <div className="w-1.5 h-1.5 rounded-full bg-accent" />
             </div>
           </div>

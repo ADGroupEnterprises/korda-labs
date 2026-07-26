@@ -56,7 +56,7 @@ export default function FreelancersPage() {
             {features.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
-                <h3 className="text-ink font-semibold mb-2">{f.label}</h3>
+                <h3 className="text-ink font-medium mb-2">{f.label}</h3>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
               </div>
             ))}

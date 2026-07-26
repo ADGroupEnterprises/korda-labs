@@ -74,7 +74,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
         <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-linen text-accent group-hover:bg-linen' : 'bg-linen text-accent group-hover:bg-linen'} flex items-center justify-center mb-4 transition-colors duration-300`}>
           {feature.icon}
         </div>
-        <h3 className="text-lg font-semibold text-paper mb-2 leading-snug">
+        <h3 className="text-lg font-medium text-paper mb-2 leading-snug">
           {feature.title}
         </h3>
         <p className="text-paper text-sm leading-relaxed">
@@ -103,7 +103,7 @@ export default function Features() {
           className="text-center mb-16"
         >
           <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
             Everything you need to live
             <br />
             <span className="text-paper">with intention.</span>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 const rows = [
-  { feature: 'Task consolidation', akiflow: '30+ integrations (manual triage)', zoe: '20+ integrations, growing weekly', zoeWins: false },
+  { feature: 'Task consolidation', akiflow: 'Dozens of integrations (manual triage)', zoe: '20+ integrations and growing', zoeWins: false },
   { feature: 'Daily planning', akiflow: 'You manually schedule every task', zoe: 'Agents auto-schedule around your calendar', zoeWins: true },
   { feature: 'Calendar time-blocking', akiflow: 'Manual drag-and-drop', zoe: 'Agent-managed, adapts in real time', zoeWins: true },
   { feature: 'AI task rescheduling', akiflow: 'None — all manual', zoe: 'Automatic when priorities shift', zoeWins: true },

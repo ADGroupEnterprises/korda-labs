@@ -108,7 +108,7 @@ export default function AgentDifferentiator() {
                     {agent.role}
                   </span>
                 </div>
-                <h3 className="text-ink font-semibold text-lg mb-2">{agent.name}</h3>
+                <h3 className="text-ink font-medium text-lg mb-2">{agent.name}</h3>
                 <p className="text-ink text-sm leading-relaxed">{agent.description}</p>
               </motion.div>
             )

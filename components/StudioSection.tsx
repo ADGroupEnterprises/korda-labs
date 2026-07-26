@@ -66,7 +66,7 @@ function AccountingUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-medium uppercase tracking-widest mb-1.5">
           Q1 Accounting — Key Changes
         </p>
         <p className="text-[10px] text-ink mb-2">Last 3 days · 8 updates detected</p>
@@ -122,11 +122,11 @@ function FitnessUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-medium uppercase tracking-widest mb-1.5">
           Strength Performance
         </p>
         <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold text-ink leading-none">-8%</span>
+          <span className="text-2xl font-medium text-ink leading-none">-8%</span>
           <span className="text-xs text-amber-600 font-medium">↓ drop detected</span>
         </div>
       </div>
@@ -162,7 +162,7 @@ function FitnessUI() {
         transition={{ delay: 0.4 }}
         className="pt-2 border-t border-linen"
       >
-        <p className="text-[9px] text-ink font-semibold uppercase tracking-widest mb-2">
+        <p className="text-[9px] text-ink font-medium uppercase tracking-widest mb-2">
           Nutrition Analysis
         </p>
         <div className="grid grid-cols-2 gap-1.5">
@@ -269,7 +269,7 @@ function LensDemo() {
           transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
           className="w-5 h-5 rounded-full flex-shrink-0 bg-copper"
         />
-        <span className="text-accent text-xs font-semibold">Zoe</span>
+        <span className="text-accent text-xs font-medium">Zoe</span>
         <AnimatePresence>
           {isThinking && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -322,7 +322,7 @@ function LensDemo() {
               >
                 <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 bg-copper" />
                 <div>
-                  <p className="text-accent text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-accent text-[10px] font-medium mb-1">Zoe</p>
                   <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
                 </div>
               </motion.div>

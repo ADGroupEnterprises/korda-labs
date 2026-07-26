@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <KordaMark size={26} />
-              <span className="font-semibold text-ink tracking-wide text-sm">Korda Labs</span>
+              <span className="font-medium text-ink tracking-wide text-sm">Korda Labs</span>
             </div>
             <p className="text-ink text-sm leading-relaxed max-w-[220px]">
               The AI that doesn&apos;t just manage your work — it does it.

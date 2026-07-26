@@ -76,7 +76,7 @@ export default function BlogPage() {
                   <p className="text-ink text-xs mt-1">{post.date}</p>
                 </div>
                 <div className="sm:col-span-3">
-                  <h2 className="text-ink font-semibold text-lg mb-2">{post.title}</h2>
+                  <h2 className="text-ink font-medium text-lg mb-2">{post.title}</h2>
                   <p className="text-ink text-sm leading-relaxed">{post.excerpt}</p>
                 </div>
               </div>

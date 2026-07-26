@@ -97,7 +97,7 @@ export default function ProactiveAIPage() {
                   <p className="text-xs text-ink mt-2">Replaces: <em>{t.replaces}</em></p>
                 </div>
                 <div className="sm:col-span-3">
-                  <h3 className="text-ink font-semibold mb-2">{t.name}</h3>
+                  <h3 className="text-ink font-medium mb-2">{t.name}</h3>
                   <p className="text-ink text-sm leading-relaxed">{t.body}</p>
                 </div>
               </div>

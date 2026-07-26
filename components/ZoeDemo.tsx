@@ -85,11 +85,11 @@ function GoalUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-medium uppercase tracking-widest mb-1.5">
           Q1 Revenue Growth
         </p>
         <div className="flex items-baseline gap-2.5">
-          <span className="text-3xl font-bold text-ink leading-none">67%</span>
+          <span className="text-3xl font-medium text-ink leading-none">67%</span>
           <span className="text-xs text-accent font-medium">↑ on track</span>
         </div>
       </div>
@@ -167,7 +167,7 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
             transition={{ delay: 0.15, duration: 0.3 }}
             className="mt-2.5 pt-2.5 border-t border-linen space-y-1.5"
           >
-            <p className="text-[9px] text-accent font-semibold uppercase tracking-widest px-1 mb-1.5">
+            <p className="text-[9px] text-accent font-medium uppercase tracking-widest px-1 mb-1.5">
               Q2 Launch — 3 new tasks
             </p>
             {newTasks.map((task, i) => (
@@ -179,7 +179,7 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
               >
                 <div className="w-1 h-3 rounded-full bg-accent flex-shrink-0" />
                 <span className="text-xs text-ink">{task}</span>
-                <span className="ml-auto text-[9px] font-semibold text-accent">new</span>
+                <span className="ml-auto text-[9px] font-medium text-accent">new</span>
               </motion.div>
             ))}
           </motion.div>
@@ -292,7 +292,7 @@ export default function ZoeDemo() {
           transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
           className="w-5 h-5 rounded-full flex-shrink-0 bg-copper"
         />
-        <span className="text-accent text-xs font-semibold">Zoe</span>
+        <span className="text-accent text-xs font-medium">Zoe</span>
         <AnimatePresence>
           {isThinking && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -358,7 +358,7 @@ export default function ZoeDemo() {
               >
                 <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 bg-copper" />
                 <div>
-                  <p className="text-accent text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-accent text-[10px] font-medium mb-1">Zoe</p>
                   <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
                   <p className="text-ink text-[10px] mt-1.5 flex items-center gap-1">
                     UI rendered in right panel

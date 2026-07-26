@@ -63,7 +63,7 @@ export default function KordaSection() {
               className="p-6 rounded-xl border border-linen bg-linen"
             >
               <div className="w-1 h-6 rounded-full bg-accent mb-4" />
-              <h3 className="text-ink font-semibold mb-2">{v.title}</h3>
+              <h3 className="text-ink font-medium mb-2">{v.title}</h3>
               <p className="text-ink text-sm leading-relaxed">{v.description}</p>
             </motion.div>
           ))}

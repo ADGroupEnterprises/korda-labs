@@ -77,7 +77,7 @@ export default function ComparePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
               <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-linen bg-linen hover:border-linen hover:bg-linen transition-all duration-300">
-                <h3 className="text-ink font-semibold mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
+                <h3 className="text-ink font-medium mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-4">{u.description}</p>
                 <span className="text-xs text-accent flex items-center gap-1">
                   Read more →

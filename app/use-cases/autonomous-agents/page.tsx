@@ -111,7 +111,7 @@ export default function AutonomousAgentsPage() {
             {capabilities.map((cap, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
                 <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{cap.tag}</p>
-                <h3 className="text-ink font-semibold mb-2">{cap.title}</h3>
+                <h3 className="text-ink font-medium mb-2">{cap.title}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-3">{cap.body}</p>
                 <p className="text-ink text-xs leading-relaxed border-t border-linen pt-3">{cap.detail}</p>
               </div>
@@ -134,7 +134,7 @@ export default function AutonomousAgentsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {workflowExamples.map((ex, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <h3 className="text-ink font-semibold mb-4">{ex.name}</h3>
+                <h3 className="text-ink font-medium mb-4">{ex.name}</h3>
                 <ol className="space-y-2">
                   {ex.steps.map((step, j) => (
                     <li key={j} className="flex gap-2.5">

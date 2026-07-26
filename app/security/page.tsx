@@ -97,7 +97,7 @@ export default function SecurityPage() {
             {principles.map((p, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
                 <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{p.tag}</p>
-                <h3 className="text-ink font-semibold mb-2">{p.title}</h3>
+                <h3 className="text-ink font-medium mb-2">{p.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{p.body}</p>
               </div>
             ))}
