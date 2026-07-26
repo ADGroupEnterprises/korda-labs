@@ -60,7 +60,7 @@ export default function ProactiveAIPage() {
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
-            The AI operating system
+            The dedicated AI partner
             <br />
             <span className="text-ink">that runs without you.</span>
           </h1>

@@ -366,9 +366,9 @@ function LensDemo() {
 // ─── Main Section ─────────────────────────────────────────────────────────────
 
 const milestones = [
-  { label: 'Founded', detail: 'Korda Labs incorporated with a single mission: give people real leverage over their lives.', delay: 0 },
-  { label: 'First product', detail: 'Zoe launched — a personal AI operating system connecting your goals, health, calendar, and habits.', delay: 0.15 },
-  { label: "What's next", detail: 'Platforms for startups, freelancers, and teams. The same intelligence layer, tuned for every scale.', delay: 0.3 },
+  { label: 'Founded', detail: 'Korda Labs incorporated with a single mission: keep your goals from getting lost in the noise of your day.', delay: 0 },
+  { label: 'First product', detail: 'Zoe — a dedicated AI partner that does the work, connecting your goals, calendar, health, and habits.', delay: 0.15 },
+  { label: 'On the roadmap', detail: 'A physical notebook that joins the paper planner on your desk with Zoe — what you write and what it runs, one plan.', delay: 0.3 },
 ]
 
 export default function StudioSection() {

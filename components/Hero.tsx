@@ -155,7 +155,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="text-lg sm:text-xl text-ink max-w-xl mb-10 leading-relaxed"
             >
-              Zoe is your personal AI operating system — connecting your goals, calendar, and tools into
+              Zoe is your dedicated AI partner that does the work — connecting your goals, calendar, and tools into
               one intelligent layer that doesn&apos;t just plan your day. It researches, writes, searches,
               automates, and executes. <em>While you focus on what only you can do.</em>
             </motion.p>

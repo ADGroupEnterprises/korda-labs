@@ -28,7 +28,7 @@ export default function ComingSoonClient() {
       }
 
       setStatus('success')
-      setMessage("Thanks for joining the waitlist! We'll be in touch soon.")
+      setMessage("You're on the list. We'll be in touch soon.")
       setEmail('')
     } catch {
       setStatus('error')
@@ -61,7 +61,7 @@ export default function ComingSoonClient() {
             Coming Soon
           </h1>
           <p className="text-xl text-ink max-w-lg mx-auto mb-12 leading-relaxed">
-            Zoe is almost ready. Join the waitlist to be among the first to experience your personal AI operating system.
+            Zoe is almost ready. Join the waitlist to be among the first to use your dedicated AI partner that does the work.
           </p>
 
           {/* Email Form */}
@@ -81,7 +81,7 @@ export default function ComingSoonClient() {
                 disabled={status === 'loading' || status === 'success'}
                 className="px-8 py-4 rounded-xl bg-accent text-paper font-medium hover:bg-mahogany transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
               >
-                {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined!' : 'Join Waitlist'}
+                {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined' : 'Join Waitlist'}
               </button>
             </div>
             

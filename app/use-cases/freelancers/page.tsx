@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Zoe for Freelancers — Korda Labs',
-  description: 'Client work, personal goals, and your calendar — one intelligent layer. Zoe is the AI operating system for independent professionals.',
+  description: 'Client work, personal goals, and your calendar — one intelligent layer. Independent professionals don\'t have a chief of staff. Zoe is the next best thing.',
 }
 
 const features = [
@@ -12,13 +12,6 @@ const features = [
   { label: 'Client context, always available', body: 'Zoe remembers your clients, their deadlines, and your commitments. No more digging through email threads to remember what you promised and when.' },
   { label: 'Personal goals alongside client work', body: 'Your professional development, fitness, and personal goals don\'t disappear when client work gets busy. Compass keeps them alive — scheduled into the gaps that exist.' },
   { label: 'AI planning that works around your life', body: 'Freelance schedules are fluid. Task Manager adapts your plan in real time as client requests come in, deadlines shift, or you simply need a different kind of day.' },
-]
-
-const comingSoon = [
-  'Proposal drafting with client context',
-  'Time tracking and invoicing intelligence',
-  'Client communication summaries',
-  'Revenue and pipeline visibility',
 ]
 
 export default function FreelancersPage() {
@@ -40,7 +33,7 @@ export default function FreelancersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="#"
+              href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Get started free
@@ -69,35 +62,13 @@ export default function FreelancersPage() {
             ))}
           </div>
 
-          {/* Coming soon */}
-          <div className="p-8 rounded-2xl border border-linen bg-linen mb-20">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
-                Coming soon
-              </span>
-              <span className="text-ink text-sm">Freelancer Platform — built on Zoe</span>
-            </div>
-            <p className="text-ink text-sm mb-6 leading-relaxed">
-              A dedicated Zoe experience tuned for independent professionals — with deeper client management,
-              proposal intelligence, and time tracking built in.
-            </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {comingSoon.map((item, i) => (
-                <li key={i} className="flex items-center gap-2.5 text-sm text-ink">
-                  <span className="w-1 h-1 rounded-full bg-linen flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
-              Your AI operating system for independent work.
+              Your dedicated AI partner for independent work.
             </h2>
             <p className="text-ink mb-8">Free to start. No credit card.</p>
             <Link
-              href="#"
+              href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Get started with Zoe

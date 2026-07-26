@@ -61,7 +61,7 @@ export default function SignupPage() {
           <p className="text-sm text-ink mb-16">
             Free to start. No credit card required.{' '}
             <a href={APP_SIGNIN_URL} className="text-accent hover:text-mahogany">
-              Already using Zoe? Sign in.
+              Or sign in if you already have an account.
             </a>
           </p>
         </div>

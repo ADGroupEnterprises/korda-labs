@@ -852,12 +852,12 @@ export default function ZoePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { time: '7:00 am daily', title: 'Morning briefing', body: 'Your goals, schedule, and priority tasks — ready before you open your laptop.' },
-              { time: 'After 4h inactivity', title: 'Stale task alert', body: 'Task sitting in review too long? Zoe flags it and asks if you want it rescheduled.' },
+              { time: 'After 4h inactivity', title: 'Stale task alert', body: 'When a task sits in review too long, Zoe flags it and asks if you want it rescheduled.' },
               { time: 'When activity drops', title: 'Goal momentum check', body: 'Compass notices when a goal goes quiet and surfaces it before it becomes a miss.' },
               { time: 'End of each day', title: 'Daily summary', body: "What got done, what shifted, and tomorrow's plan — automatic." },
               { time: 'Every Sunday', title: 'Weekly retrospective', body: 'Full-week review with goal progress, time spent, and next week\'s priorities.' },
-              { time: 'When progress < 30%', title: 'Goal gap alert', body: 'A goal category falling behind? Compass flags it with a suggested action.' },
-              { time: 'When work dominates', title: 'Domain overload warning', body: 'Work taking over personal goals again? Zoe notices the imbalance and tells you.' },
+              { time: 'When progress < 30%', title: 'Goal gap alert', body: 'When a goal category falls behind, Compass flags it with a suggested action.' },
+              { time: 'When work dominates', title: 'Domain overload warning', body: 'When work starts to crowd out personal goals, Zoe notices the imbalance and tells you.' },
             ].map((trigger, i) => (
               <div key={i} className="flex gap-4 p-5 rounded-2xl border border-linen bg-linen items-start">
                 <div className="flex-shrink-0 pt-0.5">
@@ -910,7 +910,7 @@ export default function ZoePage() {
                 { title: 'Resource pattern policies', desc: 'Specify exactly which folders, domains, and services each agent can touch.' },
                 { title: 'Daily action limits', desc: 'Set a max number of file writes, web searches, or tool calls per day. Zoe stops and asks when approaching the limit.' },
                 { title: 'Immutable audit log', desc: 'Every tool call logged with timestamp, result, and cost. Every action reviewable. 30-day minimum retention.' },
-                { title: 'Abort at any time', desc: 'Running agent doing something unexpected? One tap stops it mid-execution. Zoe tells you what it completed before stopping.' },
+                { title: 'Abort at any time', desc: 'If a running agent does something unexpected, one tap stops it mid-execution. Zoe tells you what it completed before stopping.' },
                 { title: 'Confidential task routing', desc: 'Sensitive tasks never touch cloud models — they route to local models only via your Desktop Bridge.' },
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl border border-linen bg-linen">

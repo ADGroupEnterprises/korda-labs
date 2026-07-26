@@ -30,7 +30,7 @@ const principles = [
   },
   {
     title: 'Abort at any time',
-    body: 'Running agent doing something unexpected? One tap stops it mid-execution. Zoe polls for abort requests before every model call. When stopped, it tells you exactly what actions completed before the abort — and notes that completed work is not automatically reversed.',
+    body: 'If a running agent does something unexpected, one tap stops it mid-execution. Zoe polls for abort requests before every model call. When stopped, it tells you exactly what actions completed before the abort — and notes that completed work is not automatically reversed.',
     tag: 'Abort control',
   },
   {

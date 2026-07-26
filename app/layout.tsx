@@ -24,11 +24,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Korda Labs',
-  description: 'Zoe is your personal AI operating system — connecting your goals, tools, calendar, health, and life into one intelligent layer that works for you.',
+  description: 'Korda Labs is an AI product studio. Its first product, Zoe, is a dedicated AI partner that does the work — connecting your goals, calendar, and tools into one intelligent layer.',
   metadataBase: new URL('https://kordalabs.com'), // Replace with your actual domain
   openGraph: {
     title: 'Korda Labs',
-    description: 'Not a chatbot. A personal OS that puts AI to work for your life.',
+    description: 'Not a chatbot. A dedicated AI partner that does the work.',
     type: 'website',
     url: 'https://kordalabs.com', // Replace with your actual domain
     siteName: 'Korda Labs',
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg', // You'll need to create this image
         width: 1200,
         height: 630,
-        alt: 'Korda Labs - Your Personal AI Operating System',
+        alt: 'Korda Labs — AI product studio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Korda Labs',
-    description: 'Not a chatbot. A personal OS that puts AI to work for your life.',
+    description: 'Not a chatbot. A dedicated AI partner that does the work.',
     images: ['/og-image.jpg'],
   },
 }

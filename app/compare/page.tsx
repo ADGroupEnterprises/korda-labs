@@ -45,7 +45,7 @@ export default function ComparePage() {
             See how Zoe stacks up.
           </h1>
           <p className="text-ink text-lg leading-relaxed">
-            Evaluating tools? Start here. We've put together honest, direct comparisons
+            If you're comparing tools, start here. Direct comparisons on substance,
             so you can see exactly where Zoe fits — and where it goes further.
           </p>
         </div>

@@ -29,15 +29,6 @@ function ProductsDropdown({ open }: { open: boolean }) {
                 <div className="text-xs text-ink">Dedicated AI partner</div>
               </div>
             </Link>
-            <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg opacity-40 cursor-default">
-              <div className="w-6 h-6 rounded-md bg-linen flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-linen" />
-              </div>
-              <div>
-                <div className="text-sm font-medium text-ink">More products</div>
-                <div className="text-xs text-ink">Coming soon</div>
-              </div>
-            </div>
           </div>
           <div className="border-t border-linen p-2">
             <Link

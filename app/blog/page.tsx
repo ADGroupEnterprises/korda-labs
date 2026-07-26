@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Blog — Korda Labs',
-  description: 'Thinking on AI, productivity, and the future of personal operating systems.',
+  description: 'Thinking on AI, autonomous execution, and tools that work for you.',
 }
 
 const posts = [

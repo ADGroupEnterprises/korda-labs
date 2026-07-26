@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Products — Korda Labs',
-  description: 'The full Korda Labs product lineup — starting with Zoe, your personal AI operating system.',
+  description: 'One dedicated product per problem. Zoe is the first — your dedicated AI partner that does the work.',
 }
 
 export default function ProductsPage() {
@@ -38,11 +38,11 @@ export default function ProductsPage() {
                   </span>
                 </div>
                 <h2 className="text-3xl font-medium font-serif text-ink mb-1">Zoe</h2>
-                <p className="text-accent text-sm font-medium mb-4">Personal AI Operating System</p>
+                <p className="text-accent text-sm font-medium mb-4">Your dedicated AI partner that does the work</p>
                 <p className="text-ink leading-relaxed max-w-xl mb-6">
-                  The flagship Korda Labs product. Connect your personal tools, set goals, and let a team of AI agents
-                  help you live with more intention and less friction. Built for individuals who want AI working
-                  for them — not the other way around.
+                  The first Korda Labs product. Connect your tools, set a goal, and hand off the work — research,
+                  drafts, plans, and automations delivered to your storage. Built for individuals who want AI
+                  working for them — not the other way around.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
                   {[
@@ -63,7 +63,7 @@ export default function ProductsPage() {
                 </ul>
                 <div className="flex items-center gap-4">
                   <Link
-                    href="#"
+                    href="/signup"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-mahogany transition-all duration-300"
                   >
                     Sign up free
@@ -82,49 +82,19 @@ export default function ProductsPage() {
             </div>
           </div>
 
-          {/* Locked cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {/* Locked card 1 */}
-            <div className="relative rounded-2xl border border-linen bg-linen p-8 overflow-hidden">
-              <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-linen flex items-center justify-center">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
-                  <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2"/>
-                  <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div className="mb-4">
-                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
-                  Coming soon
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-ink mb-2">Startup & Small Teams</h3>
-              <p className="text-ink text-sm leading-relaxed">
-                A shared intelligence platform for early-stage companies — aligned goals,
-                coordinated agents, and a unified view of what your team is building toward.
-                Built for the pace of a startup.
-              </p>
+          {/* Roadmap */}
+          <div className="rounded-2xl border border-linen bg-linen p-8">
+            <div className="mb-4">
+              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
+                On the roadmap
+              </span>
             </div>
-
-            {/* Locked card 2 */}
-            <div className="relative rounded-2xl border border-linen bg-linen p-8 overflow-hidden">
-              <div className="absolute top-5 right-5 w-7 h-7 rounded-lg bg-linen flex items-center justify-center">
-                <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
-                  <rect x="1" y="6" width="10" height="8" rx="1.5" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2"/>
-                  <path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" stroke="#37332E" strokeOpacity="0.15" strokeWidth="1.2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div className="mb-4">
-                <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
-                  Coming soon
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-ink mb-2">Freelancer Platform</h3>
-              <p className="text-ink text-sm leading-relaxed">
-                Zoe tuned for independent professionals — client management, project tracking,
-                proposal drafting, and time intelligence, all running quietly in the background
-                while you focus on the work.
-              </p>
-            </div>
+            <h3 className="text-xl font-medium font-serif text-ink mb-2">A notebook you can write in</h3>
+            <p className="text-ink text-sm leading-relaxed max-w-xl">
+              Next for Zoe: physical notebook hardware that joins the paper planner on your desk
+              with the partner that does the work. What you write on the page and what Zoe runs
+              become one plan.
+            </p>
           </div>
 
           {/* Section divider */}
