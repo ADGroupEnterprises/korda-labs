@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { APP_SIGNUP_URL, APP_SIGNIN_URL } from '@/lib/links'
+import ZoeMarkSpark from '@/components/marks/ZoeMarkSpark'
 
 export const metadata: Metadata = {
   title: 'Sign up — Zoe',
@@ -28,6 +29,9 @@ export default function SignupPage() {
     <main className="min-h-screen bg-paper">
       <section className="max-w-content mx-auto px-5 md:px-20 py-20 md:py-32">
         <div className="max-w-xl mx-auto text-center">
+          <div className="flex justify-center mb-6">
+            <ZoeMarkSpark size={72} />
+          </div>
           <p className="text-sm font-bold text-accent uppercase tracking-[0.16em] mb-6">
             Zoe
           </p>

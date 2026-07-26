@@ -3,6 +3,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import ZoeProductDemo from '@/components/ZoeProductDemo'
+import ZoeMarkSpark from '@/components/marks/ZoeMarkSpark'
 
 // --- Lens component (compact version) ---
 function MiniLens() {
@@ -491,7 +492,10 @@ export default function ZoePage() {
           <div className="mb-10">
             <MiniLens />
           </div>
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Personal AI Operating System</p>
+          <div className="flex justify-center mb-4">
+            <ZoeMarkSpark size={64} />
+          </div>
+          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Zoe</p>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium font-serif tracking-tight mb-6">
             Zoe
           </h1>
