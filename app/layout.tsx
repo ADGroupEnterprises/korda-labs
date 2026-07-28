@@ -25,16 +25,16 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Korda Labs',
   description: 'Korda Labs is an AI product studio. Its first product, Zoe, is a dedicated AI partner that does the work — connecting your goals, calendar, and tools into one intelligent layer.',
-  metadataBase: new URL('https://kordalabs.com'), // Replace with your actual domain
+  metadataBase: new URL('https://kordalabs.com'),
   openGraph: {
     title: 'Korda Labs',
     description: 'Not a chatbot. A dedicated AI partner that does the work.',
     type: 'website',
-    url: 'https://kordalabs.com', // Replace with your actual domain
+    url: 'https://kordalabs.com',
     siteName: 'Korda Labs',
     images: [
       {
-        url: '/og-image.jpg', // You'll need to create this image
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Korda Labs — AI product studio',
