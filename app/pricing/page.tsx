@@ -136,7 +136,7 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Pricing</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Pricing</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Start free on web.
             <br />

@@ -42,7 +42,7 @@ export default function ZoeVsMotionPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Zoe vs. Motion
           </h1>
@@ -66,7 +66,7 @@ export default function ZoeVsMotionPage() {
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-linen bg-linen">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+              <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-3">Zoe</p>
               <p className="text-ink leading-relaxed">
                 Does everything Motion does for scheduling — and then connects it to your health data,
                 long-term goals, habits, and personal life. Your AI layer knows the whole picture, not just your work queue.
@@ -82,7 +82,7 @@ export default function ZoeVsMotionPage() {
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
             <div className="text-xs font-medium tracking-widest uppercase text-ink">Feature</div>
             <div className="text-xs font-medium tracking-widest uppercase text-ink text-center">Motion</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
+            <div className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent text-center">Zoe</div>
           </div>
 
           <div className="rounded-2xl border border-linen overflow-hidden">

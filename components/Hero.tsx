@@ -124,7 +124,7 @@ export default function Hero() {
             >
               <Link
                 href="/products/zoe"
-                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-linen bg-linen text-accent text-sm font-medium tracking-widest uppercase hover:border-accent hover:bg-linen transition-all duration-300"
+                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-linen bg-linen text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase hover:border-accent hover:bg-linen transition-all duration-300"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 Introducing Zoe

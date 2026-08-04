@@ -22,7 +22,7 @@ export default function DesktopBridgePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Desktop Bridge</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Desktop Bridge</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             Your home machine,
             <br />
@@ -56,7 +56,7 @@ export default function DesktopBridgePage() {
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-linen bg-linen">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe + Desktop Bridge</p>
+              <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-3">Zoe + Desktop Bridge</p>
               <p className="text-ink text-sm leading-relaxed">
                 Your home machine is always available to your agents — local files, local scripts, local apps.
                 Encrypted end-to-end. Sandboxed to the paths you approve. Controlled by your policy settings.

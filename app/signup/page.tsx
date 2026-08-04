@@ -32,7 +32,7 @@ export default function SignupPage() {
           <div className="flex justify-center mb-6">
             <ZoeMarkSpark size={72} />
           </div>
-          <p className="text-sm font-bold text-accent uppercase tracking-[0.16em] mb-6">
+          <p className="text-[0.9rem] font-bold text-accent uppercase tracking-[0.16em] mb-6">
             Zoe
           </p>
           <h1 className="font-serif font-medium text-4xl md:text-hero-sm text-ink mb-6">

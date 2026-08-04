@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import ZoeProductDemo from '@/components/ZoeProductDemo'
 import ZoeMarkSpark from '@/components/marks/ZoeMarkSpark'
+import ZoeMarkSparkDark from '@/components/marks/ZoeMarkSparkDark'
 
 // --- Lens component (compact version) ---
 function MiniLens() {
@@ -159,7 +160,7 @@ const integrationCategories = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">{children}</p>
+    <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">{children}</p>
   )
 }
 
@@ -180,19 +181,12 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
           : 'border-linen bg-linen hover:border-accent'
       }`}
     >
-      {/* Icon + name */}
-      <div className="flex items-start gap-4 mb-4">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-          isBlue ? 'bg-linen text-accent' : 'bg-linen text-accent'
-        }`}>
-          {agent.icon}
-        </div>
-        <div>
-          <h3 className={`font-medium text-lg leading-none ${isBlue ? 'text-accent' : 'text-accent'}`}>{agent.name}</h3>
-          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent' : 'text-accent'}`}>
-            {agent.role}
-          </p>
-        </div>
+      {/* Name */}
+      <div className="mb-4">
+        <h3 className="font-medium text-lg leading-none text-accent">{agent.name}</h3>
+        <p className="text-xs font-medium mt-1 text-accent">
+          {agent.role}
+        </p>
       </div>
 
       {/* Description */}
@@ -203,11 +197,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
         {agent.skills.map(skill => (
           <span
             key={skill}
-            className={`text-xs px-2.5 py-1 rounded-full border ${
-              isBlue
-                ? 'border-linen bg-linen text-accent'
-                : 'border-linen bg-linen text-accent'
-            }`}
+            className="text-xs px-2.5 py-1 rounded-full border border-accent bg-linen text-accent"
           >
             {skill}
           </span>
@@ -284,9 +274,6 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
     >
       <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-transparent group-hover:bg-linen' : 'bg-transparent group-hover:bg-linen'} transition-all duration-300`} />
       <div className="relative">
-        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-linen text-accent group-hover:bg-linen' : 'bg-linen text-accent group-hover:bg-linen'} flex items-center justify-center mb-4 transition-colors duration-300`}>
-          {feature.icon}
-        </div>
         <h3 className="text-lg font-medium text-ink mb-2 leading-snug">{feature.title}</h3>
         <p className="text-ink text-sm leading-relaxed">{feature.description}</p>
       </div>
@@ -305,7 +292,7 @@ function ZoeFeaturesHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
+      <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">What Zoe Does</p>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight">
         Built around your life.
         <br />
@@ -458,7 +445,7 @@ function ZoeHowItWorksHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-20"
     >
-      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
+      <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">How It Works</p>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight">
         Simple by design.
         <br />
@@ -495,7 +482,7 @@ export default function ZoePage() {
           <div className="flex justify-center mb-4">
             <ZoeMarkSpark size={64} />
           </div>
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Zoe</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Zoe</p>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium font-serif tracking-tight mb-6">
             Zoe
           </h1>
@@ -654,17 +641,15 @@ export default function ZoePage() {
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-accent text-xs font-mono">Desktop Bridge — Connected</span>
-                  <div className="ml-auto flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-mahogany animate-pulse" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-mahogany animate-pulse" style={{ animationDelay: '0.3s' }} />
-                    <div className="w-1.5 h-1.5 rounded-full bg-mahogany animate-pulse" style={{ animationDelay: '0.6s' }} />
+                  <div className="ml-auto">
+                    <ZoeMarkSparkDark size={27} />
                   </div>
                 </div>
                 <div className="space-y-2 font-mono text-xs">
                   {[
                     { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper' },
-                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-blue-400/60' },
-                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-blue-400/60' },
+                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-linen' },
+                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-linen' },
                     { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent' },
                     { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper' },
                     { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent' },
@@ -774,7 +759,7 @@ export default function ZoePage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Real execution</p>
+            <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Real execution</p>
             <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               What Zoe actually does.
               <br />
@@ -809,7 +794,7 @@ export default function ZoePage() {
               },
             ].map((ex, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">{ex.label}</p>
+                <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-4">{ex.label}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2.5">
                     <span className="text-ink text-xs mt-0.5 flex-shrink-0">Trigger</span>
@@ -836,7 +821,7 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div>
-              <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
+              <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Proactive engine</p>
               <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
                 Zoe keeps you on track.
                 <br />

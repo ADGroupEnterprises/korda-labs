@@ -82,7 +82,7 @@ export default function AutonomousAgentsPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Autonomous agents</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Autonomous agents</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             Your agents don&apos;t just plan.
             <br />
@@ -110,7 +110,7 @@ export default function AutonomousAgentsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
             {capabilities.map((cap, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <p className="text-accent text-xs font-medium tracking-widest uppercase mb-3">{cap.tag}</p>
+                <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-3">{cap.tag}</p>
                 <h3 className="text-ink font-medium mb-2">{cap.title}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-3">{cap.body}</p>
                 <p className="text-ink text-xs leading-relaxed border-t border-linen pt-3">{cap.detail}</p>
@@ -149,7 +149,7 @@ export default function AutonomousAgentsPage() {
 
           {/* Safety note */}
           <div className="p-6 rounded-2xl border border-linen bg-linen mb-12">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Built-in safety model</p>
+            <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-3">Built-in safety model</p>
             <p className="text-ink text-sm leading-relaxed">
               You control what models can access which storage and integrations. Every capability is off by default.
               You enable exactly what you want and set policies for where work gets done and saved. Every action is logged

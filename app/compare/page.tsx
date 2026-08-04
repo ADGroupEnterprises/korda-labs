@@ -40,7 +40,7 @@ export default function ComparePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-2xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
             See how Zoe stacks up.
           </h1>
