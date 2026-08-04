@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 const rows = [
-  { feature: 'Task consolidation', akiflow: '30+ integrations (manual triage)', zoe: '20+ integrations, growing weekly', zoeWins: false },
+  { feature: 'Task consolidation', akiflow: 'Dozens of integrations (manual triage)', zoe: '20+ integrations and growing', zoeWins: false },
   { feature: 'Daily planning', akiflow: 'You manually schedule every task', zoe: 'Agents auto-schedule around your calendar', zoeWins: true },
   { feature: 'Calendar time-blocking', akiflow: 'Manual drag-and-drop', zoe: 'Agent-managed, adapts in real time', zoeWins: true },
   { feature: 'AI task rescheduling', akiflow: 'None — all manual', zoe: 'Automatic when priorities shift', zoeWins: true },
@@ -47,8 +47,8 @@ export default function ZoeVsAkiflowPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Compare</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Zoe vs. Akiflow
           </h1>
           <p className="text-accent font-medium text-base mb-4">Akiflow organizes your work. Zoe does it.</p>
@@ -67,7 +67,7 @@ export default function ZoeVsAkiflowPage() {
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
             <div className="text-xs font-medium tracking-widest uppercase text-ink">Feature</div>
             <div className="text-xs font-medium tracking-widest uppercase text-ink text-center">Akiflow</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
+            <div className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent text-center">Zoe</div>
           </div>
 
           <div className="rounded-2xl border border-linen overflow-hidden">
@@ -88,7 +88,7 @@ export default function ZoeVsAkiflowPage() {
 
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Ready to let AI do the planning?
             </h2>
             <p className="text-ink mb-8">Try Zoe free — no credit card required.</p>

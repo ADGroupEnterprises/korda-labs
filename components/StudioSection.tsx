@@ -1,15 +1,40 @@
 'use client'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 
-function Orb() {
+function LensVisual() {
   return (
-    <div className="flex items-center justify-center w-64 h-64 mx-auto">
-      <svg viewBox="0 0 472.797 423.24" width="120" height="108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
-        <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
-      </svg>
+    <div className="relative flex items-center justify-center w-64 h-64 mx-auto">
+      {/* Outer rings */}
+      <div className="absolute inset-0 rounded-full border border-linen" />
+      <div className="absolute inset-12 rounded-full border border-linen" />
+
+      {/* Glowing rings */}
+      <div className="absolute inset-16 rounded-full bg-linen" />
+
+      {/* The Lens */}
+      <div className="relative w-24 h-24 rounded-full bg-copper">
+        {/* Inner highlight */}
+        <div className="absolute top-4 left-5 w-5 h-5 rounded-full bg-mahogany" />
+        <div className="absolute top-3 left-4 w-2 h-2 rounded-full bg-paper" />
+      </div>
+
+      {/* Particles */}
+      {[...Array(6)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-1 h-1 rounded-full bg-accent"
+          style={{
+            top: '50%',
+            left: '50%',
+            transform: `translate(${Math.cos((i / 6) * Math.PI * 2) * 100}px, ${Math.sin((i / 6) * Math.PI * 2) * 100}px)`,
+          }}
+        />
+      ))}
+
+      {/* Background glow */}
+      <div className="absolute inset-0 rounded-full bg-linen" />
     </div>
   )
 }
@@ -41,7 +66,7 @@ function AccountingUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-medium uppercase tracking-widest mb-1.5">
           Q1 Accounting — Key Changes
         </p>
         <p className="text-[10px] text-ink mb-2">Last 3 days · 8 updates detected</p>
@@ -54,9 +79,9 @@ function AccountingUI() {
             initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
             className={`flex items-center justify-between px-2.5 py-2 rounded-lg border ${
-              item.status === 'up'
-                ? 'border-paper-100 bg-paper-100'
-                : 'border-paper-100 bg-paper-100'
+              item.status === 'up' 
+                ? 'border-linen bg-linen' 
+                : 'border-linen bg-linen'
             }`}
           >
             <span className="text-xs text-ink">{item.field}</span>
@@ -78,7 +103,7 @@ function AccountingUI() {
 
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
-        className="pt-2 border-t border-paper-100"
+        className="pt-2 border-t border-linen"
       >
         <p className="text-[10px] text-ink leading-relaxed">
           Revenue growth accelerating. Operating costs trending down. Net margin improved by 2.4 percentage points.
@@ -97,12 +122,12 @@ function FitnessUI() {
   return (
     <div className="space-y-3">
       <div>
-        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-1.5">
+        <p className="text-[9px] text-accent font-medium uppercase tracking-widest mb-1.5">
           Strength Performance
         </p>
         <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold text-ink leading-none">-8%</span>
-          <span className="text-xs text-ink font-medium">↓ drop detected</span>
+          <span className="text-2xl font-medium text-ink leading-none">-8%</span>
+          <span className="text-xs text-amber-600 font-medium">↓ drop detected</span>
         </div>
       </div>
 
@@ -116,14 +141,14 @@ function FitnessUI() {
           >
             <div className="flex justify-between text-[10px] text-ink mb-1">
               <span>{item.period}</span>
-              <span className={i === 1 ? 'text-ink font-medium' : ''}>{item.label}</span>
+              <span className={i === 1 ? 'text-amber-600 font-medium' : ''}>{item.label}</span>
             </div>
-            <div className="h-6 rounded-lg bg-paper-100 overflow-hidden">
+            <div className="h-6 rounded-lg bg-linen overflow-hidden">
               <motion.div
                 initial={{ width: 0 }} animate={{ width: `${item.value}%` }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 + i * 0.1 }}
                 className={`h-full rounded-lg ${
-                  i === 0 ? 'bg-accent-dark' : 'bg-accent'
+                  i === 0 ? 'bg-accent' : 'bg-amber-500'
                 }`}
               />
             </div>
@@ -135,17 +160,17 @@ function FitnessUI() {
       <motion.div
         initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="pt-2 border-t border-paper-100"
+        className="pt-2 border-t border-linen"
       >
-        <p className="text-[9px] text-accent font-semibold uppercase tracking-widest mb-2">
+        <p className="text-[9px] text-ink font-medium uppercase tracking-widest mb-2">
           Nutrition Analysis
         </p>
         <div className="grid grid-cols-2 gap-1.5">
-          <div className="p-2 rounded-lg border border-paper-100 bg-paper-100">
+          <div className="p-2 rounded-lg border border-amber-500/20 bg-amber-500/[0.06]">
             <div className="text-[9px] text-ink mb-0.5">Carbs (avg)</div>
-            <div className="text-xs font-medium text-ink">-15% ↓</div>
+            <div className="text-xs font-medium text-amber-600">-15% ↓</div>
           </div>
-          <div className="p-2 rounded-lg border border-paper-100 bg-paper-100">
+          <div className="p-2 rounded-lg border border-linen bg-linen">
             <div className="text-[9px] text-ink mb-0.5">Protein</div>
             <div className="text-xs font-medium text-ink">Stable</div>
           </div>
@@ -154,9 +179,9 @@ function FitnessUI() {
 
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}
-        className="pt-2 border-t border-paper-100"
+        className="pt-2 border-t border-linen"
       >
-        <p className="text-[10px] text-ink leading-relaxed font-medium">
+        <p className="text-[10px] text-accent leading-relaxed font-medium">
           💡 Suggestion: Increase carbs by 50g/day to support strength goals
         </p>
       </motion.div>
@@ -186,9 +211,9 @@ const TYPE_MS  = 36
 const HOLD_MS  = 3500
 const INIT_MS  = 700
 
-// ─── Orb Demo Component ───────────────────────────────────────────────────────
+// ─── Lens Demo Component ───────────────────────────────────────────────────────
 
-function OrbDemo() {
+function LensDemo() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
   const [active, setActive]   = useState(false)
@@ -199,10 +224,16 @@ function OrbDemo() {
 
   const demo = DEMOS[demoIdx]
 
+  const prefersReduced = useReducedMotion()
+
   useEffect(() => { if (isInView && !active) setActive(true) }, [isInView, active])
 
   useEffect(() => {
     if (!active) return
+    if (prefersReduced) {
+      if (phase < 3) { setChars(demo.query.length); setPhase(3) }
+      return
+    }
     let t: ReturnType<typeof setTimeout>
 
     if (phase === -1) {
@@ -218,24 +249,27 @@ function OrbDemo() {
     } else if (phase === 2) {
       t = setTimeout(() => setPhase(3), HOLD_MS)
     } else if (phase === 3) {
-      t = setTimeout(() => { setDemoIdx(i => (i + 1) % DEMOS.length); setPhase(-1) }, 200)
+      if (demoIdx + 1 < DEMOS.length) {
+        t = setTimeout(() => { setDemoIdx(demoIdx + 1); setPhase(-1) }, 200)
+      }
     }
 
     return () => clearTimeout(t)
-  }, [active, phase, chars, demo.query.length])
+  }, [active, phase, chars, demoIdx, prefersReduced, demo.query.length])
 
   const isThinking  = phase === 1
   const showPanel = phase >= 2
 
   return (
-    <div ref={ref} className="rounded-2xl border border-paper-100 bg-paper-100 overflow-hidden shadow-lg">
+    <div ref={ref} className="rounded-2xl border border-linen bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-paper-100">
-        <svg viewBox="0 0 472.797 423.24" width="22" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0">
-          <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
-          <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
-        </svg>
-        <span className="text-ink text-xs font-semibold">Zoe</span>
+      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-linen">
+        <motion.div
+          animate={isThinking ? { scale: [1, 1.22, 1, 1.18, 1] } : { scale: 1 }}
+          transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
+          className="w-5 h-5 rounded-full flex-shrink-0 bg-copper"
+        />
+        <span className="text-accent text-xs font-medium">Zoe</span>
         <AnimatePresence>
           {isThinking && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
@@ -252,12 +286,12 @@ function OrbDemo() {
         <div className="ml-auto flex items-center gap-2">
           <div className="flex gap-1">
             {DEMOS.map((_, i) => (
-              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-accent' : 'bg-paper-100'}`} />
+              <div key={i} className={`w-1 h-1 rounded-full transition-all duration-300 ${i === demoIdx ? 'bg-accent' : 'bg-linen'}`} />
             ))}
           </div>
-          <div className="w-px h-3 bg-paper-100" />
+          <div className="w-px h-3 bg-linen" />
           <div className="flex items-center gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
             <span className="text-ink text-[10px]">online</span>
           </div>
         </div>
@@ -273,7 +307,7 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[85%] bg-paper-100 border border-accent rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
+                <div className="max-w-[85%] bg-linen border border-linen rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -286,12 +320,9 @@ function OrbDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}
                 className="flex gap-2"
               >
-                <svg viewBox="0 0 472.797 423.24" width="22" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="flex-shrink-0 mt-0.5">
-                  <path fill="none" stroke="#8b4e27" strokeWidth="12.189" strokeMiterlimit="10" d="M300.714,22.235C229.885,6.343,170.333-6.043,102.775,26.593c-26.996,13.041-57.366,28.335-77.623,68.629C4.377,136.546-.989,194.67,16.959,240.65c24.915,63.831,103.709,91.744,142.309,91.505,7.543-.047,40.698-7.158,66.842,2.179,5.208,1.86,8.845,5.268,11.207,10.349,11.006,23.671-21.167,73.644-22.851,72.442-.877-.627-.19-19.897,6.601-31.804,9.048-15.864,29.245-27.166,79.647-38.459,52.297-11.717,49.292-6.185,79.779-12.528,14.712-3.06,42.868-23.248,63.824-62.093,5.532-10.254,25.41-48.302,21.993-100.765-.363-5.577-2.806-38.779-18.543-69.174-27.025-52.195-76.785-64.301-147.053-80.067Z"/>
-                  <path fill="none" stroke="#d1cdc7" strokeWidth="8.504" strokeMiterlimit="10" d="M290.817,41.158c-59.929-13.446-110.317-23.927-167.479,3.687-22.842,11.034-48.538,23.974-65.678,58.068-17.578,34.965-22.118,84.144-6.933,123.049,21.081,54.008,87.75,77.626,120.41,77.424,6.383-.039,34.435-6.056,56.556,1.843,4.407,1.574,35.721,13.318,63.124,10.6,44.829-4.447,41.706-5.233,67.502-10.6,12.448-2.59,36.271-19.671,54.002-52.538,4.681-8.676,21.5-40.869,18.609-85.259-.307-4.718-2.374-32.812-15.69-58.529-22.866-44.163-64.969-54.406-124.424-67.746Z"/>
-                </svg>
+                <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 bg-copper" />
                 <div>
-                  <p className="text-ink text-[10px] font-semibold mb-1">Zoe</p>
+                  <p className="text-accent text-[10px] font-medium mb-1">Zoe</p>
                   <p className="text-ink text-xs leading-relaxed">{demo.response}</p>
                 </div>
               </motion.div>
@@ -308,7 +339,7 @@ function OrbDemo() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute top-0 right-0 bottom-0 w-[320px] border-l border-paper-100 bg-paper-100 p-4"
+              className="absolute top-0 right-0 bottom-0 w-[320px] border-l border-linen bg-paper-100 p-4"
             >
               {demo.id === 'accounting' && <AccountingUI />}
               {demo.id === 'fitness' && <FitnessUI />}
@@ -318,11 +349,11 @@ function OrbDemo() {
       </div>
 
       {/* Input bar */}
-      <div className="border-t border-paper-100 px-4 py-2.5 flex items-center gap-2.5">
-        <div className="flex-1 h-7 rounded-lg bg-paper-100 border border-paper-100 flex items-center px-3">
+      <div className="border-t border-linen px-4 py-2.5 flex items-center gap-2.5">
+        <div className="flex-1 h-7 rounded-lg bg-linen border border-linen flex items-center px-3">
           <span className="text-ink text-xs">Ask Zoe anything...</span>
         </div>
-        <div className="w-6 h-6 rounded-lg bg-paper-100 flex items-center justify-center flex-shrink-0">
+        <div className="w-6 h-6 rounded-lg bg-linen flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
             <path d="M1 6h10M7 2l4 4-4 4" stroke="#8A4E28" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -335,17 +366,18 @@ function OrbDemo() {
 // ─── Main Section ─────────────────────────────────────────────────────────────
 
 const milestones = [
-  { label: 'Founded', detail: 'Korda Labs incorporated with a single mission: give people real leverage over their lives.', delay: 0 },
-  { label: 'First product', detail: 'Zoe launched — a personal AI operating system connecting your goals, health, calendar, and habits.', delay: 0.15 },
-  { label: "What's next", detail: 'Platforms for startups, freelancers, and teams. The same intelligence layer, tuned for every scale.', delay: 0.3 },
+  { label: 'Founded', detail: 'Korda Labs incorporated with a single mission: keep your goals from getting lost in the noise of your day.', delay: 0 },
+  { label: 'First product', detail: 'Zoe — a dedicated AI partner that does the work, connecting your goals, calendar, health, and habits.', delay: 0.15 },
+  { label: 'On the roadmap', detail: 'A physical notebook that joins the paper planner on your desk with Zoe — what you write and what it runs, one plan.', delay: 0.3 },
 ]
 
-export default function OrbSection() {
+export default function StudioSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
     <section className="relative py-40 px-6 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
 
       <div className="max-w-6xl mx-auto" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -355,7 +387,7 @@ export default function OrbSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight mb-6">
               A focused lab.
               <br />
               <span className="text-ink">A clear mission.</span>
@@ -392,7 +424,7 @@ export default function OrbSection() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-dark transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:text-ink transition-colors"
               >
                 See all products
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -402,13 +434,13 @@ export default function OrbSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Orb Demo */}
+          {/* Right: Lens Demo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <OrbDemo />
+            <LensDemo />
           </motion.div>
         </div>
       </div>

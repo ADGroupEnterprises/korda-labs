@@ -3,25 +3,19 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import ZoeProductDemo from '@/components/ZoeProductDemo'
+import ZoeMarkSpark from '@/components/marks/ZoeMarkSpark'
+import ZoeMarkSparkDark from '@/components/marks/ZoeMarkSparkDark'
 
-// --- Orb component (compact version) ---
-function MiniOrb() {
+// --- Lens component (compact version) ---
+function MiniLens() {
   return (
     <div className="relative flex items-center justify-center w-40 h-40 mx-auto">
-      <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-0 rounded-full border border-linen" />
-      <motion.div animate={{ rotate: -360 }} transition={{ duration: 13, repeat: Infinity, ease: 'linear' }}
-        className="absolute inset-5 rounded-full border border-linen" style={{ borderStyle: 'dashed' }} />
-      <motion.div animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="w-16 h-16 rounded-full"
-        style={{
-          background: 'radial-gradient(circle at 35% 35%, #8A4E28, #8A4E28 40%, #5C3018 80%, #5C3018)',
-          boxShadow: '0 0 32px #8A4E2866, 0 0 64px #8A4E2833, inset 0 0 16px #8A4E2833',
-        }}
-      >
+      <div className="absolute inset-0 rounded-full border border-linen" />
+      <div className="absolute inset-5 rounded-full border border-linen" style={{ borderStyle: 'dashed' }} />
+      <div className="w-16 h-16 rounded-full bg-copper relative">
         <div className="absolute top-3 left-4 w-3 h-3 rounded-full bg-mahogany" />
         <div className="absolute top-2.5 left-3.5 w-1.5 h-1.5 rounded-full bg-paper" />
-      </motion.div>
+      </div>
       <div className="absolute inset-0 rounded-full bg-linen" />
     </div>
   )
@@ -48,8 +42,7 @@ function TaskManagerAnimation() {
     if (!isInView) return
     const t1 = setTimeout(() => setPhase(1), 1400)
     const t2 = setTimeout(() => setPhase(2), 2800)
-    const t3 = setTimeout(() => { setPhase(0); setTick(n => n + 1) }, 5400)
-    return () => [t1, t2, t3].forEach(clearTimeout)
+    return () => [t1, t2].forEach(clearTimeout)
   }, [isInView, tick])
 
   const order = phase === 0 ? UNSORTED : SORTED
@@ -58,8 +51,7 @@ function TaskManagerAnimation() {
   return (
     <div ref={ref} className="rounded-2xl border border-linen bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
-        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
-          className="w-1.5 h-1.5 rounded-full bg-accent" />
+        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
           {phase === 0 ? 'Task Manager — Analyzing' : phase === 1 ? 'Task Manager — Prioritizing' : 'Task Manager — Done'}
         </span>
@@ -168,7 +160,7 @@ const integrationCategories = [
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">{children}</p>
+    <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">{children}</p>
   )
 }
 
@@ -189,19 +181,12 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
           : 'border-linen bg-linen hover:border-accent'
       }`}
     >
-      {/* Icon + name */}
-      <div className="flex items-start gap-4 mb-4">
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-          isBlue ? 'bg-linen text-accent' : 'bg-linen text-accent'
-        }`}>
-          {agent.icon}
-        </div>
-        <div>
-          <h3 className={`font-bold text-lg leading-none ${isBlue ? 'text-accent' : 'text-accent'}`}>{agent.name}</h3>
-          <p className={`text-xs font-medium mt-1 ${isBlue ? 'text-accent' : 'text-accent'}`}>
-            {agent.role}
-          </p>
-        </div>
+      {/* Name */}
+      <div className="mb-4">
+        <h3 className="font-medium text-lg leading-none text-accent">{agent.name}</h3>
+        <p className="text-xs font-medium mt-1 text-accent">
+          {agent.role}
+        </p>
       </div>
 
       {/* Description */}
@@ -212,11 +197,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
         {agent.skills.map(skill => (
           <span
             key={skill}
-            className={`text-xs px-2.5 py-1 rounded-full border ${
-              isBlue
-                ? 'border-linen bg-linen text-accent'
-                : 'border-linen bg-linen text-accent'
-            }`}
+            className="text-xs px-2.5 py-1 rounded-full border border-accent bg-linen text-accent"
           >
             {skill}
           </span>
@@ -293,10 +274,7 @@ function ZoeFeatureCard({ feature, index }: { feature: typeof zoeFeatures[0]; in
     >
       <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-transparent group-hover:bg-linen' : 'bg-transparent group-hover:bg-linen'} transition-all duration-300`} />
       <div className="relative">
-        <div className={`w-10 h-10 rounded-xl ${isBlue ? 'bg-linen text-accent group-hover:bg-linen' : 'bg-linen text-accent group-hover:bg-linen'} flex items-center justify-center mb-4 transition-colors duration-300`}>
-          {feature.icon}
-        </div>
-        <h3 className="text-lg font-semibold text-ink mb-2 leading-snug">{feature.title}</h3>
+        <h3 className="text-lg font-medium text-ink mb-2 leading-snug">{feature.title}</h3>
         <p className="text-ink text-sm leading-relaxed">{feature.description}</p>
       </div>
     </motion.div>
@@ -314,8 +292,8 @@ function ZoeFeaturesHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">What Zoe Does</p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
+      <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">What Zoe Does</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight">
         Built around your life.
         <br />
         <span className="text-ink">Not your workflow.</span>
@@ -330,7 +308,7 @@ const zoeSteps = [
     number: '01',
     title: 'Connect your world',
     description: "Link your calendar, personal apps, goals, and tools. Zoe learns how you live — not how you work.",
-    detail: '20+ integrations, more every week',
+    detail: '20+ integrations and growing',
   },
   {
     number: '02',
@@ -387,8 +365,7 @@ function AdaptiveMemoryAnimation() {
   return (
     <div ref={ref} className="rounded-2xl border border-linen bg-paper-100 p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
-        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 1.8, repeat: Infinity }}
-          className="w-1.5 h-1.5 rounded-full bg-accent" />
+        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
           Zoe Memory — Learning preferences
         </span>
@@ -443,13 +420,13 @@ function ZoeStepCard({ step, index }: { step: typeof zoeSteps[0]; index: number 
       className="flex gap-8 items-start"
     >
       <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-linen bg-linen flex items-center justify-center">
-        <span className="text-accent font-bold text-sm">{step.number}</span>
+        <span className="text-accent font-medium text-sm">{step.number}</span>
         <div className="absolute inset-0 rounded-full bg-linen" />
       </div>
       <div className="pt-2.5">
-        <h3 className="text-xl font-bold text-ink mb-2">{step.title}</h3>
+        <h3 className="text-xl font-medium text-ink mb-2">{step.title}</h3>
         <p className="text-ink leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent font-mono border border-linen bg-linen px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent font-medium border border-linen bg-linen px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -468,8 +445,8 @@ function ZoeHowItWorksHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-20"
     >
-      <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight">
+      <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">How It Works</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight">
         Simple by design.
         <br />
         <span className="text-ink">Powerful by nature.</span>
@@ -500,10 +477,13 @@ export default function ZoePage() {
           className="relative max-w-3xl mx-auto"
         >
           <div className="mb-10">
-            <MiniOrb />
+            <MiniLens />
           </div>
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">Personal AI Operating System</p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold font-serif tracking-tight mb-6">
+          <div className="flex justify-center mb-4">
+            <ZoeMarkSpark size={64} />
+          </div>
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Zoe</p>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium font-serif tracking-tight mb-6">
             Zoe
           </h1>
           <p className="text-xl text-ink max-w-xl mx-auto mb-10 leading-relaxed">
@@ -511,7 +491,7 @@ export default function ZoePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/coming-soon"
+              href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Sign up free
@@ -547,7 +527,7 @@ export default function ZoePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-ink"
+            className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] text-ink"
           >
             Zoe doesn&apos;t just plan your work.
             <br />
@@ -592,18 +572,18 @@ export default function ZoePage() {
         </div>
       </section>
 
-      {/* Orb Experience */}
+      {/* Lens Experience */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-4">
               Talk to Zoe.
               <br />
               <span className="text-ink">Or just let it work.</span>
             </h2>
             <p className="text-ink max-w-xl mx-auto">
-              The Orb is always a tap away — on your phone, your desktop, your lock screen.
+              The Lens is always a tap away — on your phone, your desktop, your lock screen.
               Ask it anything. Or say nothing, and watch your agents run quietly in the background,
               keeping your day on track without interrupting it.
             </p>
@@ -618,7 +598,7 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <SectionLabel>Meet Your Agents</SectionLabel>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               Three agents.
               <br />
               <span className="text-ink">One team. Built for you.</span>
@@ -661,17 +641,15 @@ export default function ZoePage() {
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 rounded-full bg-accent" />
                   <span className="text-accent text-xs font-mono">Desktop Bridge — Connected</span>
-                  <div className="ml-auto flex gap-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-mahogany animate-pulse" />
-                    <div className="w-1.5 h-1.5 rounded-full bg-mahogany animate-pulse" style={{ animationDelay: '0.3s' }} />
-                    <div className="w-1.5 h-1.5 rounded-full bg-mahogany animate-pulse" style={{ animationDelay: '0.6s' }} />
+                  <div className="ml-auto">
+                    <ZoeMarkSparkDark size={27} />
                   </div>
                 </div>
                 <div className="space-y-2 font-mono text-xs">
                   {[
                     { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper' },
-                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-blue-400/60' },
-                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-blue-400/60' },
+                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-linen' },
+                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-linen' },
                     { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent' },
                     { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper' },
                     { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent' },
@@ -698,7 +676,7 @@ export default function ZoePage() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="order-1 lg:order-2"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-6">
                 Your home machine,
                 <br />
                 <span className="text-ink">from anywhere.</span>
@@ -740,7 +718,7 @@ export default function ZoePage() {
             animate={intInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-4">
               Plugs into your life.
               <br />
               <span className="text-ink">Not the other way around.</span>
@@ -781,8 +759,8 @@ export default function ZoePage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Real execution</p>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+            <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Real execution</p>
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
               What Zoe actually does.
               <br />
               <span className="text-ink">Not suggestions. Not summaries. Work.</span>
@@ -816,7 +794,7 @@ export default function ZoePage() {
               },
             ].map((ex, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <p className="text-xs font-medium tracking-widest uppercase text-accent mb-4">{ex.label}</p>
+                <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-4">{ex.label}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2.5">
                     <span className="text-ink text-xs mt-0.5 flex-shrink-0">Trigger</span>
@@ -843,8 +821,8 @@ export default function ZoePage() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div>
-              <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight">
+              <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Proactive engine</p>
+              <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
                 Zoe keeps you on track.
                 <br />
                 <span className="text-ink">Proactively, when you need it.</span>
@@ -859,12 +837,12 @@ export default function ZoePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { time: '7:00 am daily', title: 'Morning briefing', body: 'Your goals, schedule, and priority tasks — ready before you open your laptop.' },
-              { time: 'After 4h inactivity', title: 'Stale task alert', body: 'Task sitting in review too long? Zoe flags it and asks if you want it rescheduled.' },
+              { time: 'After 4h inactivity', title: 'Stale task alert', body: 'When a task sits in review too long, Zoe flags it and asks if you want it rescheduled.' },
               { time: 'When activity drops', title: 'Goal momentum check', body: 'Compass notices when a goal goes quiet and surfaces it before it becomes a miss.' },
               { time: 'End of each day', title: 'Daily summary', body: "What got done, what shifted, and tomorrow's plan — automatic." },
               { time: 'Every Sunday', title: 'Weekly retrospective', body: 'Full-week review with goal progress, time spent, and next week\'s priorities.' },
-              { time: 'When progress < 30%', title: 'Goal gap alert', body: 'A goal category falling behind? Compass flags it with a suggested action.' },
-              { time: 'When work dominates', title: 'Domain overload warning', body: 'Work taking over personal goals again? Zoe notices the imbalance and tells you.' },
+              { time: 'When progress < 30%', title: 'Goal gap alert', body: 'When a goal category falls behind, Compass flags it with a suggested action.' },
+              { time: 'When work dominates', title: 'Domain overload warning', body: 'When work starts to crowd out personal goals, Zoe notices the imbalance and tells you.' },
             ].map((trigger, i) => (
               <div key={i} className="flex gap-4 p-5 rounded-2xl border border-linen bg-linen items-start">
                 <div className="flex-shrink-0 pt-0.5">
@@ -890,7 +868,7 @@ export default function ZoePage() {
               animate={privacyInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight mb-6">
                 Your models.
                 <br />
                 Your keys.
@@ -917,7 +895,7 @@ export default function ZoePage() {
                 { title: 'Resource pattern policies', desc: 'Specify exactly which folders, domains, and services each agent can touch.' },
                 { title: 'Daily action limits', desc: 'Set a max number of file writes, web searches, or tool calls per day. Zoe stops and asks when approaching the limit.' },
                 { title: 'Immutable audit log', desc: 'Every tool call logged with timestamp, result, and cost. Every action reviewable. 30-day minimum retention.' },
-                { title: 'Abort at any time', desc: 'Running agent doing something unexpected? One tap stops it mid-execution. Zoe tells you what it completed before stopping.' },
+                { title: 'Abort at any time', desc: 'If a running agent does something unexpected, one tap stops it mid-execution. Zoe tells you what it completed before stopping.' },
                 { title: 'Confidential task routing', desc: 'Sensitive tasks never touch cloud models — they route to local models only via your Desktop Bridge.' },
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl border border-linen bg-linen">
@@ -935,7 +913,7 @@ export default function ZoePage() {
       <section className="relative py-40 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-linen" />
         <div className="relative max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight mb-4">
             Ready to put AI
             <br />
             <span className="text-accent">
@@ -946,7 +924,7 @@ export default function ZoePage() {
             Sign up free. No credit card required.
           </p>
           <Link
-            href="/coming-soon"
+            href="/signup"
             className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
           >
             Get started with Zoe

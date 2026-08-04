@@ -10,7 +10,7 @@ const values = [
   },
   {
     title: 'AI that amplifies, not replaces.',
-    description: 'We believe AI should amplify human capacity, not replace human judgment. Every tool we build starts with that principle.',
+    description: 'AI should amplify human capacity, not replace human judgment. Every tool we build starts there.',
   },
   {
     title: 'No lock-in. Ever.',
@@ -18,7 +18,7 @@ const values = [
   },
   {
     title: 'Every action, audited.',
-    description: 'Default-deny execution model. Every tool call is checked against your policies, logged immutably, and reversible at any point. You stay in control.',
+    description: 'Default-deny execution. Every tool call is checked against your policies and logged immutably. Stop any agent at any time — Zoe reports exactly what completed.',
   },
 ]
 
@@ -39,15 +39,15 @@ export default function KordaSection() {
           className="mb-16"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight leading-tight">
               We build technology
               <br />
               <span className="text-ink">centered on people.</span>
             </h2>
             <p className="text-ink leading-relaxed text-lg pt-1">
-              KORDA LABS creates products that give people genuine leverage
-              over their own lives — starting with Zoe, and with more to come.
-              We care deeply about privacy, intentional AI, and software that respects the humans using it.
+              Korda Labs is an AI product studio. One dedicated product per problem,
+              built so your goals don't get lost in the noise of your day. Zoe is the first —
+              software that respects your privacy and the person using it.
             </p>
           </div>
         </motion.div>
@@ -63,7 +63,7 @@ export default function KordaSection() {
               className="p-6 rounded-xl border border-linen bg-linen"
             >
               <div className="w-1 h-6 rounded-full bg-accent mb-4" />
-              <h3 className="text-ink font-semibold mb-2">{v.title}</h3>
+              <h3 className="text-ink font-medium mb-2">{v.title}</h3>
               <p className="text-ink text-sm leading-relaxed">{v.description}</p>
             </motion.div>
           ))}

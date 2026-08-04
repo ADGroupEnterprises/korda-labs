@@ -74,8 +74,8 @@ export default function AgentDifferentiator() {
           className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end"
         >
           <div>
-            <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Your agent team</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif tracking-tight leading-tight">
+            <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Your agent team</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium font-serif tracking-tight leading-tight">
               Zoe doesn&apos;t brief you
               <br />
               <span className="text-ink">on what needs doing. It gets it done.</span>
@@ -108,7 +108,7 @@ export default function AgentDifferentiator() {
                     {agent.role}
                   </span>
                 </div>
-                <h3 className="text-ink font-semibold text-lg mb-2">{agent.name}</h3>
+                <h3 className="text-ink font-medium text-lg mb-2">{agent.name}</h3>
                 <p className="text-ink text-sm leading-relaxed">{agent.description}</p>
               </motion.div>
             )
@@ -147,7 +147,7 @@ export default function AgentDifferentiator() {
             </p>
           </div>
           <div className="p-6 rounded-2xl border border-linen bg-linen">
-            <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+            <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-3">Zoe</p>
             <p className="text-ink text-sm leading-relaxed">
               You set the goals. Agents work under your direction to plan, research, and prepare outputs — documents, briefs, automations —
               while you review and execute what needs your touch. You stay in control.

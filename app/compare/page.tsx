@@ -40,12 +40,12 @@ export default function ComparePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-2xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
-          <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Compare</p>
+          <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
             See how Zoe stacks up.
           </h1>
           <p className="text-ink text-lg leading-relaxed">
-            Evaluating tools? Start here. We've put together honest, direct comparisons
+            If you're comparing tools, start here. Direct comparisons on substance,
             so you can see exactly where Zoe fits — and where it goes further.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function ComparePage() {
             {comparisons.map((c, i) => (
               <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-linen bg-linen hover:border-linen hover:bg-linen transition-all duration-300">
                 <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Zoe vs.</p>
-                <h2 className="text-2xl font-bold font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
+                <h2 className="text-2xl font-medium font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
                 <p className="text-ink text-sm leading-relaxed mb-5">{c.description}</p>
                 <span className="text-sm text-accent group-hover:text-accent transition-colors flex items-center gap-1.5">
@@ -77,7 +77,7 @@ export default function ComparePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
               <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-linen bg-linen hover:border-linen hover:bg-linen transition-all duration-300">
-                <h3 className="text-ink font-semibold mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
+                <h3 className="text-ink font-medium mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-4">{u.description}</p>
                 <span className="text-xs text-accent flex items-center gap-1">
                   Read more →

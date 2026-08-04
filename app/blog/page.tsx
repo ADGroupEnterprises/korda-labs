@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Blog — Korda Labs',
-  description: 'Thinking on AI, productivity, and the future of personal operating systems.',
+  description: 'Thinking on AI, autonomous execution, and tools that work for you.',
 }
 
 const posts = [
@@ -51,8 +51,8 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Blog</p>
-          <h1 className="text-4xl sm:text-5xl font-bold font-serif tracking-tight mb-6">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Blog</p>
+          <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
             Thinking on AI, productivity,
             <br />
             <span className="text-ink">and the tools that should work for you.</span>
@@ -76,7 +76,7 @@ export default function BlogPage() {
                   <p className="text-ink text-xs mt-1">{post.date}</p>
                 </div>
                 <div className="sm:col-span-3">
-                  <h2 className="text-ink font-semibold text-lg mb-2">{post.title}</h2>
+                  <h2 className="text-ink font-medium text-lg mb-2">{post.title}</h2>
                   <p className="text-ink text-sm leading-relaxed">{post.excerpt}</p>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function BlogPage() {
           <div className="mt-16 p-8 rounded-2xl border border-linen bg-linen text-center">
             <p className="text-ink text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
             <Link
-              href="#"
+              href="/signup"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Join early access

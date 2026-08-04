@@ -38,15 +38,15 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
     >
       {/* Number badge */}
       <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-linen bg-linen flex items-center justify-center">
-        <span className="text-accent font-bold text-sm">{step.number}</span>
+        <span className="text-accent font-medium text-sm">{step.number}</span>
         {/* Glow dot */}
         <div className="absolute inset-0 rounded-full bg-linen" />
       </div>
 
       <div className="pt-2.5">
-        <h3 className="text-xl font-bold text-paper mb-2">{step.title}</h3>
+        <h3 className="text-xl font-medium text-paper mb-2">{step.title}</h3>
         <p className="text-paper leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent font-mono border border-linen bg-linen px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent font-medium border border-linen bg-linen px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -73,8 +73,8 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <p className="text-accent text-sm font-medium tracking-widest uppercase mb-4">How It Works</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">How It Works</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight">
             Simple by design.
             <br />
             <span className="text-paper">Powerful by nature.</span>

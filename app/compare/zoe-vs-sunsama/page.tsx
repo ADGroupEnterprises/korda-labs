@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const rows = [
   { feature: 'Daily planning ritual', sunsama: 'Guided daily planning flow', zoe: 'Automated + guided options available', zoeWins: false },
-  { feature: 'Task consolidation', sunsama: 'Multiple integrations (manual)', zoe: '20+ integrations, growing weekly', zoeWins: false },
+  { feature: 'Task consolidation', sunsama: 'Multiple integrations (manual)', zoe: '20+ integrations and growing', zoeWins: false },
   { feature: 'Agent selection matrix', sunsama: 'N/A', zoe: 'Auto-selects best model per task', zoeWins: true },
   { feature: 'One-click model addition', sunsama: 'N/A', zoe: 'Add any model instantly', zoeWins: true },
   { feature: 'Autonomous file operations', sunsama: 'None', zoe: 'Read/write Google Drive, OneDrive, local disk', zoeWins: true },
@@ -54,8 +54,8 @@ export default function ZoeVsSunsamaPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Compare</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Compare</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Zoe vs. Sunsama
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
@@ -78,7 +78,7 @@ export default function ZoeVsSunsamaPage() {
               </p>
             </div>
             <div className="p-6 rounded-2xl border border-linen bg-linen">
-              <p className="text-xs font-medium tracking-widest uppercase text-accent mb-3">Zoe</p>
+              <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-3">Zoe</p>
               <p className="text-ink leading-relaxed">
                 Does everything Sunsama does for daily planning — and then connects it to your personal goals,
                 fitness data, habits, and life context. Your AI layer knows the whole picture, not just your work queue.
@@ -94,7 +94,7 @@ export default function ZoeVsSunsamaPage() {
           <div className="grid grid-cols-3 gap-4 mb-4 px-4">
             <div className="text-xs font-medium tracking-widest uppercase text-ink">Feature</div>
             <div className="text-xs font-medium tracking-widest uppercase text-ink text-center">Sunsama</div>
-            <div className="text-xs font-medium tracking-widest uppercase text-accent text-center">Zoe</div>
+            <div className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent text-center">Zoe</div>
           </div>
 
           <div className="rounded-2xl border border-linen overflow-hidden">
@@ -115,7 +115,7 @@ export default function ZoeVsSunsamaPage() {
 
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               Daily planning that connects to your whole life.
             </h2>
             <p className="text-ink mb-8">Try Zoe free — no credit card required.</p>

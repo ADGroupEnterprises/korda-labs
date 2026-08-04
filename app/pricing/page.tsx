@@ -136,8 +136,8 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Pricing</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Pricing</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
             Start free on web.
             <br />
             <span className="text-ink">Upgrade for desktop and phone.</span>
@@ -152,7 +152,7 @@ export default function PricingPage() {
       <section className="py-8 px-6 pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-3 text-center">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-3 text-center">
               Platform Subscription Tiers
             </h2>
             <p className="text-ink text-center max-w-2xl mx-auto">
@@ -186,13 +186,13 @@ export default function PricingPage() {
                 </div>
 
                 <div className="mb-2">
-                  <span className="text-5xl font-bold font-serif text-ink">{tier.price}</span>
+                  <span className="text-5xl font-medium font-serif text-ink">{tier.price}</span>
                   {tier.price !== '$0' && <span className="text-ink text-sm ml-2">/ month</span>}
                 </div>
                 <p className="text-ink text-sm mb-6">{tier.description}</p>
 
                 <Link
-                  href="/coming-soon"
+                  href="/signup"
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 mb-8 ${
                     tier.ctaStyle === 'accent'
                       ? 'bg-accent text-paper hover:bg-mahogany'
@@ -247,7 +247,7 @@ export default function PricingPage() {
       <section className="py-20 px-6 bg-linen">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-3">
               AI Execution Models
             </h2>
             <p className="text-ink max-w-2xl mx-auto">
@@ -260,10 +260,10 @@ export default function PricingPage() {
               <div key={i} className="p-8 rounded-2xl border border-linen bg-paper">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-ink mb-1">{model.name}</h3>
+                    <h3 className="text-xl font-medium text-ink mb-1">{model.name}</h3>
                     <p className="text-sm text-ink">{model.subtitle}</p>
                   </div>
-                  <span className="text-accent font-semibold">{model.price}</span>
+                  <span className="text-accent font-medium">{model.price}</span>
                 </div>
 
                 <p className="text-ink text-sm mb-6 leading-relaxed">{model.description}</p>
@@ -290,7 +290,7 @@ export default function PricingPage() {
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-3">
               Usage Bundle Packs
             </h2>
             <p className="text-ink max-w-2xl mx-auto">
@@ -301,9 +301,9 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {usageBundles.map((bundle, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <h3 className="text-lg font-bold text-ink mb-2">{bundle.name}</h3>
+                <h3 className="text-lg font-medium text-ink mb-2">{bundle.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold font-serif text-ink">{bundle.price}</span>
+                  <span className="text-3xl font-medium font-serif text-ink">{bundle.price}</span>
                 </div>
                 <div className="mb-4 pb-4 border-b border-linen">
                   <p className="text-sm text-accent font-medium mb-1">{bundle.credits}</p>
@@ -314,7 +314,7 @@ export default function PricingPage() {
                   <p className="text-sm text-ink">{bundle.bestFor}</p>
                 </div>
                 <Link
-                  href="/coming-soon"
+                  href="/signup"
                   className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-linen text-ink hover:border-accent hover:bg-linen transition-all duration-300"
                 >
                   Purchase
@@ -343,7 +343,7 @@ export default function PricingPage() {
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border border-linen bg-paper">
                 <div className="w-1 h-5 rounded-full bg-accent mb-3" />
-                <h3 className="text-ink font-semibold text-sm mb-1.5">{item.title}</h3>
+                <h3 className="text-ink font-medium text-sm mb-1.5">{item.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{item.body}</p>
               </div>
             ))}

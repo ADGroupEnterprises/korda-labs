@@ -36,7 +36,7 @@ function WeekCalendar() {
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
           </svg>
         </div>
-        <span className="text-[10px] font-semibold text-ink tracking-wide">Week of Mar 11</span>
+        <span className="text-[10px] font-medium text-ink tracking-wide">Week of Mar 11</span>
         <div className="ml-auto flex items-center gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-accent" />
           <span className="text-[9px] text-ink">Zoe managed</span>
@@ -61,7 +61,7 @@ function WeekCalendar() {
             <div key={day} className={`flex-1 border-r border-linen last:border-0 relative ${isToday ? 'bg-linen' : ''}`}>
               {/* Day header */}
               <div className={`text-center py-1 border-b border-linen ${isToday ? 'bg-linen' : ''}`}>
-                <span className={`text-[9px] font-semibold ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
+                <span className={`text-[9px] font-medium ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
               </div>
               {/* Hour rows */}
               <div className="relative" style={{ height: totalH }}>
@@ -124,7 +124,7 @@ export default function Hero() {
             >
               <Link
                 href="/products/zoe"
-                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-linen bg-linen text-accent text-sm font-medium tracking-widest uppercase hover:border-accent hover:bg-linen transition-all duration-300"
+                className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-linen bg-linen text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase hover:border-accent hover:bg-linen transition-all duration-300"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 Introducing Zoe
@@ -138,7 +138,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-serif"
+              className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-tight leading-[1.05] mb-6 font-serif"
             >
               <span className="text-ink">Other tools</span>
               <br />
@@ -155,7 +155,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="text-lg sm:text-xl text-ink max-w-xl mb-10 leading-relaxed"
             >
-              Zoe is your personal AI operating system — connecting your goals, calendar, and tools into
+              Zoe is your dedicated AI partner that does the work — connecting your goals, calendar, and tools into
               one intelligent layer that doesn&apos;t just plan your day. It researches, writes, searches,
               automates, and executes. <em>While you focus on what only you can do.</em>
             </motion.p>
@@ -167,7 +167,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
-                href="/coming-soon"
+                href="/signup"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
               >
                 Sign up free

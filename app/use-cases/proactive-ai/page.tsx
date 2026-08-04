@@ -58,9 +58,9 @@ export default function ProactiveAIPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">Proactive engine</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
-            The AI operating system
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Proactive engine</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
+            The dedicated AI partner
             <br />
             <span className="text-ink">that runs without you.</span>
           </h1>
@@ -97,7 +97,7 @@ export default function ProactiveAIPage() {
                   <p className="text-xs text-ink mt-2">Replaces: <em>{t.replaces}</em></p>
                 </div>
                 <div className="sm:col-span-3">
-                  <h3 className="text-ink font-semibold mb-2">{t.name}</h3>
+                  <h3 className="text-ink font-medium mb-2">{t.name}</h3>
                   <p className="text-ink text-sm leading-relaxed">{t.body}</p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function ProactiveAIPage() {
           </div>
 
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
               The operating rhythm you always wanted.
               <br />
               <span className="text-ink">Now it runs itself.</span>

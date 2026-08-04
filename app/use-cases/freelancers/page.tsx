@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Zoe for Freelancers — Korda Labs',
-  description: 'Client work, personal goals, and your calendar — one intelligent layer. Zoe is the AI operating system for independent professionals.',
+  description: 'Client work, personal goals, and your calendar — one intelligent layer. Independent professionals don\'t have a chief of staff. Zoe is the next best thing.',
 }
 
 const features = [
@@ -14,21 +14,14 @@ const features = [
   { label: 'AI planning that works around your life', body: 'Freelance schedules are fluid. Task Manager adapts your plan in real time as client requests come in, deadlines shift, or you simply need a different kind of day.' },
 ]
 
-const comingSoon = [
-  'Proposal drafting with client context',
-  'Time tracking and invoicing intelligence',
-  'Client communication summaries',
-  'Revenue and pipeline visibility',
-]
-
 export default function FreelancersPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-xs font-medium tracking-widest uppercase mb-4">For freelancers</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif tracking-tight mb-6 max-w-3xl">
+          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">For freelancers</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
             Client work, personal goals,
             <br />
             <span className="text-ink">and your calendar — one intelligent layer.</span>
@@ -40,7 +33,7 @@ export default function FreelancersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="#"
+              href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Get started free
@@ -63,41 +56,19 @@ export default function FreelancersPage() {
             {features.map((f, i) => (
               <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
-                <h3 className="text-ink font-semibold mb-2">{f.label}</h3>
+                <h3 className="text-ink font-medium mb-2">{f.label}</h3>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
               </div>
             ))}
           </div>
 
-          {/* Coming soon */}
-          <div className="p-8 rounded-2xl border border-linen bg-linen mb-20">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
-                Coming soon
-              </span>
-              <span className="text-ink text-sm">Freelancer Platform — built on Zoe</span>
-            </div>
-            <p className="text-ink text-sm mb-6 leading-relaxed">
-              A dedicated Zoe experience tuned for independent professionals — with deeper client management,
-              proposal intelligence, and time tracking built in.
-            </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {comingSoon.map((item, i) => (
-                <li key={i} className="flex items-center gap-2.5 text-sm text-ink">
-                  <span className="w-1 h-1 rounded-full bg-linen flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif tracking-tight mb-4">
-              Your AI operating system for independent work.
+            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
+              Your dedicated AI partner for independent work.
             </h2>
             <p className="text-ink mb-8">Free to start. No credit card.</p>
             <Link
-              href="#"
+              href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
             >
               Get started with Zoe
