@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ZOE-434: five-colour brand system — Paper, Linen, Copper, Mahogany, Ink.
-   Full opacity only (PAL-01/02); copper is the only strong accent (PAL-03). */
+/* Harbor palette (brand architecture v2.0): sailcloth, deep-navy ink, coat blue,
+   sky + mist surfaces, copper/brass as the small warm accent. */
 :root {
-  --background: #FAFAF8;
-  --foreground: #37332E;
+  --background: #FBF9F4;
+  --foreground: #0F2942;
 }
 
 * {
@@ -19,29 +19,52 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background: #FAFAF8;
-  color: #37332E;
+  background: #FBF9F4;
+  color: #0F2942;
   font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
 }
 
 ::selection {
-  background: #EDE8DF;
-  color: #37332E;
+  background: #A7D7FF;
+  color: #0F2942;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAFAF8;
+  background: #FBF9F4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #EDE8DF;
+  background: #C9DCF0;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8A4E28;
+  background: #3D64AE;
+}
+
+@layer components {
+  /* Display face: chunky, tight, a little playful — matches the Keel wordmark. */
+  .font-display {
+    letter-spacing: -0.025em;
+  }
+  /* Eyebrow / section label: mono, tracked — the "instrument panel" voice. */
+  .eyebrow {
+    font-family: var(--font-jetbrains-mono), 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  /* Nautical-chart dot grid. */
+  .bg-chart {
+    background-image: radial-gradient(rgba(15, 41, 66, 0.1) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .bg-chart-light {
+    background-image: radial-gradient(rgba(251, 249, 244, 0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
 }
 
 /* MOTION-01: respect reduced motion globally */

@@ -3,27 +3,27 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Compare Zoe — Korda Labs',
-  description: 'See how Zoe compares to Akiflow, Motion, and other productivity tools.',
+  title: 'Compare Keel — Korda Labs',
+  description: 'See how Keel compares to Akiflow, Motion, and other productivity tools.',
 }
 
 const comparisons = [
   {
     opponent: 'Akiflow',
-    href: '/compare/zoe-vs-akiflow',
-    description: 'Akiflow consolidates your tasks. Zoe plans, schedules, and executes them — automatically.',
+    href: '/compare/keel-vs-akiflow',
+    description: 'Akiflow consolidates your tasks. Keel plans, schedules, and executes them — automatically.',
     angle: 'Same problem. Completely different approach.',
   },
   {
     opponent: 'Motion',
-    href: '/compare/zoe-vs-motion',
-    description: 'Motion auto-schedules your work calendar. Zoe connects your personal goals, fitness, and life into the same layer.',
+    href: '/compare/keel-vs-motion',
+    description: 'Motion auto-schedules your work calendar. Keel connects your personal goals, fitness, and life into the same layer.',
     angle: 'AI scheduling that goes beyond your calendar.',
   },
   {
     opponent: 'Sunsama',
-    href: '/compare/zoe-vs-sunsama',
-    description: 'Sunsama guides mindful daily planning. Zoe adds autonomous agents, personal goals, and fitness tracking to the mix.',
+    href: '/compare/keel-vs-sunsama',
+    description: 'Sunsama guides mindful daily planning. Keel adds autonomous agents, personal goals, and fitness tracking to the mix.',
     angle: 'Daily planning that connects to your whole life.',
   },
 ]
@@ -40,13 +40,13 @@ export default function ComparePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-2xl mx-auto">
-          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Compare</p>
-          <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
-            See how Zoe stacks up.
+          <p className="text-accent eyebrow mb-4">Compare</p>
+          <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight mb-6">
+            See how Keel stacks up.
           </h1>
           <p className="text-ink text-lg leading-relaxed">
             If you're comparing tools, start here. Direct comparisons on substance,
-            so you can see exactly where Zoe fits — and where it goes further.
+            so you can see exactly where Keel fits — and where it goes further.
           </p>
         </div>
       </section>
@@ -57,9 +57,9 @@ export default function ComparePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-8">Head-to-head</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {comparisons.map((c, i) => (
-              <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-linen bg-linen hover:border-linen hover:bg-linen transition-all duration-300">
-                <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Zoe vs.</p>
-                <h2 className="text-2xl font-medium font-serif text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
+              <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-mist bg-mist hover:border-mist hover:bg-mist transition-all duration-300">
+                <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Keel vs.</p>
+                <h2 className="text-2xl font-display font-bold text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
                 <p className="text-ink text-sm leading-relaxed mb-5">{c.description}</p>
                 <span className="text-sm text-accent group-hover:text-accent transition-colors flex items-center gap-1.5">
@@ -76,7 +76,7 @@ export default function ComparePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-8">By use case</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
-              <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-linen bg-linen hover:border-linen hover:bg-linen transition-all duration-300">
+              <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-mist bg-mist hover:border-mist hover:bg-mist transition-all duration-300">
                 <h3 className="text-ink font-medium mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-4">{u.description}</p>
                 <span className="text-xs text-accent flex items-center gap-1">
@@ -92,13 +92,13 @@ export default function ComparePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
               >
                 Get started free
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-linen text-ink hover:border-linen hover:bg-linen transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
               >
                 See pricing
               </Link>

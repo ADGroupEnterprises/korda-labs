@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Link from 'next/link'
+import { Zoe } from '@/components/marks/Brand'
 
 export default function ComingSoonClient() {
   const [email, setEmail] = useState('')
@@ -45,23 +46,16 @@ export default function ComingSoonClient() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          {/* The Lens */}
-          <div className="relative flex items-center justify-center w-32 h-32 mx-auto mb-12">
-            <div className="absolute inset-0 rounded-full border border-linen" />
-            <div className="absolute inset-4 rounded-full border border-linen" style={{ borderStyle: 'dashed' }} />
-            <div className="w-12 h-12 rounded-full bg-copper relative">
-              <div className="absolute top-2 left-3 w-2 h-2 rounded-full bg-mahogany" />
-              <div className="absolute top-1.5 left-2.5 w-1 h-1 rounded-full bg-paper" />
-            </div>
-            <div className="absolute inset-0 rounded-full bg-linen" />
+          <div className="flex justify-center mb-10">
+            <Zoe pose="wave" className="w-36 h-auto" />
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
             Coming Soon
           </h1>
           <p className="text-xl text-ink max-w-lg mx-auto mb-12 leading-relaxed">
-            Zoe is almost ready. Join the waitlist to be among the first to use your dedicated AI partner that does the work.
+            Keel is almost ready. Join the waitlist to be among the first to use your dedicated AI partner that does the work.
           </p>
 
           {/* Email Form */}
@@ -74,12 +68,12 @@ export default function ComingSoonClient() {
                 placeholder="Enter your email"
                 required
                 disabled={status === 'loading' || status === 'success'}
-                className="flex-1 px-6 py-4 rounded-xl border border-linen bg-paper text-ink placeholder:text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-linen transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-4 rounded-xl border border-mist bg-paper text-ink placeholder:text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-mist transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="px-8 py-4 rounded-xl bg-accent text-paper font-medium hover:bg-mahogany transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
+                className="px-8 py-4 rounded-full bg-accent text-paper font-medium hover:bg-navy transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
               >
                 {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined' : 'Join Waitlist'}
               </button>
@@ -108,11 +102,11 @@ export default function ComingSoonClient() {
           </Link>
 
           {/* Additional Info */}
-          <div className="mt-16 pt-12 border-t border-linen">
+          <div className="mt-16 pt-12 border-t border-mist">
             <p className="text-ink text-sm mb-4">Want to learn more?</p>
             <div className="flex flex-wrap justify-center gap-6">
-              <Link href="/products/zoe" className="text-sm text-accent hover:text-accent transition-colors">
-                About Zoe →
+              <Link href="/products/keel" className="text-sm text-accent hover:text-accent transition-colors">
+                About Keel →
               </Link>
               <Link href="/use-cases/autonomous-agents" className="text-sm text-accent hover:text-accent transition-colors">
                 Autonomous Agents →

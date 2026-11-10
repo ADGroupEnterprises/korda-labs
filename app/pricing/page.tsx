@@ -3,13 +3,13 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Pricing — Zoe by Korda Labs',
+  title: 'Pricing — Keel by Korda Labs',
   description: 'Start free on web. Upgrade for desktop and phone access. Bring your own API keys or use managed credits.',
 }
 
 const platformTiers = [
   {
-    name: 'Zoe Web',
+    name: 'Keel Web',
     badge: 'Free',
     price: '$0',
     period: 'forever',
@@ -27,14 +27,14 @@ const platformTiers = [
     ctaStyle: 'border',
   },
   {
-    name: 'Zoe Pro',
+    name: 'Keel Pro',
     badge: 'Desktop',
     price: '$15',
     period: 'per month',
     description: 'Web + Desktop App',
     surfaces: ['Web Dashboard', 'Desktop App'],
     features: [
-      'Everything in Zoe Web',
+      'Everything in Keel Web',
       'Desktop Bridge Service',
       'Local model execution (Ollama)',
       'Local disk storage access',
@@ -46,14 +46,14 @@ const platformTiers = [
     ctaStyle: 'accent',
   },
   {
-    name: 'Zoe Elite',
+    name: 'Keel Elite',
     badge: 'Full Access',
     price: '$25',
     period: 'per month',
     description: 'Web + Desktop + Phone',
     surfaces: ['Web Dashboard', 'Desktop App', 'Native Phone App'],
     features: [
-      'Everything in Zoe Pro',
+      'Everything in Keel Pro',
       'Native phone app',
       'Push notifications',
       'Phone-only storage affinity',
@@ -83,10 +83,10 @@ const aiModels = [
     note: 'Platform fee included in subscription tier',
   },
   {
-    name: 'Zoe Hybrid',
+    name: 'Keel Hybrid',
     subtitle: 'Managed "Soul"',
     price: 'Included',
-    description: 'Zoe handles background tasks, you provide keys for critical work',
+    description: 'Keel handles background tasks, you provide keys for critical work',
     features: [
       'Platform absorbs background token costs',
       'Distillation and memory maintenance included',
@@ -136,8 +136,8 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Pricing</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
+          <p className="text-accent eyebrow mb-4">Pricing</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
             Start free on web.
             <br />
             <span className="text-ink">Upgrade for desktop and phone.</span>
@@ -152,11 +152,11 @@ export default function PricingPage() {
       <section className="py-8 px-6 pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-3 text-center">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-3 text-center">
               Platform Subscription Tiers
             </h2>
             <p className="text-ink text-center max-w-2xl mx-auto">
-              Access to Zoe infrastructure and surfaces. All tiers support BYO API keys.
+              Access to Keel infrastructure and surfaces. All tiers support BYO API keys.
             </p>
           </div>
 
@@ -166,8 +166,8 @@ export default function PricingPage() {
                 key={i}
                 className={`relative rounded-2xl p-8 ${
                   tier.highlight
-                    ? 'border-2 border-accent bg-linen'
-                    : 'border border-linen bg-linen'
+                    ? 'border-2 border-accent bg-mist'
+                    : 'border border-mist bg-mist'
                 }`}
               >
                 {tier.highlight && (
@@ -179,14 +179,14 @@ export default function PricingPage() {
                 <div className="flex items-center justify-between mb-6">
                   <p className="text-xs font-medium tracking-widest uppercase text-ink">{tier.name}</p>
                   <span className={`text-xs px-2 py-0.5 rounded-full ${
-                    tier.badge === 'Free' ? 'bg-linen text-ink' : 'bg-linen text-accent'
+                    tier.badge === 'Free' ? 'bg-mist text-ink' : 'bg-mist text-accent'
                   }`}>
                     {tier.badge}
                   </span>
                 </div>
 
                 <div className="mb-2">
-                  <span className="text-5xl font-medium font-serif text-ink">{tier.price}</span>
+                  <span className="text-5xl font-display font-bold text-ink">{tier.price}</span>
                   {tier.price !== '$0' && <span className="text-ink text-sm ml-2">/ month</span>}
                 </div>
                 <p className="text-ink text-sm mb-6">{tier.description}</p>
@@ -195,8 +195,8 @@ export default function PricingPage() {
                   href="/signup"
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 mb-8 ${
                     tier.ctaStyle === 'accent'
-                      ? 'bg-accent text-paper hover:bg-mahogany'
-                      : 'border border-linen text-ink hover:border-linen hover:bg-linen'
+                      ? 'bg-accent text-paper hover:bg-navy'
+                      : 'border border-mist text-ink hover:border-mist hover:bg-mist'
                   }`}
                 >
                   {tier.cta}
@@ -206,7 +206,7 @@ export default function PricingPage() {
                   <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Surfaces</p>
                   <div className="flex flex-wrap gap-2">
                     {tier.surfaces.map((surface, si) => (
-                      <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-linen text-accent border border-linen">
+                      <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-mist text-accent border border-mist">
                         {surface}
                       </span>
                     ))}
@@ -226,7 +226,7 @@ export default function PricingPage() {
                 </div>
 
                 {tier.limitations.length > 0 && (
-                  <div className="pt-6 border-t border-linen">
+                  <div className="pt-6 border-t border-mist">
                     <p className="text-xs text-ink mb-2">Not included:</p>
                     <ul className="space-y-1.5">
                       {tier.limitations.map((l, li) => (
@@ -244,10 +244,10 @@ export default function PricingPage() {
       </section>
 
       {/* AI Execution Models */}
-      <section className="py-20 px-6 bg-linen">
+      <section className="py-20 px-6 bg-mist">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-3">
               AI Execution Models
             </h2>
             <p className="text-ink max-w-2xl mx-auto">
@@ -257,7 +257,7 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {aiModels.map((model, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-linen bg-paper">
+              <div key={i} className="p-8 rounded-2xl border border-mist bg-paper">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-medium text-ink mb-1">{model.name}</h3>
@@ -277,7 +277,7 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <div className="pt-4 border-t border-linen">
+                <div className="pt-4 border-t border-mist">
                   <p className="text-xs text-ink">{model.note}</p>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default function PricingPage() {
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-3">
               Usage Bundle Packs
             </h2>
             <p className="text-ink max-w-2xl mx-auto">
@@ -300,12 +300,12 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {usageBundles.map((bundle, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
+              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
                 <h3 className="text-lg font-medium text-ink mb-2">{bundle.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-medium font-serif text-ink">{bundle.price}</span>
+                  <span className="text-3xl font-display font-bold text-ink">{bundle.price}</span>
                 </div>
-                <div className="mb-4 pb-4 border-b border-linen">
+                <div className="mb-4 pb-4 border-b border-mist">
                   <p className="text-sm text-accent font-medium mb-1">{bundle.credits}</p>
                   <p className="text-xs text-ink">{bundle.tasks}</p>
                 </div>
@@ -315,7 +315,7 @@ export default function PricingPage() {
                 </div>
                 <Link
                   href="/signup"
-                  className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-linen text-ink hover:border-accent hover:bg-linen transition-all duration-300"
+                  className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-mist text-ink hover:border-accent hover:bg-mist transition-all duration-300"
                 >
                   Purchase
                 </Link>
@@ -323,7 +323,7 @@ export default function PricingPage() {
             ))}
           </div>
 
-          <div className="mt-8 p-6 rounded-xl border border-linen bg-linen text-center">
+          <div className="mt-8 p-6 rounded-xl border border-mist bg-mist text-center">
             <p className="text-sm text-ink">
               <span className="font-medium text-ink">Note:</span> Bundle credits account for the Tri-Agent Consultation Loop overhead.
               Unused credits roll over for 12 months.
@@ -333,7 +333,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ / Reassurance */}
-      <section className="py-20 px-6 bg-linen">
+      <section className="py-20 px-6 bg-mist">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
@@ -341,7 +341,7 @@ export default function PricingPage() {
               { title: 'Cancel anytime', body: 'No contracts, no cancellation fees. Downgrade or cancel from your account settings in seconds.' },
               { title: 'We never train on your data', body: 'Your conversations, goals, and context are yours. We do not use them to train any model.' },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-xl border border-linen bg-paper">
+              <div key={i} className="p-6 rounded-xl border border-mist bg-paper">
                 <div className="w-1 h-5 rounded-full bg-accent mb-3" />
                 <h3 className="text-ink font-medium text-sm mb-1.5">{item.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{item.body}</p>
@@ -353,7 +353,7 @@ export default function PricingPage() {
             <p className="text-ink text-sm mb-4">
               Comparing tools?{' '}
               <Link href="/compare" className="text-accent hover:text-accent transition-colors">
-                See how Zoe stacks up →
+                See how Keel stacks up →
               </Link>
             </p>
           </div>

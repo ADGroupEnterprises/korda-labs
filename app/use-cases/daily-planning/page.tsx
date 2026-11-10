@@ -3,15 +3,15 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'AI Daily Planning — Zoe by Korda Labs',
-  description: 'Your AI morning briefing. Your AI end-of-day review. Zoe automates the daily planning ritual so you can focus on the work that matters.',
+  title: 'AI Daily Planning — Keel by Korda Labs',
+  description: 'Your AI morning briefing. Your AI end-of-day review. Keel automates the daily planning ritual so you can focus on the work that matters.',
 }
 
 const morningSteps = [
   {
     time: 'Morning',
     title: 'Your briefing, ready before you are.',
-    body: 'Zoe reviews your goals, checks your calendar, weighs your energy levels from your health data, and hands you a prioritized plan. No inbox triage. No manual scheduling. Just a clear day, ready to go.',
+    body: 'Keel reviews your goals, checks your calendar, weighs your energy levels from your health data, and hands you a prioritized plan. No inbox triage. No manual scheduling. Just a clear day, ready to go.',
   },
   {
     time: 'During the day',
@@ -21,7 +21,7 @@ const morningSteps = [
   {
     time: 'End of day',
     title: 'Log it. Learn from it. Prep for tomorrow.',
-    body: "Zoe reviews what got done, notes what shifted, and automatically prepares your plan for tomorrow — factoring in what's still open, what's coming up, and how you're tracking toward your goals.",
+    body: "Keel reviews what got done, notes what shifted, and automatically prepares your plan for tomorrow — factoring in what's still open, what's coming up, and how you're tracking toward your goals.",
   },
 ]
 
@@ -31,28 +31,28 @@ export default function DailyPlanningPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Use case</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
+          <p className="text-accent eyebrow mb-4">Use case</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
             Your AI morning briefing.
             <br />
             <span className="text-ink">Your AI end-of-day review.</span>
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
-            Tools like Akiflow and Sunsama give you a structured planning ritual. Zoe automates it —
+            Tools like Akiflow and Sunsama give you a structured planning ritual. Keel automates it —
             so the discipline is built in, not something you have to summon every morning.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
               Get started free
             </Link>
             <Link
-              href="/products/zoe"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-linen text-ink hover:border-linen hover:bg-linen transition-all duration-300"
+              href="/products/keel"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
             >
-              Learn about Zoe
+              Learn about Keel
             </Link>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function DailyPlanningPage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
-            <div className="p-6 rounded-2xl border border-linen bg-linen">
+            <div className="p-6 rounded-2xl border border-mist bg-mist">
               <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Manual daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>— Open 4+ apps to see what's due</li>
@@ -72,8 +72,8 @@ export default function DailyPlanningPage() {
                 <li>— Do it all again tomorrow</li>
               </ul>
             </div>
-            <div className="p-6 rounded-2xl border border-linen bg-linen">
-              <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-3">Zoe daily planning</p>
+            <div className="p-6 rounded-2xl border border-mist bg-mist">
+              <p className="eyebrow text-accent mb-3">Keel daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>✓ Agents review your goals, calendar, and health overnight</li>
                 <li>✓ Wake up to a prioritized, scheduled day</li>
@@ -90,8 +90,8 @@ export default function DailyPlanningPage() {
       <section className="py-8 px-6 pb-32">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
-            <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">The ritual — automated</p>
-            <h2 className="text-3xl sm:text-4xl font-medium font-serif tracking-tight">
+            <p className="text-accent eyebrow mb-4">The ritual — automated</p>
+            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
               The planning that used to take
               <br />
               <span className="text-ink">30 minutes. Now runs in the background.</span>
@@ -100,9 +100,9 @@ export default function DailyPlanningPage() {
 
           <div className="space-y-5">
             {morningSteps.map((step, i) => (
-              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-linen bg-linen">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-mist bg-mist">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-ink">
                     {step.time}
                   </span>
                 </div>
@@ -116,15 +116,15 @@ export default function DailyPlanningPage() {
 
           {/* CTA */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl sm:text-3xl font-medium font-serif tracking-tight mb-4">
-              Let Zoe own your daily planning.
+            <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
+              Let Keel own your daily planning.
             </h2>
             <p className="text-ink mb-8">Start free. No credit card required.</p>
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started with Zoe
+              Get started with Keel
             </Link>
           </div>
         </div>

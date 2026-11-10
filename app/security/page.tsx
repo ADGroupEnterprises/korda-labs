@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Security — Zoe by Korda Labs',
-  description: "Zoe acts in the world. Here's how we make that safe — default-deny policies, immutable audit logs, end-to-end encryption, and full abort control.",
+  title: 'Security — Keel by Korda Labs',
+  description: "Keel acts in the world. Here's how we make that safe — default-deny policies, immutable audit logs, end-to-end encryption, and full abort control.",
 }
 
 const principles = [
   {
     title: 'Default-deny execution',
-    body: "Every autonomous capability is off until you explicitly enable it. File access, web search, browser automation, script execution — none of it runs without your policy allowing it. The default state is: Zoe asks, you approve.",
+    body: "Every autonomous capability is off until you explicitly enable it. File access, web search, browser automation, script execution — none of it runs without your policy allowing it. The default state is: Keel asks, you approve.",
     tag: 'Policy model',
   },
   {
@@ -20,7 +20,7 @@ const principles = [
   },
   {
     title: 'Daily action limits',
-    body: "Set a maximum number of file writes, web searches, browser actions, or tool calls per day — per action type. Zoe checks the counter before every tool call and stops at 95% of your limit to prompt before exceeding it.",
+    body: "Set a maximum number of file writes, web searches, browser actions, or tool calls per day — per action type. Keel checks the counter before every tool call and stops at 95% of your limit to prompt before exceeding it.",
     tag: 'Rate limits',
   },
   {
@@ -30,7 +30,7 @@ const principles = [
   },
   {
     title: 'Abort at any time',
-    body: 'If a running agent does something unexpected, one tap stops it mid-execution. Zoe polls for abort requests before every model call. When stopped, it tells you exactly what actions completed before the abort — and notes that completed work is not automatically reversed.',
+    body: 'If a running agent does something unexpected, one tap stops it mid-execution. Keel polls for abort requests before every model call. When stopped, it tells you exactly what actions completed before the abort — and notes that completed work is not automatically reversed.',
     tag: 'Abort control',
   },
   {
@@ -76,15 +76,15 @@ export default function SecurityPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Security & trust</p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6 max-w-3xl">
-            Zoe acts in the world.
+          <p className="text-accent eyebrow mb-4">Security & trust</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
+            Keel acts in the world.
             <br />
             <span className="text-ink">Here&apos;s how we make that safe.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
             When an AI can read your files, search the web, automate your browser, and run scripts on your machine,
-            the safety model matters. Here&apos;s exactly how Zoe&apos;s security infrastructure works — and why it starts
+            the safety model matters. Here&apos;s exactly how Keel&apos;s security infrastructure works — and why it starts
             from a position of default-deny, not default-trust.
           </p>
         </div>
@@ -95,8 +95,8 @@ export default function SecurityPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {principles.map((p, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-linen bg-linen">
-                <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-3">{p.tag}</p>
+              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+                <p className="text-accent eyebrow mb-3">{p.tag}</p>
                 <h3 className="text-ink font-medium mb-2">{p.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{p.body}</p>
               </div>
@@ -104,12 +104,12 @@ export default function SecurityPage() {
           </div>
 
           {/* Non-negotiables callout */}
-          <div className="p-8 rounded-2xl border border-linen bg-linen mb-16">
-            <p className="text-[0.9rem] font-bold tracking-[0.16em] uppercase text-accent mb-4">The non-negotiables</p>
+          <div className="p-8 rounded-2xl border border-mist bg-mist mb-16">
+            <p className="eyebrow text-accent mb-4">The non-negotiables</p>
             <ul className="space-y-3">
               {[
                 'No security decision is ever delegated to an AI model — enforcement lives in code, not prompts',
-                'When the database is unavailable, Zoe returns an error — it never fails open',
+                'When the database is unavailable, Keel returns an error — it never fails open',
                 'Encryption keys are used only for their intended purpose and never cross purposes',
                 'Session tokens are never passed in URLs',
                 'All security comparisons use constant-time equality to prevent timing attacks',
@@ -125,10 +125,10 @@ export default function SecurityPage() {
           <div className="text-center">
             <p className="text-ink text-sm mb-6">Questions about our security model?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl bg-accent text-paper hover:bg-mahogany transition-all duration-300">
+              <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
                 Get started free
               </Link>
-              <a href="mailto:security@kordalabs.com" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl border border-linen text-ink hover:border-linen hover:bg-linen transition-all duration-300">
+              <a href="mailto:security@kordalabs.com" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
                 Contact security team
               </a>
             </div>

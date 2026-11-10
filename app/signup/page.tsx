@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { APP_SIGNUP_URL, APP_SIGNIN_URL } from '@/lib/links'
-import ZoeMarkSpark from '@/components/marks/ZoeMarkSpark'
+import { Zoe, KeelLockup } from '@/components/marks/Brand'
 
 export const metadata: Metadata = {
-  title: 'Sign up — Zoe',
+  title: 'Sign up — Keel',
   description:
-    'Create your Zoe account. Set a goal, build the plan, and hand off the work.',
+    'Create your Keel account. Set a goal, build the plan, and hand off the work.',
 }
 
 const proof = [
@@ -30,13 +30,13 @@ export default function SignupPage() {
       <section className="max-w-content mx-auto px-5 md:px-20 py-20 md:py-32">
         <div className="max-w-xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <ZoeMarkSpark size={72} />
+            <Zoe pose="salute" className="w-36 h-auto" />
           </div>
-          <p className="text-[0.9rem] font-bold text-accent uppercase tracking-[0.16em] mb-6">
-            Zoe
-          </p>
-          <h1 className="font-serif font-medium text-4xl md:text-hero-sm text-ink mb-6">
-            Set a goal. Zoe does the work.
+          <div className="flex justify-center mb-6">
+            <KeelLockup className="h-9 w-auto" />
+          </div>
+          <h1 className="font-display font-bold text-4xl md:text-hero-sm text-ink mb-6">
+            Set a goal. Zoe and the crew do the work.
           </h1>
           <p className="text-lg text-ink mb-10 leading-relaxed">
             Create your account to connect your calendar and tools, set your
@@ -46,13 +46,13 @@ export default function SignupPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a
               href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md bg-accent text-paper hover:bg-mahogany transition-colors duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-colors duration-300"
             >
               Create your account
             </a>
             <Link
-              href="/products/zoe"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md border border-linen text-ink hover:bg-linen transition-colors duration-300"
+              href="/products/keel"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:bg-mist transition-colors duration-300"
             >
               See how it works
             </Link>
@@ -60,13 +60,13 @@ export default function SignupPage() {
 
           <p className="text-sm text-ink mb-16">
             Free to start. No credit card required.{' '}
-            <a href={APP_SIGNIN_URL} className="text-accent hover:text-mahogany">
+            <a href={APP_SIGNIN_URL} className="text-accent hover:text-navy">
               Or sign in if you already have an account.
             </a>
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6 border-t border-linen pt-12">
+        <div className="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6 border-t border-mist pt-12">
           {proof.map((item) => (
             <div key={item.title} className="text-left">
               <h2 className="text-sm font-medium text-ink mb-2">{item.title}</h2>
@@ -76,7 +76,7 @@ export default function SignupPage() {
         </div>
 
         <p className="max-w-3xl mx-auto text-center text-sm text-ink mt-12">
-          Zoe is built on Korda Labs&rsquo; control architecture.
+          Keel is built on Korda Labs&rsquo; control architecture.
         </p>
       </section>
     </main>

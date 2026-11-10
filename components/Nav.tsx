@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { APP_SIGNIN_URL } from '@/lib/links'
-import KordaMark from '@/components/marks/KordaMark'
+import { KordaLockup, KeelMark } from '@/components/marks/Brand'
 
 function ProductsDropdown({ open }: { open: boolean }) {
   return (
@@ -14,23 +14,23 @@ function ProductsDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 rounded-xl border border-linen bg-paper shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-xl border border-mist bg-paper shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             <Link
-              href="/products/zoe"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-linen transition-colors group"
+              href="/products/keel"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-mist transition-colors group"
             >
-              <div className="w-6 h-6 rounded-md bg-linen flex items-center justify-center flex-shrink-0">
-                <div className="w-2 h-2 rounded-full bg-accent" />
+              <div className="w-8 h-8 rounded-lg bg-mist flex items-center justify-center flex-shrink-0">
+                <KeelMark size={20} />
               </div>
               <div>
-                <div className="text-sm font-medium text-ink">Zoe</div>
-                <div className="text-xs text-ink">Dedicated AI partner</div>
+                <div className="text-sm font-semibold text-ink">Keel</div>
+                <div className="text-xs text-ink-soft">Tasks &amp; calendar, crewed by AI</div>
               </div>
             </Link>
           </div>
-          <div className="border-t border-linen p-2">
+          <div className="border-t border-mist p-2">
             <Link
               href="/products"
               className="block text-center text-xs text-ink hover:text-ink py-1.5 transition-colors"
@@ -53,7 +53,7 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-linen bg-paper shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-mist bg-paper shadow-2xl overflow-hidden"
         >
           <div className="p-1.5">
             {[
@@ -65,10 +65,10 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-linen transition-colors"
+                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-mist transition-colors"
               >
                 <span className="text-sm font-medium text-ink">{item.label}</span>
-                <span className="text-xs text-ink">{item.sub}</span>
+                <span className="text-xs text-ink-soft">{item.sub}</span>
               </Link>
             ))}
           </div>
@@ -108,13 +108,12 @@ export default function Nav() {
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-paper border-b border-linen"
+      className="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-mist"
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Left: Brand */}
         <Link href="/" className="flex items-center gap-2.5">
-          <KordaMark size={32} />
-          <span className="font-serif font-medium text-sm text-ink">Korda Labs</span>
+          <KordaLockup className="h-11 w-auto" />
         </Link>
 
         {/* Center: Nav links */}
@@ -124,7 +123,7 @@ export default function Nav() {
             <button
               onClick={() => setProductsOpen(v => !v)}
               onMouseEnter={() => setProductsOpen(true)}
-              className="flex items-center gap-1 text-ink hover:text-ink text-sm transition-colors duration-300"
+              className="flex items-center gap-1 text-ink hover:text-accent text-sm font-medium transition-colors duration-300"
             >
               Products
               {chevron(productsOpen)}
@@ -139,7 +138,7 @@ export default function Nav() {
             <button
               onClick={() => setHowOpen(v => !v)}
               onMouseEnter={() => setHowOpen(true)}
-              className="flex items-center gap-1 text-ink hover:text-ink text-sm transition-colors duration-300"
+              className="flex items-center gap-1 text-ink hover:text-accent text-sm font-medium transition-colors duration-300"
             >
               How it Works
               {chevron(howOpen)}
@@ -149,13 +148,13 @@ export default function Nav() {
             </div>
           </div>
 
-          <Link href="/pricing" className="text-ink hover:text-ink text-sm transition-colors duration-300">
+          <Link href="/pricing" className="text-ink hover:text-accent text-sm font-medium transition-colors duration-300">
             Pricing
           </Link>
-          <Link href="/compare" className="text-ink hover:text-ink text-sm transition-colors duration-300">
+          <Link href="/compare" className="text-ink hover:text-accent text-sm font-medium transition-colors duration-300">
             Compare
           </Link>
-          <Link href="/security" className="text-ink hover:text-ink text-sm transition-colors duration-300">
+          <Link href="/security" className="text-ink hover:text-accent text-sm font-medium transition-colors duration-300">
             Security
           </Link>
         </div>
@@ -170,7 +169,7 @@ export default function Nav() {
           </a>
           <Link
             href="/signup"
-            className="inline-flex px-4 py-2 text-sm font-medium rounded-lg bg-accent text-paper hover:bg-mahogany transition-all duration-300"
+            className="inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300"
           >
             Sign up free
           </Link>

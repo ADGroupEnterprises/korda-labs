@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Products — Korda Labs',
-  description: 'One dedicated product per problem. Zoe is the first — your dedicated AI partner that does the work.',
+  description: 'One dedicated product per problem. Keel is the first — your dedicated AI partner that does the work.',
 }
 
 export default function ProductsPage() {
@@ -12,7 +12,7 @@ export default function ProductsPage() {
       {/* Header */}
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-serif tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
             One intelligent layer.
             <br />
             <span className="text-ink">For your work, your goals, and your life.</span>
@@ -28,16 +28,16 @@ export default function ProductsPage() {
       <section className="py-8 px-6 pb-32">
         <div className="max-w-5xl mx-auto">
 
-          {/* Featured: Zoe Personal */}
-          <div className="relative rounded-2xl border border-linen bg-linen p-8 sm:p-10 mb-5">
+          {/* Featured: Keel Personal */}
+          <div className="relative rounded-2xl border border-mist bg-mist p-8 sm:p-10 mb-5">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-accent">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-accent">
                     Available now
                   </span>
                 </div>
-                <h2 className="text-3xl font-medium font-serif text-ink mb-1">Zoe</h2>
+                <h2 className="text-3xl font-display font-bold text-ink mb-1">Keel</h2>
                 <p className="text-accent text-sm font-medium mb-4">Your dedicated AI partner that does the work</p>
                 <p className="text-ink leading-relaxed max-w-xl mb-6">
                   The first Korda Labs product. Connect your tools, set a goal, and hand off the work — research,
@@ -52,9 +52,9 @@ export default function ProductsPage() {
                     'Your models, your keys, your data',
                   ].map((f, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-ink">
-                      <span className="mt-0.5 w-4 h-4 flex-shrink-0 rounded-full flex items-center justify-center bg-linen">
+                      <span className="mt-0.5 w-4 h-4 flex-shrink-0 rounded-full flex items-center justify-center bg-mist">
                         <svg width="8" height="8" viewBox="0 0 10 8" fill="none">
-                          <path d="M1 4L3.5 6.5L9 1" stroke="#8A4E28" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M1 4L3.5 6.5L9 1" stroke="#3D64AE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </span>
                       {f}
@@ -64,12 +64,12 @@ export default function ProductsPage() {
                 <div className="flex items-center gap-4">
                   <Link
                     href="/signup"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-mahogany transition-all duration-300"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-navy transition-all duration-300"
                   >
                     Sign up free
                   </Link>
                   <Link
-                    href="/products/zoe"
+                    href="/products/keel"
                     className="text-sm text-ink hover:text-ink transition-colors flex items-center gap-1"
                   >
                     Learn more
@@ -83,16 +83,16 @@ export default function ProductsPage() {
           </div>
 
           {/* Roadmap */}
-          <div className="rounded-2xl border border-linen bg-linen p-8">
+          <div className="rounded-2xl border border-mist bg-mist p-8">
             <div className="mb-4">
-              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-linen bg-linen text-ink">
+              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-ink">
                 On the roadmap
               </span>
             </div>
-            <h3 className="text-xl font-medium font-serif text-ink mb-2">A notebook you can write in</h3>
+            <h3 className="text-xl font-display font-bold text-ink mb-2">A notebook you can write in</h3>
             <p className="text-ink text-sm leading-relaxed max-w-xl">
-              Next for Zoe: physical notebook hardware that joins the paper planner on your desk
-              with the partner that does the work. What you write on the page and what Zoe runs
+              Next for Keel: physical notebook hardware that joins the paper planner on your desk
+              with the partner that does the work. What you write on the page and what Keel runs
               become one plan.
             </p>
           </div>

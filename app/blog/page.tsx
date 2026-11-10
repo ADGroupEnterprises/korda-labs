@@ -18,28 +18,28 @@ const posts = [
   {
     slug: 'why-time-blocking-isnt-enough',
     title: 'Why scheduling your work isn\'t the same as doing your work',
-    excerpt: 'Motion blocks time. Akiflow consolidates tasks. But at the end of the day, you still have to do the research, write the brief, and handle the follow-ups. That\'s what Zoe changes.',
+    excerpt: 'Motion blocks time. Akiflow consolidates tasks. But at the end of the day, you still have to do the research, write the brief, and handle the follow-ups. That\'s what Keel changes.',
     date: 'Coming soon',
     tag: 'Productivity',
   },
   {
     slug: 'proactive-ai-what-7am-briefings-actually-look-like',
     title: 'Proactive AI: what 7am automated briefings actually look like',
-    excerpt: 'Zoe\'s proactive engine runs 7 types of automated triggers — morning briefings, stale task alerts, goal momentum checks, and more. No app, no prompt. Here\'s how each one works.',
+    excerpt: 'Keel\'s proactive engine runs 7 types of automated triggers — morning briefings, stale task alerts, goal momentum checks, and more. No app, no prompt. Here\'s how each one works.',
     date: 'Coming soon',
     tag: 'AI',
   },
   {
     slug: 'default-deny-why-agent-security-matters',
     title: 'Default-deny: why every AI agent needs a permission model',
-    excerpt: 'Giving an AI access to your files and calendar is powerful. Doing it without resource pattern policies, daily limits, and an immutable audit log is reckless. Here\'s how Zoe handles it.',
+    excerpt: 'Giving an AI access to your files and calendar is powerful. Doing it without resource pattern policies, daily limits, and an immutable audit log is reckless. Here\'s how Keel handles it.',
     date: 'Coming soon',
     tag: 'Security',
   },
   {
     slug: 'akiflow-motion-notion-why-professionals-still-feel-scattered',
     title: 'Akiflow, Motion, Notion — why organizing work isn\'t the same as finishing it',
-    excerpt: 'Three tools, each excellent at what they do. None of them execute anything. The gap between a good plan and actual output is where Zoe lives.',
+    excerpt: 'Three tools, each excellent at what they do. None of them execute anything. The gap between a good plan and actual output is where Keel lives.',
     date: 'Coming soon',
     tag: 'Comparison',
   },
@@ -51,8 +51,8 @@ export default function BlogPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent text-[0.9rem] font-bold tracking-[0.16em] uppercase mb-4">Blog</p>
-          <h1 className="text-4xl sm:text-5xl font-medium font-serif tracking-tight mb-6">
+          <p className="text-accent eyebrow mb-4">Blog</p>
+          <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight mb-6">
             Thinking on AI, productivity,
             <br />
             <span className="text-ink">and the tools that should work for you.</span>
@@ -67,10 +67,10 @@ export default function BlogPage() {
             {posts.map((post, i) => (
               <div
                 key={i}
-                className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-linen bg-linen"
+                className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-mist bg-mist"
               >
                 <div className="sm:col-span-1">
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-2.5 py-1 rounded-full border border-linen bg-linen text-ink mb-2">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-2.5 py-1 rounded-full border border-mist bg-mist text-ink mb-2">
                     {post.tag}
                   </span>
                   <p className="text-ink text-xs mt-1">{post.date}</p>
@@ -83,11 +83,11 @@ export default function BlogPage() {
             ))}
           </div>
 
-          <div className="mt-16 p-8 rounded-2xl border border-linen bg-linen text-center">
+          <div className="mt-16 p-8 rounded-2xl border border-mist bg-mist text-center">
             <p className="text-ink text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-mahogany transition-all duration-300"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
               Join early access
             </Link>

@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             <p>
               Korda Labs (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard your information when you use our
-              products and services, including Zoe.
+              products and services, including Keel.
             </p>
           </section>
 

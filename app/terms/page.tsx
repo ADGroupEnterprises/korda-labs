@@ -16,7 +16,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-lg font-medium text-paper mb-3">1. Acceptance of Terms</h2>
             <p>
-              By accessing or using any Korda Labs product or service, including Zoe, you agree to be bound
+              By accessing or using any Korda Labs product or service, including Keel, you agree to be bound
               by these Terms of Service. If you do not agree, please do not use our services.
             </p>
           </section>

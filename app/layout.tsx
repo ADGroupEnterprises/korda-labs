@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import { Lora, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import { Bricolage_Grotesque, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 
-const lora = Lora({
+// Display: Bricolage Grotesque — chunky and a little playful, to sit with the Keel wordmark and Zoe.
+const display = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-lora',
+  variable: '--font-display',
   display: 'swap',
 })
 
@@ -15,7 +16,7 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
-// TYPE: JetBrains Mono — code, log lines, terminal output, version strings only.
+// JetBrains Mono — eyebrows, labels, code, log lines.
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains-mono',
@@ -23,12 +24,13 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Korda Labs',
-  description: 'Korda Labs is an AI product studio. Its first product, Zoe, is a dedicated AI partner that does the work — connecting your goals, calendar, and tools into one intelligent layer.',
+  title: 'Korda Labs — makers of Keel, one app for tasks & calendars powered by AI',
+  description: 'Keel is one app for your tasks and calendar. Zoe, the skipper, and her crew of AI agents research, write, schedule, and follow up — every action policy-gated and logged. Built by Korda Labs.',
   metadataBase: new URL('https://kordalabs.com'),
+  applicationName: 'Korda Labs',
   openGraph: {
-    title: 'Korda Labs',
-    description: 'Not a chatbot. A dedicated AI partner that does the work.',
+    title: 'Keel by Korda Labs',
+    description: 'One app for tasks & calendars, powered by AI that does them.',
     type: 'website',
     url: 'https://kordalabs.com',
     siteName: 'Korda Labs',
@@ -37,14 +39,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Korda Labs — AI product studio',
+        alt: 'Keel by Korda Labs — Zoe the otter, skipper of your AI crew',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Korda Labs',
-    description: 'Not a chatbot. A dedicated AI partner that does the work.',
+    title: 'Keel by Korda Labs',
+    description: 'One app for tasks & calendars, powered by AI that does them.',
     images: ['/og-image.jpg'],
   },
 }
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${lora.variable} ${dmSans.variable} ${jetbrainsMono.variable} bg-paper text-ink antialiased`}>
+      <body className={`${display.variable} ${dmSans.variable} ${jetbrainsMono.variable} bg-paper text-ink antialiased`}>
         <Nav />
         <div className="pt-16">{children}</div>
       </body>
