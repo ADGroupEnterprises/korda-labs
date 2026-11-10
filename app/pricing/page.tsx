@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
@@ -192,7 +193,7 @@ export default function PricingPage() {
                 <p className="text-ink text-sm mb-6">{tier.description}</p>
 
                 <Link
-                  href="/signup"
+                  href={APP_SIGNUP_URL}
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 mb-8 ${
                     tier.ctaStyle === 'accent'
                       ? 'bg-accent text-paper hover:bg-navy'
@@ -314,7 +315,7 @@ export default function PricingPage() {
                   <p className="text-sm text-ink">{bundle.bestFor}</p>
                 </div>
                 <Link
-                  href="/signup"
+                  href={APP_SIGNUP_URL}
                   className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-mist text-ink hover:border-accent hover:bg-mist transition-all duration-300"
                 >
                   Purchase

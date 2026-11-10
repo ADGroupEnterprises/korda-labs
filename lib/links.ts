@@ -1,5 +1,4 @@
-// Central app URLs for the signup funnel.
-// NOTE (Keel rename): the product is now Keel and its planned home is keel.kordalabs.com,
-// but these still point at the existing app domain until that host is live. Swap both here.
-export const APP_SIGNUP_URL = 'https://zoe.app/signup'
-export const APP_SIGNIN_URL = 'https://zoe.app/login'
+// Central app URLs. Everything on the site that sends someone into Keel goes through these.
+export const APP_URL = 'https://keel.kordalabs.com'
+export const APP_SIGNUP_URL = `${APP_URL}/register`
+export const APP_SIGNIN_URL = `${APP_URL}/login`

@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import Link from 'next/link'
 import { Zoe, ZoeBadge, KeelMark, KordaMark } from '@/components/marks/Brand'
 
@@ -172,7 +173,7 @@ export function StudioCta() {
             <p className="text-paper/80 mb-7">Free on web.</p>
             <div>
               <Link
-                href="/signup"
+                href={APP_SIGNUP_URL}
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-paper text-ink hover:bg-sky transition-all duration-300"
               >
                 Get Keel

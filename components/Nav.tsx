@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
-import { APP_SIGNIN_URL } from '@/lib/links'
+import { APP_SIGNUP_URL, APP_SIGNIN_URL } from '@/lib/links'
 import { KordaLockup, KeelMark } from '@/components/marks/Brand'
 
 function ProductsDropdown({ open }: { open: boolean }) {
@@ -168,7 +168,7 @@ export default function Nav() {
             Sign in
           </a>
           <Link
-            href="/signup"
+            href={APP_SIGNUP_URL}
             className="inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300"
           >
             Get Keel

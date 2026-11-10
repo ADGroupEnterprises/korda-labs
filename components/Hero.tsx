@@ -1,4 +1,5 @@
 'use client'
+import { APP_SIGNUP_URL } from '@/lib/links'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -155,7 +156,7 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto"
             >
               <Link
-                href="/signup"
+                href={APP_SIGNUP_URL}
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300 shadow-lg shadow-accent/25"
               >
                 Get Keel

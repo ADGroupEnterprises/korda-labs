@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
@@ -92,7 +93,7 @@ export default function AutonomousAgentsPage() {
             Keel&apos;s agents run multi-turn loops, up to hundreds of tool calls per task. The output lands in your storage. Every step is policy-gated and logged.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
             <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
@@ -157,7 +158,7 @@ export default function AutonomousAgentsPage() {
           </div>
 
           <div className="text-center">
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
           </div>

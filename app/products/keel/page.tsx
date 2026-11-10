@@ -1,4 +1,5 @@
 'use client'
+import { APP_SIGNUP_URL } from '@/lib/links'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -475,7 +476,7 @@ export default function KeelPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/signup"
+              href={APP_SIGNUP_URL}
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
               Get Keel
@@ -896,7 +897,7 @@ export default function KeelPage() {
             Free on web.
           </p>
           <Link
-            href="/signup"
+            href={APP_SIGNUP_URL}
             className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
           >
             Get Keel

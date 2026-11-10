@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
@@ -71,7 +72,7 @@ export default function ProactiveAIPage() {
             Morning briefings at 7am. Stale task alerts after 4 hours. Weekly retrospectives every Sunday. All automatic.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
             <Link href="/products/keel" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
@@ -119,7 +120,7 @@ export default function ProactiveAIPage() {
               <span className="text-ink">on a rhythm.</span>
             </h2>
             <p className="text-ink mb-8">Free on web.</p>
-            <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
           </div>

@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
@@ -119,7 +120,7 @@ export default function KeelVsSunsamaPage() {
             <p className="text-ink mb-8">Try Keel free — no credit card required.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="#"
+                href={APP_SIGNUP_URL}
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
               >
                 Get Keel

@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
@@ -86,7 +87,7 @@ export default function BlogPage() {
           <div className="mt-16 p-8 rounded-2xl border border-mist bg-mist text-center">
             <p className="text-ink text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
             <Link
-              href="/signup"
+              href={APP_SIGNUP_URL}
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
               Join early access

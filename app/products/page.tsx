@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -60,7 +61,7 @@ export default function ProductsPage() {
                 </ul>
                 <div className="flex items-center gap-4">
                   <Link
-                    href="/signup"
+                    href={APP_SIGNUP_URL}
                     className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-navy transition-all duration-300"
                   >
                     Get Keel

@@ -1,3 +1,4 @@
+import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
@@ -31,7 +32,7 @@ export default function FreelancersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/signup"
+              href={APP_SIGNUP_URL}
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
               Get Keel
@@ -66,7 +67,7 @@ export default function FreelancersPage() {
             </h2>
             <p className="text-ink mb-8">Free on web.</p>
             <Link
-              href="/signup"
+              href={APP_SIGNUP_URL}
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
               Get Keel
