@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { KordaLockup, KeelMark, ZoeBadge } from '@/components/marks/Brand'
+import { KordaLockup, KeelMark } from '@/components/marks/Brand'
 
 const columns = [
   {
@@ -68,10 +68,7 @@ export default function Footer() {
               <KeelMark size={18} />
               <span className="text-ink text-xs font-medium">Keel by Korda Labs.</span>
             </span>
-            <span className="hidden sm:flex items-center gap-2 text-ink-soft text-xs">
-              <ZoeBadge size={18} />
-              Skippered by Zoe.
-            </span>
+            
           </div>
 
           <p className="text-ink-soft text-xs">

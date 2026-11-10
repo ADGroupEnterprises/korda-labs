@@ -414,7 +414,7 @@ export default function KeelDemo() {
       {/* Input bar */}
       <div className="border-t border-mist px-4 py-2.5 flex items-center gap-2.5">
         <div className="flex-1 h-7 rounded-lg bg-mist border border-mist flex items-center px-3">
-          <span className="text-ink text-xs">Ask Zoe anything...</span>
+          <span className="text-ink text-xs">Ask anything...</span>
         </div>
         <div className="w-6 h-6 rounded-lg bg-mist flex items-center justify-center flex-shrink-0">
           <svg width="10" height="10" viewBox="0 0 12 12" fill="none">

@@ -216,7 +216,7 @@ const keelFeatures = [
       </svg>
     ),
     title: 'Set a goal. Get a plan.',
-    description: "A marathon, a book, a launch. Tell Zoe. She breaks it into daily steps and puts them on your calendar.",
+    description: "A marathon, a book, a launch. Tell Keel. It breaks the goal into daily steps and puts them on your calendar.",
   },
   {
     accent: 'blue' as const,
@@ -297,8 +297,8 @@ const keelSteps = [
   },
   {
     number: '02',
-    title: 'Tell Zoe',
-    description: 'Give her a goal. She asks what she needs to, then builds the plan.',
+    title: 'Set a goal',
+    description: 'Keel asks what it needs to, then builds the plan.',
     detail: 'Goals → Plans → Daily tasks',
   },
   {
@@ -468,7 +468,7 @@ export default function KeelPage() {
             <KeelLockup className="h-14 sm:h-16 w-auto" />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            Plan it in Keel. <span className="text-accent">Hand it to Zoe.</span>
+            Plan it in Keel. <span className="text-accent">Hand it off.</span>
           </h1>
           <p className="text-xl text-ink max-w-xl mx-auto mb-10 leading-relaxed">
             Tasks, calendar and goals in one app. A crew of agents that does the work.
@@ -516,7 +516,7 @@ export default function KeelPage() {
           >
             Keel plans the work.
             <br />
-            <span className="text-ink">Zoe does it.</span>
+            <span className="text-ink">Then does it.</span>
           </motion.p>
         </div>
       </section>
@@ -563,9 +563,9 @@ export default function KeelPage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-4">
-              Talk to Zoe.
+              Talk to Keel.
               <br />
-              <span className="text-ink">Or let her work.</span>
+              <span className="text-ink">Or let it work.</span>
             </h2>
             <p className="text-ink max-w-xl mx-auto">
               The Lens is one tap away on your phone, desktop and lock screen. Ask, or say nothing. The crew keeps working either way.

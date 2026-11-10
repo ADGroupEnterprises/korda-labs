@@ -10,7 +10,7 @@ const Arrow = () => (
 // ─── The crew ─────────────────────────────────────────────────────────────────
 
 const crew = [
-  { name: 'Zoe', role: 'Skipper', line: 'Takes the order. Runs the job.', zoe: true },
+  { name: 'Zoe', role: 'Skipper', line: 'Takes the order. Runs the crew.', zoe: true },
   { name: 'Compass', role: 'Navigator', line: 'Holds your goals.' },
   { name: 'Task Manager', role: 'First mate', line: 'Plans your day.' },
 ]
@@ -29,10 +29,11 @@ export function CrewSection() {
         <div>
           <p className="eyebrow text-accent mb-4">The crew</p>
           <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] text-ink mb-5">
-            Zoe runs the crew.
+            Three agents. One crew.
+
           </h2>
           <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-xl">
-            Give her the task. She picks the agent, runs the job and reports back.
+            Give Keel the task. The right agent runs the job and reports back.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">

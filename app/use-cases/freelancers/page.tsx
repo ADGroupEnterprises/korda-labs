@@ -27,7 +27,7 @@ export default function FreelancersPage() {
             <span className="text-ink">One app.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            A chief of staff for a company of one. Keel tracks your clients, deadlines and goals, and Zoe handles the admin.
+            A chief of staff for a company of one. Keel tracks your clients, deadlines and goals, and its agents handle the admin.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

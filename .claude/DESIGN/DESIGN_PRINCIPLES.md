@@ -12,7 +12,7 @@ This file is the working summary for anyone (or any agent) editing this repo.
 | **Zoe** | The otter — skipper of the AI crew, the character you talk to | Zoe-at-the-helm badge + pose illustrations | Chat avatar/labels ("Ask Zoe"), the crew section, one illustration per section |
 
 Rules of thumb:
-- The **app** is Keel ("Keel keeps your day in one place"). The **doer you talk to** is Zoe ("Zoe and her crew research, write…").
+- **The platform leads.** Copy says Keel ("Give Keel the task", "Keel plans the day"). Name **Zoe only when referring to that specific agent** — the crew list, an agent card, her label in a chat mock. She appears far more in pictures than in words.
 - Zoe is **she/her**. Keel is **it**. Never "Zoe" as the product name; never "Keel" as a character.
 - Signature: **"Keel by Korda Labs."** (footer, publisher lines, email sender).
 - The old Zoe speech-bubble/spark mark is retired. Do not reintroduce it.
@@ -64,7 +64,7 @@ The otter is cute. The copy is not. That contrast is the brand.
 4. **Specifics over adjectives.** "A brief, with sources." not "powerful research."
 5. **One CTA: "Get Keel."** One reassurance, once, small: "Free on web."
 6. **Don't plead.** No "join the waitlist to be among the first", no "no credit card required" repeated, no "we never… full stop."
-7. **Zoe is dry.** Short, competent, a little deadpan. Never bubbly, never "so happy to help."
+7. **Go easy on the name "Zoe".** Keel is the subject of almost every sentence. When Zoe does speak (chat mocks), she is dry: short, competent, never bubbly.
 8. **One nautical word per page, at most.** "Crew" is the standing one. No puns.
 
 Test: if a line would still be true with the sentence before it deleted, delete the sentence before it.

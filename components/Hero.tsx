@@ -41,7 +41,7 @@ function WeekCalendar() {
         <span className="text-[10px] font-medium text-ink tracking-wide">Week of Mar 11</span>
         <div className="ml-auto flex items-center gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-          <span className="text-[9px] text-ink">Planned by Zoe</span>
+          <span className="text-[9px] text-ink">Planned by Keel</span>
         </div>
       </div>
 
@@ -145,7 +145,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="text-lg sm:text-xl text-ink-soft max-w-xl mb-9 leading-relaxed"
             >
-              Plan the day in Keel. Hand the work to Zoe. She researches, drafts, schedules and follows up. You approve.
+              Plan your day in Keel. Its agents research, draft, schedule and follow up. You approve.
             </motion.p>
 
             <motion.div

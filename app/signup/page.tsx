@@ -36,7 +36,7 @@ export default function SignupPage() {
             <KeelLockup className="h-9 w-auto" />
           </div>
           <h1 className="font-display font-bold text-4xl md:text-hero-sm text-ink mb-6">
-            Set a goal. Zoe takes it from there.
+            Set a goal. Keel takes it from there.
           </h1>
           <p className="text-lg text-ink mb-10 leading-relaxed">
             Connect your calendar and tools. Set your first goal. Hand off the rest.
