@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Blog — Korda Labs',
-  description: 'Thinking on AI, autonomous execution, and tools that work for you.',
+  description: 'Notes from Korda Labs on agents, execution and control.',
 }
 
 const posts = [
   {
     slug: 'what-autonomous-agents-actually-do',
-    title: 'What autonomous agents actually do — and what they don\'t',
+    title: 'What autonomous agents do, and what they don\'t',
     excerpt: 'AI agents can browse the web, read your files, run scripts on your machine, and execute multi-turn workflows with hundreds of tool calls. Here\'s exactly what that looks like in practice.',
     date: 'Coming soon',
     tag: 'Execution',
@@ -18,13 +18,13 @@ const posts = [
   {
     slug: 'why-time-blocking-isnt-enough',
     title: 'Why scheduling your work isn\'t the same as doing your work',
-    excerpt: 'Motion blocks time. Akiflow consolidates tasks. But at the end of the day, you still have to do the research, write the brief, and handle the follow-ups. That\'s what Keel changes.',
+    excerpt: 'Motion blocks time. Akiflow consolidates tasks. The research, the brief and the follow-ups are still yours. Keel takes those.',
     date: 'Coming soon',
     tag: 'Productivity',
   },
   {
     slug: 'proactive-ai-what-7am-briefings-actually-look-like',
-    title: 'Proactive AI: what 7am automated briefings actually look like',
+    title: 'Proactive AI: what a 7am briefing looks like',
     excerpt: 'Keel\'s proactive engine runs 7 types of automated triggers — morning briefings, stale task alerts, goal momentum checks, and more. No app, no prompt. Here\'s how each one works.',
     date: 'Coming soon',
     tag: 'AI',
@@ -53,9 +53,9 @@ export default function BlogPage() {
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent eyebrow mb-4">Blog</p>
           <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight mb-6">
-            Thinking on AI, productivity,
+            Notes from
             <br />
-            <span className="text-ink">and the tools that should work for you.</span>
+            <span className="text-ink">the studio.</span>
           </h1>
         </div>
       </section>

@@ -4,20 +4,20 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Keel for Founders — Korda Labs',
-  description: 'The one AI layer that runs at the speed of a founder. Connect your work, goals, and health into one intelligent system that plans your day so you don\'t have to.',
+  description: 'Keel for founders. It connects your tools, plans the day and handles the logistics.',
 }
 
 const painPoints = [
   { title: 'Context-switching tax', body: 'You live in Notion, Slack, Linear, Gmail, and your calendar simultaneously. The cognitive overhead of switching between them is stealing hours you don\'t have.' },
   { title: 'No separation between work and life', body: 'Your fitness goals, your company goals, your personal goals — they all affect each other. No tool connects them. Until now.' },
-  { title: 'Manual planning overhead', body: 'You\'re spending 20–30 minutes every morning just triaging what to work on. That\'s 150+ hours a year on planning. Not building.' },
+  { title: 'Manual planning overhead', body: '20–30 minutes every morning deciding what to work on. 150+ hours a year.' },
 ]
 
 const features = [
   { label: 'Goal alignment', body: 'Set your company milestones and personal goals in one place. Compass tracks both and makes sure your daily schedule reflects your actual priorities.' },
   { label: 'Automatic daily planning', body: 'Task Manager pulls from your calendar, your project tools, and your goals — and hands you a prioritized day. Adjusts in real time when things shift.' },
-  { label: 'Health as an input', body: 'Your energy levels affect your output. Keel connects to your health data and schedules your deepest work when you\'re actually at your best.' },
-  { label: 'One context for everything', body: 'Notion, Linear, Slack, Gmail, Calendar — Keel pulls them into one intelligent layer. You stop switching. Keel keeps the full picture.' },
+  { label: 'Health as an input', body: 'Your energy levels affect your output. Keel connects to your health data and schedules your deepest work when you\'re at your best.' },
+  { label: 'One context for everything', body: 'Notion, Linear, Slack, Gmail, Calendar — Keel pulls them into one place. You stop switching. Keel keeps the full picture.' },
 ]
 
 export default function FoundersPage() {
@@ -28,19 +28,17 @@ export default function FoundersPage() {
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent eyebrow mb-4">For founders</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
-            The one AI layer that runs at the speed of a founder.
+            Run the company. Keel runs the day.
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            You already use Notion, Linear, Slack, and five other tools. Keel connects them all into one
-            intelligent layer that plans your day, tracks your goals, and handles the logistics — so you
-            can focus on what actually moves the company forward.
+            Notion, Linear, Slack, Gmail, calendar. Keel connects them, plans your day, tracks your goals and handles the logistics.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="#"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started free
+              Get Keel
             </Link>
             <Link
               href="/products/keel"
@@ -89,16 +87,16 @@ export default function FoundersPage() {
 
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
-              Stop managing your tools.
+              Back to
               <br />
-              <span className="text-ink">Start building.</span>
+              <span className="text-ink">building.</span>
             </h2>
-            <p className="text-ink mb-8">Free to start. No credit card.</p>
+            <p className="text-ink mb-8">Free on web.</p>
             <Link
               href="#"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started with Keel
+              Get Keel
             </Link>
           </div>
         </div>

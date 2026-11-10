@@ -17,7 +17,7 @@ const triggers = [
   {
     time: 'After 4h inactivity',
     name: 'Stale task alert',
-    body: "A task has been sitting in review for over 4 hours without action. Keel flags it and asks if you want it rescheduled, reassigned to an agent, or deprioritized. Nothing falls through the cracks.",
+    body: "A task has been sitting in review for over 4 hours without action. Keel flags it and asks if you want it rescheduled, reassigned to an agent, or deprioritized. ",
     replaces: 'Manually checking what got stuck',
   },
   {
@@ -60,21 +60,19 @@ export default function ProactiveAIPage() {
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent eyebrow mb-4">Proactive engine</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
-            The dedicated AI partner
+            It runs
             <br />
-            <span className="text-ink">that runs without you.</span>
+            <span className="text-ink">before you ask.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-6">
-            Akiflow and Sunsama give you a structured planning ritual. You still have to show up and do it.
-            Keel automates the ritual — firing 7 types of proactive triggers that keep your work, goals, and life
-            on track without you needing to open the app.
+            Seven triggers keep your work and goals moving without you opening the app.
           </p>
           <p className="text-ink text-sm mb-10">
             Morning briefings at 7am. Stale task alerts after 4 hours. Weekly retrospectives every Sunday. All automatic.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-              Get started free
+              Get Keel
             </Link>
             <Link href="/products/keel" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
               See all of Keel
@@ -116,13 +114,13 @@ export default function ProactiveAIPage() {
 
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
-              The operating rhythm you always wanted.
+              Your week,
               <br />
-              <span className="text-ink">Now it runs itself.</span>
+              <span className="text-ink">on a rhythm.</span>
             </h2>
-            <p className="text-ink mb-8">Free to start. No credit card.</p>
+            <p className="text-ink mb-8">Free on web.</p>
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-              Get started with Keel
+              Get Keel
             </Link>
           </div>
         </div>

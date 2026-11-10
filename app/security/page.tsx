@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Security — Keel by Korda Labs',
-  description: "Keel acts in the world. Here's how we make that safe — default-deny policies, immutable audit logs, end-to-end encryption, and full abort control.",
+  description: "How Keel is secured: default-deny policies, immutable audit logs, end-to-end encryption and abort control.",
 }
 
 const principles = [
@@ -15,7 +15,7 @@ const principles = [
   },
   {
     title: 'Resource pattern policies',
-    body: "You don't just turn capabilities on — you specify exactly what they can touch. Define which folders, domains, and services agents can access. Agents are bounded to the paths and services you define.",
+    body: "You specify what each capability can touch. Define which folders, domains, and services agents can access. Agents are bounded to the paths and services you define.",
     tag: 'Scope control',
   },
   {
@@ -80,12 +80,10 @@ export default function SecurityPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
             Keel acts in the world.
             <br />
-            <span className="text-ink">Here&apos;s how we make that safe.</span>
+            <span className="text-ink">Only on your say.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            When an AI can read your files, search the web, automate your browser, and run scripts on your machine,
-            the safety model matters. Here&apos;s exactly how Keel&apos;s security infrastructure works — and why it starts
-            from a position of default-deny, not default-trust.
+            Keel can read files, search the web, automate a browser and run scripts. Every one of those is off until you turn it on. This page is the full model.
           </p>
         </div>
       </section>
@@ -126,7 +124,7 @@ export default function SecurityPage() {
             <p className="text-ink text-sm mb-6">Questions about our security model?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-                Get started free
+                Get Keel
               </Link>
               <a href="mailto:security@kordalabs.com" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
                 Contact security team

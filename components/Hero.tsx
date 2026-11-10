@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
-import { Zoe } from '@/components/marks/Brand'
+import { Zoe, KeelLockup } from '@/components/marks/Brand'
 
 const KeelDemo = dynamic(() => import('@/components/KeelDemo'), { ssr: false })
 
@@ -124,17 +124,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-7"
             >
-              <Link
-                href="/products/keel"
-                className="inline-flex items-center gap-2 mb-7 pl-2 pr-4 py-1.5 rounded-full border border-sky bg-paper text-ink eyebrow hover:border-accent transition-all duration-300"
-              >
-                <span className="px-2 py-0.5 rounded-full bg-accent text-paper">New</span>
-                Meet Keel
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
+              <KeelLockup className="h-10 w-auto" />
             </motion.div>
 
             <motion.h1
@@ -153,8 +145,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="text-lg sm:text-xl text-ink-soft max-w-xl mb-9 leading-relaxed"
             >
-              Keel keeps your day in one place. Zoe, your skipper, and her AI crew
-              research, write, schedule, and follow up — so the list actually gets shorter.
+              Plan the day in Keel. Hand the work to Zoe. She researches, drafts, schedules and follows up. You approve.
             </motion.p>
 
             <motion.div
@@ -167,13 +158,13 @@ export default function Hero() {
                 href="/signup"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300 shadow-lg shadow-accent/25"
               >
-                Sign up free
+                Get Keel
               </Link>
               <Link
                 href="/products/keel"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full border border-ink/15 bg-paper text-ink hover:border-accent hover:text-accent transition-all duration-300"
               >
-                See Keel in action
+                How it works
               </Link>
             </motion.div>
 
@@ -183,7 +174,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.75 }}
               className="font-mono text-xs text-ink-soft mt-6"
             >
-              <span className="text-accent">●</span> Every action policy-gated and audit-logged.
+              Free on web <span className="text-accent">·</span> Every action logged
             </motion.p>
           </div>
 

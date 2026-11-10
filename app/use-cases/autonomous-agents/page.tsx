@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Autonomous Agents — Keel by Korda Labs',
-  description: "Keel's agents don't just plan. They execute — research, write, automate, and deliver real outputs while you focus on what only you can do.",
+  description: "Keel's agents research, write, automate and deliver finished output. Every step policy-gated and logged.",
 }
 
 const capabilities = [
@@ -84,17 +84,16 @@ export default function AutonomousAgentsPage() {
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent eyebrow mb-4">Autonomous agents</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
-            Your agents don&apos;t just plan.
+            Agents that
             <br />
-            <span className="text-ink">They execute.</span>
+            <span className="text-ink">finish the job.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            Keel&apos;s agents run autonomous multi-turn loops — up to hundreds of tool calls per task — to complete real work.
-            Not suggestions. Not summaries. Actual output, delivered to your storage, policy-gated and audit-logged.
+            Keel&apos;s agents run multi-turn loops, up to hundreds of tool calls per task. The output lands in your storage. Every step is policy-gated and logged.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-              Get started free
+              Get Keel
             </Link>
             <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
               How we keep it safe
@@ -126,9 +125,9 @@ export default function AutonomousAgentsPage() {
           <div className="mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-ink mb-4">End-to-end examples</p>
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
-              Personal goals. Founder activities. Freelancer flows.
+              The job,
               <br />
-              <span className="text-ink">Real workflows for real people.</span>
+              <span className="text-ink">start to finish.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
@@ -159,7 +158,7 @@ export default function AutonomousAgentsPage() {
 
           <div className="text-center">
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-              Get started free
+              Get Keel
             </Link>
           </div>
         </div>

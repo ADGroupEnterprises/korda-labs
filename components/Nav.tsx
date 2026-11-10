@@ -26,7 +26,7 @@ function ProductsDropdown({ open }: { open: boolean }) {
               </div>
               <div>
                 <div className="text-sm font-semibold text-ink">Keel</div>
-                <div className="text-xs text-ink-soft">Tasks &amp; calendar, crewed by AI</div>
+                <div className="text-xs text-ink-soft">Tasks &amp; calendar, with a crew</div>
               </div>
             </Link>
           </div>
@@ -171,7 +171,7 @@ export default function Nav() {
             href="/signup"
             className="inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300"
           >
-            Sign up free
+            Get Keel
           </Link>
         </div>
       </div>

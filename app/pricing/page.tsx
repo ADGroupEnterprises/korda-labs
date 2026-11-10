@@ -23,7 +23,7 @@ const platformTiers = [
       'BYO API keys (OpenAI, Anthropic, Gemini)',
     ],
     limitations: ['No local file access', 'No desktop bridge', 'No phone app'],
-    cta: 'Get started free',
+    cta: 'Get Keel',
     ctaStyle: 'border',
   },
   {
@@ -143,7 +143,7 @@ export default function PricingPage() {
             <span className="text-ink">Upgrade for desktop and phone.</span>
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
-            Choose your surfaces. Bring your own API keys or use managed credits. No hidden fees.
+            Pick your surfaces. Bring your own API keys or use managed credits.
           </p>
         </div>
       </section>
@@ -353,7 +353,7 @@ export default function PricingPage() {
             <p className="text-ink text-sm mb-4">
               Comparing tools?{' '}
               <Link href="/compare" className="text-accent hover:text-accent transition-colors">
-                See how Keel stacks up →
+                Compare →
               </Link>
             </p>
           </div>

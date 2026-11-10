@@ -36,11 +36,10 @@ export default function SignupPage() {
             <KeelLockup className="h-9 w-auto" />
           </div>
           <h1 className="font-display font-bold text-4xl md:text-hero-sm text-ink mb-6">
-            Set a goal. Zoe and the crew do the work.
+            Set a goal. Zoe takes it from there.
           </h1>
           <p className="text-lg text-ink mb-10 leading-relaxed">
-            Create your account to connect your calendar and tools, set your
-            first goal, and hand off the rest.
+            Connect your calendar and tools. Set your first goal. Hand off the rest.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
@@ -59,7 +58,7 @@ export default function SignupPage() {
           </div>
 
           <p className="text-sm text-ink mb-16">
-            Free to start. No credit card required.{' '}
+            Free on web.{' '}
             <a href={APP_SIGNIN_URL} className="text-accent hover:text-navy">
               Or sign in if you already have an account.
             </a>

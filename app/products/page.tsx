@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Products — Korda Labs',
-  description: 'One dedicated product per problem. Keel is the first — your dedicated AI partner that does the work.',
+  description: 'One product per problem. Keel is the first.',
 }
 
 export default function ProductsPage() {
@@ -13,13 +13,12 @@ export default function ProductsPage() {
       <section className="relative py-32 px-6 text-center overflow-hidden">
         <div className="relative max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            One intelligent layer.
+            AI that
             <br />
-            <span className="text-ink">For your work, your goals, and your life.</span>
+            <span className="text-ink">takes orders.</span>
           </h1>
           <p className="text-ink text-lg leading-relaxed">
-            Korda Labs builds dedicated AI partners that do the planning, coordination, and
-            follow-through — so you can focus on what only you can do.
+            Korda Labs builds one product per problem. Each one does the work and leaves you in command.
           </p>
         </div>
       </section>
@@ -38,11 +37,9 @@ export default function ProductsPage() {
                   </span>
                 </div>
                 <h2 className="text-3xl font-display font-bold text-ink mb-1">Keel</h2>
-                <p className="text-accent text-sm font-medium mb-4">Your dedicated AI partner that does the work</p>
+                <p className="text-accent text-sm font-medium mb-4">One app for tasks &amp; calendars, powered by AI that does them</p>
                 <p className="text-ink leading-relaxed max-w-xl mb-6">
-                  The first Korda Labs product. Connect your tools, set a goal, and hand off the work — research,
-                  drafts, plans, and automations delivered to your storage. Built for individuals who want AI
-                  working for them — not the other way around.
+                  Our first product. Connect your tools, set a goal, hand off the work. Research, drafts, plans and automations come back finished.
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
                   {[
@@ -66,7 +63,7 @@ export default function ProductsPage() {
                     href="/signup"
                     className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-sm font-medium bg-accent text-paper hover:bg-navy transition-all duration-300"
                   >
-                    Sign up free
+                    Get Keel
                   </Link>
                   <Link
                     href="/products/keel"

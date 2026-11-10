@@ -26,16 +26,14 @@ export default function DesktopBridgePage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
             Your home machine,
             <br />
-            <span className="text-ink">fully under Keel&apos;s control.</span>
+            <span className="text-ink">from anywhere.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            The Desktop Bridge runs quietly on your home computer. From your phone, your office, or anywhere —
-            Keel can read your local files, run scripts, organize folders, and execute local automations
-            as if you were sitting right there.
+            The Desktop Bridge runs on your home computer. From your phone or the office, Keel reads local files, runs scripts, organizes folders and executes local automations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-              Get started free
+              Get Keel
             </Link>
             <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
               How we keep it safe
@@ -104,13 +102,13 @@ export default function DesktopBridgePage() {
 
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
-              Your machine. Your agents.
+              Your machine.
               <br />
-              <span className="text-ink">From anywhere.</span>
+              <span className="text-ink">Your crew.</span>
             </h2>
-            <p className="text-ink mb-8">Free to start. No credit card.</p>
+            <p className="text-ink mb-8">Free on web.</p>
             <Link href="#" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
-              Get started with Keel
+              Get Keel
             </Link>
           </div>
         </div>

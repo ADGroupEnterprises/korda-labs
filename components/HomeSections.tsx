@@ -7,38 +7,15 @@ const Arrow = () => (
   </svg>
 )
 
-// ─── Stats strip ──────────────────────────────────────────────────────────────
-
-const stats = [
-  { value: 'Free', label: 'to start, no card' },
-  { value: '20+', label: 'integrations at launch' },
-  { value: '3', label: 'core agents, one crew' },
-]
-
-export function StatsStrip() {
-  return (
-    <section className="px-6">
-      <div className="max-w-5xl mx-auto grid grid-cols-3 divide-x divide-mist rounded-3xl border border-mist bg-paper-100">
-        {stats.map((s) => (
-          <div key={s.label} className="py-7 px-3 text-center">
-            <p className="font-display font-bold text-3xl sm:text-5xl text-accent">{s.value}</p>
-            <p className="font-mono text-[0.65rem] sm:text-xs text-ink-soft mt-2 uppercase tracking-wider">{s.label}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 // ─── The crew ─────────────────────────────────────────────────────────────────
 
 const crew = [
-  { name: 'Zoe', role: 'Skipper', line: 'Runs the crew and reports back to you.', zoe: true },
-  { name: 'Compass', role: 'Navigator', line: 'Keeps your goals on heading.' },
-  { name: 'Task Manager', role: 'First mate', line: 'Plans the day and queues the work.' },
+  { name: 'Zoe', role: 'Skipper', line: 'Takes the order. Runs the job.', zoe: true },
+  { name: 'Compass', role: 'Navigator', line: 'Holds your goals.' },
+  { name: 'Task Manager', role: 'First mate', line: 'Plans your day.' },
 ]
 
-const specialists = ['Researcher', 'Writer', 'Analyst', 'Builder', 'Designer', '+ more on call']
+const specialists = ['Researcher', 'Writer', 'Analyst', 'Builder', 'Designer', '+ more']
 
 export function CrewSection() {
   return (
@@ -52,10 +29,10 @@ export function CrewSection() {
         <div>
           <p className="eyebrow text-accent mb-4">The crew</p>
           <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] text-ink mb-5">
-            You set the course. Zoe runs the crew.
+            Zoe runs the crew.
           </h2>
           <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-xl">
-            Hand off a task and the right agent picks it up. You review the result.
+            Give her the task. She picks the agent, runs the job and reports back.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
@@ -78,7 +55,7 @@ export function CrewSection() {
           </div>
 
           <Link href="/use-cases/autonomous-agents" className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-ink transition-colors">
-            Meet the agents <Arrow />
+            Meet the crew <Arrow />
           </Link>
         </div>
       </div>
@@ -89,12 +66,12 @@ export function CrewSection() {
 // ─── What gets done ───────────────────────────────────────────────────────────
 
 const work = [
-  { tag: '01', title: 'Research', line: 'Searches the web and builds the brief.' },
-  { tag: '02', title: 'Write', line: 'Drafts docs, emails, and reports.' },
-  { tag: '03', title: 'Schedule', line: 'Plans your day around what matters.' },
-  { tag: '04', title: 'Automate', line: 'Fills forms and runs scripts for you.' },
-  { tag: '05', title: 'Follow up', line: 'Morning briefings and stale-task nudges.' },
-  { tag: '06', title: 'File it', line: 'Delivers finished work to your storage.' },
+  { tag: '01', title: 'Research', line: 'A brief, with sources.' },
+  { tag: '02', title: 'Write', line: 'Docs, emails, reports.' },
+  { tag: '03', title: 'Schedule', line: 'Your day, planned.' },
+  { tag: '04', title: 'Automate', line: 'Forms filled. Scripts run.' },
+  { tag: '05', title: 'Follow up', line: 'A briefing every morning.' },
+  { tag: '06', title: 'File', line: 'Saved where you keep things.' },
 ]
 
 export function WorkSection() {
@@ -104,9 +81,9 @@ export function WorkSection() {
       <div className="relative max-w-6xl mx-auto">
         <div className="flex items-end justify-between gap-6 mb-12">
           <div>
-            <p className="eyebrow text-accent mb-4">What gets done</p>
+            <p className="eyebrow text-accent mb-4">The work</p>
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] text-ink max-w-xl">
-              Not suggestions. Finished work.
+              It comes back done.
             </h2>
           </div>
           <Zoe pose="walk" className="hidden sm:block w-28 lg:w-36 h-auto -mb-4 flex-shrink-0" />
@@ -129,10 +106,10 @@ export function WorkSection() {
 // ─── Control ──────────────────────────────────────────────────────────────────
 
 const controls = [
-  { title: 'Default-deny', line: 'Nothing runs until you switch it on.' },
-  { title: 'Audit log', line: 'Every action recorded.' },
-  { title: 'Your keys, your models', line: 'No lock-in. No training on your data.' },
-  { title: 'Abort anytime', line: 'One tap stops any agent.' },
+  { title: 'Off by default', line: 'You switch on each capability.' },
+  { title: 'Logged', line: 'Every action, on the record.' },
+  { title: 'Your keys', line: 'Your models. Your data.' },
+  { title: 'Stop', line: 'One tap. Any agent.' },
 ]
 
 export function ControlSection() {
@@ -142,9 +119,9 @@ export function ControlSection() {
         <div className="absolute inset-0 bg-chart-light" aria-hidden="true" />
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-8 sm:p-14">
           <div>
-            <p className="eyebrow text-sky mb-4">You&apos;re in command</p>
+            <p className="eyebrow text-sky mb-4">Command</p>
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-8">
-              Kick back. Nothing sails without your say.
+              Nothing runs without your say.
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 mb-9">
               {controls.map((c) => (
@@ -155,7 +132,7 @@ export function ControlSection() {
               ))}
             </ul>
             <Link href="/security" className="inline-flex items-center gap-2 text-sm font-semibold text-sky hover:text-paper transition-colors">
-              How security works <Arrow />
+              Security <Arrow />
             </Link>
           </div>
           <Zoe pose="lounge" className="w-full max-w-md mx-auto h-auto" />
@@ -177,27 +154,27 @@ export function StudioCta() {
             <span className="text-ink-soft" aria-hidden="true">×</span>
             <KeelMark size={32} />
           </div>
-          <p className="eyebrow text-copper mb-3">Built by Korda Labs</p>
-          <h2 className="font-display font-bold text-3xl text-ink mb-3">An AI studio that keeps people at the helm.</h2>
+          <p className="eyebrow text-copper mb-3">Korda Labs</p>
+          <h2 className="font-display font-bold text-3xl text-ink mb-3">We build AI that takes orders.</h2>
           <p className="text-ink-soft leading-relaxed mb-6">
-            Keel is our first product. More are on the chart.
+            Keel is the first.
           </p>
           <Link href="/products" className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-ink transition-colors">
-            See what we&apos;re building <Arrow />
+            Products <Arrow />
           </Link>
         </div>
 
         <div className="relative mt-24 md:mt-0">
           <Zoe pose="peek" decorative className="absolute left-1/2 -translate-x-1/2 -top-[5.6rem] w-48 h-auto z-0" />
           <div className="relative z-10 h-full rounded-3xl bg-gradient-to-br from-accent to-navy text-paper p-8 sm:p-10 flex flex-col justify-end min-h-[18rem]">
-            <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-3">Ready to cast off?</h2>
-            <p className="text-paper/80 mb-7">Free to start. No credit card.</p>
+            <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-3">Your day, handled.</h2>
+            <p className="text-paper/80 mb-7">Free on web.</p>
             <div>
               <Link
                 href="/signup"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-paper text-ink hover:bg-sky transition-all duration-300"
               >
-                Sign up free
+                Get Keel
               </Link>
             </div>
           </div>

@@ -47,9 +47,7 @@ export default function KeelVsMotionPage() {
             Keel vs. Motion
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
-            Motion is excellent at auto-scheduling your work tasks. But it stops at the calendar.
-            Keel connects your health, long-term goals, and life context into one AI layer —
-            so your schedule reflects who you actually are, not just what's on your plate today.
+            Motion is excellent at auto-scheduling work tasks. Keel schedules too, and plans against your health data and long-term goals as well as your calendar.
           </p>
         </div>
       </section>
@@ -69,7 +67,7 @@ export default function KeelVsMotionPage() {
               <p className="eyebrow text-accent mb-3">Keel</p>
               <p className="text-ink leading-relaxed">
                 Does everything Motion does for scheduling — and then connects it to your health data,
-                long-term goals, habits, and personal life. Your AI layer knows the whole picture, not just your work queue.
+                long-term goals, habits, and personal life. Keel plans against all of it.
               </p>
             </div>
           </div>
@@ -112,7 +110,7 @@ export default function KeelVsMotionPage() {
                 href="#"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
               >
-                Get started free
+                Get Keel
               </Link>
               <Link
                 href="/pricing"

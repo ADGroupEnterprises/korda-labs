@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Keel for Freelancers — Korda Labs',
-  description: 'Client work, personal goals, and your calendar — one intelligent layer. Independent professionals don\'t have a chief of staff. Keel is the next best thing.',
+  description: 'Keel for freelancers. Clients, deadlines and calendar in one app, with a crew that handles the admin.',
 }
 
 const features = [
@@ -22,21 +22,19 @@ export default function FreelancersPage() {
         <div className="relative max-w-4xl mx-auto">
           <p className="text-accent eyebrow mb-4">For freelancers</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
-            Client work, personal goals,
+            Clients, deadlines, calendar.
             <br />
-            <span className="text-ink">and your calendar — one intelligent layer.</span>
+            <span className="text-ink">One app.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            Independent professionals don't have a chief of staff. Keel is the next best thing —
-            tracking your clients, your deadlines, your goals, and your health, so you can
-            focus on the work that actually earns.
+            A chief of staff for a company of one. Keel tracks your clients, deadlines and goals, and Zoe handles the admin.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started free
+              Get Keel
             </Link>
             <Link
               href="/products/keel"
@@ -64,14 +62,14 @@ export default function FreelancersPage() {
 
           <div className="text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
-              Your dedicated AI partner for independent work.
+              A crew for a company of one.
             </h2>
-            <p className="text-ink mb-8">Free to start. No credit card.</p>
+            <p className="text-ink mb-8">Free on web.</p>
             <Link
               href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started with Keel
+              Get Keel
             </Link>
           </div>
         </div>

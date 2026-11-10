@@ -53,3 +53,18 @@ Brown is now a garnish (logos, Zoe's fur), never a surface.
 - Light, airy, a little techy: dot-grid "chart" texture (`.bg-chart`), pill buttons, `rounded-2xl/3xl` cards with mist hairlines, one deep-navy band per page.
 - Headlines short. Homepage copy stays under ~550 words; one idea per section.
 - Motion: gentle fades + Zoe's slow bob. Respect `prefers-reduced-motion` (handled globally).
+
+## Voice — say less (v2.1)
+
+The otter is cute. The copy is not. That contrast is the brand.
+
+1. **State it. Don't argue it.** No "doesn't just", "not X — Y", "actually", "finally", "really", "so you can". Say what it does and stop.
+2. **Never define Keel by a competitor** outside `/compare`. Inside it, lead with what they do well, then what Keel does. No "goes further", no "stops at".
+3. **Short.** Headlines of two to six words, ending in a full stop. Body lines under ~20 words. No questions as headlines. No exclamation marks.
+4. **Specifics over adjectives.** "A brief, with sources." not "powerful research."
+5. **One CTA: "Get Keel."** One reassurance, once, small: "Free on web."
+6. **Don't plead.** No "join the waitlist to be among the first", no "no credit card required" repeated, no "we never… full stop."
+7. **Zoe is dry.** Short, competent, a little deadpan. Never bubbly, never "so happy to help."
+8. **One nautical word per page, at most.** "Crew" is the standing one. No puns.
+
+Test: if a line would still be true with the sentence before it deleted, delete the sentence before it.

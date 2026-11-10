@@ -52,10 +52,11 @@ export default function ComingSoonClient() {
 
           {/* Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            Coming Soon
+            Keel is close.
+
           </h1>
           <p className="text-xl text-ink max-w-lg mx-auto mb-12 leading-relaxed">
-            Keel is almost ready. Join the waitlist to be among the first to use your dedicated AI partner that does the work.
+            One app for tasks and calendars, powered by AI that does them. Leave your email to hear when it opens.
           </p>
 
           {/* Email Form */}

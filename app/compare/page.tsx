@@ -29,8 +29,8 @@ const comparisons = [
 ]
 
 const useCases = [
-  { label: 'For founders', href: '/use-cases/founders', description: 'The one AI layer that runs at the speed of a founder.' },
-  { label: 'For freelancers', href: '/use-cases/freelancers', description: 'Client work, personal goals, and your calendar — one intelligent layer.' },
+  { label: 'For founders', href: '/use-cases/founders', description: 'Run the company. Keel runs the day.' },
+  { label: 'For freelancers', href: '/use-cases/freelancers', description: 'Clients, deadlines, calendar. One app.' },
   { label: 'Daily planning', href: '/use-cases/daily-planning', description: 'Your AI morning briefing. Your AI end-of-day review.' },
 ]
 
@@ -42,11 +42,10 @@ export default function ComparePage() {
         <div className="relative max-w-2xl mx-auto">
           <p className="text-accent eyebrow mb-4">Compare</p>
           <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight mb-6">
-            See how Keel stacks up.
+            Keel, side by side.
           </h1>
           <p className="text-ink text-lg leading-relaxed">
-            If you're comparing tools, start here. Direct comparisons on substance,
-            so you can see exactly where Keel fits — and where it goes further.
+            Feature by feature. No spin.
           </p>
         </div>
       </section>
@@ -88,13 +87,13 @@ export default function ComparePage() {
 
           {/* CTA */}
           <div className="text-center pt-4">
-            <p className="text-ink text-sm mb-6">Ready to try it yourself?</p>
+            <p className="text-ink text-sm mb-6">Free on web.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
               >
-                Get started free
+                Get Keel
               </Link>
               <Link
                 href="/pricing"

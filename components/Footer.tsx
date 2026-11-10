@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="col-span-2">
             <KordaLockup className="h-14 w-auto mb-5 -ml-1" />
             <p className="text-ink-soft text-sm leading-relaxed max-w-[260px]">
-              An AI product studio. We build tools that keep you in command.
+              An AI product studio.
             </p>
           </div>
 

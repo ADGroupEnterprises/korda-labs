@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'AI Daily Planning — Keel by Korda Labs',
-  description: 'Your AI morning briefing. Your AI end-of-day review. Keel automates the daily planning ritual so you can focus on the work that matters.',
+  description: 'A morning briefing and an end-of-day review, run by Keel.',
 }
 
 const morningSteps = [
@@ -33,20 +33,19 @@ export default function DailyPlanningPage() {
         <div className="relative max-w-3xl mx-auto">
           <p className="text-accent eyebrow mb-4">Use case</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            Your AI morning briefing.
+            A briefing at 7.
             <br />
-            <span className="text-ink">Your AI end-of-day review.</span>
+            <span className="text-ink">A review at day&apos;s end.</span>
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
-            Tools like Akiflow and Sunsama give you a structured planning ritual. Keel automates it —
-            so the discipline is built in, not something you have to summon every morning.
+            Keel runs your daily planning: a briefing in the morning, a review at the end of the day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Link
               href="#"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started free
+              Get Keel
             </Link>
             <Link
               href="/products/keel"
@@ -117,14 +116,14 @@ export default function DailyPlanningPage() {
           {/* CTA */}
           <div className="mt-20 text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
-              Let Keel own your daily planning.
+              Wake up to a plan.
             </h2>
-            <p className="text-ink mb-8">Start free. No credit card required.</p>
+            <p className="text-ink mb-8">Free on web.</p>
             <Link
               href="#"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Get started with Keel
+              Get Keel
             </Link>
           </div>
         </div>

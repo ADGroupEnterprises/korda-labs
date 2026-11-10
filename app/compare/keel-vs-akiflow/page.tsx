@@ -53,9 +53,7 @@ export default function KeelVsAkiflowPage() {
           </h1>
           <p className="text-accent font-medium text-base mb-4">Akiflow organizes your work. Keel does it.</p>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
-            Akiflow is excellent at pulling tasks together and helping you plan your day. But when planning is done,
-            the work still falls to you. Keel&apos;s agents don&apos;t stop at the plan — they execute it. Research, write,
-            automate, and deliver real outputs, while the proactive engine runs your week without you having to ask.
+            Akiflow is excellent at pulling tasks together and planning your day. Keel plans the day too, then its agents do the work: research, writing, automation, follow-ups.
           </p>
         </div>
       </section>
@@ -89,7 +87,7 @@ export default function KeelVsAkiflowPage() {
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
-              Ready to let AI do the planning?
+              Try it on your own week.
             </h2>
             <p className="text-ink mb-8">Try Keel free — no credit card required.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -97,7 +95,7 @@ export default function KeelVsAkiflowPage() {
                 href="#"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
               >
-                Get started free
+                Get Keel
               </Link>
               <Link
                 href="/pricing"

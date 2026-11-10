@@ -24,8 +24,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Korda Labs — makers of Keel, one app for tasks & calendars powered by AI',
-  description: 'Keel is one app for your tasks and calendar. Zoe, the skipper, and her crew of AI agents research, write, schedule, and follow up — every action policy-gated and logged. Built by Korda Labs.',
+  title: 'Korda Labs — Keel',
+  description: 'One app for tasks and calendars, powered by AI that does them. Keel by Korda Labs.',
   metadataBase: new URL('https://kordalabs.com'),
   applicationName: 'Korda Labs',
   openGraph: {

@@ -4,16 +4,16 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Keel vs. Sunsama — Korda Labs',
-  description: 'Sunsama helps you plan your day mindfully. Keel goes further — connecting your personal goals, fitness, and life context into one AI layer.',
+  description: 'Sunsama and Keel, feature by feature.',
   openGraph: {
     title: 'Keel vs. Sunsama',
-    description: 'Sunsama helps you plan your day mindfully. Keel goes further — connecting your personal goals, fitness, and life context into one AI layer.',
+    description: 'Sunsama and Keel, feature by feature.',
     images: ['/og-keel-vs-sunsama.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Keel vs. Sunsama',
-    description: 'Sunsama helps you plan your day mindfully. Keel goes further — connecting your personal goals, fitness, and life context into one AI layer.',
+    description: 'Sunsama and Keel, feature by feature.',
     images: ['/og-keel-vs-sunsama.jpg'],
   },
 }
@@ -59,9 +59,7 @@ export default function KeelVsSunsamaPage() {
             Keel vs. Sunsama
           </h1>
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
-            Sunsama is excellent at mindful daily planning. But it stops at your work tasks.
-            Keel connects your personal goals, fitness data, and life context into one AI layer —
-            so your planning reflects who you actually are, not just what's on your plate today.
+            Sunsama is excellent at mindful daily planning. Keel plans the day too, adds your goals and fitness data, and has agents that do the work.
           </p>
         </div>
       </section>
@@ -81,7 +79,7 @@ export default function KeelVsSunsamaPage() {
               <p className="eyebrow text-accent mb-3">Keel</p>
               <p className="text-ink leading-relaxed">
                 Does everything Sunsama does for daily planning — and then connects it to your personal goals,
-                fitness data, habits, and life context. Your AI layer knows the whole picture, not just your work queue.
+                fitness data, habits, and life context. Keel plans against all of it.
               </p>
             </div>
           </div>
@@ -124,7 +122,7 @@ export default function KeelVsSunsamaPage() {
                 href="#"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
               >
-                Get started free
+                Get Keel
               </Link>
               <Link
                 href="/pricing"

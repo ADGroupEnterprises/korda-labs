@@ -192,7 +192,7 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
   )
 }
 
-// --- What Keel Does (Features) data ---
+// --- What it does (Features) data ---
 const keelFeatures = [
   {
     accent: 'blue' as const,
@@ -204,8 +204,8 @@ const keelFeatures = [
         <line x1="3" y1="10" x2="21" y2="10"/>
       </svg>
     ),
-    title: 'Your calendar, health, and habits — unified',
-    description: 'Keel connects to your personal tools: Google Calendar, Apple Health, fitness trackers, nutrition apps, and more. It sees the full picture of your life so it can help you live it better.',
+    title: 'Calendar, health, habits. One view.',
+    description: 'Google Calendar, Apple Health, fitness trackers, nutrition apps. Keel reads them all and plans against the whole picture.',
   },
   {
     accent: 'green' as const,
@@ -215,8 +215,8 @@ const keelFeatures = [
         <polyline points="12 6 12 12 16 14"/>
       </svg>
     ),
-    title: 'Set a goal. Keel builds the path.',
-    description: "Whether it's running a marathon, writing a book, or finally taking that trip — tell Zoe what you want. She turns your ambitions into daily, actionable steps you can actually follow.",
+    title: 'Set a goal. Get a plan.',
+    description: "A marathon, a book, a launch. Tell Zoe. She breaks it into daily steps and puts them on your calendar.",
   },
   {
     accent: 'blue' as const,
@@ -228,8 +228,8 @@ const keelFeatures = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
-    title: 'A team of agents working for you',
-    description: "While you live your life, Keel's agents handle the logistics — scheduling, research, reminders, planning. Not just one AI assistant, but a coordinated team that reports to you.",
+    title: 'A crew, on call',
+    description: "Scheduling, research, reminders, planning. Each goes to the agent built for it. All of them report to you.",
   },
   {
     accent: 'green' as const,
@@ -239,8 +239,8 @@ const keelFeatures = [
         <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
     ),
-    title: 'You are the center. Always.',
-    description: "Keel is built around the human, not the algorithm. Your priorities drive it. Your data stays yours. New integrations ship constantly — and you decide what Keel knows.",
+    title: 'You decide what Keel knows',
+    description: "Your priorities drive the plan. Your data stays yours. Every integration is opt-in.",
   },
 ]
 
@@ -277,47 +277,47 @@ function KeelFeaturesHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <p className="text-accent eyebrow mb-4">What Keel Does</p>
+      <p className="text-accent eyebrow mb-4">What it does</p>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight">
-        Built around your life.
+        Your whole day.
         <br />
-        <span className="text-ink">Not your workflow.</span>
+        <span className="text-ink">One app.</span>
       </h2>
     </motion.div>
   )
 }
 
-// --- How It Works data ---
+// --- How it works data ---
 const keelSteps = [
   {
     number: '01',
-    title: 'Connect your world',
-    description: "Link your calendar, personal apps, goals, and tools. Keel learns how you live — not how you work.",
+    title: 'Connect',
+    description: "Link your calendar, apps, goals and tools.",
     detail: '20+ integrations and growing',
   },
   {
     number: '02',
-    title: 'Tell Zoe what matters',
-    description: 'Share a goal, a worry, a dream. Zoe asks the right questions, then maps out a real plan tailored to your life.',
+    title: 'Tell Zoe',
+    description: 'Give her a goal. She asks what she needs to, then builds the plan.',
     detail: 'Goals → Plans → Daily tasks',
   },
   {
     number: '03',
-    title: 'Keel selects the right model',
-    description: 'Agent selection matrix automatically picks the best model for each task — balancing cost, speed, and capability. Add any new model with one click.',
+    title: 'Keel picks the model',
+    description: 'Each task is routed to the model that fits it on cost, speed and capability. Add a new model in one click.',
     detail: 'Smart routing across OpenAI, Anthropic, Gemini, local models',
   },
   {
     number: '04',
-    title: 'Live. Keel handles the rest.',
-    description: 'Your agents stay active in the background — tracking progress, surfacing insights, adjusting plans, and making sure nothing falls through the cracks.',
-    detail: 'You direct. Keel delivers.',
+    title: 'The crew works',
+    description: 'Agents run in the background: tracking progress, adjusting the plan, flagging what needs you.',
+    detail: 'You direct. The crew delivers.',
   },
   {
     number: '05',
-    title: 'Keel learns you.',
-    description: "Dedicated memory means Keel builds a model of how you think, work, and live. It adapts its scheduling, UI, and recommendations to match your preferences — without you having to repeat yourself.",
-    detail: 'Gets smarter the longer you use it',
+    title: 'Keel remembers',
+    description: "Keel keeps your preferences and plans around them. You say it once.",
+    detail: 'Preferences, kept',
   },
 ]
 
@@ -430,11 +430,11 @@ function KeelHowItWorksHeader() {
       transition={{ duration: 0.6 }}
       className="text-center mb-20"
     >
-      <p className="text-accent eyebrow mb-4">How It Works</p>
+      <p className="text-accent eyebrow mb-4">How it works</p>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight">
-        Simple by design.
+        Five steps.
         <br />
-        <span className="text-ink">Powerful by nature.</span>
+        <span className="text-ink">You do the first two.</span>
       </h2>
     </motion.div>
   )
@@ -468,17 +468,18 @@ export default function KeelPage() {
             <KeelLockup className="h-14 sm:h-16 w-auto" />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            One app for tasks &amp; calendars, <span className="text-accent">powered by AI that does them.</span>
+            Plan it in Keel. <span className="text-accent">Hand it to Zoe.</span>
           </h1>
           <p className="text-xl text-ink max-w-xl mx-auto mb-10 leading-relaxed">
-            An autonomous AI that researches, writes, automates, and executes — quietly running in the background of your work and life.
+            Tasks, calendar and goals in one app. A crew of agents that does the work.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/signup"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
             >
-              Sign up free
+              Get Keel
+
             </Link>
             <Link
               href="/products"
@@ -490,7 +491,7 @@ export default function KeelPage() {
         </motion.div>
       </section>
 
-      {/* What Keel Does — Features */}
+      {/* What it does — Features */}
       <section className="relative py-40 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
         <div className="max-w-5xl mx-auto">
@@ -513,14 +514,14 @@ export default function KeelPage() {
             transition={{ duration: 0.7 }}
             className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.1] text-ink"
           >
-            Keel doesn&apos;t just plan your work.
+            Keel plans the work.
             <br />
-            <span className="text-ink">It does it.</span>
+            <span className="text-ink">Zoe does it.</span>
           </motion.p>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* How it works */}
       <section id="how-it-works" className="relative py-40 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
         <div className="max-w-5xl mx-auto">
@@ -564,12 +565,10 @@ export default function KeelPage() {
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-4">
               Talk to Zoe.
               <br />
-              <span className="text-ink">Or just let her work.</span>
+              <span className="text-ink">Or let her work.</span>
             </h2>
             <p className="text-ink max-w-xl mx-auto">
-              The Lens is always a tap away — on your phone, your desktop, your lock screen.
-              Ask it anything. Or say nothing, and watch your agents run quietly in the background,
-              keeping your day on track without interrupting it.
+              The Lens is one tap away on your phone, desktop and lock screen. Ask, or say nothing. The crew keeps working either way.
             </p>
           </div>
           <KeelProductDemo />
@@ -581,16 +580,14 @@ export default function KeelPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <SectionLabel>Meet Your Agents</SectionLabel>
+            <SectionLabel>The crew</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
               Three agents.
               <br />
-              <span className="text-ink">One team. Built for you.</span>
+              <span className="text-ink">One crew.</span>
             </h2>
             <p className="text-ink mt-4 max-w-2xl mx-auto">
-              Zoe skippers the crew. Compass holds your goals. Task Manager owns your day.
-              Together, they share context through your integrations — so nothing is ever siloed,
-              and nothing falls through the cracks.
+              Zoe runs the crew. Compass holds your goals. Task Manager owns your day. They share one context.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -601,8 +598,7 @@ export default function KeelPage() {
           {/* Connection callout */}
           <div className="mt-8 p-5 rounded-xl border border-mist bg-mist text-center">
             <p className="text-ink text-sm">
-              All three agents share context through your connected tools — health apps, calendar, productivity platforms, and more.
-              They coordinate, not just coexist.
+              All three read from the same connected tools: health, calendar, productivity. One picture, three jobs.
             </p>
           </div>
         </div>
@@ -666,10 +662,8 @@ export default function KeelPage() {
                 <span className="text-ink">from anywhere.</span>
               </h2>
               <p className="text-ink leading-relaxed mb-6">
-                The Keel Desktop Bridge runs quietly on your home computer. When you&apos;re out,
-                on your phone, or on a different machine, Keel can still access your local files,
-                open applications, update documents, and manage your system — as if you were sitting right there.
-                Perfect for sensitive work you want to keep on local models only.
+                The Desktop Bridge runs on your home computer. From your phone or another machine, Keel can reach local files, open applications and update documents.
+                Sensitive work can stay on local models.
               </p>
               <ul className="space-y-3">
                 {[
@@ -703,13 +697,12 @@ export default function KeelPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-4">
-              Plugs into your life.
+              Works with what
               <br />
-              <span className="text-ink">Not the other way around.</span>
+              <span className="text-ink">you already use.</span>
             </h2>
             <p className="text-ink max-w-xl mx-auto mb-12">
-              Keel connects to the apps you already use — health, fitness, calendar,
-              and productivity — with new integrations shipping every week.
+              Health, fitness, calendar and productivity apps. More ship regularly.
             </p>
           </motion.div>
 
@@ -743,11 +736,11 @@ export default function KeelPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <p className="text-accent eyebrow mb-4">Real execution</p>
+            <p className="text-accent eyebrow mb-4">Execution</p>
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
-              What Keel actually does.
+              The job,
               <br />
-              <span className="text-ink">Not suggestions. Not summaries. Work.</span>
+              <span className="text-ink">start to finish.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -807,15 +800,13 @@ export default function KeelPage() {
             <div>
               <p className="text-accent eyebrow mb-4">Proactive engine</p>
               <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
-                Keel keeps you on track.
+                Keel speaks first.
                 <br />
-                <span className="text-ink">Proactively, when you need it.</span>
+                <span className="text-ink">When it matters.</span>
               </h2>
             </div>
             <p className="text-ink leading-relaxed">
-              Keel notices when you need a nudge and surfaces what matters before you have to ask.
-              Some things it handles itself. Others, it works with you to notify you what to do.
-              You stay in control — Keel just makes sure nothing falls through the cracks.
+              Seven triggers run on their own. Some Keel handles. The rest it brings to you with a recommendation. You decide.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -860,10 +851,7 @@ export default function KeelPage() {
                 <span className="text-ink">Your data.</span>
               </h2>
               <p className="text-ink leading-relaxed">
-                Keel is built on the principle that your intelligence system should be yours — fully.
-                You connect your own API keys, choose which models power which agents,
-                and decide exactly what data each integration can see.
-                We never train on your data. We never sell it. Full stop.
+                Connect your own API keys. Choose which model powers which agent. Decide what each integration can see. Your data is never used for training and never sold.
               </p>
             </motion.div>
             <motion.div
@@ -898,20 +886,20 @@ export default function KeelPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
         <div className="relative max-w-2xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight mb-4">
-            Ready to put AI
+            Your day,
             <br />
             <span className="text-accent">
-              to work for your life?
+              handled.
             </span>
           </h2>
           <p className="text-ink mb-10">
-            Sign up free. No credit card required.
+            Free on web.
           </p>
           <Link
             href="/signup"
             className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
           >
-            Get started with Keel
+            Get Keel
           </Link>
         </div>
       </section>
