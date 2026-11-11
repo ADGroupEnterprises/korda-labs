@@ -204,9 +204,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="absolute z-20 right-5 -top-[8.4rem] w-24 lg:top-auto lg:right-auto lg:-bottom-14 lg:-left-12 lg:w-44"
+              className="absolute z-20 right-5 -top-[8.4rem] w-24 lg:top-auto lg:right-auto lg:-bottom-14 lg:-left-14 lg:w-48"
             >
-              <Zoe pose="wave" className="w-full h-auto animate-bob drop-shadow-xl" />
+              <Zoe pose="wave-left" eager className="w-full h-auto animate-bob drop-shadow-xl" />
             </motion.div>
           </motion.div>
 

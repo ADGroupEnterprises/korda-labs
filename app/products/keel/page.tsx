@@ -4,7 +4,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import KeelProductDemo from '@/components/KeelProductDemo'
-import { Zoe, ZoeBadge, KeelLockup } from '@/components/marks/Brand'
+import { Zoe, ZoeBadge, CrewMark, KeelLockup } from '@/components/marks/Brand'
 
 // --- Lens component (compact version) ---
 // --- Task Manager Animation ---
@@ -169,6 +169,9 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
     >
       {/* Name */}
       <div className="mb-4">
+        <div className="mb-4">
+          {agent.name === 'Zoe' ? <ZoeBadge size={44} /> : <CrewMark agent={agent.name === 'Compass' ? 'compass' : 'task-manager'} size={44} />}
+        </div>
         <h3 className="font-medium text-lg leading-none text-accent">{agent.name}</h3>
         <p className="text-xs font-medium mt-1 text-accent">
           {agent.role}
@@ -463,7 +466,7 @@ export default function KeelPage() {
           className="relative max-w-3xl mx-auto"
         >
           <div className="flex justify-center mb-8">
-            <Zoe pose="salute" className="w-40 sm:w-48 h-auto" />
+            <Zoe pose="salute-left" eager className="w-40 sm:w-48 h-auto" />
           </div>
           <div className="flex justify-center mb-8">
             <KeelLockup className="h-14 sm:h-16 w-auto" />
@@ -886,6 +889,9 @@ export default function KeelPage() {
       <section className="relative py-40 px-6 text-center overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
         <div className="relative max-w-2xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <Zoe pose="walk-right" className="w-32 sm:w-36 h-auto" />
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight mb-4">
             Your day,
             <br />

@@ -47,7 +47,7 @@ export default function ComingSoonClient() {
           className="text-center"
         >
           <div className="flex justify-center mb-10">
-            <Zoe pose="wave" className="w-36 h-auto" />
+            <Zoe pose="wave-right" eager className="w-36 h-auto" />
           </div>
 
           {/* Heading */}

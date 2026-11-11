@@ -41,12 +41,15 @@ Brown is now a garnish (logos, Zoe's fur), never a surface.
 
 ## Zoe placement
 
-- Files: `public/zoe/zoe-{wave,salute,point,walk,lounge,peek}.webp` via `<Zoe pose="…">`.
+- Files: `public/zoe/zoe-{pose}.webp` via `<Zoe pose="…">`. v2 render (2026-11-11): whiskers, darker navy coat, no blush.
+- Poses: `wave`, `salute`, `point`, `walk`, `lounge` each in `-left` and `-right`; plus `peek` and `peek-wave` (behind the cream ball).
+- **Pick the direction that faces or gestures into the content beside her** — never pointing or walking off the page.
 - One pose per section; never two Zoes in one viewport. Pose matches the message:
   wave = hello (hero, coming soon) · point = "here's the crew" · walk = getting work done ·
   lounge = you can relax, you're in control · peek = closing CTA · salute = signup / reporting for duty.
-- Never recolour, redraw, crop mid-face, flip the coat buttons, or put text on her.
+- Never recolour, redraw, crop mid-face, mirror in CSS (use the other file), or put text on her.
 - The helm badge (`<ZoeBadge>`) is her avatar wherever she "speaks" in product UI mocks.
+- Crew marks: `<CrewMark agent="compass">` (owl with a telescope) and `<CrewMark agent="task-manager">` (penguin with a clipboard) — on agent cards only.
 
 ## Layout & feel
 

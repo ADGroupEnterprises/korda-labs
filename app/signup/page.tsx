@@ -30,7 +30,7 @@ export default function SignupPage() {
       <section className="max-w-content mx-auto px-5 md:px-20 py-20 md:py-32">
         <div className="max-w-xl mx-auto text-center">
           <div className="flex justify-center mb-6">
-            <Zoe pose="salute" className="w-36 h-auto" />
+            <Zoe pose="salute-right" eager className="w-36 h-auto" />
           </div>
           <div className="flex justify-center mb-6">
             <KeelLockup className="h-9 w-auto" />

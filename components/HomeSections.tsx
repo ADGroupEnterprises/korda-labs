@@ -1,6 +1,6 @@
 import { APP_SIGNUP_URL } from '@/lib/links'
 import Link from 'next/link'
-import { Zoe, ZoeBadge, KeelMark, KordaMark } from '@/components/marks/Brand'
+import { Zoe, ZoeBadge, CrewMark, KeelMark, KordaMark } from '@/components/marks/Brand'
 
 const Arrow = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -12,8 +12,8 @@ const Arrow = () => (
 
 const crew = [
   { name: 'Zoe', role: 'Skipper', line: 'Takes the order. Runs the crew.', zoe: true },
-  { name: 'Compass', role: 'Navigator', line: 'Holds your goals.' },
-  { name: 'Task Manager', role: 'First mate', line: 'Plans your day.' },
+  { name: 'Compass', role: 'Navigator', line: 'Holds your goals.', mark: 'compass' as const },
+  { name: 'Task Manager', role: 'First mate', line: 'Plans your day.', mark: 'task-manager' as const },
 ]
 
 const specialists = ['Researcher', 'Writer', 'Analyst', 'Builder', 'Designer', '+ more']
@@ -24,7 +24,7 @@ export function CrewSection() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-16 items-center">
         <div className="relative mx-auto w-56 sm:w-72 lg:w-full lg:max-w-sm">
           <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2.5rem] bg-gradient-to-b from-sky-soft to-sky" aria-hidden="true" />
-          <Zoe pose="point" className="relative w-full h-auto" />
+          <Zoe pose="point-right" className="relative w-[112%] max-w-none h-auto" />
         </div>
 
         <div>
@@ -41,7 +41,7 @@ export function CrewSection() {
             {crew.map((c) => (
               <div key={c.name} className="rounded-2xl border border-mist bg-paper-100 p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  {c.zoe ? <ZoeBadge size={22} /> : <span className="w-2 h-2 rounded-full bg-accent" />}
+                  {c.zoe ? <ZoeBadge size={30} /> : c.mark ? <CrewMark agent={c.mark} size={30} /> : null}
                   <span className="font-mono text-[0.68rem] uppercase tracking-wider text-accent">{c.role}</span>
                 </div>
                 <h3 className="font-display font-bold text-xl text-ink mb-1">{c.name}</h3>
@@ -88,7 +88,7 @@ export function WorkSection() {
               It comes back done.
             </h2>
           </div>
-          <Zoe pose="walk" className="hidden sm:block w-28 lg:w-36 h-auto -mb-4 flex-shrink-0" />
+          <Zoe pose="walk-left" className="hidden sm:block w-28 lg:w-36 h-auto -mb-4 flex-shrink-0" />
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
@@ -137,7 +137,7 @@ export function ControlSection() {
               Security <Arrow />
             </Link>
           </div>
-          <Zoe pose="lounge" className="w-full max-w-md mx-auto h-auto" />
+          <Zoe pose="lounge-left" className="w-full max-w-md mx-auto h-auto" />
         </div>
       </div>
     </section>
@@ -166,8 +166,8 @@ export function StudioCta() {
           </Link>
         </div>
 
-        <div className="relative mt-24 md:mt-0">
-          <Zoe pose="peek" decorative className="absolute left-1/2 -translate-x-1/2 -top-[5.6rem] w-48 h-auto z-0" />
+        <div className="relative mt-32 md:mt-0">
+          <Zoe pose="peek" decorative className="absolute left-1/2 -translate-x-1/2 -top-[7.4rem] w-56 h-auto z-0" />
           <div className="relative z-10 h-full rounded-3xl bg-gradient-to-br from-accent to-navy text-paper p-8 sm:p-10 flex flex-col justify-end min-h-[18rem]">
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-3">Your day, handled.</h2>
             <p className="text-paper/80 mb-7">Free on web.</p>
