@@ -10,7 +10,7 @@ import { useReducedMotion } from 'framer-motion'
 import { KeelWindow, label } from '@/components/showcase/KeelUI'
 import { AppPhone, SmsPhone, PINS, PinTile } from '@/components/showcase/Phones'
 
-export const PIN_MOTION = false
+export const PIN_MOTION = true
 
 const TILE_W = 112
 const GAP = 10
@@ -18,7 +18,7 @@ const LOOP_W = PINS.length * (TILE_W + GAP)
 
 /** One window onto a single, shared, endlessly moving row of pins. Every window uses the same
     animation and is shifted by its own left edge, so a pin leaving one device enters the next. */
-function PinWindow({ originX, height = 64 }: { originX: number; height?: number }) {
+function PinWindow({ originX, height = 78 }: { originX: number; height?: number }) {
   return (
     <div className="relative overflow-hidden rounded-2xl" style={{ height }}>
       <div className="absolute top-0 pin-track flex" style={{ left: -originX - LOOP_W, gap: GAP, height }}>
@@ -63,7 +63,12 @@ export default function HeroShowcase() {
   ) : undefined
 
   const phoneRow = motionOn ? (
-    <div ref={phoneSlot}><PinWindow originX={origins.phone} height={150} /></div>
+    <div>
+      <div ref={phoneSlot}><PinWindow originX={origins.phone} height={78} /></div>
+      <div className="grid grid-cols-2 gap-2 mt-2">
+        {PINS.slice(2, 4).map((p) => <PinTile key={p.id} pin={p} className="h-[4.1rem]" />)}
+      </div>
+    </div>
   ) : undefined
 
   return (
