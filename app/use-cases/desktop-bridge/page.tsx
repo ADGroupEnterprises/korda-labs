@@ -4,17 +4,17 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Desktop Bridge — Keel by Korda Labs',
-  description: 'The Desktop Bridge runs quietly on your home machine. From your phone or anywhere — Keel accesses local files, runs scripts, and controls your machine.',
+  title: 'Bridge — Keel by Korda Labs',
+  description: 'Bridge runs quietly on your home machine. From your phone or anywhere — Keel accesses local files, runs scripts, and controls your machine.',
 }
 
 const features = [
   { title: 'Local file access', body: 'Read, write, and organize files on your home machine — even when you\'re away. Agents access exactly the directories you approve, nothing more.' },
-  { title: 'Script & subprocess execution', body: 'Run local scripts, automations, and processes via agents. Whether it\'s a data pipeline, a build script, or a local app — Keel can trigger it remotely.' },
-  { title: 'iCloud & local storage', body: 'Access your iCloud Drive and local folders as first-class storage destinations. No OAuth required — the bridge handles it securely from your machine.' },
+  { title: 'Run things at home', body: 'Start a script, an export or an app on your computer from wherever you are.' },
+  { title: 'iCloud & local storage', body: 'Save to iCloud Drive and folders on your computer. No extra sign-in needed.' },
   { title: 'End-to-end encrypted', body: 'All bridge communication is encrypted end-to-end. Only you hold the keys. Keel\'s servers never see your local file contents.' },
-  { title: 'SSE-based, always-on', body: 'The bridge maintains a persistent connection via Server-Sent Events. Agents dispatch work to your machine and receive results in real time.' },
-  { title: 'Workspace-sandboxed', body: 'All file and script operations are sandboxed to your configured workspace path. Agents cannot access paths outside what you\'ve explicitly approved.' },
+  { title: 'Always on', body: 'Bridge stays connected, so work reaches your computer and results come back right away.' },
+  { title: 'Stays in its lane', body: 'Bridge only works inside the folders you approve. Nothing outside them.' },
 ]
 
 export default function DesktopBridgePage() {
@@ -23,14 +23,14 @@ export default function DesktopBridgePage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
-          <p className="text-accent eyebrow mb-4">Desktop Bridge</p>
+          <p className="text-accent eyebrow mb-4">Bridge</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
             Your home machine,
             <br />
             <span className="text-ink">from anywhere.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            The Desktop Bridge runs on your home computer. From your phone or the office, Keel reads local files, runs scripts, organizes folders and executes local automations.
+            Bridge runs on your home computer. From your phone or the office, Keel reads local files, runs scripts, organizes folders and executes local automations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
@@ -55,7 +55,7 @@ export default function DesktopBridgePage() {
               </p>
             </div>
             <div className="p-6 rounded-2xl glass">
-              <p className="eyebrow text-accent mb-3">Keel + Desktop Bridge</p>
+              <p className="eyebrow text-accent mb-3">Keel + Bridge</p>
               <p className="text-ink text-sm leading-relaxed">
                 Your home machine is always available to your agents — local files, local scripts, local apps.
                 Encrypted end-to-end. Sandboxed to the paths you approve. Controlled by your policy settings.
@@ -85,9 +85,9 @@ export default function DesktopBridgePage() {
             <div className="space-y-3">
               {[
                 { label: 'You\'re at the office', detail: 'Phone in hand. Home machine sitting at your desk.' },
-                { label: 'Ask Keel: "Run my weekly export script"', detail: 'Natural language request via the Lens on your phone.' },
-                { label: 'Bridge receives the task', detail: 'Dispatched via SSE to your home machine in real time.' },
-                { label: 'Script runs in your workspace sandbox', detail: 'Output captured, logged to audit trail.' },
+                { label: 'Ask Keel: "Run my weekly export script"', detail: 'Typed or spoken, from your phone.' },
+                { label: 'Bridge receives the task', detail: 'Sent to your computer right away.' },
+                { label: 'It runs in the folder you approved', detail: 'The result is saved and logged.' },
                 { label: 'Results delivered to your phone', detail: 'CSV exported, notification sent, task marked complete.' },
               ].map((step, i) => (
                 <div key={i} className="flex gap-4">

@@ -12,30 +12,30 @@ const groups = [
   {
     title: 'Keel',
     links: [
-      { label: 'Overview', sub: 'Tasks & calendar, with a crew', href: '/products/keel', mark: true },
-      { label: 'Pricing', sub: 'Free on web', href: '/pricing' },
-      { label: 'Security', sub: 'Nothing runs without your say', href: '/security' },
-      { label: 'Compare', sub: 'Keel, side by side', href: '/compare' },
+      { label: 'Overview', href: '/products/keel', mark: true },
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'Security', href: '/security' },
+      { label: 'Compare', href: '/compare' },
     ],
   },
   {
     title: 'How it works',
     links: [
-      { label: 'Autonomous agents', sub: 'Research, write, automate', href: '/use-cases/autonomous-agents' },
-      { label: 'Proactive AI', sub: 'It runs before you ask', href: '/use-cases/proactive-ai' },
-      { label: 'Desktop Bridge', sub: 'Your machine, from anywhere', href: '/use-cases/desktop-bridge' },
-      { label: 'Daily planning', sub: 'A briefing at 7', href: '/use-cases/daily-planning' },
-      { label: 'For founders', sub: 'Run the company', href: '/use-cases/founders' },
-      { label: 'For freelancers', sub: 'A company of one', href: '/use-cases/freelancers' },
+      { label: 'Autonomous agents', href: '/use-cases/autonomous-agents' },
+      { label: 'Proactive AI', href: '/use-cases/proactive-ai' },
+      { label: 'Bridge', href: '/use-cases/desktop-bridge' },
+      { label: 'Daily planning', href: '/use-cases/daily-planning' },
+      { label: 'For founders', href: '/use-cases/founders' },
+      { label: 'For freelancers', href: '/use-cases/freelancers' },
     ],
   },
   {
     title: 'Korda Labs',
     links: [
-      { label: 'What we believe', sub: 'Why we build this way', href: '/believe' },
-      { label: 'Roadmap', sub: 'What we are building next', href: '/roadmap' },
-      { label: 'Products', sub: 'The studio', href: '/products' },
-      { label: 'Blog', sub: 'Notes from the studio', href: '/blog' },
+      { label: 'What we believe', href: '/believe' },
+      { label: 'Roadmap', href: '/roadmap' },
+      { label: 'Products', href: '/products' },
+      { label: 'Blog', href: '/blog' },
     ],
   },
 ]
@@ -135,7 +135,6 @@ export default function Nav() {
                           ) : null}
                           <span className="min-w-0">
                             <span className="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">{l.label}</span>
-                            <span className="block text-xs text-ink-soft truncate">{l.sub}</span>
                           </span>
                         </Link>
                       </li>

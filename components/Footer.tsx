@@ -16,7 +16,7 @@ const columns = [
     links: [
       { label: 'Autonomous agents', href: '/use-cases/autonomous-agents' },
       { label: 'Proactive AI', href: '/use-cases/proactive-ai' },
-      { label: 'Desktop Bridge', href: '/use-cases/desktop-bridge' },
+      { label: 'Bridge', href: '/use-cases/desktop-bridge' },
       { label: 'Daily planning', href: '/use-cases/daily-planning' },
       { label: 'For founders', href: '/use-cases/founders' },
       { label: 'For freelancers', href: '/use-cases/freelancers' },

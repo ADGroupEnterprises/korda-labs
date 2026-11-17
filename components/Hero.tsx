@@ -20,7 +20,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-7"
           >
-            <KeelLockup className="h-10 w-auto" />
+            <p className="eyebrow text-ink-soft mb-3">Introducing</p>
+            <KeelLockup className="h-10 w-auto mx-auto" />
           </motion.div>
 
           <motion.h1

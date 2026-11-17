@@ -1,11 +1,12 @@
 'use client'
+import AppCloud from '@/components/AppCloud'
 import { APP_SIGNUP_URL } from '@/lib/links'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 const KeelWindow = dynamic(() => import('@/components/showcase/KeelUI').then((m) => m.KeelWindow), { ssr: false })
-import { Zoe, ZoeBadge, CrewMark, KeelLockup } from '@/components/marks/Brand'
+import { Zoe, ZoeBadge, CrewMark, KeelLockup, KeelMark } from '@/components/marks/Brand'
 
 // --- Lens component (compact version) ---
 // --- Task Manager Animation ---
@@ -486,12 +487,6 @@ export default function KeelPage() {
               Get Keel
 
             </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-all duration-300"
-            >
-              All products
-            </Link>
           </div>
         </motion.div>
       </section>
@@ -526,60 +521,6 @@ export default function KeelPage() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how-it-works" className="relative py-40 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
-        <div className="max-w-5xl mx-auto">
-          <KeelHowItWorksHeader />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-            {/* Steps */}
-            <div className="relative">
-              <div className="absolute left-[2.6rem] top-12 bottom-12 w-px bg-mist hidden md:block" />
-              <div className="space-y-12">
-                {keelSteps.map((step, i) => (
-                  <KeelStepCard key={i} step={step} index={i} />
-                ))}
-              </div>
-            </div>
-            {/* Animations */}
-            <div className="lg:pt-4 space-y-6">
-              <div>
-                <div className="text-[10px] text-ink uppercase tracking-widest mb-3 font-medium">Task analysis</div>
-                <TaskManagerAnimation />
-                <p className="text-ink text-xs mt-3 leading-relaxed">
-                  Task Manager sorts your day by priority, deadline, and energy level — in real time.
-                </p>
-              </div>
-              <div>
-                <div className="text-[10px] text-ink uppercase tracking-widest mb-3 font-medium">Adaptive memory</div>
-                <AdaptiveMemoryAnimation />
-                <p className="text-ink text-xs mt-3 leading-relaxed">
-                  Keel builds a model of your habits and preferences — and starts acting on them without being asked.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Lens Experience */}
-      <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-4">
-              Talk to Keel.
-              <br />
-              <span className="text-ink">Or let it work.</span>
-            </h2>
-            <p className="text-ink max-w-xl mx-auto">
-              The Lens is one tap away on your phone, desktop and lock screen. Ask, or say nothing. The crew keeps working either way.
-            </p>
-          </div>
-          <div className="min-h-[30rem]"><KeelWindow /></div>
-        </div>
-      </section>
-
       {/* Core Agents */}
       <section className="relative py-32 px-6">
         <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
@@ -609,7 +550,7 @@ export default function KeelPage() {
         </div>
       </section>
 
-      {/* Desktop Bridge */}
+      {/* Bridge */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto" ref={bridgeRef}>
@@ -621,34 +562,30 @@ export default function KeelPage() {
               transition={{ duration: 0.7 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative rounded-2xl border border-navy bg-ink p-6 overflow-hidden">
-                {/* Fake terminal / bridge UI */}
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="text-accent text-xs font-mono">Desktop Bridge — Connected</span>
-                  <div className="ml-auto">
-                    <ZoeBadge size={26} variant="inverse" />
-                  </div>
+              <div className="relative rounded-3xl glass p-6 sm:p-8">
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-[#3FA672]" />
+                  <span className="eyebrow text-accent">Bridge · Connected</span>
                 </div>
-                <div className="space-y-2 font-mono text-xs">
+                <div className="space-y-2.5">
                   {[
-                    { prompt: '>', text: 'Open the Figma project in ~/Design/Q2-launch/', color: 'text-paper' },
-                    { prompt: '◆', text: 'Locating file on home machine...', color: 'text-mist' },
-                    { prompt: '◆', text: 'Syncing latest version via Desktop Bridge', color: 'text-mist' },
-                    { prompt: '✓', text: 'File ready. Opened in browser.', color: 'text-accent' },
-                    { prompt: '>', text: 'Save my notes from today to cloud storage', color: 'text-paper' },
-                    { prompt: '✓', text: 'Saved. notes-2026-03-09.md created.', color: 'text-accent' },
+                    { me: true, text: 'Open the Q2 launch file on my computer.' },
+                    { me: false, text: 'Found it. Opening it for you now.' },
+                    { me: true, text: 'Save today’s notes to my Documents folder.' },
+                    { me: false, text: 'Saved.' },
                   ].map((line, i) => (
-                    <motion.div
+                    <motion.p
                       key={i}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={bridgeInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: 0.4 + i * 0.12, duration: 0.3 }}
-                      className={`flex gap-2 ${line.color}`}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={bridgeInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ delay: 0.3 + i * 0.18, duration: 0.35 }}
+                      className={line.me
+                        ? 'ml-auto w-fit max-w-[85%] rounded-[16px_16px_4px_16px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-4 py-2 text-sm text-ink'
+                        : 'w-fit max-w-[85%] text-sm text-ink flex items-start gap-2'}
                     >
-                      <span className="flex-shrink-0 w-4">{line.prompt}</span>
-                      <span>{line.text}</span>
-                    </motion.div>
+                      {!line.me && <KeelMark size={16} className="mt-0.5 flex-shrink-0" />}
+                      {line.text}
+                    </motion.p>
                   ))}
                 </div>
               </div>
@@ -662,20 +599,19 @@ export default function KeelPage() {
               className="order-1 lg:order-2"
             >
               <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-6">
-                Your home machine,
+                Your computer,
                 <br />
                 <span className="text-ink">from anywhere.</span>
               </h2>
               <p className="text-ink leading-relaxed mb-6">
-                The Desktop Bridge runs on your home computer. From your phone or another machine, Keel can reach local files, open applications and update documents.
-                Sensitive work can stay on local models.
+                Bridge connects Keel to your computer. From your phone, ask for a file, update a document or start a task at home. Private work can stay on your own machine.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Access any file on your home machine remotely',
-                  'Read, write, and organize documents through Keel',
-                  'Run automations and tasks from your phone',
-                  'End-to-end encrypted — only you have the keys',
+                  'Reach your files from anywhere',
+                  'Update documents through Keel',
+                  'Start tasks from your phone',
+                  'Encrypted. Only you can open it',
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm text-ink">
                     <span className="w-4 h-4 rounded-full bg-mist flex items-center justify-center flex-shrink-0">
@@ -707,134 +643,11 @@ export default function KeelPage() {
               <span className="text-ink">you already use.</span>
             </h2>
             <p className="text-ink max-w-xl mx-auto mb-12">
-              Health, fitness, calendar and productivity apps. More ship regularly.
+              Health, fitness, calendar and productivity apps. More are on the way.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
-            {integrationCategories.map((cat, ci) => (
-              <motion.div
-                key={cat.category}
-                initial={{ opacity: 0, y: 20 }}
-                animate={intInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: ci * 0.1 }}
-                className="p-5 rounded-xl glass"
-              >
-                <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-accent'}`}>
-                  {cat.category}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {cat.items.map(item => (
-                    <span key={item} className="px-2.5 py-1 rounded-full glass text-ink text-xs">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What Keel Actually Does — Execution examples */}
-      <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12">
-            <p className="text-accent eyebrow mb-4">Execution</p>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
-              The job,
-              <br />
-              <span className="text-ink">start to finish.</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              {
-                trigger: 'Compass detects a goal milestone approaching',
-                action: 'Researcher agent searches 12 sources, reads 8 pages, drafts a 2-page brief',
-                output: 'Delivered to your Google Drive before your morning meeting',
-                label: 'Research brief',
-              },
-              {
-                trigger: "Proactive engine fires every Sunday evening",
-                action: "Task Manager reviews the week's completed tasks, goal progress, and calendar",
-                output: 'Summary sent to your phone with next week\'s priorities pre-loaded',
-                label: 'Weekly retrospective',
-              },
-              {
-                trigger: 'Monthly file audit scheduled in Task Manager',
-                action: 'Agent reads your Drive, applies your naming convention, moves files',
-                output: 'Organized folder delivered to your approved storage location',
-                label: 'File organization',
-              },
-              {
-                trigger: 'GitHub webhook fires on new PR',
-                action: 'Analyst agent reads the diff, checks your coding standards, summarizes risks',
-                output: 'Review summary posted as a comment before you open the PR',
-                label: 'Code review assist',
-              },
-            ].map((ex, i) => (
-              <div key={i} className="p-6 rounded-2xl glass">
-                <p className="eyebrow text-accent mb-4">{ex.label}</p>
-                <div className="space-y-3">
-                  <div className="flex gap-2.5">
-                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Trigger</span>
-                    <span className="text-ink text-sm leading-relaxed">{ex.trigger}</span>
-                  </div>
-                  <div className="flex gap-2.5">
-                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Action</span>
-                    <span className="text-ink text-sm leading-relaxed">{ex.action}</span>
-                  </div>
-                  <div className="flex gap-2.5">
-                    <span className="text-ink text-xs mt-0.5 flex-shrink-0">Output</span>
-                    <span className="text-ink text-sm leading-relaxed font-medium">{ex.output}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Proactive Engine */}
-      <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
-            <div>
-              <p className="text-accent eyebrow mb-4">Proactive engine</p>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight">
-                Keel speaks first.
-                <br />
-                <span className="text-ink">When it matters.</span>
-              </h2>
-            </div>
-            <p className="text-ink leading-relaxed">
-              Seven triggers run on their own. Some Keel handles. The rest it brings to you with a recommendation. You decide.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[
-              { time: '7:00 am daily', title: 'Morning briefing', body: 'Your goals, schedule, and priority tasks — ready before you open your laptop.' },
-              { time: 'After 4h inactivity', title: 'Stale task alert', body: 'When a task sits in review too long, Keel flags it and asks if you want it rescheduled.' },
-              { time: 'When activity drops', title: 'Goal momentum check', body: 'Compass notices when a goal goes quiet and surfaces it before it becomes a miss.' },
-              { time: 'End of each day', title: 'Daily summary', body: "What got done, what shifted, and tomorrow's plan — automatic." },
-              { time: 'Every Sunday', title: 'Weekly retrospective', body: 'Full-week review with goal progress, time spent, and next week\'s priorities.' },
-              { time: 'When progress < 30%', title: 'Goal gap alert', body: 'When a goal category falls behind, Compass flags it with a suggested action.' },
-              { time: 'When work dominates', title: 'Domain overload warning', body: 'When work starts to crowd out personal goals, Keel notices the imbalance and tells you.' },
-            ].map((trigger, i) => (
-              <div key={i} className="flex gap-4 p-5 rounded-2xl glass items-start">
-                <div className="flex-shrink-0 pt-0.5">
-                  <span className="text-xs font-medium text-ink whitespace-nowrap">{trigger.time}</span>
-                </div>
-                <div>
-                  <h3 className="text-ink font-medium text-sm mb-1">{trigger.title}</h3>
-                  <p className="text-ink text-xs leading-relaxed">{trigger.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <AppCloud />
         </div>
       </section>
 
@@ -856,7 +669,7 @@ export default function KeelPage() {
                 <span className="text-ink">Your data.</span>
               </h2>
               <p className="text-ink leading-relaxed">
-                Connect your own API keys. Choose which model powers which agent. Decide what each integration can see. Your data is never used for training and never sold.
+                Bring your own keys, or a plan you already pay for. Choose the model for each agent. Decide what each app can share. Your data is never used for training and never sold.
               </p>
             </motion.div>
             <motion.div
@@ -866,17 +679,16 @@ export default function KeelPage() {
               className="grid grid-cols-2 gap-3"
             >
               {[
-                { title: 'BYO API keys', desc: 'Use OpenAI, Anthropic, Gemini, or local models via Ollama.' },
-                { title: 'Zero training', desc: 'Your conversations and data are never used to train any model.' },
-                { title: 'Default-deny execution', desc: 'No autonomous action runs until you explicitly enable it. File access, web search, browser automation — all off by default.' },
-                { title: 'Resource pattern policies', desc: 'Specify exactly which folders, domains, and services each agent can touch.' },
-                { title: 'Daily action limits', desc: 'Set a max number of file writes, web searches, or tool calls per day. Keel stops and asks when approaching the limit.' },
-                { title: 'Immutable audit log', desc: 'Every tool call logged with timestamp, result, and cost. Every action reviewable. 30-day minimum retention.' },
-                { title: 'Abort at any time', desc: 'If a running agent does something unexpected, one tap stops it mid-execution. Keel tells you what it completed before stopping.' },
-                { title: 'Confidential task routing', desc: 'Sensitive tasks never touch cloud models — they route to local models only via your Desktop Bridge.' },
+                { title: 'Bring your own keys', desc: 'Use OpenAI, Anthropic, Gemini, or a model on your own machine.' },
+                { title: 'Use a plan you already have', desc: 'Where a provider allows it, sign in with the plan you already pay for, starting with Claude.' },
+                { title: 'Never used for training', desc: 'Your conversations and data are never used to train a model.' },
+                { title: 'Off until you turn it on', desc: 'Nothing runs on its own until you switch it on.' },
+                { title: 'You set the boundaries', desc: 'Choose the folders, sites and services each agent can touch.' },
+                { title: 'On the record', desc: 'Every action is logged, and you can review it.' },
+                { title: 'Stop any time', desc: 'One tap stops a running agent.' },
+                { title: 'Private work stays home', desc: 'Confidential tasks run only on your own computer, through Bridge.' },
               ].map((item, i) => (
                 <div key={i} className="p-4 rounded-xl glass">
-                  <div className="w-1 h-4 rounded-full bg-accent mb-3" />
                   <div className="font-medium text-ink text-sm mb-1">{item.title}</div>
                   <div className="text-ink text-xs leading-relaxed">{item.desc}</div>
                 </div>
