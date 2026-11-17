@@ -61,6 +61,7 @@ export function Zoe({ pose, className, decorative = false, eager = false }: { po
       alt={decorative ? '' : POSE_ALT[pose.split('-')[0]]}
       aria-hidden={decorative || undefined}
       loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
       draggable={false}
       className={`select-none pointer-events-none ${className ?? ''}`}
     />

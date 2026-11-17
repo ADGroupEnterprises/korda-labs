@@ -76,40 +76,35 @@ body::before {
       0 1px 2px rgba(15, 41, 66, 0.04),
       0 14px 34px -14px rgba(15, 41, 66, 0.16);
   }
-  /* Device outline: a tube of clear glass. No fill to speak of; the page and the colour behind
-     it show through. What reads as glass is the edges: a fine dark line outside, a bright bevel
-     just inside it, a cool shadow on the far side, a streak of light across one corner, and a
-     thin iridescent line where the glass meets the screen. */
+  /* Device outline: a thin rim of clear glass, the way Apple draws it. No fill and no blur (so it
+     costs nothing to paint): a hairline outside, a bright specular edge at top-left, a softer
+     glint at bottom-right, and a faint spectrum where the glass meets the screen. */
   .glass-bezel {
     position: relative;
-    --rim: 13px;
+    --rim: 6px;
     padding: var(--rim);
     background:
-      linear-gradient(128deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 0.35) 100%),
-      rgba(255, 255, 255, 0.03);
-    -webkit-backdrop-filter: blur(3px) saturate(220%) contrast(1.06);
-    backdrop-filter: blur(3px) saturate(220%) contrast(1.06);
+      linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.12) 18%, rgba(255, 255, 255, 0.04) 72%, rgba(255, 255, 255, 0.55) 100%);
     box-shadow:
-      0 0 0 1px rgba(39, 64, 90, 0.30),
-      inset 0 0 0 1px rgba(255, 255, 255, 0.95),
-      inset 0 0 0 2px rgba(39, 64, 90, 0.07),
-      inset 5px 5px 6px -4px rgba(255, 255, 255, 1),
-      inset -5px -6px 8px -4px rgba(39, 64, 90, 0.30),
-      inset 0 0 12px rgba(61, 100, 174, 0.10),
+      0 0 0 0.5px rgba(39, 64, 90, 0.38),
+      inset 0 0 0 0.5px rgba(255, 255, 255, 1),
+      inset 1.5px 1.5px 1px -0.5px rgba(255, 255, 255, 1),
+      inset -1.5px -1.5px 1px -0.5px rgba(255, 255, 255, 0.75),
+      inset -2px -3px 4px -2px rgba(39, 64, 90, 0.28),
       0 1px 2px rgba(15, 41, 66, 0.08),
-      0 44px 70px -34px rgba(15, 41, 66, 0.5);
+      0 40px 64px -34px rgba(15, 41, 66, 0.5);
   }
   .glass-bezel::after {
     content: '';
     position: absolute;
-    inset: calc(var(--rim) - 2px);
+    inset: calc(var(--rim) - 1px);
     border-radius: var(--inner-r, 2.4rem);
-    padding: 1.5px;
-    background: conic-gradient(from 210deg, #6E9BE0, #F2B8AE, #FBEBDC, #A7D7FF, #B9A7FF, #F2B8AE, #27405A, #6E9BE0);
+    padding: 1px;
+    background: conic-gradient(from 200deg, rgba(39, 64, 90, 0.45), #A7D7FF, #FBEBDC, rgba(39, 64, 90, 0.35), #B9A7FF, #F2B8AE, rgba(39, 64, 90, 0.45));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-    opacity: 0.85;
+    opacity: 0.7;
     pointer-events: none;
   }
   /* Menus that hang outside a glass parent: nearly opaque so text stays readable. */
@@ -212,9 +207,17 @@ body::before {
   animation: pin-travel 36s linear infinite;
   will-change: transform;
 }
+.showcase-paused .pin-track { animation-play-state: paused; }
 @keyframes pin-travel {
   from { transform: translateX(0); }
   to { transform: translateX(var(--pin-loop, 732px)); }
+}
+
+/* First paint: the hero copy rises in with CSS alone, so it never waits for JavaScript. */
+.rise { animation: rise 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98) both; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
 }
 
 /* MOTION-01: respect reduced motion globally */

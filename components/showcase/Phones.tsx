@@ -46,7 +46,7 @@ export function PinTile({ pin, className = '', tall = false }: { pin: Pin; class
 
 function Phone({ children, className = '', screen = 'bg-paper' }: { children: React.ReactNode; className?: string; screen?: string }) {
   return (
-    <div style={{ ['--inner-r' as string]: '2.5rem' }} className={`w-[14.25rem] rounded-[3rem] glass-bezel text-left ${className}`}>
+    <div style={{ ['--inner-r' as string]: '2.4rem' }} className={`w-[13.75rem] rounded-[2.75rem] glass-bezel text-left ${className}`}>
       <div className={`relative rounded-[2.35rem] overflow-hidden h-[28rem] flex flex-col ${screen} `}>
         {/* Status bar */}
         <div className="absolute top-0 inset-x-0 z-20 h-8 flex items-center justify-between px-5 pt-1 text-[0.6rem] font-semibold text-black">
@@ -178,14 +178,14 @@ function AppChat({ chat, k, frozen }: { chat: (typeof APP_CHATS)[number]; k: num
   )
 }
 
-export function AppPhone({ pinRow, frozen = false, className }: { pinRow?: React.ReactNode; frozen?: boolean; className?: string }) {
+export function AppPhone({ pinRow, frozen = false, paused = false, className }: { pinRow?: React.ReactNode; frozen?: boolean; paused?: boolean; className?: string }) {
   // home → chat → home → chat. Home holds a little longer so the pins get seen.
   const [step, setStep] = useState(0)
   useEffect(() => {
-    if (frozen) return
+    if (frozen || paused) return
     const t = setTimeout(() => setStep((s) => (s + 1) % 4), step % 2 === 0 ? 6500 : 8200)
     return () => clearTimeout(t)
-  }, [step, frozen])
+  }, [step, frozen, paused])
   const chat = step % 2 === 1 ? APP_CHATS[(step - 1) / 2] : null
   return (
     <Phone className={className}>
@@ -295,17 +295,17 @@ function LinkCard({ pin }: { pin: Pin }) {
   )
 }
 
-export function SmsPhone({ frozen = false, className }: { frozen?: boolean; className?: string }) {
+export function SmsPhone({ frozen = false, paused = false, className }: { frozen?: boolean; paused?: boolean; className?: string }) {
   const [idx, setIdx] = useState(0)
   const thread = THREADS[idx]
   const ev = timeline(thread)
   const phase = usePhase(ev.map((e) => e.at), idx, frozen)
   useEffect(() => {
-    if (frozen) return
+    if (frozen || paused) return
     const t = setTimeout(() => setIdx((i) => (i + 1) % THREADS.length), ev[ev.length - 1].at + 3200)
     return () => clearTimeout(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [idx, frozen])
+  }, [idx, frozen, paused])
   const fired = ev.slice(0, phase)
   const shown = new Set(fired.filter((e) => e.kind === 'show').map((e) => e.i))
   const last = fired[fired.length - 1]

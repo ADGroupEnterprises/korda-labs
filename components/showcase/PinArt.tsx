@@ -10,15 +10,6 @@ const useUid = () => useId().replace(/[^a-zA-Z0-9]/g, '')
 
 const box = { viewBox: '0 0 128 96', preserveAspectRatio: 'xMaxYMid slice', className: 'absolute inset-0 w-full h-full', 'aria-hidden': true } as const
 
-function Grain({ id }: { id: string }) {
-  return (
-    <>
-      <filter id={id}><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" /><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .09 0" /></filter>
-      <rect width="128" height="96" filter={`url(#${id})`} />
-    </>
-  )
-}
-
 function Runs() {
   const u = useUid()
   return (
@@ -32,7 +23,6 @@ function Runs() {
       <path d="M-4 88 C 22 74, 44 92, 68 78 S 108 66, 134 70 V100 H-4Z" fill="#0F2942" opacity="0.75" />
       <path d="M10 70 C 28 52, 40 74, 58 58 S 84 34, 98 44 S 112 36, 120 26" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeDasharray="0.1 5.2" />
       <circle cx="10" cy="70" r="3.2" fill="#fff" /><circle cx="120" cy="26" r="4.4" fill="#E0A96D" stroke="#fff" strokeWidth="1.6" />
-      <Grain id={`pa-run-g${u}`} />
     </svg>
   )
 }
@@ -53,7 +43,6 @@ function Goal() {
         <circle r={r} fill="none" stroke="#A7D7FF" strokeWidth="7" strokeLinecap="round" strokeDasharray={`${c * 0.62} ${c}`} filter={`url(#pa-goal-glow${u})`} opacity="0.8" />
         <circle r={r} fill="none" stroke={`url(#pa-goal-arc${u})`} strokeWidth="7" strokeLinecap="round" strokeDasharray={`${c * 0.62} ${c}`} />
       </g>
-      <Grain id={`pa-goal-g${u}`} />
     </svg>
   )
 }
@@ -74,7 +63,6 @@ function Study() {
         <path d="M69.3 42.5 L54 51 M54 51 L42 44 M54 51 L54 66" /><path d="M84 17 L84 4" opacity="0.8" />
       </g>
       {[[54, 51, 4.5, '#3D64AE'], [42, 44, 3.4, '#fff'], [54, 66, 3.4, '#F2B8AE'], [84, 4, 3.2, '#fff']].map(([x, y, q, f]) => <circle key={`${x}${y}`} cx={x as number} cy={y as number} r={q as number} fill={f as string} stroke="#fff" strokeWidth="1.4" />)}
-      <Grain id={`pa-st-g${u}`} />
     </svg>
   )
 }
@@ -95,7 +83,6 @@ function Reunion() {
       {seats.map(([x, y], i) => i < 6
         ? <circle key={i} cx={x} cy={y} r="7.5" fill={fills[i]} stroke="#fff" strokeWidth="2" />
         : <circle key={i} cx={x} cy={y} r="7" fill="#fff" fillOpacity="0.35" stroke="#fff" strokeWidth="1.6" strokeDasharray="2.5 2.5" />)}
-      <Grain id={`pa-re-g${u}`} />
     </svg>
   )
 }
@@ -133,7 +120,6 @@ function Shelf() {
       {books.map(([x, w, h, f]) => <rect key={x} x={x} y={48 - h} width={w} height={h} rx="1.5" fill={f} />)}
       <rect x="54" y="48" width="78" height="5" rx="1" fill={`url(#pa-sh-p${u})`} />
       <rect x="54" y="84" width="78" height="5" rx="1" fill={`url(#pa-sh-p${u})`} />
-      <Grain id={`pa-sh-g${u}`} />
     </svg>
   )
 }

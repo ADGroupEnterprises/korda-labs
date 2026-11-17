@@ -8,6 +8,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { KeelMark } from '@/components/marks/Brand'
+import { SCREENS } from '@/components/showcase/Screens'
 
 // ─── Timeline hook ────────────────────────────────────────────────────────────
 
@@ -313,17 +314,89 @@ export function Thinking() {
   )
 }
 
-// ─── The desktop / web window ─────────────────────────────────────────────────
+// ─── The desktop / web window: a gallery of screens ───────────────────────────
 
 const RAIL: (keyof typeof Icon)[] = ['overview', 'planner', 'tasks', 'goals', 'projects', 'journal', 'crew']
 
-export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasClass = '' }: { frozen?: boolean; pinStrip?: React.ReactNode; sceneMs?: number; canvasClass?: string }) {
-  const idx = useCycle(SCENES.length, sceneMs, frozen)
-  const scene = SCENES[idx]
-  // 1 ask · 2 thinking · 3 reply + surfaces
-  const phase = usePhase([350, 1100, 2700], idx, frozen)
+/* Chat is opened from the Keel button at the top of the rail, so no rail item is lit for it. */
+const GALLERY = [
+  { id: 'chat', eyebrow: 'Ask', title: '', ms: 8400 },
+  { id: 'overview', eyebrow: 'Home', title: 'Overview', ms: 4400 },
+  { id: 'planner', eyebrow: 'Day', title: 'Planner', ms: 4400 },
+  { id: 'tasks', eyebrow: 'Work', title: 'Tasks', ms: 4400 },
+  { id: 'goals', eyebrow: 'Compass', title: 'Goals', ms: 4400 },
+  { id: 'projects', eyebrow: 'Work', title: 'Projects', ms: 4400 },
+  { id: 'journal', eyebrow: 'Notebook', title: 'Journal', ms: 4400 },
+  { id: 'crew', eyebrow: 'Agents', title: 'Crew', ms: 4400 },
+] as const
 
+function ChatBody({ scene, phase, canvasClass }: { scene: (typeof SCENES)[number]; phase: number; canvasClass: string }) {
   return (
+    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:h-[25rem]">
+      {/* Conversation */}
+      <div className="flex flex-col p-4 md:border-r border-ink/[0.07] min-h-0">
+        <div className="flex-1 flex flex-col justify-end gap-3 min-h-[8.5rem] overflow-hidden">
+          <AnimatePresence mode="popLayout">
+            {phase >= 1 && (
+              <motion.div key="q" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}
+                className="ml-auto w-fit max-w-[92%] rounded-[14px_14px_4px_14px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-3.5 py-2 text-[0.76rem] leading-snug text-ink">
+                {scene.ask}
+              </motion.div>
+            )}
+            {phase === 2 && <Thinking key="t" />}
+            {phase >= 3 && (
+              <motion.div key="a" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45 }} className="flex gap-2">
+                <span className="mt-0.5 flex-shrink-0"><KeelMark size={16} /></span>
+                <div>
+                  <p className="text-[0.76rem] leading-relaxed text-ink">{scene.reply}</p>
+                  <p className={`${label} text-ink-soft mt-1.5 flex items-center gap-1.5`}><Icon.check className="w-2.5 h-2.5 text-accent" /> Logged · 3 actions</p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        <div className="mt-4 rounded-2xl bg-white/85 border border-white shadow-[0_8px_20px_-12px_rgba(15,41,66,0.25)] p-2.5">
+          <p className="text-[0.72rem] text-ink-soft px-1 pb-4">Message Zoe…</p>
+          <div className="flex items-center justify-between">
+            <span className="flex gap-1.5">
+              <span className="w-6 h-6 rounded-full bg-ink/[0.05] flex items-center justify-center text-ink-soft text-xs leading-none">+</span>
+              <span className="h-6 px-2 rounded-full bg-ink/[0.05] flex items-center gap-1 text-[0.6rem] text-ink-soft"><Icon.goals className="w-3 h-3" /> Goals</span>
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="font-mono text-[0.56rem] text-ink-soft">⌘↵</span>
+              <span className="w-6 h-6 rounded-full bg-accent text-paper flex items-center justify-center btn-pillow"><Icon.up className="w-3 h-3" /></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      {/* Canvas: no loading state. Surfaces appear with the reply. */}
+      <div className={`bg-chart p-4 min-h-[16rem] border-t md:border-t-0 border-ink/[0.07] ${canvasClass}`}>
+        {phase >= 3 && scene.view}
+      </div>
+    </div>
+  )
+}
+
+export function KeelWindow({ frozen = false, paused = false, canvasClass = '', framed = false }: { frozen?: boolean; paused?: boolean; canvasClass?: string; framed?: boolean }) {
+  const [screen, setScreen] = useState(0)
+  const [sceneIdx, setSceneIdx] = useState(0)
+  const g = GALLERY[screen]
+  const scene = SCENES[sceneIdx]
+  const phase = usePhase([350, 1100, 2700], sceneIdx * 10 + screen, frozen) // 1 ask · 2 thinking · 3 reply + surfaces
+
+  const go = (n: number) => {
+    if (n === 0 && screen !== 0) setSceneIdx((i) => (i + 1) % SCENES.length)
+    setScreen(n)
+  }
+  useEffect(() => {
+    if (frozen || paused) return
+    const t = setTimeout(() => go((screen + 1) % GALLERY.length), g.ms)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screen, frozen, paused])
+
+  const Body = screen === 0 ? null : SCREENS[g.id as keyof typeof SCREENS]
+  const panel = (
     <div className="rounded-[1.45rem] bg-paper overflow-hidden text-left">
       {/* Browser chrome */}
       <div className="flex items-center gap-3 px-4 h-10 border-b border-ink/[0.07] bg-white/40">
@@ -340,12 +413,13 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
       <div className="flex">
         {/* Nav rail */}
         <div className="hidden sm:flex flex-col items-center w-12 py-3 gap-1 border-r border-ink/[0.07] bg-white/30">
-          <span className="w-8 h-8 rounded-xl bg-white/90 border border-white shadow-sm flex items-center justify-center mb-2"><KeelMark size={18} /></span>
+          <span className={`w-8 h-8 rounded-xl flex items-center justify-center mb-2 transition-all duration-300 ${screen === 0 ? 'bg-white shadow-[0_0_0_2px_rgba(61,100,174,0.45),0_6px_14px_-6px_rgba(61,100,174,0.6)]' : 'bg-white/90 border border-white shadow-sm'}`}><KeelMark size={18} /></span>
           {RAIL.map((n, i) => {
             const G = Icon[n]
+            const on = screen === i + 1
             return (
-              <span key={n} className={`relative w-8 h-8 rounded-lg flex items-center justify-center ${i === 0 ? 'text-accent bg-accent/[0.08]' : 'text-ink-soft'}`}>
-                {i === 0 && <span className="absolute -left-2 top-1.5 bottom-1.5 w-0.5 rounded-full bg-accent" />}
+              <span key={n} className={`relative w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-300 ${on ? 'text-accent bg-accent/[0.08]' : 'text-ink-soft'}`}>
+                {on && <span className="absolute -left-2 top-1.5 bottom-1.5 w-0.5 rounded-full bg-accent" />}
                 <G className="w-[1.05rem] h-[1.05rem]" />
               </span>
             )
@@ -357,72 +431,39 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
           {/* App header */}
           <div className="flex items-center gap-3 px-4 h-12 border-b border-ink/[0.07]">
             <div className="min-w-0">
-              <p className={`${label} text-accent`}>Ask</p>
-              <AnimatePresence mode="wait">
-                <motion.p key={scene.id} initial={{ opacity: 0, y: 3 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} className="font-display font-bold text-[0.9rem] leading-tight text-ink truncate">{scene.title}</motion.p>
-              </AnimatePresence>
+              <p className={`${label} text-accent`}>{g.eyebrow}</p>
+              <p className="font-display font-bold text-[0.9rem] leading-tight text-ink truncate">{screen === 0 ? scene.title : g.title}</p>
             </div>
             <span className="hidden md:flex mx-auto items-center gap-2 h-7 w-56 px-3 rounded-full bg-white/70 border border-white text-ink-soft shadow-sm">
               <Icon.search className="w-3 h-3" /><span className="text-[0.66rem] flex-1">Ask Zoe or search anything…</span><span className="font-mono text-[0.56rem] px-1.5 py-0.5 rounded bg-ink/[0.06]">⌘K</span>
             </span>
             <span className="ml-auto md:ml-0 flex items-center gap-2 text-ink-soft">
-              <span className="hidden sm:flex items-center gap-1.5 text-[0.62rem]">Routing <span className="px-2 py-0.5 rounded-full bg-sky-soft text-accent font-medium">Cloud</span></span>
+              {screen === 0 && <span className="hidden sm:flex items-center gap-1.5 text-[0.62rem]">Routing <span className="px-2 py-0.5 rounded-full bg-sky-soft text-accent font-medium">Cloud</span></span>}
               <Icon.bell className="w-4 h-4" />
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]">
-            {/* Conversation */}
-            <div className="flex flex-col p-4 md:border-r border-ink/[0.07] md:h-[25rem]">
-              <div className="flex-1 flex flex-col justify-end gap-3 min-h-[8.5rem] overflow-hidden">
-                <AnimatePresence mode="popLayout">
-                  {phase >= 1 && (
-                    <motion.div key={scene.id + 'q'} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, transition: { duration: 0.15 } }} transition={{ duration: 0.3 }}
-                      className="ml-auto w-fit max-w-[92%] rounded-[14px_14px_4px_14px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-3.5 py-2 text-[0.76rem] leading-snug text-ink">
-                      {scene.ask}
-                    </motion.div>
-                  )}
-                  {phase === 2 && <Thinking key={scene.id + 't'} />}
-                  {phase >= 3 && (
-                    <motion.div key={scene.id + 'a'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.15 } }} transition={{ duration: 0.45 }} className="flex gap-2">
-                      <span className="mt-0.5 flex-shrink-0"><KeelMark size={16} /></span>
-                      <div>
-                        <p className="text-[0.76rem] leading-relaxed text-ink">{scene.reply}</p>
-                        <p className={`${label} text-ink-soft mt-1.5 flex items-center gap-1.5`}><Icon.check className="w-2.5 h-2.5 text-accent" /> Logged · 3 actions</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              {/* Composer */}
-              <div className="mt-4 rounded-2xl bg-white/85 border border-white shadow-[0_8px_20px_-12px_rgba(15,41,66,0.25)] p-2.5">
-                <p className="text-[0.72rem] text-ink-soft px-1 pb-4">Message Zoe…</p>
-                <div className="flex items-center justify-between">
-                  <span className="flex gap-1.5">
-                    <span className="w-6 h-6 rounded-full bg-ink/[0.05] flex items-center justify-center text-ink-soft text-xs leading-none">+</span>
-                    <span className="h-6 px-2 rounded-full bg-ink/[0.05] flex items-center gap-1 text-[0.6rem] text-ink-soft"><Icon.goals className="w-3 h-3" /> Goals</span>
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <span className="font-mono text-[0.56rem] text-ink-soft">⌘↵</span>
-                    <span className="w-6 h-6 rounded-full bg-accent text-paper flex items-center justify-center btn-pillow"><Icon.up className="w-3 h-3" /></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Canvas */}
-            <div className={`relative bg-chart p-4 md:h-[25rem] min-h-[16rem] border-t md:border-t-0 border-ink/[0.07] flex flex-col ${canvasClass}`}>
-              <div className="flex-1">
-                <AnimatePresence mode="wait">
-                  {phase >= 3 && (
-                    <motion.div key={scene.id} exit={{ opacity: 0, transition: { duration: 0.15 } }}>{scene.view}</motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              {pinStrip}
-            </div>
+          <div className="relative overflow-hidden">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div key={screen === 0 ? `chat-${sceneIdx}` : g.id} initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -36, transition: { duration: 0.18 } }} transition={{ duration: 0.36, ease: [0.21, 0.47, 0.32, 0.98] }}>
+                {Body ? <div className={`md:h-[25rem] overflow-hidden ${canvasClass}`}><Body /></div> : <ChatBody scene={scene} phase={phase} canvasClass={canvasClass} />}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
+      </div>
+    </div>
+  )
+
+  return (
+    <div>
+      {framed ? <div style={{ ['--inner-r' as string]: '1.5rem' }} className="rounded-[1.85rem] glass-bezel">{panel}</div> : <div className="rounded-[1.45rem] shadow-[0_0_0_1px_rgba(15,41,66,0.08),0_30px_60px_-30px_rgba(15,41,66,0.35)]">{panel}</div>}
+      {/* Which screen is showing */}
+      <div className="mt-4 flex items-center justify-center gap-1.5" role="tablist" aria-label="Keel screens">
+        {GALLERY.map((x, i) => (
+          <button key={x.id} type="button" role="tab" aria-selected={i === screen} aria-label={x.id === 'chat' ? 'Chat' : x.title} title={x.id === 'chat' ? 'Chat' : x.title} onClick={() => go(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === screen ? 'w-6 bg-accent' : 'w-1.5 bg-ink/20 hover:bg-ink/40'}`} />
+        ))}
       </div>
     </div>
   )
