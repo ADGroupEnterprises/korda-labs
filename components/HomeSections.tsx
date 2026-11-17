@@ -56,6 +56,12 @@ export function CrewSection() {
           </Link>
         </div>
       </div>
+      {/* Sits in the existing gap between this section and the next; adds no height. */}
+      <div className="absolute inset-x-6 bottom-0 translate-y-1/2 z-10 pointer-events-none">
+        <div className="max-w-6xl mx-auto flex justify-end">
+          <Zoe pose="lounge-left" className="w-40 sm:w-52 lg:w-60 h-auto" />
+        </div>
+      </div>
     </section>
   )
 }
@@ -110,18 +116,18 @@ const controls = [
 
 export function ControlSection() {
   return (
-    <section className="relative px-6 py-24 sm:py-32">
-      <div className="relative max-w-6xl mx-auto rounded-[2.5rem] bg-ink text-paper overflow-hidden">
+    <section className="relative px-6 pt-20 pb-28 sm:pt-24 sm:pb-32">
+      <div className="relative max-w-6xl mx-auto rounded-[2rem] bg-ink text-paper overflow-hidden">
         <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-accent/50 blur-3xl" aria-hidden="true" />
         <div className="absolute -bottom-32 right-0 w-[30rem] h-[30rem] rounded-full bg-sky/20 blur-3xl" aria-hidden="true" />
         <div className="absolute inset-0 bg-chart-light" aria-hidden="true" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-8 lg:gap-12 items-end p-8 sm:p-14">
+        <div className="relative p-7 sm:p-10">
           <div>
             <p className="eyebrow text-sky mb-4">Command</p>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-8">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl leading-[1.05] mb-6">
               Nothing runs without your say.
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-9">
+            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
               {controls.map((c) => (
                 <li key={c.title} className="glass-dark rounded-2xl px-4 py-3.5">
                   <p className="font-semibold text-paper">{c.title}</p>
@@ -133,7 +139,6 @@ export function ControlSection() {
               Security <Arrow />
             </Link>
           </div>
-          <Zoe pose="lounge-left" className="w-36 sm:w-44 lg:w-52 h-auto ml-auto lg:-mb-2" />
         </div>
       </div>
     </section>
