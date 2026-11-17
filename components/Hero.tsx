@@ -33,7 +33,7 @@ function WeekCalendar() {
   return (
     <div className="rounded-2xl glass overflow-hidden shadow-lg">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-3 py-2.5 border-b border-mist bg-paper-100">
+      <div className="flex items-center gap-2.5 px-3 py-2.5 border-b border-ink/[0.08] bg-paper-100">
         <div className="w-4 h-4 rounded flex items-center justify-center">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
             <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
@@ -49,7 +49,7 @@ function WeekCalendar() {
       {/* Grid */}
       <div className="flex">
         {/* Time axis */}
-        <div className="flex-shrink-0 w-7 border-r border-mist">
+        <div className="flex-shrink-0 w-7 border-r border-ink/[0.08]">
           {TIMES.map((t, i) => (
             <div key={t} style={{ height: SLOT_H }} className="flex items-start justify-end pr-1.5 pt-0.5">
               <span className="text-[8px] text-ink leading-none">{t}</span>
@@ -61,15 +61,15 @@ function WeekCalendar() {
         {DAYS.map((day, di) => {
           const isToday = di === 2 // Wed
           return (
-            <div key={day} className={`flex-1 border-r border-mist last:border-0 relative ${isToday ? 'bg-mist' : ''}`}>
+            <div key={day} className={`flex-1 border-r border-ink/[0.08] last:border-0 relative ${isToday ? 'bg-mist' : ''}`}>
               {/* Day header */}
-              <div className={`text-center py-1 border-b border-mist ${isToday ? 'bg-mist' : ''}`}>
+              <div className={`text-center py-1 border-b border-ink/[0.08] ${isToday ? 'bg-mist' : ''}`}>
                 <span className={`text-[9px] font-medium ${isToday ? 'text-accent' : 'text-ink'}`}>{day}</span>
               </div>
               {/* Hour rows */}
               <div className="relative" style={{ height: totalH }}>
                 {TIMES.map((_, ti) => (
-                  <div key={ti} style={{ height: SLOT_H }} className="border-b border-mist last:border-0" />
+                  <div key={ti} style={{ height: SLOT_H }} className="border-b border-ink/[0.08] last:border-0" />
                 ))}
                 {/* Today current time indicator */}
                 {isToday && (

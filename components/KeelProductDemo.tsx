@@ -57,7 +57,7 @@ function PlannerUI() {
       <motion.div
         initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="flex items-center gap-3 px-2.5 py-2 rounded-xl bg-mist border border-mist"
+        className="flex items-center gap-3 px-2.5 py-2 rounded-xl bg-mist border border-ink/[0.08]"
       >
         <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
         <span className="text-[10px] text-accent font-medium">Recovery 82% · HRV 58 · Deep work window: 9–11am</span>
@@ -68,7 +68,7 @@ function PlannerUI() {
         <span className="text-[10px] font-medium text-ink uppercase tracking-widest">Wednesday, Mar 11</span>
         <div className="flex gap-1">
           {['Q1 67%', 'Fitness 71%'].map(g => (
-            <span key={g} className="text-[9px] px-1.5 py-0.5 rounded-full bg-mist text-accent border border-mist font-medium">
+            <span key={g} className="text-[9px] px-1.5 py-0.5 rounded-full bg-mist text-accent border border-ink/[0.08] font-medium">
               {g}
             </span>
           ))}
@@ -83,11 +83,11 @@ function PlannerUI() {
             initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.07, duration: 0.3 }}
             className={`flex items-start gap-2 px-2.5 py-2 rounded-xl border ${
-              b.type === 'focus'   ? 'border-mist bg-mist' :
-              b.type === 'meeting' ? 'border-mist bg-mist' :
-              b.type === 'high'    ? 'border-mist bg-mist' :
-              b.type === 'rest'    ? 'border-mist bg-transparent opacity-60' :
-              'border-mist bg-mist'
+              b.type === 'focus'   ? 'border-ink/[0.08] bg-mist' :
+              b.type === 'meeting' ? 'border-ink/[0.08] bg-mist' :
+              b.type === 'high'    ? 'border-ink/[0.08] bg-mist' :
+              b.type === 'rest'    ? 'border-ink/[0.08] bg-transparent opacity-60' :
+              'border-ink/[0.08] bg-mist'
             }`}
           >
             <span className="text-[9px] text-ink font-mono w-8 flex-shrink-0 mt-0.5">{b.time}</span>
@@ -147,10 +147,10 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
             initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.15, duration: 0.3 }}
-            className="mt-2.5 pt-2.5 border-t border-mist"
+            className="mt-2.5 pt-2.5 border-t border-ink/[0.08]"
           >
             {/* Summary */}
-            <div className="flex items-center gap-2 px-1.5 py-1.5 rounded-lg bg-mist border border-mist mb-2">
+            <div className="flex items-center gap-2 px-1.5 py-1.5 rounded-lg bg-mist border border-ink/[0.08] mb-2">
               <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6l3 3 5-5" stroke="#3D64AE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -269,7 +269,7 @@ export default function KeelProductDemo() {
   return (
     <div ref={ref} className="rounded-2xl glass overflow-hidden ">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-mist">
+      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-ink/[0.08]">
         <motion.div
           animate={isThinking ? { scale: [1, 1.22, 1, 1.18, 1] } : { scale: 1 }}
           transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
@@ -313,7 +313,7 @@ export default function KeelProductDemo() {
           <motion.div
             initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-b border-mist px-4 py-2 bg-mist overflow-hidden"
+            className="border-b border-ink/[0.08] px-4 py-2 bg-mist overflow-hidden"
           >
             <div className="flex items-center gap-2">
               <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
@@ -337,7 +337,7 @@ export default function KeelProductDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[90%] bg-mist border border-mist rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
+                <div className="max-w-[90%] bg-mist border border-ink/[0.08] rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -416,7 +416,7 @@ export default function KeelProductDemo() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-mist px-4 py-2 flex items-center gap-2 text-[10px] text-ink">
+      <div className="border-t border-ink/[0.08] px-4 py-2 flex items-center gap-2 text-[10px] text-ink">
         <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span>Audit log active</span>
         <span className="ml-auto">Policy: default-deny</span>

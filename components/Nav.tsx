@@ -1,180 +1,152 @@
 'use client'
-import { motion, AnimatePresence } from 'framer-motion'
+
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
-import { APP_SIGNUP_URL, APP_SIGNIN_URL } from '@/lib/links'
+import { usePathname } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
 import { KordaLockup, KeelMark } from '@/components/marks/Brand'
+import { APP_SIGNIN_URL } from '@/lib/links'
 
-function ProductsDropdown({ open }: { open: boolean }) {
-  return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          initial={{ opacity: 0, y: 8, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 8, scale: 0.97 }}
-          transition={{ duration: 0.3 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-2xl glass glass-solid overflow-hidden"
-        >
-          <div className="p-1.5">
-            <Link
-              href="/products/keel"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-mist transition-colors group"
-            >
-              <div className="w-8 h-8 rounded-lg bg-mist flex items-center justify-center flex-shrink-0">
-                <KeelMark size={20} />
-              </div>
-              <div>
-                <div className="text-sm font-semibold text-ink">Keel</div>
-                <div className="text-xs text-ink-soft">Tasks &amp; calendar, with a crew</div>
-              </div>
-            </Link>
-          </div>
-          <div className="border-t border-mist p-2">
-            <Link
-              href="/products"
-              className="block text-center text-xs text-ink hover:text-ink py-1.5 transition-colors"
-            >
-              View all products →
-            </Link>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  )
-}
-
-function HowItWorksDropdown({ open }: { open: boolean }) {
-  return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          initial={{ opacity: 0, y: 8, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 8, scale: 0.97 }}
-          transition={{ duration: 0.3 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-2xl glass glass-solid overflow-hidden"
-        >
-          <div className="p-1.5">
-            {[
-              { href: '/use-cases/autonomous-agents', label: 'Autonomous Agents', sub: 'Research, write, automate, execute' },
-              { href: '/use-cases/proactive-ai', label: 'Proactive AI', sub: 'Runs your week without being asked' },
-              { href: '/use-cases/desktop-bridge', label: 'Desktop Bridge', sub: 'Your machine, from anywhere' },
-              { href: '/use-cases/daily-planning', label: 'Daily Planning', sub: 'AI morning briefing & EOD review' },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="flex flex-col px-3 py-2.5 rounded-lg hover:bg-mist transition-colors"
-              >
-                <span className="text-sm font-medium text-ink">{item.label}</span>
-                <span className="text-xs text-ink-soft">{item.sub}</span>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  )
-}
+// One menu, three groups. Everything that used to be a separate header link lives here.
+const groups = [
+  {
+    title: 'Keel',
+    links: [
+      { label: 'Overview', sub: 'Tasks & calendar, with a crew', href: '/products/keel', mark: true },
+      { label: 'Pricing', sub: 'Free on web', href: '/pricing' },
+      { label: 'Security', sub: 'Nothing runs without your say', href: '/security' },
+      { label: 'Compare', sub: 'Keel, side by side', href: '/compare' },
+    ],
+  },
+  {
+    title: 'How it works',
+    links: [
+      { label: 'Autonomous agents', sub: 'Research, write, automate', href: '/use-cases/autonomous-agents' },
+      { label: 'Proactive AI', sub: 'It runs before you ask', href: '/use-cases/proactive-ai' },
+      { label: 'Desktop Bridge', sub: 'Your machine, from anywhere', href: '/use-cases/desktop-bridge' },
+      { label: 'Daily planning', sub: 'A briefing at 7', href: '/use-cases/daily-planning' },
+      { label: 'For founders', sub: 'Run the company', href: '/use-cases/founders' },
+      { label: 'For freelancers', sub: 'A company of one', href: '/use-cases/freelancers' },
+    ],
+  },
+  {
+    title: 'Korda Labs',
+    links: [
+      { label: 'What we believe', sub: 'Why we build this way', href: '/believe' },
+      { label: 'Roadmap', sub: 'What we are building next', href: '/roadmap' },
+      { label: 'Products', sub: 'The studio', href: '/products' },
+      { label: 'Blog', sub: 'Notes from the studio', href: '/blog' },
+    ],
+  },
+]
 
 export default function Nav() {
-  const [productsOpen, setProductsOpen] = useState(false)
-  const [howOpen, setHowOpen] = useState(false)
-  const productsRef = useRef<HTMLDivElement>(null)
-  const howRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
 
+  // Close on navigation, outside click, and Escape.
+  useEffect(() => { setOpen(false) }, [pathname])
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (productsRef.current && !productsRef.current.contains(e.target as Node)) {
-        setProductsOpen(false)
-      }
-      if (howRef.current && !howRef.current.contains(e.target as Node)) {
-        setHowOpen(false)
-      }
+    function onDown(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false)
     }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setOpen(false) }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
   }, [])
 
-  const chevron = (open: boolean) => (
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}>
-      <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  )
-
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-3 left-3 right-3 z-50 mx-auto max-w-6xl rounded-full glass"
-    >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Left: Brand */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <KordaLockup className="h-11 w-auto" />
-        </Link>
+    <div ref={wrapRef} className="fixed top-3 left-3 right-3 z-50 mx-auto max-w-6xl">
+      <motion.nav
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="rounded-full glass"
+      >
+        <div className="pl-4 pr-2.5 sm:pl-6 sm:pr-3 h-16 flex items-center justify-between gap-3">
+          <Link href="/" className="flex items-center flex-shrink-0" aria-label="Korda Labs home">
+            <KordaLockup className="h-10 sm:h-11 w-auto" />
+          </Link>
 
-        {/* Center: Nav links */}
-        <div className="hidden md:flex items-center gap-6">
-          {/* Products */}
-          <div className="relative" ref={productsRef}>
-            <button
-              onClick={() => setProductsOpen(v => !v)}
-              onMouseEnter={() => setProductsOpen(true)}
-              className="flex items-center gap-1 text-ink hover:text-accent text-sm font-medium transition-colors duration-300"
+          <div className="flex items-center gap-1 sm:gap-2">
+            <Link
+              href="/believe"
+              className="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-ink hover:text-accent transition-colors duration-300"
             >
-              Products
-              {chevron(productsOpen)}
-            </button>
-            <div onMouseLeave={() => setProductsOpen(false)}>
-              <ProductsDropdown open={productsOpen} />
-            </div>
-          </div>
+              What we believe
+            </Link>
 
-          {/* How it Works */}
-          <div className="relative" ref={howRef}>
             <button
-              onClick={() => setHowOpen(v => !v)}
-              onMouseEnter={() => setHowOpen(true)}
-              className="flex items-center gap-1 text-ink hover:text-accent text-sm font-medium transition-colors duration-300"
+              type="button"
+              onClick={() => setOpen(v => !v)}
+              aria-expanded={open}
+              aria-controls="site-menu"
+              className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 ${
+                open ? 'bg-ink/[0.06] text-accent' : 'text-ink hover:text-accent'
+              }`}
             >
-              How it Works
-              {chevron(howOpen)}
+              Explore
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`} aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
-            <div onMouseLeave={() => setHowOpen(false)}>
-              <HowItWorksDropdown open={howOpen} />
-            </div>
+
+            <a
+              href={APP_SIGNIN_URL}
+              className="inline-flex px-5 py-2.5 text-sm font-semibold rounded-full bg-accent text-paper btn-pillow transition-all duration-300"
+            >
+              Get Keel
+            </a>
           </div>
-
-          <Link href="/pricing" className="text-ink hover:text-accent text-sm font-medium transition-colors duration-300">
-            Pricing
-          </Link>
-          <Link href="/compare" className="text-ink hover:text-accent text-sm font-medium transition-colors duration-300">
-            Compare
-          </Link>
-          <Link href="/security" className="text-ink hover:text-accent text-sm font-medium transition-colors duration-300">
-            Security
-          </Link>
         </div>
+      </motion.nav>
 
-        {/* Right: Auth buttons */}
-        <div className="flex items-center gap-3">
-          <a
-            href={APP_SIGNIN_URL}
-            className="hidden sm:inline-flex px-4 py-2 text-sm text-ink hover:text-ink transition-colors duration-300"
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="site-menu"
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            className="mt-2 rounded-[2rem] glass glass-menu p-3 sm:p-5 max-h-[calc(100vh-7rem)] overflow-y-auto"
           >
-            Sign in
-          </a>
-          <Link
-            href={APP_SIGNUP_URL}
-            className="inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-accent text-paper btn-pillow hover:bg-ink transition-all duration-300"
-          >
-            Get Keel
-          </Link>
-        </div>
-      </div>
-    </motion.nav>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
+              {groups.map((g) => (
+                <div key={g.title} className="rounded-3xl p-3 sm:p-4">
+                  <p className="eyebrow text-ink-soft mb-2 px-3">{g.title}</p>
+                  <ul>
+                    {g.links.map((l) => (
+                      <li key={l.href}>
+                        <Link
+                          href={l.href}
+                          onClick={() => setOpen(false)}
+                          className="group flex items-center gap-3 px-3 py-2.5 rounded-2xl hover:bg-accent/[0.07] transition-colors"
+                        >
+                          {'mark' in l && l.mark ? (
+                            <span className="w-8 h-8 rounded-xl bg-white/80 border border-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                              <KeelMark size={18} />
+                            </span>
+                          ) : null}
+                          <span className="min-w-0">
+                            <span className="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">{l.label}</span>
+                            <span className="block text-xs text-ink-soft truncate">{l.sub}</span>
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   )
 }

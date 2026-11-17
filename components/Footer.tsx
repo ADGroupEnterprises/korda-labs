@@ -25,6 +25,8 @@ const columns = [
   {
     title: 'Korda Labs',
     links: [
+      { label: 'What we believe', href: '/believe' },
+      { label: 'Roadmap', href: '/roadmap' },
       { label: 'Products', href: '/products' },
       { label: 'Blog', href: '/blog' },
       { label: 'Privacy', href: '/privacy' },
@@ -35,7 +37,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-mist bg-paper pt-16 pb-10 px-6">
+    <footer className="relative border-t border-white/70 bg-white/45 backdrop-blur-md pt-16 pb-10 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
           <div className="col-span-2">
@@ -61,7 +63,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-mist">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-ink/[0.08]">
           {/* Trust-moment signature: "Keel by Korda Labs" */}
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-2">

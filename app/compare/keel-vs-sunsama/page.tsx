@@ -96,11 +96,11 @@ export default function KeelVsSunsamaPage() {
             <div className="eyebrow text-accent text-center">Keel</div>
           </div>
 
-          <div className="rounded-2xl border border-mist overflow-hidden">
+          <div className="rounded-2xl glass overflow-hidden">
             {rows.map((row, i) => (
               <div
                 key={i}
-                className={`grid grid-cols-3 gap-4 px-4 py-4 items-start ${i % 2 === 0 ? 'bg-mist' : 'bg-transparent'} border-b border-mist last:border-0`}
+                className={`grid grid-cols-3 gap-4 px-4 py-4 items-start ${i % 2 === 0 ? 'bg-accent/[0.05]' : 'bg-transparent'} border-b border-ink/[0.08] last:border-0`}
               >
                 <div className="text-sm text-ink font-medium">{row.feature}</div>
                 <div className="text-sm text-ink text-center">{row.sunsama}</div>
@@ -117,7 +117,7 @@ export default function KeelVsSunsamaPage() {
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-4">
               Daily planning that connects to your whole life.
             </h2>
-            <p className="text-ink mb-8">Try Keel free — no credit card required.</p>
+            <p className="text-ink mb-8">Free on web.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={APP_SIGNUP_URL}
@@ -127,14 +127,14 @@ export default function KeelVsSunsamaPage() {
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-all duration-300"
               >
                 See pricing
               </Link>
             </div>
           </div>
 
-          <div className="mt-16 pt-12 border-t border-mist text-center">
+          <div className="mt-16 pt-12 border-t border-ink/[0.08] text-center">
             <p className="text-ink text-sm mb-4">Also comparing</p>
             <div className="flex justify-center gap-6">
               <Link href="/compare/keel-vs-akiflow" className="text-sm text-accent hover:text-accent transition-colors">

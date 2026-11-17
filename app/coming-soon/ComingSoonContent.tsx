@@ -103,7 +103,7 @@ export default function ComingSoonClient() {
           </Link>
 
           {/* Additional Info */}
-          <div className="mt-16 pt-12 border-t border-mist">
+          <div className="mt-16 pt-12 border-t border-ink/[0.08]">
             <p className="text-ink text-sm mb-4">Want to learn more?</p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link href="/products/keel" className="text-sm text-accent hover:text-accent transition-colors">

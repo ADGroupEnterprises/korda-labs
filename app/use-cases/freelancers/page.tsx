@@ -39,7 +39,7 @@ export default function FreelancersPage() {
             </Link>
             <Link
               href="/products/keel"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-all duration-300"
             >
               See how Keel works
             </Link>

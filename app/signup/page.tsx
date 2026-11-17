@@ -26,7 +26,7 @@ const proof = [
 
 export default function SignupPage() {
   return (
-    <main className="min-h-screen bg-paper">
+    <main className="min-h-screen">
       <section className="max-w-content mx-auto px-5 md:px-20 py-20 md:py-32">
         <div className="max-w-xl mx-auto text-center">
           <div className="flex justify-center mb-6">
@@ -51,7 +51,7 @@ export default function SignupPage() {
             </a>
             <Link
               href="/products/keel"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:bg-mist transition-colors duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-colors duration-300"
             >
               See how it works
             </Link>
@@ -65,7 +65,7 @@ export default function SignupPage() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6 border-t border-mist pt-12">
+        <div className="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6 border-t border-ink/[0.08] pt-12">
           {proof.map((item) => (
             <div key={item.title} className="text-left">
               <h2 className="text-sm font-medium text-ink mb-2">{item.title}</h2>

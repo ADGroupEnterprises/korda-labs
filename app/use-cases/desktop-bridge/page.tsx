@@ -36,7 +36,7 @@ export default function DesktopBridgePage() {
             <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
-            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300">
+            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-all duration-300">
               How we keep it safe
             </Link>
           </div>

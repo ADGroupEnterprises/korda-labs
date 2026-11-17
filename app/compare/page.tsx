@@ -57,7 +57,7 @@ export default function ComparePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-8">Head-to-head</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {comparisons.map((c, i) => (
-              <Link key={i} href={c.href} className="group block p-8 rounded-2xl glass hover:border-mist hover:bg-mist transition-all duration-300">
+              <Link key={i} href={c.href} className="group block p-8 rounded-2xl glass hover:border-accent/40 transition-all duration-300">
                 <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Keel vs.</p>
                 <h2 className="text-2xl font-display font-bold text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
@@ -76,7 +76,7 @@ export default function ComparePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-8">By use case</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
-              <Link key={i} href={u.href} className="group block p-6 rounded-2xl glass hover:border-mist hover:bg-mist transition-all duration-300">
+              <Link key={i} href={u.href} className="group block p-6 rounded-2xl glass hover:border-accent/40 transition-all duration-300">
                 <h3 className="text-ink font-medium mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-4">{u.description}</p>
                 <span className="text-xs text-accent flex items-center gap-1">
@@ -98,7 +98,7 @@ export default function ComparePage() {
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-all duration-300"
               >
                 See pricing
               </Link>

@@ -52,14 +52,14 @@ function TaskManagerAnimation() {
               layout
               transition={{ layout: { type: 'spring', stiffness: 300, damping: 28 } }}
               className={`flex items-center gap-2.5 px-3 py-2.5 rounded-xl border transition-colors duration-500 ${
-                isDone ? 'border-mist opacity-40' :
-                isHigh ? 'border-mist bg-mist' :
-                'border-mist bg-mist'
+                isDone ? 'border-ink/[0.08] opacity-40' :
+                isHigh ? 'border-ink/[0.08] bg-mist' :
+                'border-ink/[0.08] bg-mist'
               }`}
             >
               <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border transition-colors duration-500 ${
                 isDone ? 'border-accent bg-mist' :
-                isHigh ? 'border-mist' : 'border-mist'
+                isHigh ? 'border-ink/[0.08]' : 'border-ink/[0.08]'
               }`}>
                 {isDone && (
                   <motion.svg initial={{ scale: 0 }} animate={{ scale: 1 }} width="8" height="8" viewBox="0 0 10 8" fill="none">
@@ -163,8 +163,8 @@ function AgentCard({ agent, index }: { agent: typeof agents[0]; index: number })
       transition={{ duration: 0.6, delay: index * 0.12 }}
       className={`group relative p-7 rounded-2xl border transition-all duration-300 ${
         isBlue
-          ? 'border-mist bg-mist hover:border-accent'
-          : 'border-mist bg-mist hover:border-accent'
+          ? 'glass hover:border-accent/50'
+          : 'glass hover:border-accent/50'
       }`}
     >
       {/* Name */}
@@ -259,7 +259,7 @@ function KeelFeatureCard({ feature, index }: { feature: typeof keelFeatures[0]; 
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="group relative p-6 rounded-2xl glass hover:border-mist hover:bg-mist transition-all duration-300"
+      className="group relative p-6 rounded-2xl glass hover:border-accent/40 transition-all duration-300"
     >
       <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-transparent group-hover:bg-mist' : 'bg-transparent group-hover:bg-mist'} transition-all duration-300`} />
       <div className="relative">
@@ -369,8 +369,8 @@ function AdaptiveMemoryAnimation() {
                 transition={{ duration: 0.35, ease: 'easeOut' }}
                 className={`flex items-center gap-2.5 px-3 py-2 rounded-lg border ${
                   item.color === 'blue'
-                    ? 'border-mist bg-mist'
-                    : 'border-mist bg-mist'
+                    ? 'border-ink/[0.08] bg-mist'
+                    : 'border-ink/[0.08] bg-mist'
                 }`}
               >
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="flex-shrink-0">
@@ -387,7 +387,7 @@ function AdaptiveMemoryAnimation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="mt-3 p-2.5 rounded-lg bg-mist border border-mist text-[10px] text-accent font-mono"
+          className="mt-3 p-2.5 rounded-lg bg-mist border border-ink/[0.08] text-[10px] text-accent font-mono"
         >
           ↑ Rescheduled tomorrow&apos;s standup — you have a focus block at 9am.
         </motion.div>
@@ -487,7 +487,7 @@ export default function KeelPage() {
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:text-ink hover:border-mist transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-accent/40 transition-all duration-300"
             >
               All products
             </Link>
@@ -497,7 +497,7 @@ export default function KeelPage() {
 
       {/* What it does — Features */}
       <section className="relative py-40 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <KeelFeaturesHeader />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -527,7 +527,7 @@ export default function KeelPage() {
 
       {/* How it works */}
       <section id="how-it-works" className="relative py-40 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <KeelHowItWorksHeader />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
@@ -563,7 +563,7 @@ export default function KeelPage() {
 
       {/* Lens Experience */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-4">
@@ -581,7 +581,7 @@ export default function KeelPage() {
 
       {/* Core Agents */}
       <section className="relative py-32 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <SectionLabel>The crew</SectionLabel>
@@ -610,7 +610,7 @@ export default function KeelPage() {
 
       {/* Desktop Bridge */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto" ref={bridgeRef}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual */}
@@ -693,7 +693,7 @@ export default function KeelPage() {
 
       {/* Integrations */}
       <section className="relative py-32 px-6">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto text-center" ref={intRef}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -737,7 +737,7 @@ export default function KeelPage() {
 
       {/* What Keel Actually Does — Execution examples */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
             <p className="text-accent eyebrow mb-4">Execution</p>
@@ -798,7 +798,7 @@ export default function KeelPage() {
 
       {/* Proactive Engine */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div>
@@ -839,7 +839,7 @@ export default function KeelPage() {
 
       {/* Privacy & Control */}
       <section className="relative py-32 px-6 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto" ref={privacyRef}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -887,7 +887,7 @@ export default function KeelPage() {
 
       {/* Final CTA */}
       <section className="relative py-40 px-6 text-center overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-mist" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="relative max-w-2xl mx-auto">
           <div className="flex justify-center mb-8">
             <Zoe pose="walk-right" className="w-32 sm:w-36 h-auto" />

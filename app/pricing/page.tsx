@@ -197,7 +197,7 @@ export default function PricingPage() {
                   className={`block w-full text-center px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 mb-8 ${
                     tier.ctaStyle === 'accent'
                       ? 'bg-accent text-paper hover:bg-navy'
-                      : 'border border-mist text-ink hover:border-mist hover:bg-mist'
+                      : 'border border-ink/[0.08] text-ink hover:border-accent/40'
                   }`}
                 >
                   {tier.cta}
@@ -207,7 +207,7 @@ export default function PricingPage() {
                   <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Surfaces</p>
                   <div className="flex flex-wrap gap-2">
                     {tier.surfaces.map((surface, si) => (
-                      <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-mist text-accent border border-mist">
+                      <span key={si} className="text-xs px-2.5 py-1 rounded-full bg-mist text-accent border border-ink/[0.08]">
                         {surface}
                       </span>
                     ))}
@@ -227,7 +227,7 @@ export default function PricingPage() {
                 </div>
 
                 {tier.limitations.length > 0 && (
-                  <div className="pt-6 border-t border-mist">
+                  <div className="pt-6 border-t border-ink/[0.08]">
                     <p className="text-xs text-ink mb-2">Not included:</p>
                     <ul className="space-y-1.5">
                       {tier.limitations.map((l, li) => (
@@ -245,7 +245,7 @@ export default function PricingPage() {
       </section>
 
       {/* AI Execution Models */}
-      <section className="py-20 px-6 bg-mist">
+      <section className="py-20 px-6 bg-white/40 border-y border-white/70">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
             <h2 className="text-2xl sm:text-3xl font-display font-bold tracking-tight mb-3">
@@ -278,7 +278,7 @@ export default function PricingPage() {
                   ))}
                 </ul>
 
-                <div className="pt-4 border-t border-mist">
+                <div className="pt-4 border-t border-ink/[0.08]">
                   <p className="text-xs text-ink">{model.note}</p>
                 </div>
               </div>
@@ -306,7 +306,7 @@ export default function PricingPage() {
                 <div className="mb-4">
                   <span className="text-3xl font-display font-bold text-ink">{bundle.price}</span>
                 </div>
-                <div className="mb-4 pb-4 border-b border-mist">
+                <div className="mb-4 pb-4 border-b border-ink/[0.08]">
                   <p className="text-sm text-accent font-medium mb-1">{bundle.credits}</p>
                   <p className="text-xs text-ink">{bundle.tasks}</p>
                 </div>
@@ -316,7 +316,7 @@ export default function PricingPage() {
                 </div>
                 <Link
                   href={APP_SIGNUP_URL}
-                  className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-mist text-ink hover:border-accent hover:bg-mist transition-all duration-300"
+                  className="block w-full text-center px-6 py-2.5 rounded-xl text-sm font-medium border border-ink/[0.08] text-ink hover:border-accent hover:bg-mist transition-all duration-300"
                 >
                   Purchase
                 </Link>
@@ -334,7 +334,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ / Reassurance */}
-      <section className="py-20 px-6 bg-mist">
+      <section className="py-20 px-6 bg-white/40 border-y border-white/70">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[

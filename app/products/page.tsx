@@ -93,6 +93,9 @@ export default function ProductsPage() {
               with the partner that does the work. What you write on the page and what Keel runs
               become one plan.
             </p>
+            <Link href="/roadmap" className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-accent hover:text-ink transition-colors">
+              See the roadmap <span aria-hidden="true">→</span>
+            </Link>
           </div>
 
           {/* Section divider */}

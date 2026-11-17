@@ -48,10 +48,10 @@ function TasksUI() {
           initial={{ opacity: 0, x: 8 }} animate={{ opacity: 1, x: 0 }}
           transition={{ delay: i * 0.07, duration: 0.3 }}
           className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg border ${
-            t.type === 'focus' ? 'border-mist bg-mist' :
-            t.type === 'high'  ? 'border-mist bg-mist' :
-            t.type === 'meeting' ? 'border-mist bg-mist' :
-            'border-mist bg-transparent'
+            t.type === 'focus' ? 'border-ink/[0.08] bg-mist' :
+            t.type === 'high'  ? 'border-ink/[0.08] bg-mist' :
+            t.type === 'meeting' ? 'border-ink/[0.08] bg-mist' :
+            'border-ink/[0.08] bg-transparent'
           }`}
         >
           <div className={`w-1 h-3.5 rounded-full flex-shrink-0 ${
@@ -72,7 +72,7 @@ function TasksUI() {
       ))}
       <motion.div
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}
-        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-mist border border-mist mt-1"
+        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-mist border border-ink/[0.08] mt-1"
       >
         <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
         <span className="text-[10px] text-accent">Recovery 82% · HRV 58 · deep work window open</span>
@@ -165,7 +165,7 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
             initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.15, duration: 0.3 }}
-            className="mt-2.5 pt-2.5 border-t border-mist space-y-1.5"
+            className="mt-2.5 pt-2.5 border-t border-ink/[0.08] space-y-1.5"
           >
             <p className="text-[9px] text-accent font-medium uppercase tracking-widest px-1 mb-1.5">
               Q2 Launch — 3 new tasks
@@ -286,7 +286,7 @@ export default function KeelDemo() {
   return (
     <div ref={ref} className="rounded-2xl glass overflow-hidden ">
       {/* Header */}
-      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-mist">
+      <div className="flex items-center gap-2.5 px-4 py-3 border-b border-ink/[0.08]">
         <motion.div
           animate={isThinking ? { scale: [1, 1.22, 1, 1.18, 1] } : { scale: 1 }}
           transition={isThinking ? { duration: 0.6, repeat: Infinity } : { duration: 0.3 }}
@@ -332,7 +332,7 @@ export default function KeelDemo() {
                 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                 className="flex justify-end"
               >
-                <div className="max-w-[90%] bg-mist border border-mist rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
+                <div className="max-w-[90%] bg-mist border border-ink/[0.08] rounded-2xl rounded-tr-sm px-3 py-2 text-xs text-ink">
                   {demo.query.slice(0, chars)}{phase === 0 && <span className="animate-pulse">|</span>}
                 </div>
               </motion.div>
@@ -412,8 +412,8 @@ export default function KeelDemo() {
       </div>
 
       {/* Input bar */}
-      <div className="border-t border-mist px-4 py-2.5 flex items-center gap-2.5">
-        <div className="flex-1 h-7 rounded-lg bg-mist border border-mist flex items-center px-3">
+      <div className="border-t border-ink/[0.08] px-4 py-2.5 flex items-center gap-2.5">
+        <div className="flex-1 h-7 rounded-lg bg-mist border border-ink/[0.08] flex items-center px-3">
           <span className="text-ink text-xs">Ask anything...</span>
         </div>
         <div className="w-6 h-6 rounded-lg bg-mist flex items-center justify-center flex-shrink-0">

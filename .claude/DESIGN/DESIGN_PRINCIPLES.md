@@ -51,9 +51,14 @@ Brown is now a garnish (logos, Zoe's fur), never a surface.
 - The helm badge (`<ZoeBadge>`) is her avatar wherever she "speaks" in product UI mocks.
 - Crew marks: `<CrewMark agent="compass">` (owl with a telescope) and `<CrewMark agent="task-manager">` (penguin with a clipboard) — on agent cards only.
 
-## Layout & feel
+## Layout & feel — soft glass
 
-- Light, airy, a little techy: dot-grid "chart" texture (`.bg-chart`), pill buttons, `rounded-2xl/3xl` cards with mist hairlines, one deep-navy band per page.
+- A fixed sky-and-sand colour field sits behind every page (`body::before`). Sections are transparent; do not give them solid backgrounds.
+- **Glass is for things that float:** the nav bar, the Explore menu, cards, tiles, buttons. Use `.glass` (cards), `.glass-menu` (menus), `.glass-tint` (insets inside a card), `.glass-dark` (chips on the navy band).
+- Buttons: `.btn-pillow` on the primary (coat blue, soft top light), `.btn-glass` on the secondary.
+- Keep it restrained. No blur behind body copy, no refraction or shine effects, no transparent text panels. One deep-navy band per page.
+- Hairlines are `border-ink/[0.08]`, not mist.
+- Header: Korda Labs logo · What we believe · Explore (one menu, three groups) · Get Keel (goes to the app login). New pages go into the Explore menu, never into the header.
 - Headlines short. Homepage copy stays under ~550 words; one idea per section.
 - Motion: gentle fades + Zoe's slow bob. Respect `prefers-reduced-motion` (handled globally).
 
