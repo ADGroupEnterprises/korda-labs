@@ -10,17 +10,17 @@ import { AppPhone, SmsPhone, PINS, PinTile } from '@/components/showcase/Phones'
 
 export const PIN_MOTION = true
 
-const TILE_W = 124
+const TILE_W = 112
 const GAP = 8
 const LOOP_W = PINS.length * (TILE_W + GAP)
 
 /** The phone's pinned row: one endless line of surfaces drifting past. */
-function PinCarousel({ height = 150 }: { height?: number }) {
+function PinCarousel({ height = 104 }: { height?: number }) {
   return (
     <div className="relative overflow-hidden rounded-[1.15rem] -mx-3.5 px-3.5" style={{ height, ['--pin-loop' as string]: `${LOOP_W}px` }}>
       <div className="absolute top-0 pin-track flex" style={{ left: -LOOP_W, gap: GAP, height }}>
         {[0, 1, 2].flatMap((r) => PINS.map((p) => (
-          <div key={r + p.id} style={{ width: TILE_W }} className="flex-shrink-0 h-full"><PinTile pin={p} tall className="h-full" /></div>
+          <div key={r + p.id} style={{ width: TILE_W }} className="flex-shrink-0 h-full"><PinTile pin={p} className="h-full" /></div>
         )))}
       </div>
     </div>
@@ -34,6 +34,14 @@ export default function HeroShowcase() {
 
   return (
     <div className="relative mx-auto max-w-[82rem]" aria-label="Keel on the web, the Keel mobile app, and Keel in Messages">
+      {/* Colour behind the devices, so the glass rims have something to bend. */}
+      <div className="pointer-events-none absolute -inset-x-10 -inset-y-12 -z-10" aria-hidden="true">
+        <div className="absolute left-[2%] top-[4%] w-[30rem] h-[22rem] rounded-full bg-sky/70 blur-[70px]" />
+        <div className="absolute left-[38%] bottom-[-6%] w-[34rem] h-[20rem] rounded-full bg-blush/60 blur-[80px]" />
+        <div className="absolute right-[0%] top-[0%] w-[28rem] h-[26rem] rounded-full bg-accent/35 blur-[80px]" />
+        <div className="absolute right-[16%] bottom-[0%] w-[20rem] h-[16rem] rounded-full bg-brass/35 blur-[70px]" />
+      </div>
+
       {/* Web */}
       <div className="xl:mr-[21.5rem]">
         <div style={{ ['--inner-r' as string]: '1.6rem' }} className="rounded-[2.1rem] glass-bezel"><KeelWindow frozen={frozen} canvasClass="xl:pr-24" /></div>

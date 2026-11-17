@@ -76,37 +76,40 @@ body::before {
       0 1px 2px rgba(15, 41, 66, 0.04),
       0 14px 34px -14px rgba(15, 41, 66, 0.16);
   }
-  /* Device outline: a rim of clear glass. Almost no fill, so the page shows through it;
-     a crisp outer edge, a bright bevel, and a thin iridescent line where it meets the screen. */
+  /* Device outline: a tube of clear glass. No fill to speak of; the page and the colour behind
+     it show through. What reads as glass is the edges: a fine dark line outside, a bright bevel
+     just inside it, a cool shadow on the far side, a streak of light across one corner, and a
+     thin iridescent line where the glass meets the screen. */
   .glass-bezel {
     position: relative;
-    --rim: 11px;
+    --rim: 13px;
     padding: var(--rim);
     background:
-      linear-gradient(140deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.05) 30%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.18) 100%);
-    -webkit-backdrop-filter: blur(5px) saturate(190%) brightness(1.04);
-    backdrop-filter: blur(5px) saturate(190%) brightness(1.04);
-    border: 1px solid rgba(15, 41, 66, 0.2);
+      linear-gradient(128deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 16%, rgba(255, 255, 255, 0) 78%, rgba(255, 255, 255, 0.35) 100%),
+      rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(3px) saturate(220%) contrast(1.06);
+    backdrop-filter: blur(3px) saturate(220%) contrast(1.06);
     box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.75),
-      inset 0 3px 4px -1px rgba(255, 255, 255, 0.95),
-      inset 3px 0 5px -3px rgba(255, 255, 255, 0.7),
-      inset -3px 0 5px -3px rgba(255, 255, 255, 0.5),
-      inset 0 -4px 6px -3px rgba(15, 41, 66, 0.12),
-      0 1px 1px rgba(15, 41, 66, 0.06),
+      0 0 0 1px rgba(39, 64, 90, 0.30),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.95),
+      inset 0 0 0 2px rgba(39, 64, 90, 0.07),
+      inset 5px 5px 6px -4px rgba(255, 255, 255, 1),
+      inset -5px -6px 8px -4px rgba(39, 64, 90, 0.30),
+      inset 0 0 12px rgba(61, 100, 174, 0.10),
+      0 1px 2px rgba(15, 41, 66, 0.08),
       0 44px 70px -34px rgba(15, 41, 66, 0.5);
   }
   .glass-bezel::after {
     content: '';
     position: absolute;
-    inset: calc(var(--rim) - 2.5px);
+    inset: calc(var(--rim) - 2px);
     border-radius: var(--inner-r, 2.4rem);
     padding: 1.5px;
-    background: conic-gradient(from 210deg, #A7D7FF, #F2B8AE, #FBEBDC, #A7D7FF, #B9A7FF, #F2B8AE, #A7D7FF);
+    background: conic-gradient(from 210deg, #6E9BE0, #F2B8AE, #FBEBDC, #A7D7FF, #B9A7FF, #F2B8AE, #27405A, #6E9BE0);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-    opacity: 0.9;
+    opacity: 0.85;
     pointer-events: none;
   }
   /* Menus that hang outside a glass parent: nearly opaque so text stays readable. */

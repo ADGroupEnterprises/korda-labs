@@ -102,6 +102,18 @@ function AppHome({ pinRow }: { pinRow?: React.ReactNode }) {
             {PINS.slice(0, 4).map((p) => <PinTile key={p.id} pin={p} className="h-[4.9rem]" />)}
           </div>
         )}
+
+        {/* Runs on under the tab bar: there is more page below. */}
+        <div className="mt-2.5 rounded-t-2xl rounded-b-none bg-white/90 border border-b-0 border-white shadow-sm p-2.5 pb-10">
+          <p className={`${label} text-accent mb-1.5`}>Awaiting your eyes</p>
+          {[['Investor update', 'Draft v2'], ['Venue shortlist', '3 options'], ['Cut list', 'Walnut']].map(([n, m]) => (
+            <div key={n} className="flex items-center gap-2 py-[3px]">
+              <span className="w-1 h-3 rounded-full bg-accent/70 flex-shrink-0" />
+              <span className="text-[0.64rem] flex-1 truncate text-ink">{n}</span>
+              <span className={`${label} !text-[0.5rem] text-ink-soft`}>{m}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="absolute bottom-2.5 inset-x-3 h-12 rounded-full glass flex items-center justify-around px-2 z-10">
