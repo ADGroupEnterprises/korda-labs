@@ -2,6 +2,7 @@ import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import { Zoe } from '@/components/marks/Brand'
 
 export const metadata: Metadata = {
   title: 'Pricing — Keel by Korda Labs',
@@ -146,6 +147,7 @@ export default function PricingPage() {
           <p className="text-ink text-lg leading-relaxed max-w-2xl mx-auto">
             Pick your surfaces. Bring your own API keys or use managed credits.
           </p>
+          <Zoe pose="point-right" eager className="w-32 sm:w-40 h-auto mx-auto mt-10 -mb-20" />
         </div>
       </section>
 

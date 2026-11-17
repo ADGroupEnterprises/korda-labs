@@ -21,13 +21,7 @@ const specialists = ['Researcher', 'Writer', 'Analyst', 'Builder', 'Designer', '
 export function CrewSection() {
   return (
     <section className="relative py-24 sm:py-32 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-16 items-center">
-        <div className="relative mx-auto w-56 sm:w-72 lg:w-full lg:max-w-sm">
-          <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2.5rem] glass" aria-hidden="true" />
-          <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2.5rem] bg-gradient-to-b from-sky-soft/40 to-sky/60" aria-hidden="true" />
-          <Zoe pose="point-right" className="relative w-[112%] max-w-none h-auto" />
-        </div>
-
+      <div className="max-w-6xl mx-auto">
         <div>
           <p className="eyebrow text-accent mb-4">The crew</p>
           <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] text-ink mb-5">
@@ -89,7 +83,6 @@ export function WorkSection() {
               It comes back done.
             </h2>
           </div>
-          <Zoe pose="walk-left" className="hidden sm:block w-28 lg:w-36 h-auto -mb-4 flex-shrink-0" />
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
@@ -122,7 +115,7 @@ export function ControlSection() {
         <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-accent/50 blur-3xl" aria-hidden="true" />
         <div className="absolute -bottom-32 right-0 w-[30rem] h-[30rem] rounded-full bg-sky/20 blur-3xl" aria-hidden="true" />
         <div className="absolute inset-0 bg-chart-light" aria-hidden="true" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-8 sm:p-14">
+        <div className="relative grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-8 lg:gap-12 items-end p-8 sm:p-14">
           <div>
             <p className="eyebrow text-sky mb-4">Command</p>
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-8">
@@ -140,7 +133,7 @@ export function ControlSection() {
               Security <Arrow />
             </Link>
           </div>
-          <Zoe pose="lounge-left" className="w-full max-w-md mx-auto h-auto" />
+          <Zoe pose="lounge-left" className="w-36 sm:w-44 lg:w-52 h-auto ml-auto lg:-mb-2" />
         </div>
       </div>
     </section>
