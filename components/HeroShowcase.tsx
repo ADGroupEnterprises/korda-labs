@@ -18,7 +18,7 @@ const LOOP_W = PINS.length * (TILE_W + GAP)
 /** The phone's pinned row: one endless line of surfaces drifting past. */
 function PinCarousel({ height = 104 }: { height?: number }) {
   return (
-    <div className="relative overflow-hidden rounded-[1.15rem] -mx-3.5 px-3.5" style={{ height, ['--pin-loop' as string]: `${LOOP_W}px` }}>
+    <div className="relative overflow-hidden rounded-[1.15rem]" style={{ height, ['--pin-loop' as string]: `${LOOP_W}px` }}>
       <div className="absolute top-0 pin-track flex" style={{ left: -LOOP_W, gap: GAP, height }}>
         {[0, 1].flatMap((r) => PINS.map((p) => (
           <div key={r + p.id} style={{ width: TILE_W }} className="flex-shrink-0 h-full"><PinTile pin={p} className="h-full" /></div>
