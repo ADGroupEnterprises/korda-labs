@@ -46,8 +46,8 @@ export function PinTile({ pin, className = '', tall = false }: { pin: Pin; class
 
 function Phone({ children, className = '', screen = 'bg-paper' }: { children: React.ReactNode; className?: string; screen?: string }) {
   return (
-    <div className={`w-[14rem] rounded-[2.9rem] p-[9px] glass-bezel text-left ${className}`}>
-      <div className={`relative rounded-[2.35rem] overflow-hidden h-[28rem] flex flex-col ${screen} shadow-[0_0_0_1px_rgba(15,41,66,0.08)]`}>
+    <div style={{ ['--inner-r' as string]: '2.5rem' }} className={`w-[14.25rem] rounded-[3rem] glass-bezel text-left ${className}`}>
+      <div className={`relative rounded-[2.35rem] overflow-hidden h-[28rem] flex flex-col ${screen} `}>
         {/* Status bar */}
         <div className="absolute top-0 inset-x-0 z-20 h-8 flex items-center justify-between px-5 pt-1 text-[0.6rem] font-semibold text-black">
           <span>9:41</span>

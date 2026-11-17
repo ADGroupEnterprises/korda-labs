@@ -36,7 +36,7 @@ export default function HeroShowcase() {
     <div className="relative mx-auto max-w-[82rem]" aria-label="Keel on the web, the Keel mobile app, and Keel in Messages">
       {/* Web */}
       <div className="xl:mr-[21.5rem]">
-        <div className="rounded-[2rem] p-[9px] glass-bezel"><KeelWindow frozen={frozen} canvasClass="xl:pr-24" /></div>
+        <div style={{ ['--inner-r' as string]: '1.6rem' }} className="rounded-[2.1rem] glass-bezel"><KeelWindow frozen={frozen} canvasClass="xl:pr-24" /></div>
       </div>
 
       {/* Phones */}

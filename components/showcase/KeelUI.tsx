@@ -324,7 +324,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
   const phase = usePhase([350, 1100, 2700], idx, frozen)
 
   return (
-    <div className="rounded-[1.45rem] bg-paper/90 overflow-hidden text-left shadow-[0_0_0_1px_rgba(15,41,66,0.08)]">
+    <div className="rounded-[1.45rem] bg-paper overflow-hidden text-left">
       {/* Browser chrome */}
       <div className="flex items-center gap-3 px-4 h-10 border-b border-ink/[0.07] bg-white/40">
         <span className="flex gap-1.5" aria-hidden="true">
