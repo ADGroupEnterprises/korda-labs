@@ -66,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.75 }}
-            className="font-mono text-xs text-ink-soft mt-6"
+            className="eyebrow text-ink-soft mt-6"
           >
             Free on web <span className="text-accent">·</span> Every action logged
           </motion.p>

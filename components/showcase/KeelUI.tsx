@@ -56,7 +56,8 @@ export const Icon = {
 
 // ─── Shared atoms ─────────────────────────────────────────────────────────────
 
-export const label = 'font-mono text-[0.56rem] uppercase tracking-[0.14em]'
+/* Same face as the site's .eyebrow: JetBrains Mono, semibold, uppercase, 0.14em tracking. */
+export const label = 'font-mono font-semibold text-[0.56rem] uppercase tracking-[0.14em]'
 
 export function Avatar({ name, tone = 'sky' }: { name: string; tone?: 'sky' | 'sand' | 'ink' | 'blush' | 'mist' }) {
   const tones = { sky: 'bg-sky text-ink', sand: 'bg-sand text-copper', ink: 'bg-ink text-paper', blush: 'bg-blush text-ink', mist: 'bg-mist text-accent' }
@@ -121,7 +122,7 @@ function RunScene() {
         {[['Proposal review', 'Thu 4:00 pm'], ['Standup', '9:30 am'], ['Pottery class', 'kept · Tue 6:30']].map(([a, b]) => (
           <div key={a} className="flex items-center justify-between py-[3px]">
             <span className="flex items-center gap-2 text-[0.7rem]"><span className="w-1 h-3.5 rounded-full bg-ink/70" />{a}</span>
-            <span className="font-mono text-[0.6rem] text-ink/70">{b}</span>
+            <span className={`${label} text-ink/70`}>{b}</span>
           </div>
         ))}
       </Surface>
@@ -226,8 +227,8 @@ function ShelfScene() {
         {cuts.map(([p, q, s]) => (
           <div key={p} className="grid grid-cols-[1fr_auto_auto] gap-3 items-center py-[5px] border-b border-ink/[0.06] last:border-0">
             <span className="text-[0.7rem] font-medium">{p}</span>
-            <span className="font-mono text-[0.6rem] text-ink-soft">×{q}</span>
-            <span className="font-mono text-[0.6rem] text-ink-soft w-[5.5rem] text-right">{s}</span>
+            <span className={`${label} text-ink-soft`}>×{q}</span>
+            <span className={`${label} text-ink-soft w-[5.5rem] text-right`}>{s}</span>
           </div>
         ))}
       </Surface>
@@ -339,7 +340,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
                       <span className="mt-0.5 flex-shrink-0"><KeelMark size={16} /></span>
                       <div>
                         <p className="text-[0.76rem] leading-relaxed text-ink">{scene.reply}</p>
-                        <p className="font-mono text-[0.56rem] text-ink-soft mt-1.5 flex items-center gap-1.5"><Icon.check className="w-2.5 h-2.5 text-accent" /> Logged · 3 actions</p>
+                        <p className={`${label} text-ink-soft mt-1.5 flex items-center gap-1.5`}><Icon.check className="w-2.5 h-2.5 text-accent" /> Logged · 3 actions</p>
                       </div>
                     </motion.div>
                   )}

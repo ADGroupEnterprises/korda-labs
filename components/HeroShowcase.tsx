@@ -83,7 +83,7 @@ export default function HeroShowcase() {
         <AppPhone pinRow={phoneRow} className="relative z-10" />
         <div className="flex flex-col items-center xl:mb-12">
           <SmsPhone frozen={frozen} />
-          <Link href="/roadmap" className="mt-3 inline-flex items-center gap-1.5 font-mono text-[0.6rem] uppercase tracking-wider px-3 py-1.5 rounded-full glass text-ink-soft hover:text-accent transition-colors whitespace-nowrap">
+          <Link href="/roadmap" className="mt-3 inline-flex items-center gap-1.5 font-mono font-semibold text-[0.6rem] uppercase tracking-[0.14em] px-3 py-1.5 rounded-full glass text-ink-soft hover:text-accent transition-colors whitespace-nowrap">
             Text Keel · on the roadmap
           </Link>
         </div>

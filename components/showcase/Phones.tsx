@@ -81,7 +81,7 @@ export function AppPhone({ pinRow, className }: { pinRow?: React.ReactNode; clas
             <div key={n as string} className="flex items-center gap-2 py-[3px]">
               <span className={`w-3 h-3 rounded-full flex items-center justify-center flex-shrink-0 ${done ? 'bg-accent text-paper' : 'border border-ink/25'}`}>{done && <Icon.check className="w-2 h-2" />}</span>
               <span className={`text-[0.64rem] flex-1 truncate ${done ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span>
-              <span className="font-mono text-[0.52rem] text-ink-soft">{t}</span>
+              <span className={`${label} !text-[0.5rem] text-ink-soft`}>{t}</span>
             </div>
           ))}
         </div>
@@ -143,7 +143,7 @@ export function SmsPhone({ frozen = false, className }: { frozen?: boolean; clas
         <p className="text-[0.64rem] font-semibold text-ink mt-1">Keel</p>
       </div>
       <div className="flex-1 flex flex-col justify-end gap-2 px-3 pb-2 bg-gradient-to-b from-paper-100 to-sky-soft/60 overflow-hidden">
-        <p className="text-center font-mono text-[0.5rem] text-ink-soft mb-auto pt-2">Text Message · Today 9:41 AM</p>
+        <p className={`${label} !text-[0.5rem] text-center text-accent mb-auto pt-2`}>Text Message · Today 9:41 AM</p>
         <AnimatePresence mode="popLayout">
           {phase >= 1 && <Bubble key={idx + 'q'} me>{t.ask}</Bubble>}
           {phase === 2 && <Dots key={idx + 'd'} />}
