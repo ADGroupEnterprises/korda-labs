@@ -31,6 +31,7 @@ const columns = [
       { label: 'Blog', href: '/blog' },
       { label: 'Privacy', href: '/privacy' },
       { label: 'Terms', href: '/terms' },
+      { label: 'SMS terms', href: '/text' },
     ],
   },
 ]
