@@ -12,14 +12,14 @@ import { PINS, PinTile, type Pin } from '@/components/showcase/Pins'
 
 export { PINS, PinTile }
 
-/* Corner radii follow an iPhone 15: the screen corner is about 14% of the screen's width, so the
+/* Corner radii follow an iPhone 15: the screen corner is about 11% of the screen's width, so the
    body reads as a rounded rectangle, not a pill. */
 // ─── Phone frame: a thick rim of clear glass around the screen ────────────────
 
 function Phone({ children, className = '', screen = 'bg-paper' }: { children: React.ReactNode; className?: string; screen?: string }) {
   return (
-    <div style={{ ['--inner-r' as string]: '1.95rem' }} className={`w-[13.75rem] rounded-[2.3rem] glass-bezel text-left ${className}`}>
-      <div className={`relative rounded-[1.9rem] overflow-hidden h-[28rem] flex flex-col ${screen} `}>
+    <div style={{ ['--inner-r' as string]: '1.5rem' }} className={`w-[13.75rem] rounded-[1.85rem] glass-bezel text-left ${className}`}>
+      <div className={`relative rounded-[1.45rem] overflow-hidden h-[28rem] flex flex-col ${screen} `}>
         {/* Status bar */}
         <div className="absolute top-0 inset-x-0 z-20 h-8 flex items-center justify-between px-5 pt-1 text-[0.6rem] font-semibold text-black">
           <span>9:41</span>
