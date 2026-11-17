@@ -320,19 +320,19 @@ const RAIL: (keyof typeof Icon)[] = ['overview', 'planner', 'tasks', 'goals', 'p
 
 /* Chat is opened from the Keel button at the top of the rail, so no rail item is lit for it. */
 const GALLERY = [
-  { id: 'chat', eyebrow: 'Ask', title: '', ms: 8400 },
-  { id: 'overview', eyebrow: 'Home', title: 'Overview', ms: 4400 },
-  { id: 'planner', eyebrow: 'Day', title: 'Planner', ms: 4400 },
-  { id: 'tasks', eyebrow: 'Work', title: 'Tasks', ms: 4400 },
-  { id: 'goals', eyebrow: 'Compass', title: 'Goals', ms: 4400 },
-  { id: 'projects', eyebrow: 'Work', title: 'Projects', ms: 4400 },
-  { id: 'journal', eyebrow: 'Notebook', title: 'Journal', ms: 4400 },
-  { id: 'crew', eyebrow: 'Agents', title: 'Crew', ms: 4400 },
+  { id: 'chat', title: '', ms: 8400 },
+  { id: 'overview', title: 'Overview', ms: 4600 },
+  { id: 'planner', title: 'Planner', ms: 4600 },
+  { id: 'tasks', title: 'Tasks', ms: 6800 },
+  { id: 'goals', title: 'Goals', ms: 6800 },
+  { id: 'projects', title: 'Projects', ms: 4800 },
+  { id: 'journal', title: 'Journal', ms: 7200 },
+  { id: 'crew', title: 'Agents', ms: 4600 },
 ] as const
 
 function ChatBody({ scene, phase, canvasClass }: { scene: (typeof SCENES)[number]; phase: number; canvasClass: string }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:h-[25rem]">
+    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:h-[26.75rem]">
       {/* Conversation */}
       <div className="flex flex-col p-4 md:border-r border-ink/[0.07] min-h-0">
         <div className="flex-1 flex flex-col justify-end gap-3 min-h-[8.5rem] overflow-hidden">
@@ -431,8 +431,7 @@ export function KeelWindow({ frozen = false, paused = false, canvasClass = '', f
           {/* App header */}
           <div className="flex items-center gap-3 px-4 h-12 border-b border-ink/[0.07]">
             <div className="min-w-0">
-              <p className={`${label} text-accent`}>{g.eyebrow}</p>
-              <p className="font-display font-bold text-[0.9rem] leading-tight text-ink truncate">{screen === 0 ? scene.title : g.title}</p>
+              <p className="font-display font-bold text-[1.12rem] leading-none text-ink truncate">{screen === 0 ? scene.title : g.title}</p>
             </div>
             <span className="hidden md:flex mx-auto items-center gap-2 h-7 w-56 px-3 rounded-full bg-white/70 border border-white text-ink-soft shadow-sm">
               <Icon.search className="w-3 h-3" /><span className="text-[0.66rem] flex-1">Ask Zoe or search anything…</span><span className="font-mono text-[0.56rem] px-1.5 py-0.5 rounded bg-ink/[0.06]">⌘K</span>
@@ -446,7 +445,7 @@ export function KeelWindow({ frozen = false, paused = false, canvasClass = '', f
           <div className="relative overflow-hidden">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div key={screen === 0 ? `chat-${sceneIdx}` : g.id} initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -36, transition: { duration: 0.18 } }} transition={{ duration: 0.36, ease: [0.21, 0.47, 0.32, 0.98] }}>
-                {Body ? <div className={`md:h-[25rem] overflow-hidden ${canvasClass}`}><Body /></div> : <ChatBody scene={scene} phase={phase} canvasClass={canvasClass} />}
+                {Body ? <div className={`md:h-[26.75rem] overflow-hidden ${canvasClass}`}><Body /></div> : <ChatBody scene={scene} phase={phase} canvasClass={canvasClass} />}
               </motion.div>
             </AnimatePresence>
           </div>

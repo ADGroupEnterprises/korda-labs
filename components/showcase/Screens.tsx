@@ -3,8 +3,28 @@
 /* The seven app screens behind the rail, drawn from the real Keel shell and filled with the same
    week the chat examples use. Renderings of intent, not screenshots. */
 
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Icon, label, Avatar } from '@/components/showcase/KeelUI'
+import { PINS, PinTile } from '@/components/showcase/Pins'
 import { KeelMark, CrewMark } from '@/components/marks/Brand'
+
+/** Some screens have two views. Show the first, then switch once, the way a person would. */
+function useFlip(ms: number) {
+  const [v, setV] = useState(0)
+  useEffect(() => { const t = setTimeout(() => setV(1), ms); return () => clearTimeout(t) }, [ms])
+  return v
+}
+function Fade({ k, children, className = '' }: { k: string | number; children: React.ReactNode; className?: string }) {
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div key={k} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, transition: { duration: 0.14 } }} transition={{ duration: 0.3 }} className={className}>{children}</motion.div>
+    </AnimatePresence>
+  )
+}
+function Seg({ items, on }: { items: string[]; on: number }) {
+  return <span className="flex h-7 rounded-lg border border-ink/10 bg-white/60 p-0.5 text-[0.62rem]">{items.map((v, i) => <span key={v} className={`px-2.5 flex items-center rounded-md transition-colors duration-300 ${i === on ? 'bg-accent text-paper font-semibold shadow-sm' : 'text-ink-soft'}`}>{v}</span>)}</span>
+}
 
 const card = 'rounded-2xl bg-white/90 border border-white shadow-[0_1px_2px_rgba(15,41,66,0.05),0_10px_24px_-16px_rgba(15,41,66,0.25)]'
 const row = 'flex items-center gap-2 py-[5px] border-b border-ink/[0.06] last:border-0'
@@ -29,32 +49,37 @@ function Head({ k, t, link }: { k: string; t: string; link?: string }) {
 function Overview() {
   return (
     <div className="p-4 bg-chart h-full">
-      <div className="flex items-baseline gap-2.5 mb-3">
+      <div className="flex items-baseline gap-2.5 mb-2.5">
         <p className="font-display font-bold text-xl text-ink leading-none">Good morning</p>
         <p className="text-[0.66rem] text-ink-soft">Monday, November 16</p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] gap-2.5">
+      {/* Pinned surfaces sit above everything else: the same pins as the phone. */}
+      <div className="flex items-center justify-between mb-1.5"><p className={`${label} text-ink-soft`}>Pinned</p><Icon.pin className="w-3 h-3 text-ink-soft" /></div>
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-2 mb-3">
+        {PINS.map((p, i) => <PinTile key={p.id} pin={p} className={`h-[4.3rem] ${i > 2 ? 'hidden md:block' : ''}`} />)}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         <div className={`${card} p-3`}>
           <Head k="Today’s page" t="Mon, Nov 16" link="Open Planner" />
-          {[['7:00', 'Easy run · 5k', true], ['9:00', 'Deep work: investor update', false], ['1:30', 'Standup', false], ['4:00', 'Venue call · The Loft', false]].map(([t, n, d]) => (
+          {[['7:00', 'Easy run · 5k', true], ['9:00', 'Deep work: investor update', false], ['4:00', 'Venue call · The Loft', false]].map(([t, n, d]) => (
             <div key={n as string} className={row}><Tick done={d as boolean} /><span className={`text-[0.7rem] flex-1 truncate ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span><span className={`${label} text-ink-soft`}>{t}</span></div>
           ))}
         </div>
         <div className={`${card} p-3`}>
           <Head k="Compass" t="Goal progress" link="All goals" />
-          {[['Half marathon · Mar 14', 62], ['Ship v1', 48], ['O-Chem II · final Dec 12', 30]].map(([n, v]) => (
-            <div key={n as string} className="py-[5px]"><p className="flex justify-between text-[0.66rem] text-ink mb-1"><span className="truncate">{n}</span><span className="font-semibold tabular-nums">{v}%</span></p><Bar v={v as number} /></div>
+          {[['Half marathon · Mar 14', 62], ['Ship v1', 48], ['O-Chem II · Dec 12', 30]].map(([n, v]) => (
+            <div key={n as string} className="grid grid-cols-[minmax(0,1fr)_4.5rem_2rem] items-center gap-2 py-[5px]"><span className="text-[0.66rem] text-ink truncate">{n}</span><Bar v={v as number} /><span className="text-[0.64rem] font-semibold tabular-nums text-right">{v}%</span></div>
           ))}
         </div>
-        <div className={`${card} p-3`}>
+        <div className={`${card} p-3 hidden md:block`}>
           <Head k="Awaiting your eyes" t="Tasks in review" link="Open board" />
           {[['Investor update', 'Draft v2', 'Writer'], ['Venue shortlist', '3 options', 'Researcher']].map(([n, m, a]) => (
             <div key={n} className={row}><span className="w-1 h-3.5 rounded-full bg-accent/70" /><span className="text-[0.7rem] flex-1 truncate text-ink">{n} <span className="text-ink-soft">· {m}</span></span><span className="px-1.5 py-0.5 rounded-full bg-mist text-accent text-[0.56rem]">{a}</span></div>
           ))}
         </div>
-        <div className={`${card} p-3`}>
+        <div className={`${card} p-3 hidden md:block`}>
           <Head k="Don’t miss" t="Upcoming &amp; overdue" link="Open tasks" />
-          {[['Reunion RSVPs close', 'Fri', false], ['Cloud hosting renews', 'Wed', false], ['Return library books', 'Overdue', true]].map(([n, m, late]) => (
+          {[['Reunion RSVPs close', 'Fri', false], ['Return library books', 'Overdue', true]].map(([n, m, late]) => (
             <div key={n as string} className={row}><span className="text-[0.7rem] flex-1 truncate text-ink">{n}</span><span className={`${label} ${late ? 'text-copper' : 'text-ink-soft'}`}>{m}</span></div>
           ))}
         </div>
@@ -129,28 +154,73 @@ const BOARD: [string, string, string, [string, string][]][] = [
   ['Complete', 'Done', 'border-navy/40', [['Move proposal review', 'Zoe'], ['Nudge RSVPs', 'Zoe']]],
 ]
 
+const TASK_ROWS: [string, string, string, string][] = [
+  ['Draft investor update', 'Writer', 'In progress', 'Today'], ['Week 1 study guide', 'Analyst', 'In progress', 'Tue'], ['Compare 3 venues', 'Researcher', 'Assigned', 'Wed'],
+  ['Venue shortlist', 'Researcher', 'Review', 'Today'], ['Cut list for shelf', 'Builder', 'Assigned', 'Sat'], ['Reply to Jamie', 'You', 'Inbox', 'Today'], ['Book dentist', 'You', 'Inbox', 'Fri'],
+]
+
 function Tasks() {
+  const view = useFlip(3000) // board, then detail
   return (
-    <div className="p-3 h-full flex flex-col">
-      <div className="flex items-center gap-2 mb-2.5">
-        <span className="flex-1 h-7 rounded-lg bg-white/80 border border-white px-2.5 flex items-center text-[0.66rem] text-ink-soft">New task title</span>
-        <span className="h-7 px-3 rounded-lg bg-accent text-paper text-[0.66rem] font-semibold flex items-center">Create</span>
-        <span className="hidden sm:flex h-7 rounded-lg border border-ink/10 overflow-hidden text-[0.62rem]"><span className="px-2.5 flex items-center bg-ink/[0.06] text-ink font-medium">Board</span><span className="px-2.5 flex items-center text-ink-soft">Detail</span></span>
-      </div>
-      <div className="flex-1 grid grid-cols-2 md:grid-cols-5 gap-2 min-h-0">
-        {BOARD.map(([k, t, edge, items], ci) => (
-          <div key={t} className={`${card} p-2 border-l-2 ${edge} ${ci > 1 ? 'hidden md:block' : ''}`}>
-            <p className={`${label} !text-[0.5rem] text-accent`}>{k}</p>
-            <p className="font-display font-bold text-[0.78rem] text-ink mb-2 flex justify-between">{t}<span className="text-ink-soft font-sans font-normal text-[0.6rem]">{items.length}</span></p>
-            {items.map(([n, who]) => (
-              <div key={n} className="rounded-xl bg-paper border border-ink/[0.06] p-2 mb-1.5">
-                <p className="text-[0.66rem] leading-snug text-ink mb-1.5">{n}</p>
-                <span className={`inline-block px-1.5 py-0.5 rounded-full text-[0.52rem] ${who === 'You' ? 'bg-sand text-copper' : 'bg-mist text-accent'}`}>{who}</span>
-              </div>
-            ))}
-            <p className="text-[0.56rem] text-ink-soft mt-1">+ Add to this column</p>
-          </div>
+    <div className="grid grid-cols-1 md:grid-cols-[8.5rem_minmax(0,1fr)] gap-2.5 p-3 h-full">
+      {/* The same two-part filter pane as the Planner: lists on top, projects under. */}
+      <div className={`${card} p-2.5 hidden md:block`}>
+        <p className={`${label} text-accent mb-1.5`}>Lists</p>
+        {[['All tasks', 23], ['Mine', 6], ['With the crew', 9], ['In review', 2]].map(([n, c], i) => (
+          <p key={n as string} className={`flex justify-between text-[0.66rem] px-2 py-1 rounded-lg ${i === 0 ? 'bg-accent text-paper font-semibold' : 'text-ink'}`}><span>{n}</span><span className="tabular-nums opacity-70">{c}</span></p>
         ))}
+        <p className={`${label} text-accent mt-3 mb-1.5`}>Projects</p>
+        {[['Walnut bookshelf', 5], ['Reunion dinner', 4], ['Investor update', 3], ['O-Chem II', 9]].map(([n, c]) => (
+          <p key={n as string} className="flex justify-between text-[0.66rem] px-2 py-1 text-ink"><span className="truncate">{n}</span><span className="tabular-nums opacity-60">{c}</span></p>
+        ))}
+        <p className={`${label} text-accent mt-3 mb-1.5`}>Filter</p>
+        <p className="flex flex-wrap gap-1">{['Due this week', 'Has agent'].map((f) => <span key={f} className="px-1.5 py-0.5 rounded-full bg-ink/[0.05] text-[0.54rem] text-ink-soft">{f}</span>)}</p>
+      </div>
+      <div className="flex flex-col min-w-0 min-h-0">
+        <div className="flex items-center gap-2 mb-2.5">
+          <span className="flex-1 h-7 rounded-lg bg-white/80 border border-white px-2.5 flex items-center text-[0.66rem] text-ink-soft">New task title</span>
+          <span className="h-7 px-3 rounded-lg bg-accent text-paper text-[0.66rem] font-semibold flex items-center">Create</span>
+          <Seg items={['Board', 'Detail']} on={view} />
+        </div>
+        <Fade k={view} className="flex-1 min-h-0">
+          {view === 0 ? (
+            <div className="h-full grid grid-cols-2 md:grid-cols-5 gap-2">
+              {BOARD.map(([k, t, edge, items], ci) => (
+                <div key={t} className={`${card} p-2 border-l-2 ${edge} ${ci > 1 ? 'hidden md:block' : ''}`}>
+                  <p className={`${label} !text-[0.5rem] text-accent`}>{k}</p>
+                  <p className="font-display font-bold text-[0.76rem] text-ink mb-2 flex justify-between">{t}<span className="text-ink-soft font-sans font-normal text-[0.6rem]">{items.length}</span></p>
+                  {items.map(([n, who]) => (
+                    <div key={n} className="rounded-xl bg-paper border border-ink/[0.06] p-2 mb-1.5">
+                      <p className="text-[0.64rem] leading-snug text-ink mb-1.5">{n}</p>
+                      <span className={`inline-block px-1.5 py-0.5 rounded-full text-[0.52rem] ${who === 'You' ? 'bg-sand text-copper' : 'bg-mist text-accent'}`}>{who}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="h-full grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] gap-2">
+              <div className={`${card} p-2.5`}>
+                <div className={`grid grid-cols-[minmax(0,1fr)_4.6rem_4.6rem_2.4rem] gap-2 pb-1.5 border-b border-ink/10 ${label} !text-[0.5rem] text-ink-soft`}><span>Task</span><span>Owner</span><span>Status</span><span className="text-right">Due</span></div>
+                {TASK_ROWS.map(([n, who, st, due], i) => (
+                  <div key={n} className={`grid grid-cols-[minmax(0,1fr)_4.6rem_4.6rem_2.4rem] gap-2 items-center py-[5px] px-1 -mx-1 rounded-md text-[0.64rem] ${i === 0 ? 'bg-accent/[0.08] text-ink font-semibold' : 'text-ink'}`}>
+                    <span className="truncate">{n}</span><span className="text-ink-soft font-normal truncate">{who}</span><span className="text-ink-soft font-normal truncate">{st}</span><span className={`${label} !text-[0.5rem] text-ink-soft text-right`}>{due}</span>
+                  </div>
+                ))}
+              </div>
+              <div className={`${card} p-3 hidden md:block`}>
+                <p className={`${label} !text-[0.5rem] text-accent`}>Active · Writer</p>
+                <p className="font-display font-bold text-[0.92rem] text-ink leading-tight mb-1.5">Draft investor update</p>
+                <p className="text-[0.64rem] leading-relaxed text-ink-soft mb-2">November numbers, two pilot wins, hiring plan. Match October’s tone.</p>
+                {[['Pull numbers from Stripe', true], ['Write draft v2', true], ['Your approval', false]].map(([n, d]) => (
+                  <div key={n as string} className="flex items-center gap-2 py-[3px]"><Tick done={d as boolean} /><span className={`text-[0.64rem] ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span></div>
+                ))}
+                <p className={`${label} !text-[0.5rem] text-ink-soft mt-2.5 mb-1`}>Activity</p>
+                {['9:02 · Writer started draft v2', '9:14 · Numbers checked', '9:20 · Sent to review'].map((l) => <p key={l} className="text-[0.58rem] text-ink-soft leading-relaxed">{l}</p>)}
+              </div>
+            </div>
+          )}
+        </Fade>
       </div>
     </div>
   )
@@ -158,29 +228,68 @@ function Tasks() {
 
 // ─── Goals ────────────────────────────────────────────────────────────────────
 
+/* The goal map. Big nodes are goals, mid nodes are milestones, small ones are the habits and
+   tasks that feed them. Shared nodes are the point: one long run serves two things. */
+type N = { id: string; x: number; y: number; t: string; k: 'goal' | 'mile' | 'leaf'; tone?: string }
+const GN: N[] = [
+  { id: 'run', x: 22, y: 30, t: 'Half marathon', k: 'goal', tone: 'bg-accent text-paper' },
+  { id: 'ship', x: 70, y: 26, t: 'Ship v1', k: 'goal', tone: 'bg-ink text-paper' },
+  { id: 'chem', x: 50, y: 76, t: 'O-Chem II', k: 'goal', tone: 'bg-copper text-paper' },
+  { id: 'm1', x: 8, y: 62, t: '16k long run', k: 'mile' }, { id: 'm2', x: 33, y: 8, t: 'Race pace', k: 'mile' },
+  { id: 'm3', x: 90, y: 50, t: 'Billing', k: 'mile' }, { id: 'm4', x: 88, y: 10, t: 'Launch', k: 'mile' },
+  { id: 'm5', x: 24, y: 88, t: 'Practice exams', k: 'mile' }, { id: 'm6', x: 76, y: 90, t: 'Spectroscopy', k: 'mile' },
+  { id: 'l1', x: 46, y: 44, t: 'Morning blocks', k: 'leaf' }, { id: 'l2', x: 30, y: 56, t: 'Sleep 7h', k: 'leaf' }, { id: 'l3', x: 66, y: 56, t: 'Investor update', k: 'leaf' },
+]
+const GE: [string, string][] = [['run', 'm1'], ['run', 'm2'], ['ship', 'm3'], ['ship', 'm4'], ['chem', 'm5'], ['chem', 'm6'], ['l1', 'run'], ['l1', 'ship'], ['l1', 'chem'], ['l2', 'run'], ['l2', 'chem'], ['l3', 'ship'], ['l3', 'chem']]
+
+function Web({ nodes, edges, hot }: { nodes: N[]; edges: [string, string][]; hot?: string }) {
+  const at = (id: string) => nodes.find((n) => n.id === id)!
+  return (
+    <div className="relative w-full h-full">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full" aria-hidden="true">
+        {edges.map(([a, b]) => { const p = at(a), q = at(b); const on = hot && (a === hot || b === hot); return <line key={a + b} x1={p.x} y1={p.y} x2={q.x} y2={q.y} stroke={on ? '#3D64AE' : '#0F2942'} strokeOpacity={on ? 0.7 : 0.16} strokeWidth={on ? 1.6 : 1} vectorEffect="non-scaling-stroke" /> })}
+      </svg>
+      {nodes.map((n) => (
+        <span key={n.id} className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" style={{ left: `${n.x}%`, top: `${n.y}%` }}>
+          {n.k === 'goal'
+            ? <span className={`px-2.5 py-1 rounded-full font-display font-bold text-[0.66rem] whitespace-nowrap shadow-[0_8px_16px_-8px_rgba(15,41,66,0.6)] ring-2 ring-white ${n.tone}`}>{n.t}</span>
+            : <><span className={`rounded-full ring-2 ring-white ${n.id === hot ? 'w-3.5 h-3.5 bg-accent shadow-[0_0_0_5px_rgba(61,100,174,0.18)]' : n.k === 'mile' ? 'w-2.5 h-2.5 bg-sky' : 'w-2 h-2 bg-brass'}`} /><span className={`mt-0.5 text-[0.52rem] whitespace-nowrap ${n.id === hot ? 'text-accent font-semibold' : 'text-ink-soft'}`}>{n.t}</span></>}
+        </span>
+      ))}
+    </div>
+  )
+}
+
 function Goals() {
+  const view = useFlip(3000) // map, then list
   const goals: [string, string, number, string[]][] = [
     ['Run a half marathon', 'Mar 14', 62, ['Base built', '16k long run', 'Race pace']],
     ['Ship v1', 'Jan 29', 48, ['Beta', 'Billing', 'Launch']],
     ['Pass O-Chem II', 'Dec 12', 30, ['Ch. 7–10', 'Spectroscopy', 'Practice exams']],
   ]
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_14rem] h-full">
-      <div className="p-3 bg-chart">
-        <div className="flex justify-between items-center mb-2.5"><p className="text-[0.72rem] font-semibold text-ink">Goals</p><span className="h-6 px-2.5 rounded-lg bg-accent text-paper text-[0.62rem] font-semibold flex items-center">Create goal</span></div>
-        {goals.map(([n, due, v, ms]) => (
-          <div key={n} className={`${card} p-3 mb-2`}>
-            <div className="flex items-baseline justify-between mb-1.5"><p className="font-display font-bold text-[0.84rem] text-ink">{n}</p><p className={`${label} text-ink-soft`}>{due} · {v}%</p></div>
-            <Bar v={v} />
-            <div className="flex gap-1.5 mt-2">{ms.map((m, i) => <span key={m} className={`px-2 py-0.5 rounded-full text-[0.56rem] ${i === 0 ? 'bg-accent/10 text-accent line-through' : 'bg-ink/[0.05] text-ink-soft'}`}>{m}</span>)}</div>
-          </div>
-        ))}
+    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_13rem] h-full">
+      <div className="p-3 bg-chart flex flex-col min-h-[16rem]">
+        <div className="flex justify-between items-center mb-2.5"><Seg items={['Map', 'List']} on={view} /><span className="h-7 px-2.5 rounded-lg bg-accent text-paper text-[0.62rem] font-semibold flex items-center">Create goal</span></div>
+        <Fade k={view} className="flex-1 min-h-0">
+          {view === 0 ? <div className="h-full min-h-[13rem] px-6 py-3"><Web nodes={GN} edges={GE} hot="l1" /></div> : (
+            <div>
+              {goals.map(([n, due, v, ms]) => (
+                <div key={n} className={`${card} p-2.5 mb-2`}>
+                  <div className="flex items-baseline justify-between mb-1.5"><p className="font-display font-bold text-[0.82rem] text-ink">{n}</p><p className={`${label} text-ink-soft`}>{due} · {v}%</p></div>
+                  <Bar v={v} />
+                  <div className="flex gap-1.5 mt-2">{ms.map((m, i) => <span key={m} className={`px-2 py-0.5 rounded-full text-[0.56rem] ${i === 0 ? 'bg-accent/10 text-accent line-through' : 'bg-ink/[0.05] text-ink-soft'}`}>{m}</span>)}</div>
+                </div>
+              ))}
+            </div>
+          )}
+        </Fade>
       </div>
       <div className="hidden md:flex flex-col border-l border-ink/[0.07] p-3">
         <p className="flex items-center gap-1.5 text-[0.72rem] font-semibold text-ink mb-3"><CrewMark agent="compass" size={16} /> Compass Chat</p>
         <div className="flex-1 flex flex-col justify-end gap-2">
-          <p className="ml-auto max-w-[90%] rounded-[12px_12px_4px_12px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-2.5 py-1.5 text-[0.66rem] text-ink">Am I on pace for March?</p>
-          <p className="text-[0.66rem] leading-relaxed text-ink">Yes. You are two long runs ahead of plan. Keep Sunday at 16k.</p>
+          <p className="ml-auto max-w-[90%] rounded-[12px_12px_4px_12px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-2.5 py-1.5 text-[0.66rem] text-ink">What do my mornings feed?</p>
+          <p className="text-[0.66rem] leading-relaxed text-ink">All three goals. Morning blocks carry the run, v1 and O-Chem, so protect them first.</p>
         </div>
         <span className="mt-3 h-7 rounded-full bg-white/90 border border-white shadow-sm px-3 flex items-center text-[0.62rem] text-ink-soft">Ask Compass about your goals</span>
       </div>
@@ -192,30 +301,37 @@ function Goals() {
 
 function Projects() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[10rem_minmax(0,1fr)] gap-2.5 p-3 h-full">
+    <div className="grid grid-cols-1 md:grid-cols-[9.5rem_minmax(0,1fr)] gap-2.5 p-3 h-full">
       <div className={`${card} p-2.5 hidden md:block`}>
         <p className={`${label} text-accent mb-1.5`}>Projects</p>
         {[['Walnut bookshelf', 5, true], ['Reunion dinner', 4, false], ['Investor update', 3, false], ['O-Chem II', 9, false]].map(([n, c, on]) => (
           <p key={n as string} className={`flex justify-between text-[0.66rem] px-2 py-1.5 rounded-lg ${on ? 'bg-accent/10 text-accent font-semibold' : 'text-ink'}`}><span className="truncate">{n}</span><span className="opacity-60">{c}</span></p>
         ))}
       </div>
-      <div className={`${card} p-3.5`}>
+      <div className={`${card} p-3.5 flex flex-col min-h-0`}>
         <div className="flex items-start justify-between mb-2">
           <div><p className={`${label} text-copper`}>Hobby</p><p className="font-display font-bold text-lg text-ink leading-tight">Walnut bookshelf</p></div>
           <p className="text-right"><span className="font-display font-bold text-lg text-ink">40%</span><span className="block text-[0.56rem] text-ink-soft">2 of 5 done</span></p>
         </div>
         <Bar v={40} tone="copper" />
-        <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-3 mt-3">
+        {/* Details */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2.5">
+          {[['Due', 'Dec 6'], ['Budget', '$312'], ['Crew', 'Builder'], ['Goal', 'Make things']].map(([k, v]) => (
+            <p key={k} className="rounded-xl bg-paper border border-ink/[0.06] px-2.5 py-1.5"><span className={`${label} !text-[0.48rem] text-ink-soft block`}>{k}</span><span className="text-[0.7rem] font-semibold text-ink">{v}</span></p>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] gap-3 mt-2.5 flex-1 min-h-0">
           <div>
+            <p className={`${label} text-ink-soft mb-1`}>Tasks</p>
             {[['Measure the alcove', true], ['Cut list and materials', true], ['Order walnut boards', false], ['Cut and sand · Sat 2 pm', false], ['Assemble and oil', false]].map(([n, d]) => (
-              <div key={n as string} className={row}><Tick done={d as boolean} /><span className={`text-[0.68rem] truncate ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span></div>
+              <div key={n as string} className="flex items-center gap-2 py-[3px]"><Tick done={d as boolean} /><span className={`text-[0.66rem] truncate ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span></div>
             ))}
           </div>
           <div className="hidden sm:block">
-            <p className={`${label} text-ink-soft mb-1.5`}>Files</p>
-            {['Cut list.pdf', 'Alcove sketch.png', 'Lumber quote.pdf'].map((f) => <p key={f} className="flex items-center gap-1.5 text-[0.64rem] text-ink py-[3px]"><Icon.doc className="w-3 h-3 text-accent" />{f}</p>)}
-            <p className={`${label} text-ink-soft mt-2.5 mb-1`}>Budget</p>
-            <p className="font-display font-bold text-base text-ink leading-none">$312</p>
+            <p className={`${label} text-ink-soft mb-1`}>Notes</p>
+            <p className="text-[0.62rem] leading-relaxed text-ink rounded-xl bg-sand/60 px-2.5 py-1.5 mb-2">Alcove is 91 cm wide. Leave 3 mm each side. Oil finish, not varnish.</p>
+            <p className={`${label} text-ink-soft mb-1`}>Docs</p>
+            {['Cut list.pdf', 'Alcove sketch.png', 'Lumber quote.pdf'].map((f) => <p key={f} className="flex items-center gap-1.5 text-[0.62rem] text-ink py-[2px]"><Icon.doc className="w-3 h-3 text-accent" />{f}</p>)}
           </div>
         </div>
       </div>
@@ -225,34 +341,60 @@ function Projects() {
 
 // ─── Journal ──────────────────────────────────────────────────────────────────
 
+/* The note graph: every dot is a note; a line means one links to the other. */
+const JN: N[] = [
+  { id: 'today', x: 50, y: 46, t: 'Mon, Nov 16', k: 'leaf' },
+  { id: 'a', x: 26, y: 26, t: 'Half marathon', k: 'mile' }, { id: 'b', x: 76, y: 24, t: 'Investor update', k: 'mile' }, { id: 'c', x: 72, y: 74, t: 'Reunion dinner', k: 'mile' }, { id: 'd', x: 24, y: 74, t: 'O-Chem II', k: 'mile' },
+  { id: 'e', x: 8, y: 46, t: 'Sun, Nov 15', k: 'leaf' }, { id: 'f', x: 92, y: 48, t: 'Churn', k: 'leaf' }, { id: 'g', x: 90, y: 86, t: 'Dana', k: 'leaf' }, { id: 'h', x: 52, y: 90, t: 'The Loft', k: 'leaf' },
+  { id: 'i', x: 46, y: 10, t: 'Race pace', k: 'leaf' }, { id: 'j', x: 8, y: 14, t: 'Shoes', k: 'leaf' }, { id: 'k', x: 6, y: 90, t: 'Ch. 7', k: 'leaf' }, { id: 'l', x: 94, y: 8, t: 'Pilots', k: 'leaf' },
+]
+const JE: [string, string][] = [['today', 'a'], ['today', 'b'], ['today', 'c'], ['a', 'e'], ['a', 'i'], ['a', 'j'], ['b', 'f'], ['b', 'l'], ['c', 'g'], ['c', 'h'], ['d', 'k'], ['d', 'e'], ['today', 'e'], ['g', 'h'], ['i', 'e']]
+
 function Journal() {
+  const view = useFlip(3200) // graph, then the note it opens
   return (
-    <div className="relative h-full min-h-[16rem] px-5 md:pl-16 py-4" style={{ backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0 25px, rgba(61,100,174,0.13) 25px 26px)' }}>
-      <span className="hidden md:block absolute left-11 inset-y-0 w-px bg-[#C2453A]/40" aria-hidden="true" />
-      <p className={`${label} text-accent`}>Monday, November 16</p>
-      <p className="font-display font-bold text-lg text-ink leading-[26px] mb-[26px]">A good start to the week.</p>
-      <div className="text-[0.74rem] leading-[26px] text-ink max-w-lg">
-        <p>Ran before the standup. Legs felt better than last Monday.</p>
-        <p>Investor update is close. The churn number still needs a second look.</p>
-        <p>Dana says the Loft can do the 12th. Waiting on two RSVPs.</p>
+    <div className="grid grid-cols-1 md:grid-cols-[8.5rem_minmax(0,1fr)] h-full">
+      <div className="hidden md:block border-r border-ink/[0.07] p-2.5">
+        <Seg items={['Graph', 'Note']} on={view} />
+        <p className={`${label} text-accent mt-3 mb-1.5`}>Recent</p>
+        {['Mon, Nov 16', 'Sun, Nov 15', 'Half marathon', 'Reunion dinner', 'Investor update'].map((n, i) => (
+          <p key={n} className={`text-[0.64rem] px-2 py-1 rounded-lg truncate ${i === 0 ? 'bg-accent/10 text-accent font-semibold' : 'text-ink'}`}>{n}</p>
+        ))}
       </div>
-      <div className={`${card} mt-[26px] p-3 max-w-md`}>
-        <p className={`${label} text-accent mb-1 flex items-center gap-1.5`}><KeelMark size={11} /> End of day</p>
-        <p className="text-[0.68rem] leading-relaxed text-ink">4 of 5 done. Walnut order moved to tomorrow. Long run stays Sunday.</p>
-      </div>
+      <Fade k={view} className="min-h-[16rem] h-full">
+        {view === 0 ? (
+          <div className="h-full bg-chart px-8 py-5"><Web nodes={JN} edges={JE} hot="today" /></div>
+        ) : (
+          <div className="relative h-full px-5 md:pl-14 py-4" style={{ backgroundImage: 'repeating-linear-gradient(to bottom, transparent 0 25px, rgba(61,100,174,0.13) 25px 26px)' }}>
+            <span className="hidden md:block absolute left-9 inset-y-0 w-px bg-[#C2453A]/40" aria-hidden="true" />
+            <p className={`${label} text-accent leading-[26px]`}>Monday, November 16</p>
+            <p className="font-display font-bold text-lg text-ink leading-[26px] mb-[26px]">A good start to the week.</p>
+            <div className="text-[0.72rem] leading-[26px] text-ink max-w-lg">
+              <p>Ran before the standup. Legs felt better than last Monday.</p>
+              <p><span className="text-accent font-medium">Investor update</span> is close. The churn number needs a second look.</p>
+              <p>Dana says the Loft can do the 12th. Waiting on two RSVPs.</p>
+            </div>
+            <p className="flex flex-wrap gap-1.5 mt-[13px] mb-[13px]">{['Half marathon', 'Investor update', 'Reunion dinner'].map((l) => <span key={l} className="px-2 py-0.5 rounded-full bg-white/90 border border-white shadow-sm text-[0.56rem] text-accent">↗ {l}</span>)}</p>
+            <div className={`${card} p-2.5 max-w-md`}>
+              <p className={`${label} text-accent mb-1 flex items-center gap-1.5`}><KeelMark size={11} /> End of day</p>
+              <p className="text-[0.66rem] leading-relaxed text-ink">4 of 5 done. Walnut order moved to tomorrow. Long run stays Sunday.</p>
+            </div>
+          </div>
+        )}
+      </Fade>
     </div>
   )
 }
 
-// ─── Crew ─────────────────────────────────────────────────────────────────────
+// ─── Agents ───────────────────────────────────────────────────────────────────
 
-function Crew() {
+function Agents() {
   const core: [string, string, string, React.ReactNode][] = [
     ['Zoe', 'Skipper', 'Routing 3 jobs', <KeelMark key="z" size={18} />],
     ['Compass', 'Navigator', 'Watching 3 goals', <CrewMark key="c" agent="compass" size={22} />],
     ['Task Manager', 'First mate', 'Planned today · 6:40 am', <CrewMark key="t" agent="task-manager" size={22} />],
   ]
-  const jobs: [string, string, string, number][] = [['Researcher', 'Venue shortlist', 'In review', 100], ['Writer', 'Investor update · v2', 'Drafting', 70], ['Analyst', 'O-Chem week 1 guide', 'Working', 45], ['Builder', 'Shelf cut list', 'Queued', 0]]
+  const crew: [string, string, string, number][] = [['Researcher', 'Venue shortlist', 'In review', 100], ['Writer', 'Investor update · v2', 'Drafting', 70], ['Analyst', 'O-Chem week 1 guide', 'Working', 45], ['Builder', 'Shelf cut list', 'Queued', 0], ['Designer', 'Idle', 'Ready', 0]]
   return (
     <div className="p-3 bg-chart h-full">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-2.5">
@@ -264,12 +406,12 @@ function Crew() {
         ))}
       </div>
       <div className={`${card} p-3`}>
-        <Head k="Specialists" t="Jobs running" />
-        {jobs.map(([who, job, st, v]) => (
-          <div key={job} className={`${row} gap-3`}>
+        <p className="font-display font-bold text-[0.9rem] leading-tight text-ink mb-1.5">Crew</p>
+        {crew.map(([who, job, st, v]) => (
+          <div key={who} className={`${row} gap-3`}>
             <Avatar name={who[0]} tone={v === 100 ? 'sand' : 'mist'} />
-            <span className="text-[0.68rem] text-ink flex-1 truncate"><span className="font-semibold">{who}</span> · {job}</span>
-            <span className="hidden sm:block w-20"><Bar v={v} /></span>
+            <span className="text-[0.68rem] text-ink flex-1 truncate"><span className="font-semibold">{who}</span> <span className="text-ink-soft">· {job}</span></span>
+            <span className="hidden sm:block w-20">{st !== 'Ready' && <Bar v={v} />}</span>
             <span className={`${label} !text-[0.5rem] w-16 text-right ${v === 100 ? 'text-copper' : 'text-ink-soft'}`}>{st}</span>
           </div>
         ))}
@@ -278,4 +420,4 @@ function Crew() {
   )
 }
 
-export const SCREENS = { overview: Overview, planner: Planner, tasks: Tasks, goals: Goals, projects: Projects, journal: Journal, crew: Crew }
+export const SCREENS = { overview: Overview, planner: Planner, tasks: Tasks, goals: Goals, projects: Projects, journal: Journal, crew: Agents }
