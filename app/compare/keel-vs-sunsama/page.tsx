@@ -69,14 +69,14 @@ export default function KeelVsSunsamaPage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Sunsama</p>
               <p className="text-ink leading-relaxed">
                 Guides you through a mindful daily planning ritual. Consolidates tasks from multiple sources
                 and helps you schedule your day with intention. Focused on work and productivity.
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="eyebrow text-accent mb-3">Keel</p>
               <p className="text-ink leading-relaxed">
                 Does everything Sunsama does for daily planning — and then connects it to your personal goals,
@@ -121,13 +121,13 @@ export default function KeelVsSunsamaPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={APP_SIGNUP_URL}
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
               >
                 Get Keel
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
               >
                 See pricing
               </Link>

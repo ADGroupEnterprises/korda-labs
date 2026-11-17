@@ -72,10 +72,10 @@ export default function ProactiveAIPage() {
             Morning briefings at 7am. Stale task alerts after 4 hours. Weekly retrospectives every Sunday. All automatic.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
-            <Link href="/products/keel" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
+            <Link href="/products/keel" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300">
               See all of Keel
             </Link>
           </div>
@@ -88,9 +88,9 @@ export default function ProactiveAIPage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-10">7 proactive triggers</p>
           <div className="space-y-4 mb-20">
             {triggers.map((t, i) => (
-              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl glass">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-ink mb-2">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full glass text-ink mb-2">
                     {t.time}
                   </span>
                   <p className="text-xs text-ink mt-2">Replaces: <em>{t.replaces}</em></p>
@@ -104,7 +104,7 @@ export default function ProactiveAIPage() {
           </div>
 
           {/* Sensitivity note */}
-          <div className="p-6 rounded-2xl border border-mist bg-mist mb-16">
+          <div className="p-6 rounded-2xl glass mb-16">
             <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Your sensitivity, your control</p>
             <p className="text-ink text-sm leading-relaxed">
               Every trigger has a priority level. A single sensitivity slider (1–5) controls which priorities fire for you —
@@ -120,7 +120,7 @@ export default function ProactiveAIPage() {
               <span className="text-ink">on a rhythm.</span>
             </h2>
             <p className="text-ink mb-8">Free on web.</p>
-            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
           </div>

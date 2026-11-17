@@ -68,10 +68,10 @@ export default function BlogPage() {
             {posts.map((post, i) => (
               <div
                 key={i}
-                className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-mist bg-mist"
+                className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl glass"
               >
                 <div className="sm:col-span-1">
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-2.5 py-1 rounded-full border border-mist bg-mist text-ink mb-2">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-2.5 py-1 rounded-full glass text-ink mb-2">
                     {post.tag}
                   </span>
                   <p className="text-ink text-xs mt-1">{post.date}</p>
@@ -84,7 +84,7 @@ export default function BlogPage() {
             ))}
           </div>
 
-          <div className="mt-16 p-8 rounded-2xl border border-mist bg-mist text-center">
+          <div className="mt-16 p-8 rounded-2xl glass text-center">
             <p className="text-ink text-sm mb-4">Posts are in production. Join early access to get notified when we publish.</p>
             <Link
               href={APP_SIGNUP_URL}

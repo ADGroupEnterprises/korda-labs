@@ -94,7 +94,7 @@ export default function SecurityPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {principles.map((p, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <p className="text-accent eyebrow mb-3">{p.tag}</p>
                 <h3 className="text-ink font-medium mb-2">{p.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{p.body}</p>
@@ -103,7 +103,7 @@ export default function SecurityPage() {
           </div>
 
           {/* Non-negotiables callout */}
-          <div className="p-8 rounded-2xl border border-mist bg-mist mb-16">
+          <div className="p-8 rounded-2xl glass mb-16">
             <p className="eyebrow text-accent mb-4">The non-negotiables</p>
             <ul className="space-y-3">
               {[
@@ -124,10 +124,10 @@ export default function SecurityPage() {
           <div className="text-center">
             <p className="text-ink text-sm mb-6">Questions about our security model?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+              <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
                 Get Keel
               </Link>
-              <a href="mailto:security@kordalabs.com" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
+              <a href="mailto:security@kordalabs.com" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300">
                 Contact security team
               </a>
             </div>

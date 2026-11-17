@@ -29,11 +29,11 @@ export default function ProductsPage() {
         <div className="max-w-5xl mx-auto">
 
           {/* Featured: Keel Personal */}
-          <div className="relative rounded-2xl border border-mist bg-mist p-8 sm:p-10 mb-5">
+          <div className="relative rounded-2xl glass p-8 sm:p-10 mb-5">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-accent">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full glass text-accent">
                     Available now
                   </span>
                 </div>
@@ -81,9 +81,9 @@ export default function ProductsPage() {
           </div>
 
           {/* Roadmap */}
-          <div className="rounded-2xl border border-mist bg-mist p-8">
+          <div className="rounded-2xl glass p-8">
             <div className="mb-4">
-              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-ink">
+              <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full glass text-ink">
                 On the roadmap
               </span>
             </div>

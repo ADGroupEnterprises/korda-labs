@@ -31,7 +31,7 @@ function WeekCalendar() {
   const totalH = TIMES.length * SLOT_H
 
   return (
-    <div className="rounded-2xl border border-mist bg-paper-100 overflow-hidden shadow-lg">
+    <div className="rounded-2xl glass overflow-hidden shadow-lg">
       {/* Header */}
       <div className="flex items-center gap-2.5 px-3 py-2.5 border-b border-mist bg-paper-100">
         <div className="w-4 h-4 rounded flex items-center justify-center">
@@ -114,7 +114,7 @@ function WeekCalendar() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 bg-gradient-to-b from-sky-soft via-paper to-paper">
+    <section className="relative overflow-hidden px-6">
       <div className="absolute inset-0 bg-chart [mask-image:linear-gradient(to_bottom,black,transparent_75%)]" aria-hidden="true" />
       <div className="relative z-10 w-full max-w-7xl mx-auto pt-16 pb-20 lg:pt-24 lg:pb-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -157,13 +157,13 @@ export default function Hero() {
             >
               <Link
                 href={APP_SIGNUP_URL}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300 shadow-lg shadow-accent/25"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-accent text-paper btn-pillow hover:bg-ink transition-all duration-300 shadow-lg shadow-accent/25"
               >
                 Get Keel
               </Link>
               <Link
                 href="/products/keel"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full border border-ink/15 bg-paper text-ink hover:border-accent hover:text-accent transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full btn-glass text-ink hover:border-accent hover:text-accent transition-all duration-300"
               >
                 How it works
               </Link>

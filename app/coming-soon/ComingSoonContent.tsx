@@ -69,12 +69,12 @@ export default function ComingSoonClient() {
                 placeholder="Enter your email"
                 required
                 disabled={status === 'loading' || status === 'success'}
-                className="flex-1 px-6 py-4 rounded-xl border border-mist bg-paper text-ink placeholder:text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-mist transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 px-6 py-4 rounded-xl glass text-ink placeholder:text-ink focus:outline-none focus:border-accent focus:ring-2 focus:ring-mist transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="px-8 py-4 rounded-full bg-accent text-paper font-medium hover:bg-navy transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
+                className="px-8 py-4 rounded-full bg-accent text-paper btn-pillow font-medium hover:bg-navy transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent"
               >
                 {status === 'loading' ? 'Joining...' : status === 'success' ? 'Joined' : 'Join Waitlist'}
               </button>

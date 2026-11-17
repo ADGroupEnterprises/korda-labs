@@ -54,9 +54,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${dmSans.variable} ${jetbrainsMono.variable} bg-paper text-ink antialiased`}>
+      <body className={`${display.variable} ${dmSans.variable} ${jetbrainsMono.variable} text-ink antialiased`}>
         <Nav />
-        <div className="pt-16">{children}</div>
+        <div className="pt-20">{children}</div>
       </body>
     </html>
   )

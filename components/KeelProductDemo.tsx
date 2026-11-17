@@ -162,7 +162,7 @@ function CloudCompareUI({ visibleSteps, showGaps }: { visibleSteps: number; show
                 key={i}
                 initial={{ opacity: 0, x: -5 }} animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.09 + 0.2 }}
-                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-mist bg-mist mb-1"
+                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg glass mb-1"
               >
                 <div className="w-1 h-3 rounded-full bg-accent flex-shrink-0" />
                 <span className="text-[11px] text-ink truncate">{task}</span>
@@ -267,7 +267,7 @@ export default function KeelProductDemo() {
     : 'idle'
 
   return (
-    <div ref={ref} className="rounded-2xl border border-mist bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
+    <div ref={ref} className="rounded-2xl glass overflow-hidden ">
       {/* Header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-mist">
         <motion.div

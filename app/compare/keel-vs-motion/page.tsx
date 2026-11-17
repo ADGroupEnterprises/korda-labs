@@ -57,14 +57,14 @@ export default function KeelVsMotionPage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Motion</p>
               <p className="text-ink leading-relaxed">
                 Automatically schedules your work tasks into your calendar. Solid AI time-blocking,
                 project management, and meeting coordination — all within your work context.
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="eyebrow text-accent mb-3">Keel</p>
               <p className="text-ink leading-relaxed">
                 Does everything Motion does for scheduling — and then connects it to your health data,
@@ -109,13 +109,13 @@ export default function KeelVsMotionPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={APP_SIGNUP_URL}
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
               >
                 Get Keel
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
               >
                 See pricing
               </Link>

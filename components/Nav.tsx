@@ -14,7 +14,7 @@ function ProductsDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-xl border border-mist bg-paper shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 rounded-2xl glass glass-solid overflow-hidden"
         >
           <div className="p-1.5">
             <Link
@@ -53,7 +53,7 @@ function HowItWorksDropdown({ open }: { open: boolean }) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 8, scale: 0.97 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-xl border border-mist bg-paper shadow-2xl overflow-hidden"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 rounded-2xl glass glass-solid overflow-hidden"
         >
           <div className="p-1.5">
             {[
@@ -108,7 +108,7 @@ export default function Nav() {
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-paper/85 backdrop-blur-md border-b border-mist"
+      className="fixed top-3 left-3 right-3 z-50 mx-auto max-w-6xl rounded-full glass"
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Left: Brand */}
@@ -169,7 +169,7 @@ export default function Nav() {
           </a>
           <Link
             href={APP_SIGNUP_URL}
-            className="inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-accent text-paper hover:bg-ink transition-all duration-300"
+            className="inline-flex px-4 py-2 text-sm font-semibold rounded-full bg-accent text-paper btn-pillow hover:bg-ink transition-all duration-300"
           >
             Get Keel
           </Link>

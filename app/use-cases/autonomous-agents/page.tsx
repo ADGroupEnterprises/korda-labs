@@ -93,10 +93,10 @@ export default function AutonomousAgentsPage() {
             Keel&apos;s agents run multi-turn loops, up to hundreds of tool calls per task. The output lands in your storage. Every step is policy-gated and logged.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
-            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
+            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300">
               How we keep it safe
             </Link>
           </div>
@@ -109,7 +109,7 @@ export default function AutonomousAgentsPage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-10">What agents can do</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
             {capabilities.map((cap, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <p className="text-accent eyebrow mb-3">{cap.tag}</p>
                 <h3 className="text-ink font-medium mb-2">{cap.title}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-3">{cap.body}</p>
@@ -133,7 +133,7 @@ export default function AutonomousAgentsPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {workflowExamples.map((ex, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <h3 className="text-ink font-medium mb-4">{ex.name}</h3>
                 <ol className="space-y-2">
                   {ex.steps.map((step, j) => (
@@ -148,7 +148,7 @@ export default function AutonomousAgentsPage() {
           </div>
 
           {/* Safety note */}
-          <div className="p-6 rounded-2xl border border-mist bg-mist mb-12">
+          <div className="p-6 rounded-2xl glass mb-12">
             <p className="eyebrow text-accent mb-3">Built-in safety model</p>
             <p className="text-ink text-sm leading-relaxed">
               You control what models can access which storage and integrations. Every capability is off by default.
@@ -158,7 +158,7 @@ export default function AutonomousAgentsPage() {
           </div>
 
           <div className="text-center">
-            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
           </div>

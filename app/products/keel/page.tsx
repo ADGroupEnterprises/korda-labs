@@ -35,7 +35,7 @@ function TaskManagerAnimation() {
   const displayTasks = order.map(id => TM_TASKS.find(t => t.id === id)!)
 
   return (
-    <div ref={ref} className="rounded-2xl border border-mist bg-paper-100 p-4 overflow-hidden">
+    <div ref={ref} className="rounded-2xl glass p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
         <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
@@ -259,7 +259,7 @@ function KeelFeatureCard({ feature, index }: { feature: typeof keelFeatures[0]; 
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="group relative p-6 rounded-2xl border border-mist bg-mist hover:border-mist hover:bg-mist transition-all duration-300"
+      className="group relative p-6 rounded-2xl glass hover:border-mist hover:bg-mist transition-all duration-300"
     >
       <div className={`absolute inset-0 rounded-2xl ${isBlue ? 'bg-transparent group-hover:bg-mist' : 'bg-transparent group-hover:bg-mist'} transition-all duration-300`} />
       <div className="relative">
@@ -352,7 +352,7 @@ function AdaptiveMemoryAnimation() {
   }, [isInView])
 
   return (
-    <div ref={ref} className="rounded-2xl border border-mist bg-paper-100 p-4 overflow-hidden">
+    <div ref={ref} className="rounded-2xl glass p-4 overflow-hidden">
       <div className="flex items-center gap-2 mb-4">
         <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
@@ -408,14 +408,14 @@ function KeelStepCard({ step, index }: { step: typeof keelSteps[0]; index: numbe
       transition={{ duration: 0.6, delay: index * 0.15 }}
       className="flex gap-8 items-start"
     >
-      <div className="relative flex-shrink-0 w-12 h-12 rounded-full border border-mist bg-mist flex items-center justify-center">
+      <div className="relative flex-shrink-0 w-12 h-12 rounded-full glass flex items-center justify-center">
         <span className="text-accent font-medium text-sm">{step.number}</span>
         <div className="absolute inset-0 rounded-full bg-mist" />
       </div>
       <div className="pt-2.5">
         <h3 className="text-xl font-medium text-ink mb-2">{step.title}</h3>
         <p className="text-ink leading-relaxed mb-3 max-w-xl">{step.description}</p>
-        <span className="inline-block text-xs text-accent font-medium border border-mist bg-mist px-3 py-1 rounded-full">
+        <span className="inline-block text-xs text-accent font-medium glass px-3 py-1 rounded-full">
           {step.detail}
         </span>
       </div>
@@ -480,14 +480,14 @@ export default function KeelPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
             >
               Get Keel
 
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:text-ink hover:border-mist transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:text-ink hover:border-mist transition-all duration-300"
             >
               All products
             </Link>
@@ -600,7 +600,7 @@ export default function KeelPage() {
             ))}
           </div>
           {/* Connection callout */}
-          <div className="mt-8 p-5 rounded-xl border border-mist bg-mist text-center">
+          <div className="mt-8 p-5 rounded-xl glass text-center">
             <p className="text-ink text-sm">
               All three read from the same connected tools: health, calendar, productivity. One picture, three jobs.
             </p>
@@ -717,14 +717,14 @@ export default function KeelPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={intInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: ci * 0.1 }}
-                className="p-5 rounded-xl border border-mist bg-mist"
+                className="p-5 rounded-xl glass"
               >
                 <div className={`text-xs font-medium tracking-widest uppercase mb-4 ${'text-accent'}`}>
                   {cat.category}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map(item => (
-                    <span key={item} className="px-2.5 py-1 rounded-full border border-mist bg-mist text-ink text-xs">
+                    <span key={item} className="px-2.5 py-1 rounded-full glass text-ink text-xs">
                       {item}
                     </span>
                   ))}
@@ -774,7 +774,7 @@ export default function KeelPage() {
                 label: 'Code review assist',
               },
             ].map((ex, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <p className="eyebrow text-accent mb-4">{ex.label}</p>
                 <div className="space-y-3">
                   <div className="flex gap-2.5">
@@ -823,7 +823,7 @@ export default function KeelPage() {
               { time: 'When progress < 30%', title: 'Goal gap alert', body: 'When a goal category falls behind, Compass flags it with a suggested action.' },
               { time: 'When work dominates', title: 'Domain overload warning', body: 'When work starts to crowd out personal goals, Keel notices the imbalance and tells you.' },
             ].map((trigger, i) => (
-              <div key={i} className="flex gap-4 p-5 rounded-2xl border border-mist bg-mist items-start">
+              <div key={i} className="flex gap-4 p-5 rounded-2xl glass items-start">
                 <div className="flex-shrink-0 pt-0.5">
                   <span className="text-xs font-medium text-ink whitespace-nowrap">{trigger.time}</span>
                 </div>
@@ -874,7 +874,7 @@ export default function KeelPage() {
                 { title: 'Abort at any time', desc: 'If a running agent does something unexpected, one tap stops it mid-execution. Keel tells you what it completed before stopping.' },
                 { title: 'Confidential task routing', desc: 'Sensitive tasks never touch cloud models — they route to local models only via your Desktop Bridge.' },
               ].map((item, i) => (
-                <div key={i} className="p-4 rounded-xl border border-mist bg-mist">
+                <div key={i} className="p-4 rounded-xl glass">
                   <div className="w-1 h-4 rounded-full bg-accent mb-3" />
                   <div className="font-medium text-ink text-sm mb-1">{item.title}</div>
                   <div className="text-ink text-xs leading-relaxed">{item.desc}</div>
@@ -904,7 +904,7 @@ export default function KeelPage() {
           </p>
           <Link
             href={APP_SIGNUP_URL}
-            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+            className="inline-flex items-center justify-center px-10 py-4 text-lg font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
           >
             Get Keel
           </Link>

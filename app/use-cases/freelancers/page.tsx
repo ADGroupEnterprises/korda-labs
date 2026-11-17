@@ -33,13 +33,13 @@ export default function FreelancersPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
             >
               Get Keel
             </Link>
             <Link
               href="/products/keel"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
             >
               See how Keel works
             </Link>
@@ -53,7 +53,7 @@ export default function FreelancersPage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-10">Available now</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20">
             {features.map((f, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
                 <h3 className="text-ink font-medium mb-2">{f.label}</h3>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
@@ -68,7 +68,7 @@ export default function FreelancersPage() {
             <p className="text-ink mb-8">Free on web.</p>
             <Link
               href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
             >
               Get Keel
             </Link>

@@ -57,7 +57,7 @@ export default function ComparePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-8">Head-to-head</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {comparisons.map((c, i) => (
-              <Link key={i} href={c.href} className="group block p-8 rounded-2xl border border-mist bg-mist hover:border-mist hover:bg-mist transition-all duration-300">
+              <Link key={i} href={c.href} className="group block p-8 rounded-2xl glass hover:border-mist hover:bg-mist transition-all duration-300">
                 <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Keel vs.</p>
                 <h2 className="text-2xl font-display font-bold text-ink mb-2 group-hover:text-accent transition-colors">{c.opponent}</h2>
                 <p className="text-accent text-sm font-medium mb-3">{c.angle}</p>
@@ -76,7 +76,7 @@ export default function ComparePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-8">By use case</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
             {useCases.map((u, i) => (
-              <Link key={i} href={u.href} className="group block p-6 rounded-2xl border border-mist bg-mist hover:border-mist hover:bg-mist transition-all duration-300">
+              <Link key={i} href={u.href} className="group block p-6 rounded-2xl glass hover:border-mist hover:bg-mist transition-all duration-300">
                 <h3 className="text-ink font-medium mb-2 group-hover:text-accent transition-colors">{u.label}</h3>
                 <p className="text-ink text-sm leading-relaxed mb-4">{u.description}</p>
                 <span className="text-xs text-accent flex items-center gap-1">
@@ -92,13 +92,13 @@ export default function ComparePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={APP_SIGNUP_URL}
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
               >
                 Get Keel
               </Link>
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
               >
                 See pricing
               </Link>

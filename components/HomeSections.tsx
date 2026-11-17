@@ -23,7 +23,8 @@ export function CrewSection() {
     <section className="relative py-24 sm:py-32 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 lg:gap-16 items-center">
         <div className="relative mx-auto w-56 sm:w-72 lg:w-full lg:max-w-sm">
-          <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2.5rem] bg-gradient-to-b from-sky-soft to-sky" aria-hidden="true" />
+          <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2.5rem] glass" aria-hidden="true" />
+          <div className="absolute inset-x-4 bottom-0 top-10 rounded-[2.5rem] bg-gradient-to-b from-sky-soft/40 to-sky/60" aria-hidden="true" />
           <Zoe pose="point-right" className="relative w-[112%] max-w-none h-auto" />
         </div>
 
@@ -39,7 +40,7 @@ export function CrewSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
             {crew.map((c) => (
-              <div key={c.name} className="rounded-2xl border border-mist bg-paper-100 p-5">
+              <div key={c.name} className="rounded-2xl glass p-5">
                 <div className="flex items-center gap-2 mb-3">
                   {c.zoe ? <ZoeBadge size={30} /> : c.mark ? <CrewMark agent={c.mark} size={30} /> : null}
                   <span className="font-mono text-[0.68rem] uppercase tracking-wider text-accent">{c.role}</span>
@@ -52,7 +53,7 @@ export function CrewSection() {
 
           <div className="flex flex-wrap gap-2 mb-8">
             {specialists.map((s) => (
-              <span key={s} className="font-mono text-xs px-3 py-1.5 rounded-full bg-mist text-ink">{s}</span>
+              <span key={s} className="font-mono text-xs px-3 py-1.5 rounded-full glass text-ink">{s}</span>
             ))}
           </div>
 
@@ -78,8 +79,8 @@ const work = [
 
 export function WorkSection() {
   return (
-    <section className="relative py-24 sm:py-32 px-6 bg-paper-100 border-y border-mist overflow-hidden">
-      <div className="absolute inset-0 bg-chart opacity-60" aria-hidden="true" />
+    <section className="relative py-24 sm:py-32 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-chart opacity-50 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" aria-hidden="true" />
       <div className="relative max-w-6xl mx-auto">
         <div className="flex items-end justify-between gap-6 mb-12">
           <div>
@@ -93,7 +94,7 @@ export function WorkSection() {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {work.map((w) => (
-            <div key={w.tag} className="group rounded-2xl border border-mist bg-paper p-5 sm:p-6 hover:border-accent transition-colors duration-300">
+            <div key={w.tag} className="group rounded-2xl glass p-5 sm:p-6 hover:border-accent transition-colors duration-300">
               <p className="font-mono text-xs text-accent mb-4">{w.tag}</p>
               <h3 className="font-display font-bold text-xl sm:text-2xl text-ink mb-1.5">{w.title}</h3>
               <p className="text-sm text-ink-soft leading-snug">{w.line}</p>
@@ -118,6 +119,8 @@ export function ControlSection() {
   return (
     <section className="relative px-6 py-24 sm:py-32">
       <div className="relative max-w-6xl mx-auto rounded-[2.5rem] bg-ink text-paper overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-accent/50 blur-3xl" aria-hidden="true" />
+        <div className="absolute -bottom-32 right-0 w-[30rem] h-[30rem] rounded-full bg-sky/20 blur-3xl" aria-hidden="true" />
         <div className="absolute inset-0 bg-chart-light" aria-hidden="true" />
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-8 sm:p-14">
           <div>
@@ -125,9 +128,9 @@ export function ControlSection() {
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-8">
               Nothing runs without your say.
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 mb-9">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-9">
               {controls.map((c) => (
-                <li key={c.title} className="border-l-2 border-sky pl-4">
+                <li key={c.title} className="glass-dark rounded-2xl px-4 py-3.5">
                   <p className="font-semibold text-paper">{c.title}</p>
                   <p className="text-sm text-paper/70 leading-snug">{c.line}</p>
                 </li>
@@ -150,7 +153,7 @@ export function StudioCta() {
   return (
     <section className="relative px-6 pb-28">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div className="rounded-3xl border border-mist bg-paper-100 p-8 sm:p-10 flex flex-col">
+        <div className="rounded-3xl glass p-8 sm:p-10 flex flex-col">
           <div className="flex items-center gap-3 mb-6">
             <KordaMark size={36} />
             <span className="text-ink-soft" aria-hidden="true">×</span>

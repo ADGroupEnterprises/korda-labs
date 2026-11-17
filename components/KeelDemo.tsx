@@ -115,7 +115,7 @@ function GoalUI() {
           { label: 'Pace', value: '4.8%/wk', green: true },
           { label: 'Status', value: 'On track', green: true },
         ].map(s => (
-          <div key={s.label} className="p-2 rounded-lg border border-mist bg-mist">
+          <div key={s.label} className="p-2 rounded-lg glass">
             <div className="text-[9px] text-ink mb-0.5">{s.label}</div>
             <div className={`text-xs font-medium ${s.green ? 'text-accent' : 'text-ink'}`}>
               {s.value}
@@ -175,7 +175,7 @@ function RetrievalUI({ visibleSteps, showTasks }: { visibleSteps: number; showTa
                 key={i}
                 initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 + 0.2 }}
-                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-mist bg-mist"
+                className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg glass"
               >
                 <div className="w-1 h-3 rounded-full bg-accent flex-shrink-0" />
                 <span className="text-xs text-ink">{task}</span>
@@ -284,7 +284,7 @@ export default function KeelDemo() {
     : 'idle'
 
   return (
-    <div ref={ref} className="rounded-2xl border border-mist bg-paper-100 overflow-hidden shadow-lg shadow-ink/8">
+    <div ref={ref} className="rounded-2xl glass overflow-hidden ">
       {/* Header */}
       <div className="flex items-center gap-2.5 px-4 py-3 border-b border-mist">
         <motion.div

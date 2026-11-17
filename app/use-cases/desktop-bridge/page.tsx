@@ -33,10 +33,10 @@ export default function DesktopBridgePage() {
             The Desktop Bridge runs on your home computer. From your phone or the office, Keel reads local files, runs scripts, organizes folders and executes local automations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
-            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300">
+            <Link href="/security" className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300">
               How we keep it safe
             </Link>
           </div>
@@ -47,14 +47,14 @@ export default function DesktopBridgePage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Every other AI tool</p>
               <p className="text-ink text-sm leading-relaxed">
                 Lives in the cloud. Can&apos;t touch your local files. Can&apos;t run your scripts. Can&apos;t access the apps
                 installed on your machine. The moment you close the browser, it stops.
               </p>
             </div>
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="eyebrow text-accent mb-3">Keel + Desktop Bridge</p>
               <p className="text-ink text-sm leading-relaxed">
                 Your home machine is always available to your agents — local files, local scripts, local apps.
@@ -71,7 +71,7 @@ export default function DesktopBridgePage() {
           <p className="text-xs font-medium tracking-widest uppercase text-ink mb-10">What the bridge enables</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20">
             {features.map((f, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <div className="w-1 h-5 rounded-full bg-accent mb-4" />
                 <h3 className="text-ink font-medium mb-2">{f.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{f.body}</p>
@@ -80,7 +80,7 @@ export default function DesktopBridgePage() {
           </div>
 
           {/* Example workflow */}
-          <div className="p-8 rounded-2xl border border-mist bg-mist mb-16">
+          <div className="p-8 rounded-2xl glass mb-16">
             <p className="text-xs font-medium tracking-widest uppercase text-ink mb-6">Example workflow</p>
             <div className="space-y-3">
               {[
@@ -108,7 +108,7 @@ export default function DesktopBridgePage() {
               <span className="text-ink">Your crew.</span>
             </h2>
             <p className="text-ink mb-8">Free on web.</p>
-            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300">
+            <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
               Get Keel
             </Link>
           </div>

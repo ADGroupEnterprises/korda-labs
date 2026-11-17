@@ -44,13 +44,13 @@ export default function DailyPlanningPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Link
               href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
             >
               Get Keel
             </Link>
             <Link
               href="/products/keel"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full border border-ink/15 text-ink hover:border-mist hover:bg-mist transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full btn-glass text-ink hover:border-mist hover:bg-mist transition-all duration-300"
             >
               Learn about Keel
             </Link>
@@ -62,7 +62,7 @@ export default function DailyPlanningPage() {
       <section className="py-8 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-24">
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="text-xs font-medium tracking-widest uppercase text-ink mb-3">Manual daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>— Open 4+ apps to see what's due</li>
@@ -72,7 +72,7 @@ export default function DailyPlanningPage() {
                 <li>— Do it all again tomorrow</li>
               </ul>
             </div>
-            <div className="p-6 rounded-2xl border border-mist bg-mist">
+            <div className="p-6 rounded-2xl glass">
               <p className="eyebrow text-accent mb-3">Keel daily planning</p>
               <ul className="space-y-2.5 text-sm text-ink leading-relaxed">
                 <li>✓ Agents review your goals, calendar, and health overnight</li>
@@ -100,9 +100,9 @@ export default function DailyPlanningPage() {
 
           <div className="space-y-5">
             {morningSteps.map((step, i) => (
-              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-4 gap-4 p-6 rounded-2xl glass">
                 <div>
-                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full border border-mist bg-mist text-ink">
+                  <span className="inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full glass text-ink">
                     {step.time}
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export default function DailyPlanningPage() {
             <p className="text-ink mb-8">Free on web.</p>
             <Link
               href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper hover:bg-navy transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
             >
               Get Keel
             </Link>

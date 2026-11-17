@@ -168,11 +168,11 @@ export default function PricingPage() {
                 className={`relative rounded-2xl p-8 ${
                   tier.highlight
                     ? 'border-2 border-accent bg-mist'
-                    : 'border border-mist bg-mist'
+                    : 'glass'
                 }`}
               >
                 {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-paper text-xs font-medium">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-accent text-paper btn-pillow text-xs font-medium">
                     Most Popular
                   </div>
                 )}
@@ -258,7 +258,7 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {aiModels.map((model, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-mist bg-paper">
+              <div key={i} className="p-8 rounded-2xl glass">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-medium text-ink mb-1">{model.name}</h3>
@@ -301,7 +301,7 @@ export default function PricingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {usageBundles.map((bundle, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-mist bg-mist">
+              <div key={i} className="p-6 rounded-2xl glass">
                 <h3 className="text-lg font-medium text-ink mb-2">{bundle.name}</h3>
                 <div className="mb-4">
                   <span className="text-3xl font-display font-bold text-ink">{bundle.price}</span>
@@ -324,7 +324,7 @@ export default function PricingPage() {
             ))}
           </div>
 
-          <div className="mt-8 p-6 rounded-xl border border-mist bg-mist text-center">
+          <div className="mt-8 p-6 rounded-xl glass text-center">
             <p className="text-sm text-ink">
               <span className="font-medium text-ink">Note:</span> Bundle credits account for the Tri-Agent Consultation Loop overhead.
               Unused credits roll over for 12 months.
@@ -342,7 +342,7 @@ export default function PricingPage() {
               { title: 'Cancel anytime', body: 'No contracts, no cancellation fees. Downgrade or cancel from your account settings in seconds.' },
               { title: 'We never train on your data', body: 'Your conversations, goals, and context are yours. We do not use them to train any model.' },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-xl border border-mist bg-paper">
+              <div key={i} className="p-6 rounded-xl glass">
                 <div className="w-1 h-5 rounded-full bg-accent mb-3" />
                 <h3 className="text-ink font-medium text-sm mb-1.5">{item.title}</h3>
                 <p className="text-ink text-sm leading-relaxed">{item.body}</p>
