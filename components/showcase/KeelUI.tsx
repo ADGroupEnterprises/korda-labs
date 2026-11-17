@@ -246,9 +246,57 @@ function ShelfScene() {
   )
 }
 
+/** Spend by category, as bars. Used on the web canvas and inline in the mobile chat. */
+export const SPEND: [string, number][] = [['Dev & hosting', 156], ['Design tools', 124], ['AI', 72], ['Other', 60]]
+export function SpendBars({ compact = false }: { compact?: boolean }) {
+  return (
+    <div className={compact ? 'space-y-1' : 'space-y-1.5'}>
+      {SPEND.map(([k, v], i) => (
+        <div key={k} className={`grid ${compact ? 'grid-cols-[3.5rem_1fr_auto]' : 'grid-cols-[4.6rem_1fr_auto]'} items-center gap-2`}>
+          <span className={`${compact ? 'text-[0.56rem]' : 'text-[0.64rem]'} text-ink-soft truncate`}>{k}</span>
+          <span className="h-[7px] rounded-full bg-ink/[0.06] overflow-hidden">
+            <motion.span initial={{ width: 0 }} animate={{ width: `${(v / 156) * 100}%` }} transition={{ duration: 0.6, delay: 0.15 + i * 0.07, ease: 'easeOut' }} className="block h-full rounded-full bg-gradient-to-r from-sky to-accent" />
+          </span>
+          <span className={`${compact ? 'text-[0.56rem]' : 'text-[0.64rem]'} font-semibold text-ink tabular-nums`}>${v}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function FinanceScene() {
+  return (
+    <div className="grid grid-cols-6 gap-2.5">
+      <Surface title="Software spend · October" className="col-span-4">
+        <div className="flex items-baseline gap-2 mb-2.5">
+          <p className="font-display font-bold text-2xl leading-none">$412</p>
+          <p className="text-[0.62rem] text-ink-soft">9 subscriptions · up $38 from September</p>
+        </div>
+        <SpendBars />
+      </Surface>
+      <Surface title="Renewing this week" tone="ink" delay={0.07} className="col-span-2">
+        {[['Cloud hosting', '$96', 'Wed'], ['Design suite', '$45', 'Fri']].map(([k, v, d]) => (
+          <div key={k} className="py-1 border-b border-white/10 last:border-0">
+            <p className="text-[0.7rem] font-semibold flex justify-between"><span>{k}</span><span>{v}</span></p>
+            <p className={`${label} text-sky !text-[0.5rem] mt-0.5`}>{d}</p>
+          </div>
+        ))}
+      </Surface>
+      <Surface title="Pulled from your accounts" tone="sky" delay={0.14} className="col-span-6">
+        <div className="flex flex-wrap gap-1.5">
+          {['Checking ··4821', 'Card ··1107', 'Read-only', 'Synced 8:02 am'].map((c) => (
+            <span key={c} className="h-6 px-2.5 rounded-full bg-white/70 border border-white text-[0.62rem] text-ink flex items-center">{c}</span>
+          ))}
+        </div>
+      </Surface>
+    </div>
+  )
+}
+
 export const SCENES = [
   { id: 'run', title: 'Half marathon week', ask: 'Plan my week around the half marathon.', reply: 'Three runs are on your calendar, long run Sunday. I moved the proposal review to Thursday and kept pottery.', view: <RunScene /> },
   { id: 'update', title: 'November investor update', ask: 'Draft the investor update from this month’s numbers.', reply: 'Draft is ready. Revenue is checked against Stripe. It needs your approval before it sends.', view: <UpdateScene /> },
+  { id: 'spend', title: 'Software spend', ask: 'What did I spend on software last month?', reply: '$412 across nine subscriptions, up $38 from September. Two renew this week.', view: <FinanceScene /> },
   { id: 'study', title: 'O-Chem II study plan', ask: 'Build a study plan for Organic Chemistry II. The final is Dec 12.', reply: 'Four weeks, six hours a week, two practice exams at the end. First session is Tuesday at 8.', view: <StudyScene /> },
   { id: 'reunion', title: 'Reunion dinner', ask: 'Find a date for the reunion dinner. Eight of us.', reply: 'Saturday the 12th works for seven of eight. Six have confirmed. I’ll nudge the other two tomorrow.', view: <ReunionScene /> },
   { id: 'shelf', title: 'Walnut bookshelf', ask: 'I want to build a walnut bookshelf. What do I need?', reply: 'Here’s the cut list and materials. I blocked two Saturday afternoons in the shop.', view: <ShelfScene /> },
@@ -256,7 +304,7 @@ export const SCENES = [
 
 // ─── Chat atoms ───────────────────────────────────────────────────────────────
 
-function Thinking() {
+export function Thinking() {
   return (
     <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, transition: { duration: 0.12 } }} transition={{ duration: 0.25 }} className="flex items-center gap-2 pl-0.5">
       <motion.span animate={{ scale: [1, 1.16, 1] }} transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }} className="inline-flex"><KeelMark size={14} /></motion.span>
@@ -325,7 +373,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
 
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]">
             {/* Conversation */}
-            <div className="flex flex-col p-4 md:border-r border-ink/[0.07] md:h-[27.5rem]">
+            <div className="flex flex-col p-4 md:border-r border-ink/[0.07] md:h-[25rem]">
               <div className="flex-1 flex flex-col justify-end gap-3 min-h-[8.5rem] overflow-hidden">
                 <AnimatePresence mode="popLayout">
                   {phase >= 1 && (
@@ -363,7 +411,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
             </div>
 
             {/* Canvas */}
-            <div className={`relative bg-chart p-4 md:h-[27.5rem] min-h-[16rem] border-t md:border-t-0 border-ink/[0.07] flex flex-col ${canvasClass}`}>
+            <div className={`relative bg-chart p-4 md:h-[25rem] min-h-[16rem] border-t md:border-t-0 border-ink/[0.07] flex flex-col ${canvasClass}`}>
               <div className="flex-1">
                 <AnimatePresence mode="wait">
                   {phase >= 3 && (

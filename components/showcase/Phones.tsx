@@ -3,9 +3,10 @@
 /* Two phones for the hero: the Keel mobile app (home of pinned surfaces) and Keel over text
    message (a roadmap concept). Renderings of intent, not screenshots. */
 
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { KeelMark } from '@/components/marks/Brand'
-import { Icon, label, useCycle, usePhase, Avatar } from '@/components/showcase/KeelUI'
+import { Icon, label, useCycle, usePhase, Avatar, Thinking, SpendBars } from '@/components/showcase/KeelUI'
 import { PIN_ART } from '@/components/showcase/PinArt'
 
 // ─── Pinned surfaces (shared by the app phone and the motion strip) ───────────
@@ -22,18 +23,18 @@ export const PINS = [
 export type Pin = (typeof PINS)[number]
 
 /** A pinned surface: generated artwork edge to edge, a glass rim, the headline over it. */
-export function PinTile({ pin, className = '' }: { pin: Pin; className?: string }) {
+export function PinTile({ pin, className = '', tall = false }: { pin: Pin; className?: string; tall?: boolean }) {
   const Art = PIN_ART[pin.id]
   const fg = pin.dark ? 'text-white' : 'text-ink'
   return (
     <div className={`relative isolate overflow-hidden rounded-[1.15rem] shadow-[0_10px_22px_-12px_rgba(15,41,66,0.5)] ${fg} ${className}`}>
       <Art />
-      <div className={`absolute inset-0 ${pin.dark ? 'bg-gradient-to-r from-black/45 via-black/10 to-transparent' : 'bg-gradient-to-r from-white/80 via-white/25 to-transparent'}`} aria-hidden="true" />
+      <div className={`absolute inset-0 ${pin.dark ? (tall ? 'bg-gradient-to-t from-black/55 via-black/5 to-black/15' : 'bg-gradient-to-r from-black/45 via-black/10 to-transparent') : (tall ? 'bg-gradient-to-t from-white/85 via-white/10 to-white/40' : 'bg-gradient-to-r from-white/80 via-white/25 to-transparent')}`} aria-hidden="true" />
       <div className="absolute inset-0 rounded-[1.15rem] ring-1 ring-inset ring-white/45 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)]" aria-hidden="true" />
       <div className="relative h-full p-2.5 flex flex-col justify-between">
         <p className={`${label} !text-[0.5rem] whitespace-nowrap ${pin.dark ? 'text-white/85' : 'text-ink/70'}`}>{pin.title}</p>
         <div>
-          <p className="font-display font-bold text-[1rem] leading-none tracking-tight whitespace-nowrap">{pin.big}</p>
+          <p className={`font-display font-bold ${tall ? 'text-[1.25rem]' : 'text-[1rem]'} leading-none tracking-tight whitespace-nowrap`}>{pin.big}</p>
           <p className={`text-[0.55rem] mt-1 font-medium whitespace-nowrap ${pin.dark ? 'text-white/80' : 'text-ink/70'}`}>{pin.sub}</p>
         </div>
       </div>
@@ -62,11 +63,16 @@ function Phone({ children, className = '', screen = 'bg-paper' }: { children: Re
   )
 }
 
-// ─── Keel mobile app ──────────────────────────────────────────────────────────
+// ─── Keel mobile app: home, then a conversation, and back ─────────────────────
 
-export function AppPhone({ pinRow, className }: { pinRow?: React.ReactNode; className?: string }) {
+const APP_CHATS = [
+  { title: 'Software spend', ask: 'What did I spend on software last month?', reply: '$412 across nine subscriptions, up $38 from September. Two renew this week.', widget: true, log: 'Logged · 2 accounts read' },
+  { title: 'Thursday', ask: 'Move my 2pm and tell Jamie.', reply: 'Done. Proposal review is Thursday at 4. Jamie has the note.', widget: false, log: 'Logged · 2 actions' },
+]
+
+function AppHome({ pinRow }: { pinRow?: React.ReactNode }) {
   return (
-    <Phone className={className}>
+    <>
       <div className="flex-1 flex flex-col bg-gradient-to-b from-sky-soft via-paper to-paper pt-10 px-3.5">
         <div className="flex items-center justify-between mb-3">
           <div>
@@ -76,7 +82,6 @@ export function AppPhone({ pinRow, className }: { pinRow?: React.ReactNode; clas
           <span className="w-7 h-7 rounded-full bg-white shadow-sm flex items-center justify-center"><Avatar name="AM" tone="mist" /></span>
         </div>
 
-        {/* Today */}
         <div className="rounded-2xl bg-white/90 border border-white shadow-sm p-2.5 mb-2.5">
           <p className={`${label} text-accent mb-1.5`}>Today</p>
           {[['7:00', 'Easy run · 5k', true], ['9:00', 'Deep work: investor update', false], ['4:00', 'Venue call · The Loft', false]].map(([t, n, done]) => (
@@ -99,23 +104,131 @@ export function AppPhone({ pinRow, className }: { pinRow?: React.ReactNode; clas
         )}
       </div>
 
-      {/* Tab bar */}
       <div className="absolute bottom-2.5 inset-x-3 h-12 rounded-full glass flex items-center justify-around px-2 z-10">
         {(['overview', 'planner'] as const).map((n, i) => { const G = Icon[n]; return <G key={n} className={`w-[1.05rem] h-[1.05rem] ${i === 0 ? 'text-accent' : 'text-ink-soft'}`} /> })}
         <span className="w-9 h-9 -mt-1 rounded-full bg-accent btn-pillow flex items-center justify-center"><KeelMark size={16} className="brightness-0 invert" /></span>
         {(['tasks', 'goals'] as const).map((n) => { const G = Icon[n]; return <G key={n} className="w-[1.05rem] h-[1.05rem] text-ink-soft" /> })}
       </div>
+    </>
+  )
+}
+
+function AppChat({ chat, k, frozen }: { chat: (typeof APP_CHATS)[number]; k: number; frozen: boolean }) {
+  const phase = usePhase([700, 1500, 3000, 3700], k, frozen) // ask · thinking · reply · widget
+  return (
+    <div className="flex-1 flex flex-col min-h-0 bg-gradient-to-b from-sky-soft/70 via-paper to-paper">
+      <div className="pt-10 px-3.5 pb-2 flex items-center gap-2 border-b border-ink/[0.06]">
+        <svg viewBox="0 0 12 20" className="w-[7px] h-[12px] text-ink-soft" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <div className="flex-1">
+          <p className={`${label} !text-[0.5rem] text-accent`}>Ask</p>
+          <p className="font-display font-bold text-[0.82rem] leading-tight text-ink">{chat.title}</p>
+        </div>
+        <Icon.history className="w-3.5 h-3.5 text-ink-soft" />
+      </div>
+
+      <div className="flex-1 min-h-0 flex flex-col justify-end gap-2.5 px-3 pb-2 overflow-hidden">
+        <AnimatePresence mode="popLayout">
+          {phase >= 1 && (
+            <motion.div key="q" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}
+              className="ml-auto w-fit max-w-[88%] rounded-[14px_14px_4px_14px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-3 py-1.5 text-[0.7rem] leading-snug text-ink">
+              {chat.ask}
+            </motion.div>
+          )}
+          {phase === 2 && <Thinking key="t" />}
+          {phase >= 3 && (
+            <motion.div key="a" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.45 }} className="flex gap-1.5">
+              <span className="mt-0.5 flex-shrink-0"><KeelMark size={14} /></span>
+              <div className="min-w-0 flex-1">
+                <p className="text-[0.7rem] leading-relaxed text-ink">{chat.reply}</p>
+                {chat.widget && phase >= 4 && (
+                  <motion.div initial={{ opacity: 0, scale: 0.95, y: 6 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.34 }} className="mt-2 rounded-2xl bg-white/95 border border-white shadow-[0_10px_22px_-14px_rgba(15,41,66,0.35)] p-2.5">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <p className={`${label} !text-[0.5rem] text-accent`}>October</p>
+                      <Icon.pin className="w-3 h-3 text-ink-soft" />
+                    </div>
+                    <p className="font-display font-bold text-lg leading-none mb-2">$412</p>
+                    <SpendBars compact />
+                    <p className="text-[0.5rem] text-ink-soft mt-2">Checking ··4821 · Card ··1107</p>
+                  </motion.div>
+                )}
+                <p className={`${label} !text-[0.5rem] text-ink-soft mt-1.5 flex items-center gap-1`}><Icon.check className="w-2.5 h-2.5 text-accent" /> {chat.log}</p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <div className="mx-3 mb-3 h-9 rounded-full bg-white/95 border border-white shadow-[0_8px_18px_-12px_rgba(15,41,66,0.3)] flex items-center justify-between pl-3.5 pr-1">
+        <span className="text-[0.66rem] text-ink-soft">Message Zoe…</span>
+        <span className="w-7 h-7 rounded-full bg-accent btn-pillow text-paper flex items-center justify-center"><Icon.up className="w-3 h-3" /></span>
+      </div>
+    </div>
+  )
+}
+
+export function AppPhone({ pinRow, frozen = false, className }: { pinRow?: React.ReactNode; frozen?: boolean; className?: string }) {
+  // home → chat → home → chat. Home holds a little longer so the pins get seen.
+  const [step, setStep] = useState(0)
+  useEffect(() => {
+    if (frozen) return
+    const t = setTimeout(() => setStep((s) => (s + 1) % 4), step % 2 === 0 ? 6500 : 8200)
+    return () => clearTimeout(t)
+  }, [step, frozen])
+  const chat = step % 2 === 1 ? APP_CHATS[(step - 1) / 2] : null
+  return (
+    <Phone className={className}>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div key={step} initial={{ opacity: 0, x: chat ? 24 : -24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, transition: { duration: 0.16 } }} transition={{ duration: 0.32, ease: [0.21, 0.47, 0.32, 0.98] }} className="flex-1 flex flex-col min-h-0">
+          {chat ? <AppChat chat={chat} k={step} frozen={frozen} /> : <AppHome pinRow={pinRow} />}
+        </motion.div>
+      </AnimatePresence>
     </Phone>
   )
 }
 
 // ─── Keel in Messages ─────────────────────────────────────────────────────────
 
-const THREADS: { ask: string; reply: string; pin: Pin['id'] }[] = [
-  { ask: 'Is the investor update ready?', reply: 'Draft v2 is ready. It needs your OK before it sends.', pin: 'update' },
-  { ask: 'Who hasn’t RSVP’d for the 12th?', reply: 'Dana and Ravi. Want me to nudge them?', pin: 'reunion' },
-  { ask: 'What’s my O-Chem session tomorrow?', reply: 'Chapter 7, problems 1–20. One hour, 8 am.', pin: 'study' },
+type Msg = { me?: boolean; text?: string; pin?: Pin['id'] }
+
+/* Mostly plain text. Keel sends a surface back only when a picture says it better. */
+const THREADS: Msg[][] = [
+  [
+    { me: true, text: 'Book a table for 4 at Luca on Friday, around 7:30.' },
+    { text: 'Booked. Friday 7:30 pm, party of four, under your name. It’s on your calendar.' },
+  ],
+  [
+    { me: true, text: 'Reorder the usual groceries.' },
+    { text: 'Cart is ready: 14 items, $86.40, delivery tomorrow 9–11 am. Confirm and I’ll place the order.' },
+    { me: true, text: 'Confirm.' },
+    { text: 'Ordered. The receipt is in your inbox.' },
+  ],
+  [
+    { me: true, text: 'Who hasn’t RSVP’d for the 12th?' },
+    { text: 'Dana and Ravi. Want me to nudge them?' },
+    { pin: 'reunion' },
+  ],
+  [
+    { me: true, text: 'What’s my O-Chem session tomorrow?' },
+    { text: 'Chapter 7, problems 1–20. One hour, 8 am.' },
+  ],
+  [
+    { me: true, text: 'How’s the half marathon training going?' },
+    { text: 'On track. Long run is Sunday.' },
+    { pin: 'goal' },
+  ],
 ]
+
+/** Turn a thread into a timeline: typing dots before each Keel text, then the message. */
+function timeline(thread: Msg[]) {
+  const ev: { at: number; kind: 'dots' | 'show'; i: number }[] = []
+  let t = 500
+  thread.forEach((m, i) => {
+    if (m.me) { t += i === 0 ? 0 : 1300; ev.push({ at: t, kind: 'show', i }) }
+    else if (m.pin) { t += 650; ev.push({ at: t, kind: 'show', i }) }
+    else { t += 800; ev.push({ at: t, kind: 'dots', i }); t += 1100; ev.push({ at: t, kind: 'show', i }) }
+  })
+  return ev
+}
 
 const ios = { fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif' }
 const IOS_BLUE = '#007AFF'
@@ -171,10 +284,21 @@ function LinkCard({ pin }: { pin: Pin }) {
 }
 
 export function SmsPhone({ frozen = false, className }: { frozen?: boolean; className?: string }) {
-  const idx = useCycle(THREADS.length, 6800, frozen)
-  const t = THREADS[idx]
-  const pin = PINS.find((p) => p.id === t.pin)!
-  const phase = usePhase([500, 1300, 2500, 3200], idx, frozen) // ask · dots · reply · card
+  const [idx, setIdx] = useState(0)
+  const thread = THREADS[idx]
+  const ev = timeline(thread)
+  const phase = usePhase(ev.map((e) => e.at), idx, frozen)
+  useEffect(() => {
+    if (frozen) return
+    const t = setTimeout(() => setIdx((i) => (i + 1) % THREADS.length), ev[ev.length - 1].at + 3200)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx, frozen])
+  const fired = ev.slice(0, phase)
+  const shown = new Set(fired.filter((e) => e.kind === 'show').map((e) => e.i))
+  const last = fired[fired.length - 1]
+  const typing = last?.kind === 'dots'
+  const lastMine = Math.max(...thread.map((m, i) => (m.me && shown.has(i) ? i : -1)))
   return (
     <Phone className={className} screen="bg-white">
       <div style={ios} className="flex-1 flex flex-col min-h-0">
@@ -195,11 +319,15 @@ export function SmsPhone({ frozen = false, className }: { frozen?: boolean; clas
         <div className="flex-1 min-h-0 flex flex-col justify-end gap-[5px] px-3 pb-1.5 overflow-hidden">
           <p className="text-center text-[0.5rem] leading-tight text-[#8E8E93] mb-auto pt-2"><span className="font-semibold">iMessage</span><br />Today 9:41 AM</p>
           <AnimatePresence mode="popLayout">
-            {phase >= 1 && <Bubble key={idx + 'q'} me>{t.ask}</Bubble>}
-            {phase >= 1 && <motion.p key={idx + 'dl'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-right text-[0.5rem] font-medium text-[#8E8E93] -mt-0.5 pr-0.5">{phase >= 3 ? 'Read 9:41 AM' : 'Delivered'}</motion.p>}
-            {phase === 2 && <Dots key={idx + 'd'} />}
-            {phase >= 3 && <Bubble key={idx + 'a'}>{t.reply}</Bubble>}
-            {phase >= 4 && <LinkCard key={idx + 'c'} pin={pin} />}
+            {thread.flatMap((m, i) => {
+              if (!shown.has(i)) return []
+              const k = `${idx}-${i}`
+              if (m.pin) return [<LinkCard key={k} pin={PINS.find((p) => p.id === m.pin)!} />]
+              const out = [<Bubble key={k} me={m.me}>{m.text}</Bubble>]
+              if (i === lastMine) out.push(<motion.p key={k + 'd'} initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-right text-[0.5rem] font-medium text-[#8E8E93] -mt-0.5 pr-0.5">Delivered</motion.p>)
+              return out
+            })}
+            {typing && <Dots key={`${idx}-dots-${last.i}`} />}
           </AnimatePresence>
         </div>
 

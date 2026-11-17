@@ -186,7 +186,7 @@ body::before {
   to { background-position: -110% 0; }
 }
 
-/* Hero test: a single shared row of pinned surfaces, travelling left to right. */
+/* Hero test: the phone's pinned surfaces, drifting past in one endless row. */
 .pin-track {
   animation: pin-travel 36s linear infinite;
   will-change: transform;

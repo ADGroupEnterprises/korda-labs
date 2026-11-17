@@ -133,7 +133,6 @@ function Shelf() {
       {books.map(([x, w, h, f]) => <rect key={x} x={x} y={48 - h} width={w} height={h} rx="1.5" fill={f} />)}
       <rect x="54" y="48" width="78" height="5" rx="1" fill={`url(#pa-sh-p${u})`} />
       <rect x="54" y="84" width="78" height="5" rx="1" fill={`url(#pa-sh-p${u})`} />
-      <rect x="66" y="62" width="30" height="22" rx="2" fill="#FBEBDC" opacity="0.9" /><circle cx="110" cy="74" r="10" fill="#27405A" opacity="0.85" />
       <Grain id={`pa-sh-g${u}`} />
     </svg>
   )
