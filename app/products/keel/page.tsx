@@ -3,7 +3,8 @@ import { APP_SIGNUP_URL } from '@/lib/links'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
-import KeelProductDemo from '@/components/KeelProductDemo'
+import dynamic from 'next/dynamic'
+const KeelWindow = dynamic(() => import('@/components/showcase/KeelUI').then((m) => m.KeelWindow), { ssr: false })
 import { Zoe, ZoeBadge, CrewMark, KeelLockup } from '@/components/marks/Brand'
 
 // --- Lens component (compact version) ---
@@ -564,7 +565,7 @@ export default function KeelPage() {
       {/* Lens Experience */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-4">
               Talk to Keel.
@@ -575,7 +576,7 @@ export default function KeelPage() {
               The Lens is one tap away on your phone, desktop and lock screen. Ask, or say nothing. The crew keeps working either way.
             </p>
           </div>
-          <KeelProductDemo />
+          <div className="min-h-[30rem]"><KeelWindow /></div>
         </div>
       </section>
 

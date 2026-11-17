@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden px-6">
       <div className="absolute inset-0 bg-chart [mask-image:linear-gradient(to_bottom,black,transparent_60%)]" aria-hidden="true" />
-      <div className="relative z-10 w-full max-w-7xl mx-auto pt-14 pb-28 lg:pt-20 lg:pb-36">
+      <div className="relative z-10 w-full max-w-7xl mx-auto pt-14 pb-24 lg:pt-20 lg:pb-44">
         {/* Copy */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <motion.div
@@ -77,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="mt-14 lg:mt-20 min-h-[26rem]"
+          className="mt-14 lg:mt-20 min-h-[30rem]"
         >
           <HeroShowcase />
         </motion.div>

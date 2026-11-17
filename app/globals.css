@@ -171,6 +171,16 @@ body::before {
   to { background-position: -110% 0; }
 }
 
+/* Hero test: a single shared row of pinned surfaces, travelling left to right. */
+.pin-track {
+  animation: pin-travel 36s linear infinite;
+  will-change: transform;
+}
+@keyframes pin-travel {
+  from { transform: translateX(0); }
+  to { transform: translateX(var(--pin-loop, 732px)); }
+}
+
 /* MOTION-01: respect reduced motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,
