@@ -89,6 +89,15 @@ body::before {
       inset 0 1px 0 rgba(255, 255, 255, 0.95),
       0 30px 60px -20px rgba(15, 41, 66, 0.28);
   }
+  /* "Thinking" text: a slow light sweep, nothing else. */
+  .thinking-shimmer {
+    background: linear-gradient(90deg, #49617B 0%, #49617B 35%, #A7D7FF 50%, #49617B 65%, #49617B 100%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: thinking-sweep 1.8s linear infinite;
+  }
   /* Highlighter marks for the "What we believe" page. */
   .hl {
     background: linear-gradient(180deg, transparent 58%, rgba(167, 215, 255, 0.85) 58%, rgba(167, 215, 255, 0.85) 92%, transparent 92%);
@@ -155,6 +164,11 @@ body::before {
     background-image: radial-gradient(rgba(251, 249, 244, 0.12) 1px, transparent 1px);
     background-size: 22px 22px;
   }
+}
+
+@keyframes thinking-sweep {
+  from { background-position: 110% 0; }
+  to { background-position: -110% 0; }
 }
 
 /* MOTION-01: respect reduced motion globally */
