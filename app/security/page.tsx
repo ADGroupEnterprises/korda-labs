@@ -2,6 +2,7 @@ import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import { Zoe } from '@/components/marks/Brand'
 
 export const metadata: Metadata = {
   title: 'Security — Keel by Korda Labs',
@@ -77,6 +78,7 @@ export default function SecurityPage() {
       {/* Hero */}
       <section className="relative py-32 px-6 overflow-hidden">
         <div className="relative max-w-4xl mx-auto">
+          <Zoe pose="walk-left" eager className="hidden md:block absolute right-0 bottom-0 w-32 lg:w-40 h-auto" />
           <p className="text-accent eyebrow mb-4">Security & trust</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6 max-w-3xl">
             Keel acts in the world.
