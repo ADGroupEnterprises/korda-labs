@@ -25,8 +25,8 @@ const rows = [
   { feature: 'Audit log', motion: 'Not available', keel: 'Immutable — every action logged, 30-day retention', keelWins: true },
   { feature: 'BYO API keys', motion: 'No — closed infrastructure', keel: 'Yes — OpenAI, Anthropic, Gemini, Ollama', keelWins: true },
   { feature: 'Desktop bridge', motion: 'Not available', keel: 'Remote access + task execution on home machine', keelWins: true },
-  { feature: 'Free tier', motion: 'No — trial only', keel: 'Yes — free forever tier', keelWins: true },
-  { feature: 'Starting price', motion: '$19/month (annual)', keel: '$12/month (annual early access)', keelWins: true },
+  { feature: 'Free tier', motion: 'No — trial only', keel: 'Yes — the web app is free', keelWins: true },
+  { feature: 'Starting price', motion: '$19/month (annual)', keel: 'Free on web · Apps $8.99/month or $79/year', keelWins: true },
 ]
 
 function Check() {
