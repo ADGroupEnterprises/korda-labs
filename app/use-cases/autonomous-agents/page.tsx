@@ -36,7 +36,7 @@ const capabilities = [
   {
     tag: 'Desktop access',
     title: 'Access your desktop as needed',
-    body: 'The Desktop Bridge lets agents access local files and run tasks on your machine when needed — perfect for sensitive work you want to keep on local models only.',
+    body: 'Bridge lets agents reach files and run tasks on your computer when needed — perfect for sensitive work you want to keep on local models only.',
     detail: 'Requires explicit policy configuration. All execution logged to audit trail.',
   },
 ]

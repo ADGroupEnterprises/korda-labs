@@ -10,66 +10,18 @@ export const metadata: Metadata = {
 }
 
 const principles = [
-  {
-    title: 'Default-deny execution',
-    body: "Every autonomous capability is off until you explicitly enable it. File access, web search, browser automation, script execution — none of it runs without your policy allowing it. The default state is: Keel asks, you approve.",
-    tag: 'Policy model',
-  },
-  {
-    title: 'Resource pattern policies',
-    body: "You specify what each capability can touch. Define which folders, domains, and services agents can access. Agents are bounded to the paths and services you define.",
-    tag: 'Scope control',
-  },
-  {
-    title: 'Daily action limits',
-    body: "Set a maximum number of file writes, web searches, browser actions, or tool calls per day — per action type. Keel checks the counter before every tool call and stops at 95% of your limit to prompt before exceeding it.",
-    tag: 'Rate limits',
-  },
-  {
-    title: 'Immutable audit log',
-    body: 'Every tool call — allowed or blocked — is written to an immutable audit log with timestamp, result, and cost estimate. Security events (delivery blocked, symlink rejected, tool budget exceeded) are logged separately. 30-day minimum retention.',
-    tag: 'Audit trail',
-  },
-  {
-    title: 'Abort at any time',
-    body: 'If a running agent does something unexpected, one tap stops it mid-execution. Keel polls for abort requests before every model call. When stopped, it tells you exactly what actions completed before the abort — and notes that completed work is not automatically reversed.',
-    tag: 'Abort control',
-  },
-  {
-    title: 'End-to-end encryption',
-    body: 'All API keys, OAuth tokens, and webhook secrets are encrypted using industry-standard encryption. Keys are never stored in plaintext. Your credentials stay secure.',
-    tag: 'Encryption',
-  },
-  {
-    title: 'Confidential task routing',
-    body: 'Tasks marked as confidential or private are never routed to cloud models — they run exclusively on local models via your Desktop Bridge. Storage access is limited. Agent names and domains are excluded from logs.',
-    tag: 'Data sensitivity',
-  },
-  {
-    title: 'BYO API keys',
-    body: 'You connect your own API keys for OpenAI, Anthropic, Gemini, or local models via Ollama. We never hold your model credentials. Your usage, your billing, your control.',
-    tag: 'Model ownership',
-  },
-  {
-    title: 'Three-surface auth',
-    body: 'Web app uses secure session cookies. Desktop app stores credentials in your system Keychain. Phone app uses secure device storage. All authentication tokens are stored securely and never exposed.',
-    tag: 'Authentication',
-  },
-  {
-    title: 'Network security',
-    body: "Webhook URLs are validated to prevent security attacks. Web content is sanitized before agents see it — agents never receive raw web data that could contain malicious code.",
-    tag: 'Network security',
-  },
-  {
-    title: 'File safety',
-    body: "Files are read and written with security protections to prevent attacks. Delivery destinations are validated at task approval time so they can't be changed between approval and delivery.",
-    tag: 'File safety',
-  },
-  {
-    title: 'No security delegated to LLMs',
-    body: 'Security enforcement lives in code, not in prompts. We never rely on an AI model to decide whether an action is safe. All policy checks, rate limits, and security boundaries are enforced at the infrastructure layer.',
-    tag: 'Non-negotiable',
-  },
+  { tag: 'Permission', title: 'Off until you turn it on', body: 'Keel can read files, search the web, use a browser and run tasks on your computer. Each one stays off until you switch it on. By default Keel asks, and you approve.' },
+  { tag: 'Boundaries', title: 'You set the boundaries', body: 'Choose the folders, websites and services Keel can touch. It stays inside them.' },
+  { tag: 'Limits', title: 'Daily limits', body: 'Set how many actions of each kind Keel may take in a day. Near the limit, it stops and asks.' },
+  { tag: 'Record', title: 'Everything is on the record', body: 'Every action is logged with the time, the result and what it cost, whether it ran or was blocked. The log cannot be edited, and it is kept for at least 30 days.' },
+  { tag: 'Stop', title: 'Stop any time', body: 'One tap stops a running agent. Keel tells you what it finished first. Finished work is not undone automatically.' },
+  { tag: 'Encryption', title: 'Your keys are locked up', body: 'The keys and sign-ins you connect are stored encrypted, never as plain text.' },
+  { tag: 'Confidential', title: 'Private work stays home', body: 'Mark a task confidential and it runs only on a model on your own computer, through Bridge. It never goes to a cloud model.' },
+  { tag: 'Models', title: 'Your models', body: 'Bring your own keys for OpenAI, Anthropic, Gemini or a model on your own machine. You pay the provider directly.' },
+  { tag: 'Sign-in', title: 'Signed in safely on every device', body: 'On the web, on desktop and on your phone, your sign-in is kept in the secure storage that device provides.' },
+  { tag: 'Web', title: 'Careful on the web', body: 'Web pages are cleaned before an agent reads them, so a page cannot slip in instructions or code.' },
+  { tag: 'Files', title: 'Careful with files', body: 'Where a file will be saved is fixed when you approve the task. It cannot be changed afterwards.' },
+  { tag: 'Non-negotiable', title: 'The rules live in the software', body: 'Keel never asks an AI model whether something is safe. The checks are built in, and a model cannot talk its way past them.' },
 ]
 
 export default function SecurityPage() {
@@ -86,7 +38,7 @@ export default function SecurityPage() {
             <span className="text-ink">Only on your say.</span>
           </h1>
           <p className="text-ink text-xl leading-relaxed max-w-2xl mb-10">
-            Keel can read files, search the web, automate a browser and run scripts. Every one of those is off until you turn it on. This page is the full model.
+            Keel can read files, search the web, use a browser and run tasks on your computer. Every one of those is off until you turn it on. This page explains how.
           </p>
         </div>
       </section>
@@ -109,11 +61,10 @@ export default function SecurityPage() {
             <p className="eyebrow text-accent mb-4">The non-negotiables</p>
             <ul className="space-y-3">
               {[
-                'No security decision is ever delegated to an AI model — enforcement lives in code, not prompts',
-                'When the database is unavailable, Keel returns an error — it never fails open',
-                'Encryption keys are used only for their intended purpose and never cross purposes',
-                'Session tokens are never passed in URLs',
-                'All security comparisons use constant-time equality to prevent timing attacks',
+                'An AI model never decides what is safe. The software does.',
+                'If something breaks, Keel stops. It never carries on unchecked.',
+                'Each key is used for one job only.',
+                'Your sign-in is never put in a web address.',
               ].map((rule, i) => (
                 <li key={i} className="flex gap-3 text-sm text-ink">
                   <span className="text-accent flex-shrink-0">—</span>
@@ -124,7 +75,7 @@ export default function SecurityPage() {
           </div>
 
           <div className="text-center">
-            <p className="text-ink text-sm mb-6">Questions about our security model?</p>
+            <p className="text-ink text-sm mb-6">Questions about security?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href={APP_SIGNUP_URL} className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300">
                 Get Keel

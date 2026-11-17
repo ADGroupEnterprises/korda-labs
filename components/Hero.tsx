@@ -14,7 +14,8 @@ export default function Hero() {
         {/* Copy */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div style={{ animationDelay: '0.1s' }} className="rise mb-7">
-            <KeelLockup className="h-10 w-auto" />
+            <p className="eyebrow text-ink-soft mb-3">Introducing</p>
+            <KeelLockup className="h-10 w-auto mx-auto" />
           </div>
 
           <h1 style={{ animationDelay: '0.2s' }} className="rise text-[2.75rem] sm:text-6xl xl:text-7xl font-display font-bold leading-[1.02] mb-6 text-ink">
