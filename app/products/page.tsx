@@ -38,7 +38,7 @@ export default function ProductsPage() {
                   </span>
                 </div>
                 <h2 className="text-3xl font-display font-bold text-ink mb-1">Keel</h2>
-                <p className="text-accent text-sm font-medium mb-4">One app for tasks &amp; calendars, powered by AI that does them</p>
+                <p className="text-accent text-sm font-medium mb-4">Your life, in working order</p>
                 <p className="text-ink leading-relaxed max-w-xl mb-6">
                   Our first product. Connect your tools, set a goal, hand off the work. Research, drafts, plans and automations come back finished.
                 </p>

@@ -56,7 +56,7 @@ export default function ComingSoonClient() {
 
           </h1>
           <p className="text-xl text-ink max-w-lg mx-auto mb-12 leading-relaxed">
-            One app for tasks and calendars, powered by AI that does them. Leave your email to hear when it opens.
+            Your life, in working order. Leave your email to hear when it opens.
           </p>
 
           {/* Email Form */}

@@ -19,12 +19,13 @@ export default function Hero() {
           </div>
 
           <h1 style={{ animationDelay: '0.2s' }} className="rise text-[2.75rem] sm:text-6xl xl:text-7xl font-display font-bold leading-[1.02] mb-6 text-ink">
-            One app for tasks &amp; calendars,{' '}
-            <span className="text-accent">powered by AI that does them.</span>
+            Your life,{' '}
+            <span className="text-accent">in working order.</span>
           </h1>
 
-          <p style={{ animationDelay: '0.35s' }} className="rise text-lg sm:text-xl text-ink-soft max-w-xl mb-9 leading-relaxed">
-            Plan your day in Keel. Its agents research, draft, schedule and follow up. You approve.
+          <p style={{ animationDelay: '0.35s' }} className="rise text-lg sm:text-xl text-ink-soft max-w-2xl mb-9 leading-relaxed">
+            Keel starts with you: your goals, your calendar, your tools. It connects them, plans your days, and does the work in between.{' '}
+            <span className="sm:block text-ink">Privately, and on your say.</span>
           </p>
 
           <div style={{ animationDelay: '0.5s' }} className="rise flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -43,7 +44,7 @@ export default function Hero() {
           </div>
 
           <p style={{ animationDelay: '0.75s' }} className="rise eyebrow text-ink-soft mt-6">
-            Free on web <span className="text-accent">·</span> Every action logged
+            Free on web <span className="text-accent">·</span> Private by design <span className="text-accent">·</span> Every action logged
           </p>
         </div>
 

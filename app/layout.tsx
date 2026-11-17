@@ -25,12 +25,12 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Korda Labs — Keel',
-  description: 'One app for tasks and calendars, powered by AI that does them. Keel by Korda Labs.',
+  description: 'Your life, in working order. Keel connects your goals, calendar and tools, plans your days and does the work in between. Privately, and on your say. Keel by Korda Labs.',
   metadataBase: new URL('https://kordalabs.com'),
   applicationName: 'Korda Labs',
   openGraph: {
     title: 'Keel by Korda Labs',
-    description: 'One app for tasks & calendars, powered by AI that does them.',
+    description: 'Your life, in working order. Keel connects your goals, calendar and tools, plans your days and does the work in between.',
     type: 'website',
     url: 'https://kordalabs.com',
     siteName: 'Korda Labs',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Keel by Korda Labs',
-    description: 'One app for tasks & calendars, powered by AI that does them.',
+    description: 'Your life, in working order. Keel connects your goals, calendar and tools, plans your days and does the work in between.',
     images: ['/og-image.jpg'],
   },
 }
