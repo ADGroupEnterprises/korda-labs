@@ -199,24 +199,46 @@ function Tasks() {
               ))}
             </div>
           ) : (
-            <div className="h-full grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] gap-2">
-              <div className={`${card} p-2.5`}>
-                <div className={`grid grid-cols-[minmax(0,1fr)_4.6rem_4.6rem_2.4rem] gap-2 pb-1.5 border-b border-ink/10 ${label} !text-[0.5rem] text-ink-soft`}><span>Task</span><span>Owner</span><span>Status</span><span className="text-right">Due</span></div>
-                {TASK_ROWS.map(([n, who, st, due], i) => (
-                  <div key={n} className={`grid grid-cols-[minmax(0,1fr)_4.6rem_4.6rem_2.4rem] gap-2 items-center py-[5px] px-1 -mx-1 rounded-md text-[0.64rem] ${i === 0 ? 'bg-accent/[0.08] text-ink font-semibold' : 'text-ink'}`}>
-                    <span className="truncate">{n}</span><span className="text-ink-soft font-normal truncate">{who}</span><span className="text-ink-soft font-normal truncate">{st}</span><span className={`${label} !text-[0.5rem] text-ink-soft text-right`}>{due}</span>
+            <div className="h-full grid grid-cols-1 md:grid-cols-[9.5rem_minmax(0,1fr)] gap-2">
+              {/* Narrow second menu: the tasks in the current list */}
+              <div className={`${card} p-2 hidden md:block overflow-hidden`}>
+                {TASK_ROWS.map(([n, who, , due], i) => (
+                  <div key={n} className={`px-2 py-1.5 rounded-lg mb-0.5 ${i === 0 ? 'bg-accent/[0.09]' : ''}`}>
+                    <p className={`text-[0.64rem] leading-tight truncate ${i === 0 ? 'text-accent font-semibold' : 'text-ink'}`}>{n}</p>
+                    <p className="flex justify-between text-[0.52rem] text-ink-soft mt-0.5"><span>{who}</span><span className={`${label} !text-[0.46rem]`}>{due}</span></p>
                   </div>
                 ))}
               </div>
-              <div className={`${card} p-3 hidden md:block`}>
-                <p className={`${label} !text-[0.5rem] text-accent`}>Active · Writer</p>
-                <p className="font-display font-bold text-[0.92rem] text-ink leading-tight mb-1.5">Draft investor update</p>
-                <p className="text-[0.64rem] leading-relaxed text-ink-soft mb-2">November numbers, two pilot wins, hiring plan. Match October’s tone.</p>
-                {[['Pull numbers from Stripe', true], ['Write draft v2', true], ['Your approval', false]].map(([n, d]) => (
-                  <div key={n as string} className="flex items-center gap-2 py-[3px]"><Tick done={d as boolean} /><span className={`text-[0.64rem] ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span></div>
-                ))}
-                <p className={`${label} !text-[0.5rem] text-ink-soft mt-2.5 mb-1`}>Activity</p>
-                {['9:02 · Writer started draft v2', '9:14 · Numbers checked', '9:20 · Sent to review'].map((l) => <p key={l} className="text-[0.58rem] text-ink-soft leading-relaxed">{l}</p>)}
+              {/* The task itself */}
+              <div className={`${card} p-3.5 overflow-hidden`}>
+                <div className="flex items-start justify-between gap-3 mb-2.5">
+                  <div className="min-w-0">
+                    <p className="flex items-center gap-1.5 mb-1"><span className="px-2 py-0.5 rounded-full bg-accent text-paper text-[0.54rem] font-semibold">In progress</span><span className="px-2 py-0.5 rounded-full bg-mist text-accent text-[0.54rem]">Writer</span><span className="px-2 py-0.5 rounded-full bg-sand text-copper text-[0.54rem]">High</span></p>
+                    <p className="font-display font-bold text-[1.05rem] text-ink leading-tight">Draft investor update</p>
+                  </div>
+                  <span className="h-6 px-2.5 rounded-full bg-white border border-ink/10 text-[0.58rem] text-ink flex items-center gap-1 whitespace-nowrap flex-shrink-0"><KeelMark size={10} /> Chat with Zoe</span>
+                </div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-1.5 mb-2.5">
+                  {[['Due', 'Fri, Nov 20'], ['Planned', 'Today 9:00–11:00'], ['Duration', '2 h'], ['Also planned', 'Tue 2:00 pm'], ['Project', 'Investor update'], ['List', 'Work'], ['Linked goal', 'Ship v1'], ['Depends on', 'Stripe numbers ✓']].map(([k, v]) => (
+                    <p key={k} className="rounded-xl bg-paper border border-ink/[0.06] px-2 py-1.5 min-w-0"><span className={`${label} !text-[0.46rem] text-ink-soft block`}>{k}</span><span className={`block text-[0.64rem] font-semibold truncate ${k === 'Linked goal' ? 'text-accent' : 'text-ink'}`}>{v}</span></p>
+                  ))}
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] gap-3">
+                  <div>
+                    <p className={`${label} !text-[0.5rem] text-ink-soft mb-1`}>Notes</p>
+                    <p className="text-[0.62rem] leading-relaxed text-ink rounded-xl bg-sand/60 px-2.5 py-1.5 mb-2">November numbers, two pilot wins, the hiring plan. Match October’s tone. Double-check churn.</p>
+                    <p className={`${label} !text-[0.5rem] text-ink-soft mb-1`}>Steps</p>
+                    {[['Pull numbers from Stripe', true], ['Write draft v2', true], ['Your approval', false]].map(([n, d]) => (
+                      <div key={n as string} className="flex items-center gap-2 py-[2px]"><Tick done={d as boolean} /><span className={`text-[0.62rem] ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span></div>
+                    ))}
+                  </div>
+                  <div className="hidden lg:block">
+                    <p className={`${label} !text-[0.5rem] text-ink-soft mb-1`}>Deliverables</p>
+                    <p className="flex items-center gap-1.5 text-[0.62rem] text-ink mb-2"><Icon.doc className="w-3 h-3 text-accent" />Investor update v2.md</p>
+                    <p className={`${label} !text-[0.5rem] text-ink-soft mb-1`}>Activity</p>
+                    {['9:02 · Writer started draft v2', '9:14 · Numbers checked', '9:20 · Sent to review'].map((l) => <p key={l} className="text-[0.56rem] text-ink-soft leading-relaxed">{l}</p>)}
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -299,41 +321,79 @@ function Goals() {
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
 
+const PROJECT_TASKS: [string, [string, string, string][]][] = [
+  ['In flight', [['Order walnut boards', 'You', 'Thu'], ['Cut and sand', 'You', 'Sat 2 pm']]],
+  ['Awaiting you', [['Approve lumber quote', 'Builder', 'Today']]],
+  ['Done', [['Measure the alcove', 'You', ''], ['Cut list and materials', 'Builder', '']]],
+]
+
 function Projects() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[9.5rem_minmax(0,1fr)] gap-2.5 p-3 h-full">
-      <div className={`${card} p-2.5 hidden md:block`}>
-        <p className={`${label} text-accent mb-1.5`}>Projects</p>
-        {[['Walnut bookshelf', 5, true], ['Reunion dinner', 4, false], ['Investor update', 3, false], ['O-Chem II', 9, false]].map(([n, c, on]) => (
-          <p key={n as string} className={`flex justify-between text-[0.66rem] px-2 py-1.5 rounded-lg ${on ? 'bg-accent/10 text-accent font-semibold' : 'text-ink'}`}><span className="truncate">{n}</span><span className="opacity-60">{c}</span></p>
+    <div className="grid grid-cols-1 md:grid-cols-[8.5rem_minmax(0,1fr)_13rem] h-full">
+      {/* Project list */}
+      <div className="hidden md:block border-r border-ink/[0.07] p-2.5">
+        <p className={`${label} text-accent mb-1.5 flex justify-between`}>Projects <span className="text-ink-soft">+</span></p>
+        {[['Walnut bookshelf', '#9A6646', true], ['Reunion dinner', '#F2B8AE', false], ['Investor update', '#3D64AE', false], ['O-Chem II', '#A7D7FF', false]].map(([n, c, on]) => (
+          <p key={n as string} className={`flex items-center gap-1.5 text-[0.64rem] px-2 py-1.5 rounded-lg ${on ? 'bg-accent/10 text-accent font-semibold' : 'text-ink'}`}><span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: c as string }} /><span className="truncate">{n}</span></p>
         ))}
       </div>
-      <div className={`${card} p-3.5 flex flex-col min-h-0`}>
-        <div className="flex items-start justify-between mb-2">
-          <div><p className={`${label} text-copper`}>Hobby</p><p className="font-display font-bold text-lg text-ink leading-tight">Walnut bookshelf</p></div>
-          <p className="text-right"><span className="font-display font-bold text-lg text-ink">40%</span><span className="block text-[0.56rem] text-ink-soft">2 of 5 done</span></p>
+
+      {/* The project */}
+      <div className="p-3 bg-chart min-w-0 overflow-hidden">
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <div className="min-w-0">
+            <p className={`${label} !text-[0.5rem] text-copper`}>Goal-linked project</p>
+            <p className="font-display font-bold text-[1.1rem] text-ink leading-tight flex items-center gap-2"><span className="w-2.5 h-2.5 rounded-full bg-copper" />Walnut bookshelf</p>
+          </div>
+          <span className="px-2 py-1 rounded-full bg-white/90 border border-white shadow-sm text-[0.56rem] text-accent whitespace-nowrap">↗ Goal · Make things</span>
         </div>
-        <Bar v={40} tone="copper" />
-        {/* Details */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2.5">
-          {[['Due', 'Dec 6'], ['Budget', '$312'], ['Crew', 'Builder'], ['Goal', 'Make things']].map(([k, v]) => (
-            <p key={k} className="rounded-xl bg-paper border border-ink/[0.06] px-2.5 py-1.5"><span className={`${label} !text-[0.48rem] text-ink-soft block`}>{k}</span><span className="text-[0.7rem] font-semibold text-ink">{v}</span></p>
+        {/* Four numbers, as the real page has them */}
+        <div className="grid grid-cols-4 gap-1.5 mb-2">
+          {[['Total', '5', false], ['In flight', '2', true], ['Awaiting you', '1', false], ['Done', '2', false]].map(([k, v, hot]) => (
+            <p key={k as string} className={`${card} px-2.5 py-1.5`}><span className={`font-display font-bold text-lg leading-none block ${hot ? 'text-copper' : 'text-ink'}`}>{v}</span><span className={`${label} !text-[0.46rem] text-ink-soft`}>{k}</span></p>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] gap-3 mt-2.5 flex-1 min-h-0">
-          <div>
-            <p className={`${label} text-ink-soft mb-1`}>Tasks</p>
-            {[['Measure the alcove', true], ['Cut list and materials', true], ['Order walnut boards', false], ['Cut and sand · Sat 2 pm', false], ['Assemble and oil', false]].map(([n, d]) => (
-              <div key={n as string} className="flex items-center gap-2 py-[3px]"><Tick done={d as boolean} /><span className={`text-[0.66rem] truncate ${d ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span></div>
+        <div className="mb-2.5"><Bar v={40} tone="copper" /></div>
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)] gap-2">
+          <div className={`${card} p-2.5`}>
+            {PROJECT_TASKS.map(([group, items]) => (
+              <div key={group} className="mb-1.5 last:mb-0">
+                <p className={`${label} !text-[0.48rem] ${group === 'Awaiting you' ? 'text-copper' : 'text-ink-soft'} mb-0.5`}>{group}</p>
+                {items.map(([n, who, due]) => (
+                  <div key={n} className="flex items-center gap-2 py-[2px]">
+                    <Tick done={group === 'Done'} />
+                    <span className={`text-[0.63rem] flex-1 truncate ${group === 'Done' ? 'line-through text-ink-soft' : 'text-ink'}`}>{n}</span>
+                    <span className={`px-1.5 rounded-full text-[0.5rem] ${who === 'You' ? 'bg-sand text-copper' : 'bg-mist text-accent'}`}>{who}</span>
+                    {due && <span className={`${label} !text-[0.46rem] text-ink-soft w-10 text-right`}>{due}</span>}
+                  </div>
+                ))}
+              </div>
             ))}
           </div>
-          <div className="hidden sm:block">
-            <p className={`${label} text-ink-soft mb-1`}>Notes</p>
-            <p className="text-[0.62rem] leading-relaxed text-ink rounded-xl bg-sand/60 px-2.5 py-1.5 mb-2">Alcove is 91 cm wide. Leave 3 mm each side. Oil finish, not varnish.</p>
-            <p className={`${label} text-ink-soft mb-1`}>Docs</p>
-            {['Cut list.pdf', 'Alcove sketch.png', 'Lumber quote.pdf'].map((f) => <p key={f} className="flex items-center gap-1.5 text-[0.62rem] text-ink py-[2px]"><Icon.doc className="w-3 h-3 text-accent" />{f}</p>)}
+          <div className="hidden lg:flex flex-col gap-2">
+            <div className={`${card} p-2.5`}>
+              <p className={`${label} !text-[0.48rem] text-ink-soft mb-1`}>Details</p>
+              {[['Due', 'Dec 6'], ['Budget', '$312'], ['Crew', 'Builder']].map(([k, v]) => <p key={k} className="flex justify-between text-[0.62rem] py-[1px]"><span className="text-ink-soft">{k}</span><span className="font-semibold text-ink">{v}</span></p>)}
+            </div>
+            <div className={`${card} p-2.5`}>
+              <p className={`${label} !text-[0.48rem] text-ink-soft mb-1`}>Notes</p>
+              <p className="text-[0.6rem] leading-snug text-ink mb-1.5">Alcove is 91 cm. Leave 3 mm each side. Oil, not varnish.</p>
+              <p className={`${label} !text-[0.48rem] text-ink-soft mb-0.5`}>Docs</p>
+              {['Cut list.pdf', 'Alcove sketch.png'].map((f) => <p key={f} className="flex items-center gap-1.5 text-[0.6rem] text-ink py-[1px]"><Icon.doc className="w-3 h-3 text-accent" />{f}</p>)}
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Chat that knows this project */}
+      <div className="hidden md:flex flex-col border-l border-ink/[0.07] p-3">
+        <p className="flex items-center gap-1.5 text-[0.72rem] font-semibold text-ink"><KeelMark size={14} /> Project chat</p>
+        <p className="text-[0.56rem] text-ink-soft mb-3">Walnut bookshelf</p>
+        <div className="flex-1 flex flex-col justify-end gap-2">
+          <p className="ml-auto max-w-[92%] rounded-[12px_12px_4px_12px] border border-accent/20 bg-gradient-to-b from-sky-soft to-mist px-2.5 py-1.5 text-[0.64rem] text-ink">What’s left before Saturday?</p>
+          <p className="text-[0.64rem] leading-relaxed text-ink">Order the boards by Thursday and approve the lumber quote. The cut list is ready.</p>
+        </div>
+        <span className="mt-3 h-7 rounded-full bg-white/90 border border-white shadow-sm px-3 flex items-center text-[0.6rem] text-ink-soft">Ask about this project</span>
       </div>
     </div>
   )

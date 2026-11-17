@@ -53,7 +53,7 @@ export default function HeroShowcase() {
 
       {/* Web */}
       <div className="xl:mr-[21rem]">
-        <KeelWindow frozen={frozen} paused={paused} framed canvasClass="xl:pr-28" />
+        <KeelWindow frozen={frozen} paused={paused} framed />
       </div>
 
       {/* Phones */}
