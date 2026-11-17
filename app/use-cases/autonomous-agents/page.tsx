@@ -2,6 +2,7 @@ import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import UseCaseLinks from '@/components/UseCaseLinks'
 
 export const metadata: Metadata = {
   title: 'Autonomous Agents — Keel by Korda Labs',
@@ -165,6 +166,7 @@ export default function AutonomousAgentsPage() {
         </div>
       </section>
 
+      <UseCaseLinks />
       <Footer />
     </div>
   )

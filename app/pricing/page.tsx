@@ -2,6 +2,7 @@ import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import UseCaseLinks from '@/components/UseCaseLinks'
 import { Zoe } from '@/components/marks/Brand'
 
 // Source: Keel plans readout, 2026-11-16 (founder-locked prices, Nov 15). USD.
@@ -168,6 +169,7 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <UseCaseLinks />
       <Footer />
     </div>
   )

@@ -4,41 +4,41 @@ import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { KordaLockup, KeelMark } from '@/components/marks/Brand'
+import { KordaLockup, KordaMark, KeelMark } from '@/components/marks/Brand'
 import { APP_SIGNIN_URL } from '@/lib/links'
 
-// One menu, three groups. Everything that used to be a separate header link lives here.
-const groups = [
-  {
-    title: 'Keel',
-    links: [
-      { label: 'Overview', href: '/products/keel', mark: true },
-      { label: 'Pricing', href: '/pricing' },
-      { label: 'Security', href: '/security' },
-      { label: 'Compare', href: '/compare' },
-    ],
-  },
-  {
-    title: 'How it works',
-    links: [
-      { label: 'Autonomous agents', href: '/use-cases/autonomous-agents' },
-      { label: 'Proactive AI', href: '/use-cases/proactive-ai' },
-      { label: 'Bridge', href: '/use-cases/desktop-bridge' },
-      { label: 'Daily planning', href: '/use-cases/daily-planning' },
-      { label: 'For founders', href: '/use-cases/founders' },
-      { label: 'For freelancers', href: '/use-cases/freelancers' },
-    ],
-  },
-  {
-    title: 'Korda Labs',
-    links: [
-      { label: 'What we believe', href: '/believe' },
-      { label: 'Roadmap', href: '/roadmap' },
-      { label: 'Products', href: '/products' },
-      { label: 'Blog', href: '/blog' },
-    ],
-  },
+// One menu, two sides: the studio on the left, the product on the right.
+const korda = [
+  { label: 'What we believe', href: '/believe' },
+  { label: 'Roadmap', href: '/roadmap' },
+  { label: 'Products', href: '/products' },
+  { label: 'Blog', href: '/blog' },
 ]
+// Keel fills two columns under one left-aligned header. Daily planning, For founders and
+// For freelancers are reached from the Keel pages themselves (see UseCaseLinks).
+const keel = [
+  [
+    { label: 'Overview', href: '/products/keel' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Security', href: '/security' },
+    { label: 'Compare', href: '/compare' },
+  ],
+  [
+    { label: 'Autonomous agents', href: '/use-cases/autonomous-agents' },
+    { label: 'Bridge', href: '/use-cases/desktop-bridge' },
+    { label: 'Proactive AI', href: '/use-cases/proactive-ai' },
+  ],
+]
+
+function MenuLink({ label, href, close }: { label: string; href: string; close: () => void }) {
+  return (
+    <li>
+      <Link href={href} onClick={close} className="group block px-3 py-2.5 rounded-2xl hover:bg-accent/[0.07] transition-colors">
+        <span className="text-sm font-semibold text-ink group-hover:text-accent transition-colors">{label}</span>
+      </Link>
+    </li>
+  )
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -117,31 +117,27 @@ export default function Nav() {
             className="mt-2 rounded-[2rem] glass glass-menu p-3 sm:p-5 max-h-[calc(100vh-7rem)] overflow-y-auto"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-              {groups.map((g) => (
-                <div key={g.title} className="rounded-3xl p-3 sm:p-4">
-                  <p className="eyebrow text-ink-soft mb-2 px-3">{g.title}</p>
-                  <ul>
-                    {g.links.map((l) => (
-                      <li key={l.href}>
-                        <Link
-                          href={l.href}
-                          onClick={() => setOpen(false)}
-                          className="group flex items-center gap-3 px-3 py-2.5 rounded-2xl hover:bg-accent/[0.07] transition-colors"
-                        >
-                          {'mark' in l && l.mark ? (
-                            <span className="w-8 h-8 rounded-xl bg-white/80 border border-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                              <KeelMark size={18} />
-                            </span>
-                          ) : null}
-                          <span className="min-w-0">
-                            <span className="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">{l.label}</span>
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+              {/* Korda Labs */}
+              <div className="rounded-3xl p-3 sm:p-4">
+                <p className="flex items-center gap-2.5 px-3 mb-3">
+                  <KordaMark size={28} />
+                  <span className="font-display font-bold text-lg text-ink">Korda Labs</span>
+                </p>
+                <ul>{korda.map((l) => <MenuLink key={l.href} {...l} close={() => setOpen(false)} />)}</ul>
+              </div>
+
+              {/* Keel */}
+              <div className="rounded-3xl p-3 sm:p-4 md:col-span-2 md:border-l md:border-ink/[0.07] md:pl-6">
+                <p className="flex items-center gap-2.5 px-3 mb-3">
+                  <KeelMark size={26} />
+                  <span className="font-display font-bold text-lg text-ink">Keel</span>
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
+                  {keel.map((col, i) => (
+                    <ul key={i}>{col.map((l) => <MenuLink key={l.href} {...l} close={() => setOpen(false)} />)}</ul>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </motion.div>
         )}

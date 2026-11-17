@@ -1,5 +1,6 @@
 'use client'
 import AppCloud from '@/components/AppCloud'
+import UseCaseLinks from '@/components/UseCaseLinks'
 import { APP_SIGNUP_URL } from '@/lib/links'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
@@ -697,6 +698,8 @@ export default function KeelPage() {
           </div>
         </div>
       </section>
+
+      <UseCaseLinks />
 
       {/* Final CTA */}
       <section className="relative py-40 px-6 text-center overflow-hidden">

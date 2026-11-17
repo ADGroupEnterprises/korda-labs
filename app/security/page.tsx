@@ -2,6 +2,7 @@ import { APP_SIGNUP_URL } from '@/lib/links'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import UseCaseLinks from '@/components/UseCaseLinks'
 import { Zoe } from '@/components/marks/Brand'
 
 export const metadata: Metadata = {
@@ -88,6 +89,7 @@ export default function SecurityPage() {
         </div>
       </section>
 
+      <UseCaseLinks />
       <Footer />
     </div>
   )
