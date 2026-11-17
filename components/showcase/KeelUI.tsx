@@ -57,7 +57,7 @@ export const Icon = {
 // ─── Shared atoms ─────────────────────────────────────────────────────────────
 
 /* Same face as the site's .eyebrow: JetBrains Mono, semibold, uppercase, 0.14em tracking. */
-export const label = 'font-mono font-semibold text-[0.56rem] uppercase tracking-[0.14em]'
+export const label = 'font-mono font-semibold text-[0.56rem] uppercase tracking-[0.14em] whitespace-nowrap'
 
 export function Avatar({ name, tone = 'sky' }: { name: string; tone?: 'sky' | 'sand' | 'ink' | 'blush' | 'mist' }) {
   const tones = { sky: 'bg-sky text-ink', sand: 'bg-sand text-copper', ink: 'bg-ink text-paper', blush: 'bg-blush text-ink', mist: 'bg-mist text-accent' }
@@ -276,7 +276,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
   const phase = usePhase([350, 1100, 2700], idx, frozen)
 
   return (
-    <div className="rounded-[1.4rem] glass overflow-hidden text-left">
+    <div className="rounded-[1.45rem] bg-paper/90 overflow-hidden text-left shadow-[0_0_0_1px_rgba(15,41,66,0.08)]">
       {/* Browser chrome */}
       <div className="flex items-center gap-3 px-4 h-10 border-b border-ink/[0.07] bg-white/40">
         <span className="flex gap-1.5" aria-hidden="true">
@@ -325,7 +325,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
 
           <div className="grid grid-cols-1 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]">
             {/* Conversation */}
-            <div className="flex flex-col p-4 md:border-r border-ink/[0.07] md:h-[25rem]">
+            <div className="flex flex-col p-4 md:border-r border-ink/[0.07] md:h-[27.5rem]">
               <div className="flex-1 flex flex-col justify-end gap-3 min-h-[8.5rem] overflow-hidden">
                 <AnimatePresence mode="popLayout">
                   {phase >= 1 && (
@@ -363,7 +363,7 @@ export function KeelWindow({ frozen = false, pinStrip, sceneMs = 7600, canvasCla
             </div>
 
             {/* Canvas */}
-            <div className={`relative bg-chart p-4 md:h-[25rem] min-h-[16rem] border-t md:border-t-0 border-ink/[0.07] flex flex-col ${canvasClass}`}>
+            <div className={`relative bg-chart p-4 md:h-[27.5rem] min-h-[16rem] border-t md:border-t-0 border-ink/[0.07] flex flex-col ${canvasClass}`}>
               <div className="flex-1">
                 <AnimatePresence mode="wait">
                   {phase >= 3 && (

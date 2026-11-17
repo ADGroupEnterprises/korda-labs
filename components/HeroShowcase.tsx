@@ -12,15 +12,15 @@ import { AppPhone, SmsPhone, PINS, PinTile } from '@/components/showcase/Phones'
 
 export const PIN_MOTION = true
 
-const TILE_W = 112
+const TILE_W = 132
 const GAP = 10
 const LOOP_W = PINS.length * (TILE_W + GAP)
 
 /** One window onto a single, shared, endlessly moving row of pins. Every window uses the same
     animation and is shifted by its own left edge, so a pin leaving one device enters the next. */
-function PinWindow({ originX, height = 78 }: { originX: number; height?: number }) {
+function PinWindow({ originX, height = 92 }: { originX: number; height?: number }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl" style={{ height }}>
+    <div className="relative overflow-hidden rounded-[1.15rem]" style={{ height }}>
       <div className="absolute top-0 pin-track flex" style={{ left: -originX - LOOP_W, gap: GAP, height }}>
         {[0, 1, 2, 3].flatMap((r) => PINS.map((p) => (
           <PinTile key={r + p.id} pin={p} className="flex-shrink-0 h-full" />
@@ -64,9 +64,9 @@ export default function HeroShowcase() {
 
   const phoneRow = motionOn ? (
     <div>
-      <div ref={phoneSlot}><PinWindow originX={origins.phone} height={78} /></div>
+      <div ref={phoneSlot}><PinWindow originX={origins.phone} height={92} /></div>
       <div className="grid grid-cols-2 gap-2 mt-2">
-        {PINS.slice(2, 4).map((p) => <PinTile key={p.id} pin={p} className="h-[4.1rem]" />)}
+        {PINS.slice(2, 4).map((p) => <PinTile key={p.id} pin={p} className="h-[4.4rem]" />)}
       </div>
     </div>
   ) : undefined
@@ -75,7 +75,7 @@ export default function HeroShowcase() {
     <div ref={root} className="relative mx-auto max-w-[82rem]" style={{ ['--pin-loop' as string]: `${LOOP_W}px` }} aria-label="Keel on the web, the Keel mobile app, and Keel over text message">
       {/* Web */}
       <div className="xl:mr-[21.5rem]">
-        <KeelWindow frozen={frozen} pinStrip={webStrip} canvasClass="xl:pr-24" />
+        <div className="rounded-[2rem] p-[9px] glass-bezel"><KeelWindow frozen={frozen} pinStrip={webStrip} canvasClass="xl:pr-24" /></div>
       </div>
 
       {/* Phones */}
