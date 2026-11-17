@@ -74,13 +74,6 @@ export default function Nav() {
           </Link>
 
           <div className="flex items-center gap-1 sm:gap-2">
-            <Link
-              href="/believe"
-              className="hidden sm:inline-flex px-4 py-2 text-sm font-medium text-ink hover:text-accent transition-colors duration-300"
-            >
-              What we believe
-            </Link>
-
             <button
               type="button"
               onClick={() => setOpen(v => !v)}
