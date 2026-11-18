@@ -1,13 +1,14 @@
-import Hero from '@/components/Hero'
-import { KordaSection, StudioCta } from '@/components/HomeSections'
+import { KordaHero, BridgeSection, KordaSection } from '@/components/HomeSections'
+import HomeProduct from '@/components/HomeProduct'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <KordaHero />
+      <BridgeSection />
       <KordaSection />
-      <StudioCta />
+      <HomeProduct />
       <Footer />
     </main>
   )

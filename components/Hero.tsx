@@ -36,7 +36,7 @@ export default function Hero() {
               Get Keel
             </Link>
             <Link
-              href="/products/keel"
+              href="#what-it-does"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full btn-glass text-ink hover:border-accent/40 hover:text-accent transition-all duration-300"
             >
               How it works

@@ -24,13 +24,13 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Korda Labs — Keel',
-  description: 'Your life, in working order. Keel connects your goals, calendar and tools, plans your days and does the work in between. Privately, and on your say. Keel by Korda Labs.',
+  title: 'Korda Labs — Bridging AI to the life you already live',
+  description: 'Korda Labs builds personal AI products that bridge the new world of AI to the life you already live. Our first is Keel.',
   metadataBase: new URL('https://kordalabs.com'),
   applicationName: 'Korda Labs',
   openGraph: {
-    title: 'Keel by Korda Labs',
-    description: 'Your life, in working order. Keel connects your goals, calendar and tools, plans your days and does the work in between.',
+    title: 'Korda Labs',
+    description: 'Korda Labs builds personal AI products that bridge the new world of AI to the life you already live. Our first is Keel.',
     type: 'website',
     url: 'https://kordalabs.com',
     siteName: 'Korda Labs',
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Keel by Korda Labs',
-    description: 'Your life, in working order. Keel connects your goals, calendar and tools, plans your days and does the work in between.',
+    title: 'Korda Labs',
+    description: 'Korda Labs builds personal AI products that bridge the new world of AI to the life you already live. Our first is Keel.',
     images: ['/og-image.jpg'],
   },
 }

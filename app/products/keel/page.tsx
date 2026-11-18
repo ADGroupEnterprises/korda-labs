@@ -1,4 +1,5 @@
 'use client'
+import Hero from '@/components/Hero'
 import AppCloud from '@/components/AppCloud'
 import UseCaseLinks from '@/components/UseCaseLinks'
 import { APP_SIGNUP_URL } from '@/lib/links'
@@ -459,41 +460,11 @@ export default function KeelPage() {
   return (
     <div className="min-h-screen">
 
-      {/* Hero */}
-      <section className="relative py-28 px-6 text-center overflow-hidden">
-        <motion.div
-          ref={heroRef}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative max-w-3xl mx-auto"
-        >
-          <div className="flex justify-center mb-8">
-            <Zoe pose="salute-left" eager className="w-40 sm:w-48 h-auto" />
-          </div>
-          <div className="flex justify-center mb-8">
-            <KeelLockup className="h-14 sm:h-16 w-auto" />
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            Plan it in Keel. <span className="text-accent">Hand it off.</span>
-          </h1>
-          <p className="text-xl text-ink max-w-xl mx-auto mb-10 leading-relaxed">
-            Tasks, calendar and goals in one app. A crew of agents that does the work.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={APP_SIGNUP_URL}
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full bg-accent text-paper btn-pillow hover:bg-navy transition-all duration-300"
-            >
-              Get Keel
-
-            </Link>
-          </div>
-        </motion.div>
-      </section>
+      {/* Hero: headline, buttons and the three-device showcase */}
+      <Hero />
 
       {/* What it does — Features */}
-      <section className="relative py-40 px-6">
+      <section id="what-it-does" className="relative py-40 px-6 scroll-mt-24">
         <div className="absolute top-0 left-0 right-0 h-px bg-ink/[0.07]" />
         <div className="max-w-5xl mx-auto">
           <KeelFeaturesHeader />

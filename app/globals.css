@@ -227,6 +227,12 @@ body::before {
   50% { transform: translateY(-9px); }
 }
 
+/* Home bridge: light moving along the deck. */
+.span-flow { animation: span-flow 2.4s linear infinite; }
+@keyframes span-flow {
+  to { stroke-dashoffset: -12; }
+}
+
 /* MOTION-01: respect reduced motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,

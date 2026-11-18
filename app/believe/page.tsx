@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import { Zoe } from '@/components/marks/Brand'
-import { APP_SIGNUP_URL } from '@/lib/links'
 
 export const metadata: Metadata = {
   title: 'What we believe — Korda Labs',
-  description: 'Start with what you want. Privacy as a freedom, no lock-in, and AI used on purpose so you can act in the real world.',
+  description: 'Korda Labs bridges the new world of AI to the life you already live. Products that are personal, private, and in service of your goals.',
 }
 
 const beliefs = [
@@ -14,45 +13,55 @@ const beliefs = [
     title: 'Your goals come first.',
     body: (
       <>
-        Keel starts with a goal you set. Everything it plans, drafts and schedules has to{' '}
-        <span className="hl">answer to that goal</span>. If a task doesn&apos;t move you closer, it doesn&apos;t
+        Everything we build starts with a goal you set. What it plans, drafts and schedules has to{' '}
+        <span className="hl">answer to that goal</span>. If something doesn&apos;t move you closer, it doesn&apos;t
         belong on your day.
       </>
     ),
   },
   {
     n: '02',
-    title: 'Privacy is a freedom.',
+    title: 'Meet people where they live.',
     body: (
       <>
-        What you are working toward is <span className="hl">nobody else&apos;s business</span>. Your data is never
-        used for training and never sold. You decide what each integration can see, and sensitive work can stay on
-        models running on your own machine.
+        You should not have to rebuild your life around a new tool. Our products connect to the calendar, the files
+        and the apps you already use, and <span className="hl-warm">do their work there</span>.
       </>
     ),
   },
   {
     n: '03',
-    title: 'No lock-in.',
+    title: 'Personal means one person.',
     body: (
       <>
-        Bring your own keys. Pick the model for each agent. Swap it when something better ships. Finished work lands
-        in your own storage. We would rather <span className="hl-warm">earn next month</span> than trap it.
+        A product of ours takes orders from you and nobody else. Nothing runs until you switch it on. Every action
+        is logged. <span className="hl">One tap stops it.</span>
       </>
     ),
   },
   {
     n: '04',
-    title: 'AI that works for one person.',
+    title: 'Privacy is a freedom.',
     body: (
       <>
-        An assistant should take orders from you and nobody else. Nothing in Keel runs until you switch it on. Every
-        action is logged. <span className="hl">One tap stops any agent.</span>
+        What you are working toward is <span className="hl">nobody else&apos;s business</span>. Your data is never
+        used for training and never sold. You decide what each connection can see, and sensitive work can stay on
+        your own machine.
       </>
     ),
   },
   {
     n: '05',
+    title: 'No lock-in.',
+    body: (
+      <>
+        Bring your own models. Swap them when something better ships. Finished work lands in your own storage. We
+        would rather <span className="hl-warm">earn next month</span> than trap it.
+      </>
+    ),
+  },
+  {
+    n: '06',
     title: 'Use it on purpose.',
     body: (
       <>
@@ -62,12 +71,12 @@ const beliefs = [
     ),
   },
   {
-    n: '06',
-    title: 'The point is the real world.',
+    n: '07',
+    title: 'The point is your life.',
     body: (
       <>
-        The measure is not how much you asked an AI. It is what changed off the screen: the proposal sent, the trip
-        booked, <span className="hl">the run you didn&apos;t skip</span>.
+        The measure is not how much you asked an AI. It is what changed off the screen: the proposal sent, the goal
+        you kept, <span className="hl">the run you didn&apos;t skip</span>.
       </>
     ),
   },
@@ -90,15 +99,18 @@ export default function BelievePage() {
         {/* Opening */}
         <div className="max-w-xl mx-auto space-y-16 sm:space-y-20 text-xl sm:text-2xl leading-relaxed text-ink">
           <p>
-            Most software starts with what it wants from you. Your time. Your attention. Your data.{' '}
-            <span className="line-through decoration-2 decoration-copper/70 text-ink-soft">Your engagement.</span>
+            AI is arriving as a new world. New tools, new words, something else to learn{' '}
+            <span className="hl-warm">every week</span>.
           </p>
           <p>
-            AI made that easier to hide. A helpful voice on top, and the{' '}
-            <span className="hl-warm">same old incentives</span> underneath.
+            Your life is already here. A calendar. An inbox. People who need you. Goals you have carried for years.
+          </p>
+          <p>
+            Most software asks you to move. Give it your time. Your attention. Your data.{' '}
+            <span className="line-through decoration-2 decoration-copper/70 text-ink-soft">Your engagement.</span>
           </p>
           <p className="font-display font-bold text-3xl sm:text-4xl leading-tight">
-            We think it should run the other way.
+            Korda Labs builds the bridge. AI that comes to where you already live.
           </p>
         </div>
 
@@ -123,11 +135,12 @@ export default function BelievePage() {
             <br />
             <span className="text-accent">So you can get on with it.</span>
           </p>
+          <p className="text-lg text-ink-soft mb-8">Keel is the first product we built on these.</p>
           <a
-            href={APP_SIGNUP_URL}
+            href="/products/keel"
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-accent text-paper btn-pillow transition-all duration-300"
           >
-            Get Keel
+            Meet Keel
           </a>
         </div>
       </article>
