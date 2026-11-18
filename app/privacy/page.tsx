@@ -58,7 +58,7 @@ export default function PrivacyPage() {
             <p>
               If you turn on Keel texts, we use your mobile number only to send you the Keel messages you
               asked for and to receive your replies. We do not sell your mobile number or share it, or your
-              text opt-in, with third parties for their marketing. To deliver texts, the message passes
+              text opt-in, with third parties or affiliates for their marketing. To deliver texts, the message passes
               through our messaging provider and mobile carriers; sensitive content stays in the app and is
               never sent by text. Reply STOP to any text to opt out, or turn texts off in Settings. See{' '}
               <a href="/text" className="text-accent hover:underline">Keel texts: opt-in and SMS terms</a>.

@@ -42,6 +42,20 @@ export default function TextPage() {
             <p className="mb-5 text-ink-soft">
               You opt in inside Keel, in Settings, after entering your mobile number. The box is unticked by default and is separate from every other consent. This is the wording you see:
             </p>
+            <figure className="mb-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/text/opt-in-screen.png"
+                width={720}
+                height={566}
+                alt="The Keel opt-in screen, under Settings, Texts. A mobile number field, then an unticked checkbox that reads: Text me from Keel. Korda Labs will send texts about your Keel tasks, goals and reminders to the number above. Message frequency varies, up to 20 a day. Msg and data rates may apply. Reply HELP for help, STOP to cancel. Consent is not a condition of using Keel. Links to Terms and Privacy. A Send verification code button that stays off until the box is ticked."
+                className="w-full h-auto rounded-2xl border border-ink/[0.08]"
+              />
+              <figcaption className="mt-2.5 text-sm text-ink-soft">
+                The opt-in screen in Keel, under Settings › Texts. The box starts unticked, and the button stays off until you tick it. Shown as designed; texts are not switched on yet.
+              </figcaption>
+            </figure>
+            <p className="mb-4 text-ink-soft">The same wording, as text:</p>
             <div className="glass rounded-3xl p-6 sm:p-7">
               <div className="flex items-start gap-3.5">
                 <span className="mt-1 w-5 h-5 rounded-md border-2 border-ink/30 bg-white flex-shrink-0" role="img" aria-label="Unticked checkbox" />
@@ -101,7 +115,7 @@ export default function TextPage() {
               <li><span className="font-semibold">Help.</span> Reply HELP to any Keel text, or email <a href={`mailto:${SUPPORT}`} className="text-accent hover:underline">{SUPPORT}</a>.</li>
               <li><span className="font-semibold">Carriers.</span> Mobile carriers are not liable for delayed or undelivered messages. Delivery depends on your carrier and your coverage.</li>
               <li><span className="font-semibold">Your number.</span> If you change or give up your mobile number, turn texts off first or tell us, so messages do not go to someone else.</li>
-              <li><span className="font-semibold">Privacy.</span> We do not sell your mobile number or share it, or your text opt-in, with third parties for their marketing. See the <Link href="/privacy#text-messages" className="text-accent hover:underline">Privacy Policy</Link>.</li>
+              <li><span className="font-semibold">Privacy.</span> We do not sell your mobile number or share it, or your text opt-in, with third parties or affiliates for their marketing. See the <Link href="/privacy#text-messages" className="text-accent hover:underline">Privacy Policy</Link>.</li>
               <li><span className="font-semibold">Other terms.</span> These SMS terms add to the Korda Labs <Link href="/terms" className="text-accent hover:underline">Terms of Service</Link>.</li>
             </ol>
           </section>
