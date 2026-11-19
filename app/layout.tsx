@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Keel by Korda Labs — Zoe the otter, skipper of your AI crew',
+        alt: 'Korda Labs — Keel, with Zoe the otter',
       },
     ],
   },

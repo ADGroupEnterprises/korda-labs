@@ -450,9 +450,9 @@ function Journal() {
 
 function Agents() {
   const core: [string, string, string, React.ReactNode][] = [
-    ['Zoe', 'Skipper', 'Routing 3 jobs', <KeelMark key="z" size={18} />],
-    ['Compass', 'Navigator', 'Watching 3 goals', <CrewMark key="c" agent="compass" size={22} />],
-    ['Task Manager', 'First mate', 'Planned today · 6:40 am', <CrewMark key="t" agent="task-manager" size={22} />],
+    ['Zoe', 'Orchestrator', 'Routing 3 jobs', <KeelMark key="z" size={18} />],
+    ['Compass', 'Goals Navigator', 'Watching 3 goals', <CrewMark key="c" agent="compass" size={22} />],
+    ['Bob', 'Task Manager', 'Planned today · 6:40 am', <CrewMark key="t" agent="task-manager" size={22} />],
   ]
   const crew: [string, string, string, number][] = [['Researcher', 'Venue shortlist', 'In review', 100], ['Writer', 'Investor update · v2', 'Drafting', 70], ['Analyst', 'O-Chem week 1 guide', 'Working', 45], ['Builder', 'Shelf cut list', 'Queued', 0], ['Designer', 'Idle', 'Ready', 0]]
   return (

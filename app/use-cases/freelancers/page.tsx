@@ -12,7 +12,7 @@ const features = [
   { label: 'Project & deadline tracking', body: 'Connect Notion, Todoist, or your preferred tool. Keel surfaces what\'s due, what\'s at risk, and what to work on today — without you having to check everything manually.' },
   { label: 'Client context, always available', body: 'Keel remembers your clients, their deadlines, and your commitments. No more digging through email threads to remember what you promised and when.' },
   { label: 'Personal goals alongside client work', body: 'Your professional development, fitness, and personal goals don\'t disappear when client work gets busy. Compass keeps them alive — scheduled into the gaps that exist.' },
-  { label: 'AI planning that works around your life', body: 'Freelance schedules are fluid. Task Manager adapts your plan in real time as client requests come in, deadlines shift, or you simply need a different kind of day.' },
+  { label: 'AI planning that works around your life', body: 'Freelance schedules are fluid. Bob, the task manager, adapts your plan in real time as client requests come in, deadlines shift, or you simply need a different kind of day.' },
 ]
 
 export default function FreelancersPage() {

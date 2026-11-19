@@ -16,7 +16,7 @@ const painPoints = [
 
 const features = [
   { label: 'Goal alignment', body: 'Set your company milestones and personal goals in one place. Compass tracks both and makes sure your daily schedule reflects your actual priorities.' },
-  { label: 'Automatic daily planning', body: 'Task Manager pulls from your calendar, your project tools, and your goals — and hands you a prioritized day. Adjusts in real time when things shift.' },
+  { label: 'Automatic daily planning', body: 'Bob, the task manager, pulls from your calendar, your project tools, and your goals — and hands you a prioritized day. Adjusts in real time when things shift.' },
   { label: 'Health as an input', body: 'Your energy levels affect your output. Keel connects to your health data and schedules your deepest work when you\'re at your best.' },
   { label: 'One context for everything', body: 'Notion, Linear, Slack, Gmail, Calendar — Keel pulls them into one place. You stop switching. Keel keeps the full picture.' },
 ]

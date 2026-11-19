@@ -20,7 +20,7 @@ export default function HomeProduct() {
             <KeelLockup className="h-9 w-auto brightness-0 invert mb-6 self-start" />
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-4">Your life, in working order.</h2>
             <p className="text-paper/80 text-lg leading-relaxed max-w-lg mb-8">
-              Keel starts with your goals, connects your calendar and tools, plans your days and does the work in between. Privately, and on your say.
+              Keel starts with you: your goals, your calendar, your tools. It connects them, plans your days, and does the work in between. Privately, and on your say.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/products/keel" className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-paper text-ink hover:bg-sky transition-all duration-300">

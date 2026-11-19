@@ -43,7 +43,7 @@ function TaskManagerAnimation() {
       <div className="flex items-center gap-2 mb-4">
         <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         <span className="text-[10px] font-mono text-accent tracking-widest uppercase">
-          {phase === 0 ? 'Task Manager — Analyzing' : phase === 1 ? 'Task Manager — Prioritizing' : 'Task Manager — Done'}
+          {phase === 0 ? 'Bob — Analyzing' : phase === 1 ? 'Bob — Prioritizing' : 'Bob — Done'}
         </span>
       </div>
       <div className="space-y-1.5">
@@ -96,19 +96,19 @@ function TaskManagerAnimation() {
 const agents = [
   {
     name: 'Zoe',
-    role: 'The Skipper',
+    role: 'Orchestrator',
     color: 'blue',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
       </svg>
     ),
-    description: 'The skipper of the crew. Zoe listens to what you need, understands your full context, and coordinates Compass and Task Manager on your behalf. She synthesizes signals from your goals, health, and schedule into clear direction — surfacing what matters before you have to ask.',
+    description: 'Zoe runs the crew. She listens to what you need, understands your full context, and coordinates Compass and Bob on your behalf. She synthesizes signals from your goals, health, and schedule into clear direction — surfacing what matters before you have to ask.',
     skills: ['Natural language understanding', 'Cross-agent coordination', 'Contextual memory', 'Proactive recommendations'],
   },
   {
     name: 'Compass',
-    role: 'Goals',
+    role: 'Goals Navigator',
     color: 'green',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -119,15 +119,15 @@ const agents = [
     skills: ['Goal hierarchy & milestones', 'Progress tracking', 'Personal & fitness integrations', 'Calendar-aware planning'],
   },
   {
-    name: 'Task Manager',
-    role: 'Daily Planning',
+    name: 'Bob',
+    role: 'Task Manager',
     color: 'blue',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
       </svg>
     ),
-    description: "Task Manager takes what Compass knows and turns it into what you do today. It plans your schedule, queues tasks by priority and energy level, and adapts in real time as things shift. Not a to-do list — a living, breathing plan that moves with you.",
+    description: "Bob takes what Compass knows and turns it into what you do today. It plans your schedule, queues tasks by priority and energy level, and adapts in real time as things shift. Not a to-do list — a living, breathing plan that moves with you.",
     skills: ['Schedule optimization', 'Priority & energy-aware queuing', 'Deadline management', 'Notion, Todoist & Calendar sync'],
   },
 ]
@@ -505,7 +505,7 @@ export default function KeelPage() {
               <span className="text-ink">One crew.</span>
             </h2>
             <p className="text-ink mt-4 max-w-2xl mx-auto">
-              Zoe runs the crew. Compass holds your goals. Task Manager owns your day. They share one context.
+              Zoe runs the crew. Compass holds your goals. Bob owns your day. They share one context.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">

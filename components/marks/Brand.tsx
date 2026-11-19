@@ -1,5 +1,5 @@
 /* Brand marks — brand architecture v2.0.
-   Korda Labs = the company (compass). Keel = the product (sailboat). Zoe = the otter, skipper of the crew.
+   Korda Labs = the company (compass). Keel = the product (sailboat). Zoe = the otter, who orchestrates the crew.
    All files in /public/brand are reproduced from Marketing/01 - Assets; do not recolour or redraw. */
 
 type ImgProps = { className?: string; alt?: string }
@@ -29,7 +29,7 @@ export function ZoeBadge({ size = 24, variant = 'color', className }: { size?: n
   return <img src={`/brand/zoe-helm-${variant}.svg`} width={size} height={size} alt="" aria-hidden="true" className={className} />
 }
 
-/** Crew marks — Compass (owl with a telescope) and Task Manager (penguin with a clipboard). */
+/** Crew marks — Compass, the goals navigator (owl with a telescope) and Bob, the task manager (penguin with a clipboard). */
 export function CrewMark({ agent, size = 28, className }: { agent: 'compass' | 'task-manager'; size?: number; className?: string }) {
   return <img src={`/brand/${agent}-mark.svg`} width={size} height={size} alt="" aria-hidden="true" className={className} />
 }

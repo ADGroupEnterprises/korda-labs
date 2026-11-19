@@ -32,7 +32,7 @@ const capabilities = [
     tag: 'Persona agents',
     title: 'Specialist agents created as needed',
     body: 'Researcher. Writer. Analyst. Builder. Designer. Keel creates the right agent and selects the best model for the job — automatically — based on task type and complexity.',
-    detail: 'Agents work under your direction, coordinating with Compass and Task Manager for goal and schedule context.',
+    detail: 'Agents work under your direction, coordinating with Compass and Bob for goal and schedule context.',
   },
   {
     tag: 'Desktop access',
@@ -48,7 +48,7 @@ const workflowExamples = [
     steps: [
       'You set a goal: "Run a marathon in 6 months"',
       'Compass breaks it into weekly milestones',
-      'Task Manager schedules training runs around your calendar',
+      'Bob schedules training runs around your calendar',
       'Keel monitors your progress via Apple Health',
       'Weekly check-ins notify you of adjustments needed',
       'You execute the plan — Keel keeps you on track',
@@ -69,7 +69,7 @@ const workflowExamples = [
     name: 'Freelancer client workflow',
     steps: [
       'New client project added to Notion',
-      'Task Manager breaks it into deliverables',
+      'Bob breaks it into deliverables',
       'Schedules work blocks around your other commitments',
       'Keel tracks deadlines and sends proactive reminders',
       'Research agent prepares briefs when needed',

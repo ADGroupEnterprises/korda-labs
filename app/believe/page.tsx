@@ -107,12 +107,16 @@ export default function BelievePage() {
         {/* Opening */}
         <div className="max-w-xl mx-auto space-y-16 sm:space-y-20 text-xl sm:text-2xl leading-relaxed text-ink">
           <p>
-            AI gets more capable every month. What most people do with it{' '}
-            <span className="hl-warm">barely moves</span>.
+            AI gets more capable by the month. Getting real use out of it is still work: new tools, new habits,{' '}
+            <span className="hl-warm">new words to learn</span>.
           </p>
           <p>
-            The gap is not about how smart anyone is. Your life is already full: a calendar, an inbox, people who
-            need you. There is no spare week to learn a new world.
+            Most people don&apos;t have that time. Their days are already full: a calendar, an inbox, people who need
+            them.
+          </p>
+          <p>
+            So a lot of what AI can do never reaches the people it could help. They could use it. Nobody built it to
+            fit.
           </p>
           <p>
             Most software asks you to move in anyway. Give it your time. Your attention. Your data.{' '}
