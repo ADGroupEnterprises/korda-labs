@@ -17,7 +17,6 @@ export default function HomeProduct() {
         <Zoe pose="peek" decorative className="absolute left-10 sm:left-16 -top-[7.4rem] w-56 h-auto z-0" />
         <div className="relative z-10 rounded-[2rem] bg-gradient-to-br from-accent to-navy text-paper overflow-hidden grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_20rem] gap-6">
           <div className="p-8 sm:p-12 flex flex-col justify-center">
-            <p className="eyebrow text-sky mb-5">Our first product</p>
             <KeelLockup className="h-9 w-auto brightness-0 invert mb-6 self-start" />
             <h2 className="font-display font-bold text-4xl sm:text-5xl leading-[1.05] mb-4">Your life, in working order.</h2>
             <p className="text-paper/80 text-lg leading-relaxed max-w-lg mb-8">

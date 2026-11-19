@@ -10,17 +10,26 @@ export const metadata: Metadata = {
 const beliefs = [
   {
     n: '01',
-    title: 'Your goals come first.',
+    title: 'Start with what people do.',
     body: (
       <>
-        Everything we build starts with a goal you set. What it plans, drafts and schedules has to{' '}
-        <span className="hl">answer to that goal</span>. If something doesn&apos;t move you closer, it doesn&apos;t
-        belong on your day.
+        Everything we build starts from a real day: the work, the errands, the plans already in motion. The product
+        fits around that, and has to <span className="hl">earn its place in it</span>.
       </>
     ),
   },
   {
     n: '02',
+    title: 'Built for the average person.',
+    body: (
+      <>
+        It has to work for someone who will never read a prompt guide. If it takes an expert to get the value out,{' '}
+        <span className="hl-warm">we are not done</span>.
+      </>
+    ),
+  },
+  {
+    n: '03',
     title: 'Meet people where they live.',
     body: (
       <>
@@ -30,7 +39,7 @@ const beliefs = [
     ),
   },
   {
-    n: '03',
+    n: '04',
     title: 'Personal means one person.',
     body: (
       <>
@@ -40,7 +49,7 @@ const beliefs = [
     ),
   },
   {
-    n: '04',
+    n: '05',
     title: 'Privacy is a freedom.',
     body: (
       <>
@@ -51,7 +60,7 @@ const beliefs = [
     ),
   },
   {
-    n: '05',
+    n: '06',
     title: 'No lock-in.',
     body: (
       <>
@@ -61,7 +70,7 @@ const beliefs = [
     ),
   },
   {
-    n: '06',
+    n: '07',
     title: 'Use it on purpose.',
     body: (
       <>
@@ -71,7 +80,7 @@ const beliefs = [
     ),
   },
   {
-    n: '07',
+    n: '08',
     title: 'The point is your life.',
     body: (
       <>
@@ -88,25 +97,25 @@ export default function BelievePage() {
       <article className="px-6">
         {/* Title */}
         <header className="max-w-3xl mx-auto pt-24 sm:pt-36 pb-20 sm:pb-28 text-center">
-          <p className="eyebrow text-accent mb-8">What we believe</p>
           <h1 className="font-display font-bold text-ink text-[3.25rem] leading-[0.98] sm:text-8xl">
-            Start with
+            What we
             <br />
-            what you want.
+            believe.
           </h1>
         </header>
 
         {/* Opening */}
         <div className="max-w-xl mx-auto space-y-16 sm:space-y-20 text-xl sm:text-2xl leading-relaxed text-ink">
           <p>
-            AI is arriving as a new world. New tools, new words, something else to learn{' '}
-            <span className="hl-warm">every week</span>.
+            AI gets more capable every month. What most people do with it{' '}
+            <span className="hl-warm">barely moves</span>.
           </p>
           <p>
-            Your life is already here. A calendar. An inbox. People who need you. Goals you have carried for years.
+            The gap is not about how smart anyone is. Your life is already full: a calendar, an inbox, people who
+            need you. There is no spare week to learn a new world.
           </p>
           <p>
-            Most software asks you to move. Give it your time. Your attention. Your data.{' '}
+            Most software asks you to move in anyway. Give it your time. Your attention. Your data.{' '}
             <span className="line-through decoration-2 decoration-copper/70 text-ink-soft">Your engagement.</span>
           </p>
           <p className="font-display font-bold text-3xl sm:text-4xl leading-tight">

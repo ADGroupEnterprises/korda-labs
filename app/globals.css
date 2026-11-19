@@ -227,10 +227,11 @@ body::before {
   50% { transform: translateY(-9px); }
 }
 
-/* Home bridge: light moving along the deck. */
-.span-flow { animation: span-flow 2.4s linear infinite; }
-@keyframes span-flow {
-  to { stroke-dashoffset: -12; }
+/* Home bridge: a glint of light crossing from one shore to the other. */
+.span-glint { animation: span-glint 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+@keyframes span-glint {
+  from { stroke-dashoffset: 30; }
+  to { stroke-dashoffset: -330; }
 }
 
 /* MOTION-01: respect reduced motion globally */
